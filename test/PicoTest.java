@@ -24,9 +24,9 @@ public class PicoTest {
     }
 
     @Test
-    public void test04UnPicoDePiedraDeberiaInicializarConFuerza5(){
+    public void test04UnPicoDePiedraDeberiaInicializarConFuerza4(){
         Pico picoDePiedra = new Pico(new Piedra());
-        assertEquals(5, picoDePiedra.fuerza());
+        assertEquals(4, picoDePiedra.fuerza());
     }
 
     @Test
@@ -36,8 +36,8 @@ public class PicoTest {
     }
 
     @Test
-    public void test06UnPicoDeMetalDeberiaInicializarConFuerza10(){
+    public void test06UnPicoDeMetalDeberiaInicializarConFuerza12(){
         Pico picoDeMetal = new Pico(new Metal());
-        assertEquals(10, picoDeMetal.fuerza());
+        assertEquals(12, picoDeMetal.fuerza());
     }
 }

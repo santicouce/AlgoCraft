@@ -49,7 +49,7 @@ public class AlgoCraftTests {
 
     }
 
-    @Test
+    /*@Test
     public void test05PicoFinoConDurabilidadYFuerzaCorrespondiente() {
         PicoFino picoFino = new PicoFino();
         int durabilidadPico = 1000;
@@ -59,5 +59,5 @@ public class AlgoCraftTests {
         assertEquals(fuerzaPico, picoFino.fuerza());
 
     }
-
+*/
 }
