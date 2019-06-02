@@ -8,4 +8,5 @@ public abstract class Material {
         return this.durabilidad;
     }
 
+    public abstract void serGolpeadaPor(Hacha hacha);
 }

@@ -5,4 +5,8 @@ public class Piedra extends Material{
         this.durabilidad =30;
     }
 
+    @Override
+    public void serGolpeadaPor(Hacha hacha) {
+
+    }
 }
