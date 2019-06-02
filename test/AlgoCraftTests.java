@@ -70,4 +70,30 @@ public class AlgoCraftTests {
 
     }
 
+    @Test
+    public void test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene() {
+        Hacha hacha = new Hacha(new Madera());
+        int durabilidadHacha = 100;
+        int fuerzaHacha = 2;
+        hacha.golpear(new Madera());
+
+        assertEquals(durabilidadHacha-2, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+    @Test
+    public void test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene() {
+        Hacha hacha = new Hacha(new Madera());
+        int durabilidadHacha = 100;
+        int fuerzaHacha = 2;
+
+        Madera madera = new Madera();
+        hacha.golpear(madera);
+        hacha.golpear(madera);
+
+        assertEquals(durabilidadHacha-4, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+
 }
