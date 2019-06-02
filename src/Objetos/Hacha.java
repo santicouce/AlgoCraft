@@ -4,20 +4,20 @@ public class Hacha extends Herramienta{
 
 
     public Hacha(Madera madera){
-        this.setMaterial(madera);
-        this.setDurabilidad(100);
-        this.setFuerza(2);
+        this.material = madera;
+        this.durabilidad = 100;
+        this.fuerza = 2;
     }
 
     public Hacha (Piedra piedra){
-        this.setMaterial(piedra);
-        this.setDurabilidad(200);
-        this.setFuerza(5);
+        this.material = piedra;
+        this.durabilidad = 200;
+        this.fuerza = 5;
     }
 
     public Hacha (Metal metal){
-        this.setMaterial(metal);
-        this.setDurabilidad(400);
-        this.setFuerza(10);
+        this.material = metal;
+        this.durabilidad = 400;
+        this.fuerza = 10;
     }
 }
