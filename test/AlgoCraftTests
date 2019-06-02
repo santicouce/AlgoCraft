@@ -6,7 +6,6 @@ public class TP1Tests {
 
     @Test
     public void test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente() {
-        //Se crea hacha de madera con con su durabilidad y fuerza correspondiente
         Hacha hacha = new Hacha(madera);
         int durabilidadHacha = 100;
         int fuerzaHacha = 2;
@@ -18,7 +17,6 @@ public class TP1Tests {
 
     @Test
     public void test02PicoDeMaderaConDurabilidadYFuerzaCorrespondiente() {
-        //Se crea pico de madera con con su durabilidad y fuerza correspondiente
         Pico pico = new Pico(madera);
         int durabilidadPico = 100;
         int fuerzaPico = 2;
@@ -28,4 +26,38 @@ public class TP1Tests {
 
     }
 
+    @Test
+    public void test03SeCreaHachaDeMetalConDurabilidadYFuerzaCorrespondiente() {
+        Hacha hacha = new Hacha(metal);
+        int durabilidadHacha = 400;
+        int fuerzaHacha = 10;
+
+        assertEquals(durabilidadHacha, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+
+    @Test
+    public void test04PicoDeMetalConDurabilidadYFuerzaCorrespondiente() {
+        Pico pico = new Pico(metal);
+        int durabilidadPico = 400;
+        int fuerzaPico = 12;
+
+        assertEquals(durabilidadHacha, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+
+    @Test
+    public void test05PicoFinoConDurabilidadYFuerzaCorrespondiente() {
+        PicoFino picoFino = new PicoFino();
+        int durabilidadPico = 1000;
+        int fuerzaPico = 20;
+
+        assertEquals(durabilidadHacha, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+
+    
 }
