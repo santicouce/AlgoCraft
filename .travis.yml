@@ -13,4 +13,6 @@ notifications:
   email:
     recipients:
       - scouce@fi.uba.ar
+      - hlarrea@fi.uba.ar
+      - giuliana.e.altamirano@gmail.com
     on_failure: always
