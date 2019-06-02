@@ -1,16 +1,26 @@
 package Objetos;
 
-public class Hacha {
+public class Hacha{
+
+    private Material material;
 
     public Hacha(Madera madera){
+        material = madera;
+    }
 
+    public Hacha (Piedra piedra){
+        material = piedra;
+    }
+
+    public Hacha (Metal metal){
+        material = metal;
     }
 
     public int durabilidad() {
-        return 100;
+        return material.durabilidad();
     }
 
     public int fuerza(){
-        return 2;
+        return material.fuerza();
     }
 }
