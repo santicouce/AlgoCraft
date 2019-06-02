@@ -1,1 +1,9 @@
 
+<project name="AlgoCraft">
+  <target name="init">
+    <mkdir dir="classes" />
+    <mkdir dir="build" />
+</target>
+  
+  
+</project>
