@@ -1,0 +1,31 @@
+import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class TP1Tests {
+
+    @Test
+    public void test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente() {
+        //Se crea hacha de madera con con su durabilidad y fuerza correspondiente
+        Hacha hacha = new Hacha(madera);
+        int durabilidadHacha = 100;
+        int fuerzaHacha = 2;
+
+        assertEquals(durabilidadHacha, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+
+    @Test
+    public void test02PicoDeMaderaConDurabilidadYFuerzaCorrespondiente() {
+        //Se crea pico de madera con con su durabilidad y fuerza correspondiente
+        Pico pico = new Pico(madera);
+        int durabilidadPico = 100;
+        int fuerzaPico = 2;
+
+        assertEquals(durabilidadHacha, hacha.durabilidad());
+        assertEquals(fuerzaHacha, hacha.fuerza());
+
+    }
+
+}
