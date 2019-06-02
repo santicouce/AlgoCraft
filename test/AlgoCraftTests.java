@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 import Objetos.*;
-import org.junit.jupiter.api.Test;
-=======
-import Objetos.Hacha;
-import Objetos.Madera;
-import Objetos.Metal;
-import Objetos.Piedra;
 import org.junit.Test;
->>>>>>> acfa6afdcde22640b55314752529d8cf03987a59
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,11 +1,19 @@
 package Objetos;
 
 public class PicoFino {
-    public int durabilidad() {
-        return 0;
+
+    private Material material;
+    private int fuerza;
+
+    public PicoFino(Metal metal){
+        material = metal;
     }
 
-    public int fuerza() {
-        return 0;
+    public PicoFino(Piedra piedra){
+        material = piedra;
+    }
+
+    public int fuerza(){
+        return fuerza;
     }
 }

@@ -3,6 +3,7 @@ package Objetos;
 public class Pico {
 
     private Material material;
+    private int fuerza;
 
     public Pico(Madera madera){
         material = madera;
@@ -21,6 +22,6 @@ public class Pico {
     }
 
     public int fuerza(){
-        return material.fuerza();
+        return fuerza;
     }
 }
