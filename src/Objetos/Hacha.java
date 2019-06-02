@@ -22,8 +22,6 @@ public class Hacha extends Herramienta{
     }
 
     public void golpear(Madera madera) {
-        int durabilidadActual = this.durabilidad();
-        int nuevaDurabilidad=durabilidadActual-this.fuerza();
-        this.setDurabilidad(nuevaDurabilidad);
+        this.durabilidad = this.durabilidad - fuerza;
     }
 }
