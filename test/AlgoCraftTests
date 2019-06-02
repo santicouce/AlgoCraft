@@ -21,8 +21,8 @@ public class TP1Tests {
         int durabilidadPico = 100;
         int fuerzaPico = 2;
 
-        assertEquals(durabilidadHacha, hacha.durabilidad());
-        assertEquals(fuerzaHacha, hacha.fuerza());
+        assertEquals(durabilidadPico, pico.durabilidad());
+        assertEquals(fuerzaPico, pico.fuerza());
 
     }
 
@@ -43,8 +43,8 @@ public class TP1Tests {
         int durabilidadPico = 400;
         int fuerzaPico = 12;
 
-        assertEquals(durabilidadHacha, hacha.durabilidad());
-        assertEquals(fuerzaHacha, hacha.fuerza());
+        assertEquals(durabilidadPico, pico.durabilidad());
+        assertEquals(fuerzaPico, pico.fuerza());
 
     }
 
@@ -54,10 +54,10 @@ public class TP1Tests {
         int durabilidadPico = 1000;
         int fuerzaPico = 20;
 
-        assertEquals(durabilidadHacha, hacha.durabilidad());
-        assertEquals(fuerzaHacha, hacha.fuerza());
+        assertEquals(durabilidadPico, pico.durabilidad());
+        assertEquals(fuerzaPico, pico.fuerza());
 
     }
 
-    
+
 }
