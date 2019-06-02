@@ -1,31 +1,23 @@
 package Objetos;
 
-public class Hacha{
-    private int durabilidad;
-    private int fuerza;
+public class Hacha extends Herramienta{
 
-    private Material material;
 
     public Hacha(Madera madera){
-        durabilidad = 100;
-        fuerza = 2;
+        this.setMaterial(madera);
+        this.setDurabilidad(100);
+        this.setFuerza(2);
     }
 
     public Hacha (Piedra piedra){
-        durabilidad = 200;
-        fuerza = 5;
+        this.setMaterial(piedra);
+        this.setDurabilidad(200);
+        this.setFuerza(5);
     }
 
     public Hacha (Metal metal){
-        durabilidad = 400;
-        fuerza = 10;
-    }
-
-    public int durabilidad() {
-        return durabilidad;
-    }
-
-    public int fuerza(){
-        return fuerza;
+        this.setMaterial(metal);
+        this.setDurabilidad(400);
+        this.setFuerza(10);
     }
 }
