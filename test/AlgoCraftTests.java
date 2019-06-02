@@ -1,7 +1,4 @@
-import Objetos.Hacha;
-import Objetos.Madera;
-import Objetos.Metal;
-import Objetos.Piedra;
+import Objetos.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -58,8 +55,8 @@ public class AlgoCraftTests {
         int durabilidadPico = 1000;
         int fuerzaPico = 20;
 
-        assertEquals(durabilidadPico, pico.durabilidad());
-        assertEquals(fuerzaPico, pico.fuerza());
+        assertEquals(durabilidadPico, picoFino.durabilidad());
+        assertEquals(fuerzaPico, picoFino.fuerza());
 
     }
 
