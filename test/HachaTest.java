@@ -113,8 +113,29 @@ public class HachaTest {
         assertEquals(durabilidadHacha-5, hacha.durabilidad());
     }
 
+    @Test
+    public void test16HachaDeMetalGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Metal());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Piedra());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
 
+    @Test
+    public void test17HachaDeMetalGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Metal());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Metal());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
 
+    @Test
+    public void test18HachaDeMetalGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Metal());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Diamante());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
 
 
 }
