@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002bc1b5-3603-4263-b54f-6a7da5e5503a" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/Objetos/Desgaste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgoCraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AlgoCraft.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/AlgoCraft/AlgoCraftTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AlgoCraft/AlgoCraftTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/AlgoCraft/HachaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AlgoCraft/HachaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetos/Hacha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Hacha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetos/Herramienta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Herramienta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/HachaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/HachaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/MaderaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MaderaTest.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/Objetos/Jugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/JugadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,85 +15,66 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/MaderaTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objetos/Desgaste.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding>
-                <element signature="e#136#137#0" expanded="true" />
-                <element signature="e#160#161#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-              <folding>
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#168#169#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/test/HachaTest.java">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-=======
-        <entry file="file://$PROJECT_DIR$/src/Objetos/Jugador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#103#116#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ivy.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/JugadorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -120,9 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/HachaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="5" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
+            <state relative-caret-position="135">
+              <caret line="111" selection-start-line="111" selection-end-line="111" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100#0;class#HachaTest#0" />
@@ -136,14 +97,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objetos/Madera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#76#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,35 +117,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Objetos/Material.java" />
-        <option value="$PROJECT_DIR$/test/PicoTest.java" />
-        <option value="$PROJECT_DIR$/test/PicoFinoTest.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/Pico.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/PicoFino.java" />
-        <option value="$PROJECT_DIR$/test/AlgoCraftTests.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/test/PiedraTest.java" />
-        <option value="$PROJECT_DIR$/test/MaderaTest.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/Herramienta.java" />
-        <option value="$PROJECT_DIR$/test/HachaTest.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/Objetos/Desgaste.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java" />
         <option value="$PROJECT_DIR$/src/Objetos/Hacha.java" />
-=======
-        <option value="$PROJECT_DIR$/src/Objetos/Hacha.java" />
-        <option value="$PROJECT_DIR$/test/JugadorTest.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/Jugador.java" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="23" />
+    <option name="x" value="471" />
+    <option name="y" value="165" />
     <option name="width" value="1300" />
-    <option name="height" value="737" />
+    <option name="height" value="718" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -196,18 +143,12 @@
             <path>
               <item name="AlgoCraft" type="b2602c69:ProjectViewProjectNode" />
               <item name="AlgoCraft" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AlgoCraft" type="b2602c69:ProjectViewProjectNode" />
               <item name="AlgoCraft" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Objetos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoCraft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlgoCraft" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -218,24 +159,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Junit/hamcrest-core-1.3.jar!/" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Objetos" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,13 +175,8 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="JUnit.HachaTest">
+  <component name="RunManager">
     <configuration name="All in AlgoCraft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-  <component name="RunManager" selected="JUnit.JugadorTest.test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera">
-    <configuration name="AlgoCraftTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
       <module name="AlgoCraft" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -263,74 +184,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="HachaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HachaTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration name="AlgoCraftTests.test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HachaTest" />
-      <option name="METHOD_NAME" value="test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HachaTest.test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HachaTest" />
-      <option name="METHOD_NAME" value="test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HachaTest.test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HachaTest" />
-      <option name="METHOD_NAME" value="test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JugadorTest.test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="JugadorTest" />
-      <option name="METHOD_NAME" value="test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
-        <item itemvalue="JUnit.HachaTest" />
-        <item itemvalue="JUnit.HachaTest.test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
-        <item itemvalue="JUnit.HachaTest.test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
         <item itemvalue="JUnit.All in AlgoCraft" />
-        <item itemvalue="JUnit.HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" />
-=======
-        <item itemvalue="JUnit.JugadorTest.test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera" />
-        <item itemvalue="JUnit.AlgoCraftTests" />
-        <item itemvalue="JUnit.HachaTest" />
-        <item itemvalue="JUnit.HachaTest.test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100" />
-        <item itemvalue="JUnit.AlgoCraftTests.test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
       </list>
     </recent_temporary>
   </component>
@@ -338,65 +194,16 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="002bc1b5-3603-4263-b54f-6a7da5e5503a" name="Default Changelist" comment="" />
-      <created>1559496166581</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1559496166581</updated>
-      <workItem from="1559496176443" duration="3076000" />
-      <workItem from="1559500280788" duration="12855000" />
-      <workItem from="1559514433289" duration="3688000" />
-    </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="All_in_AlgoCraft - 2019.06.02 at 20h 02m 46s.xml">
-      <configuration name="All in AlgoCraft" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest_test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia - 2019.06.02 at 20h 06m 27s.xml">
-      <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest_test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia - 2019.06.02 at 20h 06m 29s.xml">
-      <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest_test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2 - 2019.06.02 at 20h 06m 57s.xml">
-      <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_AlgoCraft - 2019.06.02 at 20h 07m 01s.xml">
-      <configuration name="All in AlgoCraft" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest - 2019.06.02 at 20h 10m 42s.xml">
-      <configuration name="HachaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest - 2019.06.02 at 20h 14m 36s.xml">
-      <configuration name="HachaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest_test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5 - 2019.06.02 at 20h 14m 57s.xml">
-      <configuration name="HachaTest.test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest - 2019.06.02 at 20h 15m 46s.xml">
-      <configuration name="HachaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest_test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5 - 2019.06.02 at 20h 17m 03s.xml">
-      <configuration name="HachaTest.test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="19619000" />
-=======
-    <option name="totallyTimeSpent" value="17457000" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
+    <option name="totallyTimeSpent" value="515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25704697" />
-=======
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25338647" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -405,13 +212,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-=======
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32884902" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -420,11 +222,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-<<<<<<< HEAD
       <window_info anchor="bottom" id="Messages" order="12" weight="0.34560907" />
-=======
-      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.34678626" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -435,271 +233,61 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25338647" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32884902" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.34678626" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests" />
-    <entry file="file://$PROJECT_DIR$/src/HachaTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Metal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Piedra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Pico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/PicoFino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Diamante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/PicoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/PicoFinoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DiamanteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/MetalTest.java">
+    <entry file="file://$PROJECT_DIR$/test/JugadorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/test/PiedraTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
     <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Herramienta.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/MaderaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="340">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Material.java">
+    <entry file="file://$PROJECT_DIR$/ivy.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-=======
-    <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Herramienta.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Madera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#76#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Desgaste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-=======
-        <state relative-caret-position="72">
-          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="5" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
-          <folding>
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding>
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#168#169#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/test/JugadorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/HachaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100#0;class#HachaTest#0" />
-            <element signature="method#test02UnHachaDeMaderaDeberiaInicializarConFuerza2#0;class#HachaTest#0" />
-            <element signature="method#test03UnHachaDePiedraDeberiaInicializarConDurabilidad200#0;class#HachaTest#0" />
-            <element signature="method#test04UnHachaDePiedraDeberiaInicializarConFuerza5#0;class#HachaTest#0" />
-            <element signature="method#test05UnHachaDeMetalDeberiaInicializarConDurabilidad400#0;class#HachaTest#0" />
-            <element signature="method#test06UnHachaDeMetalDeberiaInicializarConFuerza10#0;class#HachaTest#0" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Jugador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#103#116#0" expanded="true" />
->>>>>>> cc728a972de564409ff3b68e7311bd913fd9065f
-          </folding>
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
