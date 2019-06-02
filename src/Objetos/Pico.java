@@ -4,6 +4,7 @@ public class Pico {
 
     private Material material;
     private int fuerza;
+    private int durabilidad;
 
     public Pico(Madera madera){
         material = madera;
@@ -18,7 +19,7 @@ public class Pico {
     }
 
     public int durabilidad() {
-        return material.durabilidad();
+        return durabilidad;
     }
 
     public int fuerza(){

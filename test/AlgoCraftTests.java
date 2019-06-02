@@ -16,7 +16,7 @@ public class AlgoCraftTests {
 
     }
 
- /*   @Test
+    @Test
     public void test02PicoDeMaderaConDurabilidadYFuerzaCorrespondiente() {
         Pico pico = new Pico(new Madera());
         int durabilidadPico = 100;
@@ -59,5 +59,5 @@ public class AlgoCraftTests {
         assertEquals(fuerzaPico, picoFino.fuerza());
 
     }
-*/
+
 }
