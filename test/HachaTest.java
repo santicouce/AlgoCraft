@@ -1,6 +1,10 @@
-import Objetos.*;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import Objetos.Hacha;
+import Objetos.Madera;
+import Objetos.Metal;
+import Objetos.Piedra;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HachaTest {
 
@@ -30,8 +34,8 @@ public class HachaTest {
 
     @Test
     public void test05UnHachaDeMetalDeberiaInicializarConDurabilidad400(){
-      Hacha hachaDeMetal = new Hacha(new Metal());
-      assertEquals(400, hachaDeMetal.durabilidad());
+        Hacha hachaDeMetal = new Hacha(new Metal());
+        assertEquals(400, hachaDeMetal.durabilidad());
     }
 
     @Test

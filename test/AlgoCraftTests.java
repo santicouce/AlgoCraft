@@ -1,12 +1,16 @@
-import org.junit.Test;
+import Objetos.Hacha;
+import Objetos.Madera;
+import Objetos.Metal;
+import Objetos.Piedra;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TP1Tests {
+public class AlgoCraftTests {
 
     @Test
     public void test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente() {
-        Hacha hacha = new Hacha(madera);
+        Hacha hacha = new Hacha(new Madera());
         int durabilidadHacha = 100;
         int fuerzaHacha = 2;
 
@@ -17,7 +21,7 @@ public class TP1Tests {
 
     @Test
     public void test02PicoDeMaderaConDurabilidadYFuerzaCorrespondiente() {
-        Pico pico = new Pico(madera);
+        Pico pico = new Pico(new Madera());
         int durabilidadPico = 100;
         int fuerzaPico = 2;
 
@@ -28,7 +32,7 @@ public class TP1Tests {
 
     @Test
     public void test03SeCreaHachaDeMetalConDurabilidadYFuerzaCorrespondiente() {
-        Hacha hacha = new Hacha(metal);
+        Hacha hacha = new Hacha(new Metal());
         int durabilidadHacha = 400;
         int fuerzaHacha = 10;
 
@@ -39,7 +43,7 @@ public class TP1Tests {
 
     @Test
     public void test04PicoDeMetalConDurabilidadYFuerzaCorrespondiente() {
-        Pico pico = new Pico(metal);
+        Pico pico = new Pico(new Metal());
         int durabilidadPico = 400;
         int fuerzaPico = 12;
 
