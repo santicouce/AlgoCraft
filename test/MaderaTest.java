@@ -20,4 +20,5 @@ public class MaderaTest {
         madera.serGolpeadaPor(hacha);
         assertEquals(durabilidadInicialMadera-2, madera.durabilidad());
     }
+
 }

@@ -2,28 +2,30 @@ package Objetos;
 
 public class Hacha extends Herramienta{
 
+    Desgaste desgaste;
 
     public Hacha(Madera madera){
         this.material = madera;
         this.durabilidad = 100;
         this.fuerza = 2;
+        this.desgaste = new DesgasteDeFuerza();
     }
 
     public Hacha (Piedra piedra){
         this.material = piedra;
         this.durabilidad = 200;
         this.fuerza = 5;
+        this.desgaste = new DesgasteDeFuerza();
     }
 
     public Hacha (Metal metal){
         this.material = metal;
         this.durabilidad = 400;
         this.fuerza = 10;
+        this.desgaste = new DesgasteMitadDeFuerza();
     }
 
-    public void golpear(Madera madera) {
-        int durabilidadActual = this.durabilidad();
-        int nuevaDurabilidad=durabilidadActual-this.fuerza();
-        this.setDurabilidad(nuevaDurabilidad);
+    public void golpear(Material material) {
+        durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
     }
 }

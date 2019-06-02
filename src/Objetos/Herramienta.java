@@ -1,6 +1,6 @@
 package Objetos;
 
-public class Herramienta {
+public abstract class Herramienta {
 
     protected Material material;
     protected int durabilidad;

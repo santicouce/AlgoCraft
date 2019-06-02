@@ -1,7 +1,4 @@
-import Objetos.Hacha;
-import Objetos.Madera;
-import Objetos.Metal;
-import Objetos.Piedra;
+import Objetos.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -45,24 +42,79 @@ public class HachaTest {
     }
 
     @Test
-    public void test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2() {
+    public void test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
         Hacha hacha = new Hacha(new Madera());
-        int durabilidadHacha = 100;
+        int durabilidadHacha = hacha.durabilidad();
         hacha.golpear(new Madera());
-
         assertEquals(durabilidadHacha-2, hacha.durabilidad());
-
     }
 
-    /*@Test
-    public void test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia() {
-        Hacha hacha = new Hacha(new Piedra());
-        int durabilidadHacha = 100;
+    @Test
+    public void test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Hacha hacha = new Hacha(new Madera());
+        int durabilidadHacha = hacha.durabilidad();
         hacha.golpear(new Piedra());
+        assertEquals(durabilidadHacha-2, hacha.durabilidad());
+    }
 
-        assertEquals(durabilidadHacha, hacha.durabilidad());
+    @Test
+    public void test09HachaDeMaderaGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Hacha hacha = new Hacha(new Madera());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Metal());
+        assertEquals(durabilidadHacha-2, hacha.durabilidad());
+    }
 
-    }*/
+    @Test
+    public void test10HachaDeMaderaGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Hacha hacha = new Hacha(new Madera());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Diamante());
+        assertEquals(durabilidadHacha-2, hacha.durabilidad());
+    }
+
+    @Test
+    public void test11HachaDePiedraGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Piedra());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Madera());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
+
+    @Test
+    public void test12HachaDePiedraGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Piedra());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Piedra());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
+
+    @Test
+    public void test13HachaDePiedraGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Piedra());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Metal());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
+
+    @Test
+    public void test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Piedra());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Diamante());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
+
+    @Test
+    public void test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5() {
+        Hacha hacha = new Hacha(new Metal());
+        int durabilidadHacha = hacha.durabilidad();
+        hacha.golpear(new Madera());
+        assertEquals(durabilidadHacha-5, hacha.durabilidad());
+    }
+
+
+
 
 
 }

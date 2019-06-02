@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="002bc1b5-3603-4263-b54f-6a7da5e5503a" name="Default Changelist" comment="" />
+    <list default="true" id="002bc1b5-3603-4263-b54f-6a7da5e5503a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Objetos/Desgaste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgoCraft.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AlgoCraft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/AlgoCraft/AlgoCraftTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AlgoCraft/AlgoCraftTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/AlgoCraft/HachaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AlgoCraft/HachaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objetos/Hacha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Hacha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objetos/Herramienta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Herramienta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/HachaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/HachaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MaderaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MaderaTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,14 +25,73 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/MaderaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="323">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objetos/Desgaste.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#136#137#0" expanded="true" />
+                <element signature="e#160#161#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+              <folding>
+                <element signature="e#144#145#0" expanded="true" />
+                <element signature="e#168#169#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/HachaTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100#0;class#HachaTest#0" />
+                <element signature="method#test02UnHachaDeMaderaDeberiaInicializarConFuerza2#0;class#HachaTest#0" />
+                <element signature="method#test03UnHachaDePiedraDeberiaInicializarConDurabilidad200#0;class#HachaTest#0" />
+                <element signature="method#test04UnHachaDePiedraDeberiaInicializarConFuerza5#0;class#HachaTest#0" />
+                <element signature="method#test05UnHachaDeMetalDeberiaInicializarConDurabilidad400#0;class#HachaTest#0" />
+                <element signature="method#test06UnHachaDeMetalDeberiaInicializarConFuerza10#0;class#HachaTest#0" />
               </folding>
             </state>
           </provider>
@@ -46,10 +117,16 @@
         <option value="$PROJECT_DIR$/test/PicoFinoTest.java" />
         <option value="$PROJECT_DIR$/src/Objetos/Pico.java" />
         <option value="$PROJECT_DIR$/src/Objetos/PicoFino.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/Hacha.java" />
         <option value="$PROJECT_DIR$/test/AlgoCraftTests.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/test/PiedraTest.java" />
+        <option value="$PROJECT_DIR$/test/MaderaTest.java" />
         <option value="$PROJECT_DIR$/src/Objetos/Herramienta.java" />
         <option value="$PROJECT_DIR$/test/HachaTest.java" />
+        <option value="$PROJECT_DIR$/src/Objetos/Desgaste.java" />
+        <option value="$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java" />
+        <option value="$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java" />
+        <option value="$PROJECT_DIR$/src/Objetos/Hacha.java" />
       </list>
     </option>
   </component>
@@ -103,6 +180,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/Program Files/Junit/hamcrest-core-1.3.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -126,32 +204,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AlgoCraftTests">
-    <configuration name="AlgoCraftTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.HachaTest">
+    <configuration name="All in AlgoCraft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AlgoCraft" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AlgoCraftTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlgoCraftTests.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AlgoCraftTests" />
-      <option name="METHOD_NAME" value="test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlgoCraftTests.test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlgoCraft" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AlgoCraftTests" />
-      <option name="METHOD_NAME" value="test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,11 +222,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HachaTest.test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AlgoCraft" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HachaTest" />
-      <option name="METHOD_NAME" value="test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100" />
+      <option name="METHOD_NAME" value="test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HachaTest.test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AlgoCraft" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HachaTest" />
+      <option name="METHOD_NAME" value="test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HachaTest.test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AlgoCraft" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HachaTest" />
+      <option name="METHOD_NAME" value="test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AlgoCraftTests" />
         <item itemvalue="JUnit.HachaTest" />
-        <item itemvalue="JUnit.HachaTest.test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100" />
-        <item itemvalue="JUnit.AlgoCraftTests.test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene" />
-        <item itemvalue="JUnit.AlgoCraftTests.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene" />
+        <item itemvalue="JUnit.HachaTest.test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
+        <item itemvalue="JUnit.HachaTest.test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" />
+        <item itemvalue="JUnit.All in AlgoCraft" />
+        <item itemvalue="JUnit.HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" />
       </list>
     </recent_temporary>
   </component>
@@ -197,49 +274,49 @@
       <updated>1559496166581</updated>
       <workItem from="1559496176443" duration="3076000" />
       <workItem from="1559500280788" duration="12855000" />
+      <workItem from="1559514433289" duration="3688000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AlgoCraftTests_test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente - 2019.06.02 at 18h 34m 15s.xml">
-      <configuration name="AlgoCraftTests.test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente" configurationId="JUnit" />
+    <history-entry file="All_in_AlgoCraft - 2019.06.02 at 20h 02m 46s.xml">
+      <configuration name="All in AlgoCraft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AlgoCraftTests - 2019.06.02 at 18h 34m 22s.xml">
-      <configuration name="AlgoCraftTests" configurationId="JUnit" />
+    <history-entry file="HachaTest_test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia - 2019.06.02 at 20h 06m 27s.xml">
+      <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HachaTest_test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2 - 2019.06.02 at 18h 45m 51s.xml">
-      <configuration name="HachaTest.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2" configurationId="JUnit" />
+    <history-entry file="HachaTest_test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia - 2019.06.02 at 20h 06m 29s.xml">
+      <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoDurabilidadNoCambia" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HachaTest_test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2 - 2019.06.02 at 18h 53m 06s.xml">
-      <configuration name="HachaTest.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2" configurationId="JUnit" />
+    <history-entry file="HachaTest_test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2 - 2019.06.02 at 20h 06m 57s.xml">
+      <configuration name="HachaTest.test08HachaDeMaderaGolpeaPiedraLuegoSuDurabilidadDisminuyeEn2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AlgoCraftTests_test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene - 2019.06.02 at 18h 54m 10s.xml">
-      <configuration name="AlgoCraftTests.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene" configurationId="JUnit" />
+    <history-entry file="All_in_AlgoCraft - 2019.06.02 at 20h 07m 01s.xml">
+      <configuration name="All in AlgoCraft" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AlgoCraftTests_test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene - 2019.06.02 at 18h 54m 24s.xml">
-      <configuration name="AlgoCraftTests.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlgoCraftTests_test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene - 2019.06.02 at 18h 54m 35s.xml">
-      <configuration name="AlgoCraftTests.test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlgoCraftTests_test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene - 2019.06.02 at 18h 56m 30s.xml">
-      <configuration name="AlgoCraftTests.test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HachaTest - 2019.06.02 at 19h 07m 01s.xml">
+    <history-entry file="HachaTest - 2019.06.02 at 20h 10m 42s.xml">
       <configuration name="HachaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AlgoCraftTests - 2019.06.02 at 19h 07m 15s.xml">
-      <configuration name="AlgoCraftTests" configurationId="JUnit" />
+    <history-entry file="HachaTest - 2019.06.02 at 20h 14m 36s.xml">
+      <configuration name="HachaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HachaTest_test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5 - 2019.06.02 at 20h 14m 57s.xml">
+      <configuration name="HachaTest.test14HachaDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HachaTest - 2019.06.02 at 20h 15m 46s.xml">
+      <configuration name="HachaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HachaTest_test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5 - 2019.06.02 at 20h 17m 03s.xml">
+      <configuration name="HachaTest.test15HachaDeMetalGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn5" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15931000" />
+    <option name="totallyTimeSpent" value="19619000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25338647" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25704697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -248,8 +325,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32884902" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -258,7 +335,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.34678626" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.34560907" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -276,13 +353,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests" />
     <entry file="file://$PROJECT_DIR$/src/HachaTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Objetos/Metal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -297,10 +367,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/DiamanteTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Objetos/Pico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/PicoFino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/Diamante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -314,13 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Pico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/PicoFinoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -331,65 +415,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/PicoFino.java">
+    <entry file="file://$PROJECT_DIR$/test/DiamanteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MetalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/PiedraTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objetos/Herramienta.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MaderaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/Madera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#76#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/Desgaste.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteFuerza.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/DesgasteMitadDeFuerza.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding>
+            <element signature="e#144#145#0" expanded="true" />
+            <element signature="e#168#169#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/Madera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding>
-            <element signature="e#76#77#0" expanded="true" />
-            <element signature="e#112#113#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/HachaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="7" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        <state relative-caret-position="451">
+          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/AlgoCraftTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#test01UnHachaDeMaderaDeberiaInicializarConDurabilidad100#0;class#HachaTest#0" />
+            <element signature="method#test02UnHachaDeMaderaDeberiaInicializarConFuerza2#0;class#HachaTest#0" />
+            <element signature="method#test03UnHachaDePiedraDeberiaInicializarConDurabilidad200#0;class#HachaTest#0" />
+            <element signature="method#test04UnHachaDePiedraDeberiaInicializarConFuerza5#0;class#HachaTest#0" />
+            <element signature="method#test05UnHachaDeMetalDeberiaInicializarConDurabilidad400#0;class#HachaTest#0" />
+            <element signature="method#test06UnHachaDeMetalDeberiaInicializarConFuerza10#0;class#HachaTest#0" />
           </folding>
         </state>
       </provider>
@@ -449,7 +587,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
