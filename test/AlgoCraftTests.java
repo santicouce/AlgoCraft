@@ -49,9 +49,9 @@ public class AlgoCraftTests {
 
     }
 
-    /*@Test
-    public void test05PicoFinoConDurabilidadYFuerzaCorrespondiente() {
-        PicoFino picoFino = new PicoFino();
+    @Test
+    public void test05PicoFinoDeMetalConDurabilidadYFuerzaCorrespondiente() {
+        PicoFino picoFino = new PicoFino(new Metal());
         int durabilidadPico = 1000;
         int fuerzaPico = 20;
 
@@ -59,5 +59,15 @@ public class AlgoCraftTests {
         assertEquals(fuerzaPico, picoFino.fuerza());
 
     }
-*/
+    @Test
+    public void test06PicoFinoDePiedraConDurabilidadYFuerzaCorrespondiente() {
+        PicoFino picoFino = new PicoFino(new Piedra());
+        int durabilidadPico = 1000;
+        int fuerzaPico = 20;
+
+        assertEquals(durabilidadPico, picoFino.durabilidad());
+        assertEquals(fuerzaPico, picoFino.fuerza());
+
+    }
+
 }
