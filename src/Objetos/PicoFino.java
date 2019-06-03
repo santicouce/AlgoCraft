@@ -14,4 +14,9 @@ public class PicoFino extends Herramienta{
         this.fuerza = 20;
         this.material = piedra;
     }
+
+    @Override
+    public void golpear(Material material) {
+
+    }
 }

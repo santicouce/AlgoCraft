@@ -40,4 +40,68 @@ public class PicoTest {
         Pico picoDeMetal = new Pico(new Metal());
         assertEquals(12, picoDeMetal.fuerza());
     }
+
+    @Test
+    public void test07PicoDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Pico pico = new Pico(new Madera());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Madera());
+        assertEquals(durabilidadPico-2, pico.durabilidad());
+    }
+
+    @Test
+    public void test08PicoDeMaderaGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Pico pico = new Pico(new Madera());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Piedra());
+        assertEquals(durabilidadPico-2, pico.durabilidad());
+    }
+
+    @Test
+    public void test09PicoDeMaderaGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Pico pico = new Pico(new Madera());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Metal());
+        assertEquals(durabilidadPico-2, pico.durabilidad());
+    }
+
+    @Test
+    public void test10PicoDeMaderaGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+        Pico pico = new Pico(new Madera());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Madera());
+        assertEquals(durabilidadPico-2, pico.durabilidad());
+    }
+
+    @Test
+    public void test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+        Pico pico = new Pico(new Piedra());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Madera());
+        assertEquals(durabilidadPico-3, pico.durabilidad());//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+    }
+
+    @Test
+    public void test12PicoDePiedraGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+        Pico pico = new Pico(new Piedra());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Piedra());
+        assertEquals(durabilidadPico-3, pico.durabilidad());//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+    }
+
+    @Test
+    public void test13PicoDePiedraGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+        Pico pico = new Pico(new Piedra());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Metal());
+        assertEquals(durabilidadPico-3, pico.durabilidad());//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+    }
+
+    @Test
+    public void test14PicoDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+        Pico pico = new Pico(new Piedra());
+        int durabilidadPico = pico.durabilidad();
+        pico.golpear(new Diamante());
+        assertEquals(durabilidadPico-3, pico.durabilidad());//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+    }
 }

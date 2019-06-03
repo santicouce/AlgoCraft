@@ -2,8 +2,6 @@ package Objetos;
 
 public class Hacha extends Herramienta{
 
-    Desgaste desgaste;
-
     public Hacha(Madera madera){
         this.material = madera;
         this.durabilidad = 100;
@@ -25,6 +23,7 @@ public class Hacha extends Herramienta{
         this.desgaste = new DesgasteMitadDeFuerza();
     }
 
+    @Override
     public void golpear(Material material) {
         durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
     }
