@@ -40,6 +40,7 @@ public class PicoTest {
         Pico picoDeMetal = new Pico(new Metal());
         assertEquals(12, picoDeMetal.fuerza());
     }
+<<<<<<< HEAD
 
     @Test
     public void test07PicoDeMaderaGolpeaMaderaLuegoDurabilidadDePicoDeberiaDisminuirEn2() {
@@ -104,4 +105,6 @@ public class PicoTest {
         pico.golpear(new Diamante());
         assertEquals(durabilidadPico-3, pico.durabilidad());//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
     }
+=======
+>>>>>>> parent of c51ca40... Pruebas de golpear con Pico de Madera y Metal
 }
