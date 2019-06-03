@@ -42,7 +42,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test07PicoDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+    public void test07PicoDeMaderaGolpeaMaderaLuegoDurabilidadDePicoDeberiaDisminuirEn2() {
         Pico pico = new Pico(new Madera());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Madera());
@@ -50,7 +50,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test08PicoDeMaderaGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+    public void test08PicoDeMaderaGolpeaPiedraLuegoDurabilidadDePicoDeberiaDisminuirEn2() {
         Pico pico = new Pico(new Madera());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Piedra());
@@ -58,7 +58,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test09PicoDeMaderaGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+    public void test09PicoDeMaderaGolpeaMetalLuegoDurabilidadDePicoDeberiaDisminuirEn2() {
         Pico pico = new Pico(new Madera());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Metal());
@@ -66,7 +66,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test10PicoDeMaderaGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn2() {
+    public void test10PicoDeMaderaGolpeaDiamanteLuegoDurabilidadDePicoDeberiaDisminuirEn2() {
         Pico pico = new Pico(new Madera());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Madera());
@@ -74,7 +74,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+    public void test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDePicoDeberiaDisminuirEnOchoTercios() {
         Pico pico = new Pico(new Piedra());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Madera());
@@ -82,7 +82,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test12PicoDePiedraGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+    public void test12PicoDePiedraGolpeaPiedraLuegoDurabilidadDePicoDeberiaDisminuirEnOchoTercios() {
         Pico pico = new Pico(new Piedra());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Piedra());
@@ -90,7 +90,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test13PicoDePiedraGolpeaMetalLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+    public void test13PicoDePiedraGolpeaMetalLuegoDurabilidadDePicoDeberiaDisminuirEnOchoTercios() {
         Pico pico = new Pico(new Piedra());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Metal());
@@ -98,7 +98,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test14PicoDePiedraGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios() {
+    public void test14PicoDePiedraGolpeaDiamanteLuegoDurabilidadDePicoDeberiaDisminuirEnOchoTercios() {
         Pico pico = new Pico(new Piedra());
         int durabilidadPico = pico.durabilidad();
         pico.golpear(new Diamante());
