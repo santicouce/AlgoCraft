@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="002bc1b5-3603-4263-b54f-6a7da5e5503a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Objetos/DesgasteEspecial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/AlgoCraft/PicoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/AlgoCraft/PicoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetos/Hacha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Hacha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetos/Herramienta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Herramienta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetos/Pico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/Pico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetos/PicoFino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objetos/PicoFino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PicoTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="002bc1b5-3603-4263-b54f-6a7da5e5503a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,15 +41,42 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Objetos/Pico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
+            <state relative-caret-position="309">
               <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#501#502#0" expanded="true" />
                 <element signature="e#574#575#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objetos/PicoFino.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/DiamanteTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -80,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#662#663#0" expanded="true" />
                 <element signature="e#735#736#0" expanded="true" />
@@ -115,7 +133,6 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/test/HachaTest.java" />
-        <option value="$PROJECT_DIR$/src/Objetos/PicoFino.java" />
         <option value="$PROJECT_DIR$/src/Objetos/DesgasteDeFuerza.java" />
         <option value="$PROJECT_DIR$/src/Objetos/Desgaste.java" />
         <option value="$PROJECT_DIR$/src/Objetos/DesgasteEspecial.java" />
@@ -124,6 +141,8 @@
         <option value="$PROJECT_DIR$/src/Objetos/Hacha.java" />
         <option value="$PROJECT_DIR$/src/Objetos/Herramienta.java" />
         <option value="$PROJECT_DIR$/src/Objetos/Pico.java" />
+        <option value="$PROJECT_DIR$/src/Objetos/PicoFino.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -144,11 +163,6 @@
             <path>
               <item name="AlgoCraft" type="b2602c69:ProjectViewProjectNode" />
               <item name="AlgoCraft" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AlgoCraft" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlgoCraft" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AlgoCraft" type="b2602c69:ProjectViewProjectNode" />
@@ -191,7 +205,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DiamanteTest">
+  <component name="RunManager" selected="JUnit.All in AlgoCraft">
     <configuration name="All in AlgoCraft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AlgoCraft" />
       <option name="PACKAGE_NAME" value="" />
@@ -241,9 +255,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in AlgoCraft" />
         <item itemvalue="JUnit.DiamanteTest" />
         <item itemvalue="JUnit.PicoTest.test06UnPicoDeMetalDeberiaInicializarConFuerza12" />
-        <item itemvalue="JUnit.All in AlgoCraft" />
         <item itemvalue="JUnit.PicoTest.test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios" />
         <item itemvalue="JUnit.PicoTest.test10PicoDeMaderaGolpeaDiamanteLuegoDurabilidadDeHachaDeberiaDisminuirEn2" />
       </list>
@@ -264,9 +278,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PicoTest_test07PicoDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn2 - 2019.06.02 at 21h 05m 24s.xml">
-      <configuration name="PicoTest.test07PicoDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEn2" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PicoTest_test08PicoDeMaderaGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn2 - 2019.06.02 at 21h 05m 56s.xml">
       <configuration name="PicoTest.test08PicoDeMaderaGolpeaPiedraLuegoDurabilidadDeHachaDeberiaDisminuirEn2" configurationId="JUnit" />
     </history-entry>
@@ -294,13 +305,15 @@
     <history-entry file="PicoTest_test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios - 2019.06.02 at 21h 21m 48s.xml">
       <configuration name="PicoTest.test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDeHachaDeberiaDisminuirEnOchoTercios" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DiamanteTest - 2019.06.04 at 02h 00m 05s.xml">
+      <configuration name="DiamanteTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2686000" />
+    <option name="totallyTimeSpent" value="2948000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -321,7 +334,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.34560907" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.34560907" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -353,13 +366,6 @@
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -379,13 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objetos/PicoFino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -473,7 +472,7 @@
     <entry file="file://$PROJECT_DIR$/src/Objetos/Hacha.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#662#663#0" expanded="true" />
             <element signature="e#735#736#0" expanded="true" />
@@ -494,12 +493,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objetos/Pico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
+        <state relative-caret-position="309">
           <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#501#502#0" expanded="true" />
             <element signature="e#574#575#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objetos/PicoFino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DiamanteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
