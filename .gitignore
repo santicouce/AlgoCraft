@@ -11,9 +11,12 @@
 
 # Idea
 .idea
+.idea/
+out/
 *.iml
 *.iws
 *.ipr
+
 
 # OS
 Thumbs.db

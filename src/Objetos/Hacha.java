@@ -2,8 +2,6 @@ package Objetos;
 
 public class Hacha extends Herramienta{
 
-    Desgaste desgaste;
-
     public Hacha(Madera madera){
         this.material = madera;
         this.durabilidad = 100;
