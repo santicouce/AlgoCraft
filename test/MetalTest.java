@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import Objetos.Madera;
 import Objetos.Metal;
 import Objetos.Pico;
 import Objetos.Metal;
 
+=======
+import Objetos.Metal;
+>>>>>>> parent of b134772... Modifiqué Jugador y su test
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -14,6 +18,7 @@ public class MetalTest {
         Metal metal = new Metal();
         assertEquals(50,metal.durabilidad());
     }
+<<<<<<< HEAD
 
     @Test
     public void test02UnaMetalSeGolpeaConUnPicoDeMaderaYDurabilidadDeLaPiedraNoCambia(){
@@ -26,4 +31,6 @@ public class MetalTest {
         assertEquals(durabilidadIncialDelmetal,metal.durabilidad());
 
     }
+=======
+>>>>>>> parent of b134772... Modifiqué Jugador y su test
 }
