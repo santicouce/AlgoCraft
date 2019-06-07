@@ -7,7 +7,6 @@ public abstract class Herramienta {
     protected int fuerza;
     protected Desgaste desgaste;
 
-
     public int durabilidad() {
         return this.durabilidad;
     }
@@ -17,4 +16,5 @@ public abstract class Herramienta {
     }
 
     public abstract void golpear(Material material);
+
 }

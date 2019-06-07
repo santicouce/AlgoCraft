@@ -9,4 +9,5 @@ public abstract class Material {
     }
 
     public abstract void serGolpeadaPor(Hacha hacha);
+
 }

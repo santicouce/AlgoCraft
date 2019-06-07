@@ -4,19 +4,16 @@ public class PicoFino extends Herramienta{
 
     private Material material;
 
-    public PicoFino(Metal metal){
-        this.durabilidad = 1000;
-        this.fuerza = 20;
-        this.material = metal;
-    }
-    public PicoFino(Piedra piedra){
-        this.durabilidad = 1000;
-        this.fuerza = 20;
-        this.material = piedra;
+    public PicoFino(MaterialDeConstruccion unMaterial){
+        this.material = unMaterial;
+        this.durabilidad = unMaterial.durabilidadDeConstruccion(this);
+        this.fuerza = unMaterial.fuerzaDeConstruccion(this);
+        this.desgaste = unMaterial.desgasteDeConstruccion(this);
     }
 
     @Override
     public void golpear(Material material) {
 
     }
+
 }
