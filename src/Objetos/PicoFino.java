@@ -10,7 +10,6 @@ public class PicoFino extends Herramienta{
         this.fuerza = unMaterial.fuerzaDeConstruccion(this);
         this.desgaste = unMaterial.desgasteDeConstruccion(this);
     }
-
     @Override
     public void golpear(Material material) {
 
