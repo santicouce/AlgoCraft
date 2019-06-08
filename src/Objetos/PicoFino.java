@@ -15,4 +15,19 @@ public class PicoFino extends Herramienta{
 
     }
 
+    @Override
+    public boolean esUnHacha() {
+        return false;
+    }
+
+    @Override
+    public boolean esUnPico() {
+        return false;
+    }
+
+    @Override
+    public boolean esUnPicoFino() {
+        return true;
+    }
+
 }

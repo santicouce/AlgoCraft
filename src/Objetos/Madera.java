@@ -3,12 +3,6 @@ package Objetos;
 public class Madera extends MaterialDeConstruccion{
     public Madera (){
         this.durabilidad = 10;
-
-    }
-
-    @Override
-    public void serGolpeadaPor(Hacha hacha) {
-        this.durabilidad = this.durabilidad - hacha.fuerza();
     }
 
     @Override
@@ -54,5 +48,10 @@ public class Madera extends MaterialDeConstruccion{
     @Override
     public Desgaste desgasteDeConstruccion(PicoFino unPicoFino) {   ///MEJORAR
         return null;
+    }
+
+    @Override
+    public void serGolpeadaPor(Herramienta unaHerramienta) {
+        durabilidad -= unaHerramienta.fuerza();
     }
 }

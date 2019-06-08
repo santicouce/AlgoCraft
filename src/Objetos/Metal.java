@@ -7,11 +7,6 @@ public class Metal extends MaterialDeConstruccion{
     }
 
     @Override
-    public void serGolpeadaPor(Hacha hacha) {
-
-    }
-
-    @Override
     public int durabilidadDeConstruccion(Hacha unHacha) {
         return 400;
     }
@@ -55,4 +50,8 @@ public class Metal extends MaterialDeConstruccion{
         return null;
     }
 
+    @Override
+    public void serGolpeadaPor(Herramienta unaHerramienta) {
+
+    }
 }

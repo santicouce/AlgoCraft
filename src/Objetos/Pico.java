@@ -14,4 +14,19 @@ public class Pico extends Herramienta {
 
         durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
     }
+
+    @Override
+    public boolean esUnHacha() {
+        return false;
+    }
+
+    @Override
+    public boolean esUnPico() {
+        return true;
+    }
+
+    @Override
+    public boolean esUnPicoFino() {
+        return false;
+    }
 }
