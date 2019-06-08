@@ -50,9 +50,4 @@ public class Piedra extends MaterialDeConstruccion{
     public Desgaste desgasteDeConstruccion(PicoFino unPicoFino) { //MEJORAR
         return null;
     }
-
-    @Override
-    public void serGolpeadaPor(Herramienta unaHerramienta) {
-        durabilidad -= unaHerramienta.fuerza();
-    }
 }
