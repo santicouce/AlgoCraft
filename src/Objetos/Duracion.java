@@ -3,7 +3,7 @@ package Objetos;
 public class Duracion {
     private int cantidadDeUsos;
     private int cantidadMaximaDeUsos;
-    public void Duracion(int cantidadMaximaDeUsos){
+    public Duracion(int cantidadMaximaDeUsos){
         cantidadDeUsos = 0;
         this.cantidadMaximaDeUsos = cantidadMaximaDeUsos;
     }

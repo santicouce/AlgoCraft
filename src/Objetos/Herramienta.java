@@ -16,6 +16,7 @@ public abstract class Herramienta {
     }
     public abstract void golpear(Material material);
     public void rompete(){durabilidad = 0;}
+
     public abstract boolean esUnHacha();
     public abstract boolean esUnPico();
     public abstract boolean esUnPicoFino();

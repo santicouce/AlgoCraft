@@ -1,10 +1,7 @@
 package Objetos;
 
 public class MaderaProxy extends Material{
-    Material madera;
-    public  MaderaProxy(){
-        madera = new Madera();
-    }
+    private Material madera = new Madera();
     @Override
     public int durabilidad(){
         return madera.durabilidad();

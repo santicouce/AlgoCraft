@@ -53,6 +53,6 @@ public class Piedra extends MaterialDeConstruccion{
 
     @Override
     public void serGolpeadaPor(Herramienta unaHerramienta) {
-
+        durabilidad -= unaHerramienta.fuerza();
     }
 }
