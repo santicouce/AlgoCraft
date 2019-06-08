@@ -11,7 +11,6 @@ public class Metal extends MaterialDeConstruccion{
 
     }
 
-
     @Override
     public int durabilidadDeConstruccion(Hacha unHacha) {
         return 400;
@@ -22,7 +21,6 @@ public class Metal extends MaterialDeConstruccion{
         return 400;
     }
 
-    @Override
     public int durabilidadDeConstruccion(PicoFino unPicoFino) {
         return 1000;
     }

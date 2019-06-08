@@ -12,7 +12,4 @@ public class Hacha extends Herramienta{
     public void golpear(Material material) {
         durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
     }
-
-
-
 }

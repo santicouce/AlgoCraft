@@ -25,6 +25,7 @@ public class Piedra extends MaterialDeConstruccion{
         return 1000;
     }
 
+
     @Override
     public int fuerzaDeConstruccion(Hacha unHacha) {
         return 5;

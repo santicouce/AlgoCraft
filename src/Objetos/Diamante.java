@@ -7,6 +7,5 @@ public class Diamante extends Material {
 
     @Override
     public void serGolpeadaPor(Hacha hacha) {
-
     }
 }
