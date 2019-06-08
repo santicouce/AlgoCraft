@@ -16,6 +16,7 @@ public abstract class Herramienta {
     }
     public abstract void golpear(Material material);
     public void rompete(){durabilidad = 0;}
+    public int reducir(int durabilidadDeObjetoGolpeado){ return (durabilidadDeObjetoGolpeado - fuerza);}
 
     public abstract boolean esUnHacha();
     public abstract boolean esUnPico();
