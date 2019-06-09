@@ -1,5 +1,5 @@
-import Objetos.*;
-import Objetos.Piedra;
+
+import AlgoCraft.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

@@ -1,34 +1,33 @@
-package Objetos;
+package AlgoCraft;
 
-public class Piedra extends MaterialDeConstruccion{
-    public Piedra (){
-        this.durabilidad =30;
+public class Metal extends MaterialDeConstruccion{
+    public Metal ()
+    {
+        this.durabilidad =50;
     }
 
     @Override
     public int durabilidadDeConstruccion(Hacha unHacha) {
-        return 200;
+        return 400;
     }
 
     @Override
     public int durabilidadDeConstruccion(Pico unPico) {
-        return 200;
+        return 400;
     }
 
-    @Override
     public int durabilidadDeConstruccion(PicoFino unPicoFino) {
         return 1000;
     }
 
-
     @Override
     public int fuerzaDeConstruccion(Hacha unHacha) {
-        return 5;
+        return 10;
     }
 
     @Override
     public int fuerzaDeConstruccion(Pico unPico) {
-        return 4;
+        return 12;
     }
 
     @Override
@@ -38,16 +37,21 @@ public class Piedra extends MaterialDeConstruccion{
 
     @Override
     public Desgaste desgasteDeConstruccion(Hacha unHacha) {
-        return (new DesgasteDeFuerza());
+        return (new DesgasteMitadDeFuerza());
     }
 
     @Override
-    public Desgaste desgasteDeConstruccion(Pico unPico) {  //MEJORAR
-        return (new DesgasteDeFuerza());
+    public Desgaste desgasteDeConstruccion(Pico unPico) {
+        return (new DesgasteUsos());
     }
 
     @Override
     public Desgaste desgasteDeConstruccion(PicoFino unPicoFino) { //MEJORAR
         return null;
+    }
+
+    @Override
+    public void serGolpeadaPor(Herramienta unaHerramienta) {
+
     }
 }

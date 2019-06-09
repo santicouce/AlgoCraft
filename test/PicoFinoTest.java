@@ -1,6 +1,6 @@
-import Objetos.Metal;
-import Objetos.PicoFino;
-import Objetos.Piedra;
+import AlgoCraft.Metal;
+import AlgoCraft.PicoFino;
+import AlgoCraft.Piedra;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

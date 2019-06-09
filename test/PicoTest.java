@@ -1,4 +1,4 @@
-import Objetos.*;
+import AlgoCraft.*;
 import org.junit.Test;
 
 

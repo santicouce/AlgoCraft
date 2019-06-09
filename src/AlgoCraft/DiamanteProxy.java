@@ -1,4 +1,4 @@
-package Objetos;
+package AlgoCraft;
 
 public class DiamanteProxy extends  Material{
     Diamante diamante = new Diamante();

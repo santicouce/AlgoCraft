@@ -1,4 +1,4 @@
-package Objetos;
+package AlgoCraft;
 
 public class Madera extends MaterialDeConstruccion{
     public Madera (){

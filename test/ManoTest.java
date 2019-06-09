@@ -1,5 +1,5 @@
-import Objetos.Mano;
-import Objetos.Madera;
+import AlgoCraft.Mano;
+import AlgoCraft.Madera;
 import org.junit.Test;
 
 public class ManoTest {

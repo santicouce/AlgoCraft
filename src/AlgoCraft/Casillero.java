@@ -1,3 +1,5 @@
+package AlgoCraft;
+
 public class Casillero {
 
     private boolean estado;

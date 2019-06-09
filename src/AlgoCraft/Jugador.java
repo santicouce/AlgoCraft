@@ -1,4 +1,4 @@
-package Objetos;
+package AlgoCraft;
 public class Jugador {
     Inventario inventario = new Inventario();
     Mano mano = new Mano();

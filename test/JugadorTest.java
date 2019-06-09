@@ -1,4 +1,5 @@
-import Objetos.*;
+import AlgoCraft.Jugador;
+import AlgoCraft.Madera;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

@@ -1,21 +1,23 @@
-package Objetos;
+package AlgoCraft;
 
-public class Hacha extends Herramienta{
+public class PicoFino extends Herramienta{
 
-    public Hacha(MaterialDeConstruccion unMaterial){
+    private Material material;
+
+    public PicoFino(MaterialDeConstruccion unMaterial){
         this.material = unMaterial;
         this.durabilidad = unMaterial.durabilidadDeConstruccion(this);
         this.fuerza = unMaterial.fuerzaDeConstruccion(this);
         this.desgaste = unMaterial.desgasteDeConstruccion(this);
     }
-
+    @Override
     public void golpear(Material material) {
-        durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
+
     }
 
     @Override
     public boolean esUnHacha() {
-        return true;
+        return false;
     }
 
     @Override
@@ -25,6 +27,7 @@ public class Hacha extends Herramienta{
 
     @Override
     public boolean esUnPicoFino() {
-        return false;
+        return true;
     }
+
 }

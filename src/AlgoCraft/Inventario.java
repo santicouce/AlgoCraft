@@ -1,8 +1,8 @@
-package Objetos;
+package AlgoCraft;
 
 import java.util.ArrayList;
 import java.util.List;
-import Objetos.Herramienta;
+import AlgoCraft.Herramienta;
 
 public class Inventario {
     private List<Herramienta> herramientas;

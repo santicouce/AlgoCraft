@@ -1,4 +1,4 @@
-package Objetos;
+package AlgoCraft;
 
 public class DesgasteDeFuerza extends Desgaste{
     @Override

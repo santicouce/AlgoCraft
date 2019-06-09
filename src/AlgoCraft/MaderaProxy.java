@@ -1,4 +1,4 @@
-package Objetos;
+package AlgoCraft;
 
 public class MaderaProxy extends Material{
     private Material madera = new Madera();

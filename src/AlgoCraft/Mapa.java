@@ -1,3 +1,7 @@
+package AlgoCraft;
+
+import AlgoCraft.Casillero;
+
 public class Mapa {
 
     private Casillero tablero[][];

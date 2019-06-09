@@ -1,4 +1,4 @@
-package Objetos;
+package AlgoCraft;
 
 public class DesgasteUsos extends Desgaste {
     @Override

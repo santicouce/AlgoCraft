@@ -1,4 +1,4 @@
-import Objetos.Diamante;
+import AlgoCraft.Diamante;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

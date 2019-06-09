@@ -1,18 +1,18 @@
-package Objetos;
+package AlgoCraft;
 
-public class PicoFino extends Herramienta{
+public class Pico extends Herramienta {
 
-    private Material material;
-
-    public PicoFino(MaterialDeConstruccion unMaterial){
+    public Pico(MaterialDeConstruccion unMaterial){
         this.material = unMaterial;
         this.durabilidad = unMaterial.durabilidadDeConstruccion(this);
         this.fuerza = unMaterial.fuerzaDeConstruccion(this);
         this.desgaste = unMaterial.desgasteDeConstruccion(this);
     }
+
     @Override
     public void golpear(Material material) {
 
+        durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
     }
 
     @Override
@@ -22,12 +22,11 @@ public class PicoFino extends Herramienta{
 
     @Override
     public boolean esUnPico() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean esUnPicoFino() {
-        return true;
+        return false;
     }
-
 }
