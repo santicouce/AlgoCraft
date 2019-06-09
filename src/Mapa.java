@@ -8,17 +8,17 @@ public class Mapa {
         this.tablero = new Casillero[10][10];
     }
 
-
     public boolean esUnMapa() {
         return true;
     }
 
-    public Casillero iterarTodoElMapa{
-        for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++) {
+    public Casillero accederAPosicion(int columna, int fila){
+        return this.tablero[columna][fila];
+        /*for (int i = 0; i < columna; i++) {
+            for (int j = 0; j < fila; j++) {
                 return this.tablero[i][j];
             }
-        }
+        }*/
     }
 
 }

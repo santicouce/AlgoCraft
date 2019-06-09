@@ -10,9 +10,9 @@ public class MapaTest {
     public void test01SeCreaMapa(){
         assertEquals(true, mapa.esUnMapa());
     }
-    @Test
+/*    @Test
     public void test02ElMapaTieneCasilleros(){
-
+        assertEquals(true, mapa.accederAPosicion(2,2).esUnCasillero());
     }
-
+*/
 }
