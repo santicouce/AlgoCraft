@@ -1,14 +1,14 @@
-
 import Objetos.*;
-import Objetos.Jugador;
-
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class JugadorTest {
     @Test
     public void test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera(){
         Jugador jugador = new Jugador();
-       // assertTrue (jugador.contieneHerramienta(hacha));
+        Madera madera = new Madera();
+        int durabilidadInicialMadera = madera.durabilidad();
+        jugador.golpear(madera);
+        assertEquals(durabilidadInicialMadera - 2, madera.durabilidad());
     }
 }
