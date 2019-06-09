@@ -1,5 +1,4 @@
-import Objetos.Madera;
-import Objetos.Hacha;
+import Objetos.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -21,4 +20,21 @@ public class MaderaTest {
         assertEquals(durabilidadInicialMadera-2, madera.durabilidad());
     }
 
+    @Test
+    public void test03UnaMaderaEsGolpeadaConUnHachaDePiedraYSuDurabilidadSeDeberiaReducirEn5(){
+        Madera madera = new Madera();
+        Hacha hacha = new Hacha(new Piedra());
+        int durabilidadInicialMadera = madera.durabilidad();
+        madera.serGolpeadaPor(hacha);
+        assertEquals(durabilidadInicialMadera-5,madera.durabilidad());
+    }
+
+    @Test
+    public void test03UnaMaderaEsGolpeadaConUnHachaDeMetalYSuDurabilidadSeDeberiaReducirEn10(){
+        Madera madera = new Madera();
+        Hacha hacha = new Hacha(new Metal());
+        int durabilidadInicialMadera = madera.durabilidad();
+        madera.serGolpeadaPor(hacha);
+        assertEquals(durabilidadInicialMadera-10,madera.durabilidad());
+    }
 }

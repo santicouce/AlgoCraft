@@ -104,4 +104,13 @@ public class PicoTest {
         pico.golpear(new Diamante());
         assertEquals(durabilidadPico-4, pico.durabilidad());//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
     }
+// FIN DEL WARNING
+
+    @Test
+    public void test15UnPicoDeMetalGolpeaUnaMaderaYSuDurabilidadNoDeberiaDisminuir(){
+        Pico pico = new Pico(new Metal());
+        int durabilidadInicial = pico.durabilidad();
+        pico.golpear(new Madera());
+        assertEquals(durabilidadInicial, pico.durabilidad());
+    }
 }

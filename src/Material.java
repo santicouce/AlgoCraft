@@ -8,5 +8,8 @@ public abstract class Material {
         return this.durabilidad;
     }
 
-    public abstract void serGolpeadaPor(Hacha hacha);
+    public void serGolpeadaPor(Herramienta unaHerramienta){
+        durabilidad = unaHerramienta.reducir(durabilidad);
+    }
+
 }

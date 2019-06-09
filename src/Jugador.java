@@ -4,19 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Jugador {
-
-    private List<Herramienta> herramientasDisponibles = new ArrayList<Herramienta>();
-
+    Inventario inventario = new Inventario();
     public Jugador(){
-
         Hacha hacha = new Hacha(new Madera());
-        herramientasDisponibles.add(hacha);
+        inventario.aniadirHerramienta(hacha);
     }
-
-   // public boolean contieneHerramienta(Herramienta herramienta){
-
-     //   return herramientasDisponibles.contains(herramienta);
-    //}
-
 
 }

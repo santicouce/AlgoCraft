@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class AlgoCraftTests {
+public class AlgoCraftTest {
 
     @Test
     public void test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente() {

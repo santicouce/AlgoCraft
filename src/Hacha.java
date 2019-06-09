@@ -2,28 +2,29 @@ package Objetos;
 
 public class Hacha extends Herramienta{
 
-    public Hacha(Madera madera){
-        this.material = madera;
-        this.durabilidad = 100;
-        this.fuerza = 2;
-        this.desgaste = new DesgasteDeFuerza();
-    }
-
-    public Hacha (Piedra piedra){
-        this.material = piedra;
-        this.durabilidad = 200;
-        this.fuerza = 5;
-        this.desgaste = new DesgasteDeFuerza();
-    }
-
-    public Hacha (Metal metal){
-        this.material = metal;
-        this.durabilidad = 400;
-        this.fuerza = 10;
-        this.desgaste = new DesgasteMitadDeFuerza();
+    public Hacha(MaterialDeConstruccion unMaterial){
+        this.material = unMaterial;
+        this.durabilidad = unMaterial.durabilidadDeConstruccion(this);
+        this.fuerza = unMaterial.fuerzaDeConstruccion(this);
+        this.desgaste = unMaterial.desgasteDeConstruccion(this);
     }
 
     public void golpear(Material material) {
         durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
+    }
+
+    @Override
+    public boolean esUnHacha() {
+        return true;
+    }
+
+    @Override
+    public boolean esUnPico() {
+        return false;
+    }
+
+    @Override
+    public boolean esUnPicoFino() {
+        return false;
     }
 }

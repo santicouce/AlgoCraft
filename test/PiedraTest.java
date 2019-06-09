@@ -10,12 +10,27 @@ public class PiedraTest {
     }
 
     @Test
-    public void test02UnaPiedraEsGolpeadaPorUnHachaDeMaderaYSuDurabilidadNoDeberiaCambiar(){
+    public void test02UnaPiedraEsGolpeadaPorUnPicoDeMaderaYSuDurabilidadSeDeberiaReducirEn2(){
         Piedra piedra = new Piedra();
-        Hacha hacha= new Hacha(new Madera());
+        Pico pico = new Pico(new Madera());
         int durabilidadInicialDePiedra = piedra.durabilidad();
-        piedra.serGolpeadaPor(hacha);
-        assertEquals(durabilidadInicialDePiedra, piedra.durabilidad());
-
+        piedra.serGolpeadaPor(pico);
+        assertEquals(durabilidadInicialDePiedra-2, piedra.durabilidad());
+    }
+    @Test
+    public void test03UnaPiedraEsGolpeadaPorUnPicoDePiedraYSuDurabilidadSeDeberiaReducirEn4(){
+        Piedra piedra = new Piedra();
+        Pico pico = new Pico(new Piedra());
+        int durabilidadInicialDePiedra = piedra.durabilidad();
+        piedra.serGolpeadaPor(pico);
+        assertEquals(durabilidadInicialDePiedra-4, piedra.durabilidad());
+    }
+    @Test
+    public void test04UnaPiedraEsGolpeadaPorUnPicoDeMetalYSuDurabilidadSeDeberiaReducirEn12(){
+        Piedra piedra = new Piedra();
+        Pico pico = new Pico(new Metal());
+        int durabilidadInicialDePiedra = piedra.durabilidad();
+        piedra.serGolpeadaPor(pico);
+        assertEquals(durabilidadInicialDePiedra-12, piedra.durabilidad());
     }
 }
