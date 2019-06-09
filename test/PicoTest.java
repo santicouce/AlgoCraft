@@ -113,4 +113,22 @@ public class PicoTest {
         pico.golpear(new Madera());
         assertEquals(durabilidadInicial, pico.durabilidad());
     }
+
+    @Test
+    public void test16PicoRespondeQueNoEsUnHacha(){
+        Pico pico = new Pico(new Madera());
+        assertEquals(false, pico.esUnHacha());
+    }
+
+    @Test
+    public void test17PicoRespondeQueEsUnPico(){
+        Pico pico = new Pico(new Madera());
+        assertEquals(true, pico.esUnPico());
+    }
+
+    @Test
+    public void test18PicoRespondeQueNoEsUnPicoFino(){
+        Pico pico = new Pico(new Madera());
+        assertEquals(false, pico.esUnPicoFino());
+    }
 }

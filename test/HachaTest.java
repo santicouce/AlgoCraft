@@ -137,5 +137,23 @@ public class HachaTest {
         assertEquals(durabilidadHacha-5, hacha.durabilidad());
     }
 
+    @Test
+    public void test19HachaRespondeQueEsUnHacha(){
+        Hacha hacha = new Hacha(new Madera());
+        assertEquals(true, hacha.esUnHacha());
+    }
+
+    @Test
+    public void test20HachaRespondeQueNoEsUnPico(){
+        Hacha hacha = new Hacha(new Madera());
+        assertEquals(false, hacha.esUnPico());
+    }
+
+    @Test
+    public void test21HachaRespondeQueNoEsUnPicoFino(){
+        Hacha hacha = new Hacha(new Madera());
+        assertEquals(false, hacha.esUnPicoFino());
+    }
+
 
 }

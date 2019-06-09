@@ -3,9 +3,11 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class JugadorTest {
+
+    private Jugador jugador = new Jugador();
+
     @Test
     public void test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera(){
-        Jugador jugador = new Jugador();
         Madera madera = new Madera();
         int durabilidadInicialMadera = madera.durabilidad();
         jugador.golpear(madera);
