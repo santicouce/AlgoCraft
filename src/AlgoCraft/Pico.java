@@ -4,9 +4,10 @@ public class Pico extends Herramienta {
 
     public Pico(MaterialDeConstruccion unMaterial){
         this.material = unMaterial;
-        this.durabilidad = unMaterial.durabilidadDeConstruccion(this);
-        this.fuerza = unMaterial.fuerzaDeConstruccion(this);
-        this.desgaste = unMaterial.desgasteDeConstruccion(this);
+        EstrategiaDeConstruccion estrategiaDeConstruccion = unMaterial.estrategiaDeConstruccion();
+        this.durabilidad = estrategiaDeConstruccion.durabilidadDeConstruccion(this);
+        this.fuerza = estrategiaDeConstruccion.fuerzaDeConstruccion(this);
+        this.desgaste = estrategiaDeConstruccion.desgasteDeConstruccion(this);
     }
 
     @Override

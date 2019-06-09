@@ -11,5 +11,4 @@ public abstract class Material {
     public void serGolpeadaPor(Herramienta unaHerramienta){
         durabilidad = unaHerramienta.reducir(durabilidad);
     }
-
 }

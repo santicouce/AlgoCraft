@@ -4,9 +4,10 @@ public class Hacha extends Herramienta {
 
     public Hacha(MaterialDeConstruccion unMaterial){
         this.material = unMaterial;
-        this.durabilidad = unMaterial.durabilidadDeConstruccion(this);
-        this.fuerza = unMaterial.fuerzaDeConstruccion(this);
-        this.desgaste = unMaterial.desgasteDeConstruccion(this);
+        EstrategiaDeConstruccion estrategiaDeConstruccion = unMaterial.estrategiaDeConstruccion();
+        this.durabilidad = estrategiaDeConstruccion.durabilidadDeConstruccion(this);
+        this.fuerza = estrategiaDeConstruccion.fuerzaDeConstruccion(this);
+        this.desgaste = estrategiaDeConstruccion.desgasteDeConstruccion(this);
     }
 
     public void golpear(Material material) {

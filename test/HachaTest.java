@@ -136,7 +136,7 @@ public class HachaTest {
         hacha.golpear(new Diamante());
         assertEquals(durabilidadHacha-5, hacha.durabilidad());
     }
-
+//Warning
     @Test
     public void test19HachaRespondeQueEsUnHacha(){
         Hacha hacha = new Hacha(new Madera());
@@ -154,6 +154,4 @@ public class HachaTest {
         Hacha hacha = new Hacha(new Madera());
         assertEquals(false, hacha.esUnPicoFino());
     }
-
-
 }
