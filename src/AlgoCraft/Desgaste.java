@@ -1,5 +1,5 @@
 package AlgoCraft;
 
 public  abstract class Desgaste {
-    public abstract int desgastarDada(int durabilidad, int fuerza);
+    public abstract double desgastarDada(double durabilidad, int fuerza);
 }

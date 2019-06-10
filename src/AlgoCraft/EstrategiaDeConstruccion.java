@@ -1,9 +1,9 @@
 package AlgoCraft;
 
 public abstract class EstrategiaDeConstruccion {
-    public  abstract int durabilidadDeConstruccion(Hacha unHacha);
-    public  abstract int durabilidadDeConstruccion(Pico unPico);
-    public  abstract int durabilidadDeConstruccion(PicoFino unPicoFino);
+    public  abstract double durabilidadDeConstruccion(Hacha unHacha);
+    public  abstract double durabilidadDeConstruccion(Pico unPico);
+    public  abstract double durabilidadDeConstruccion(PicoFino unPicoFino);
 
     public  abstract int fuerzaDeConstruccion(Hacha unHacha);
     public  abstract int fuerzaDeConstruccion(Pico unPico);

@@ -11,11 +11,11 @@ public class PicoFinoTest {
 
     @Test
     public void test01UnPicoFinoDeMetalDeberiaInicializarConDurabilidad1000(){
-        assertEquals(1000, picoFinoDeMetal.durabilidad());
+        assertEquals(1000, picoFinoDeMetal.durabilidad(),0.0001);
     }
     @Test
     public void test02UnPicoFinoDePiedraDeberiaInicializarConDurabilidad1000(){
-        assertEquals(1000, picoFinoDePiedra.durabilidad());
+        assertEquals(1000, picoFinoDePiedra.durabilidad(),0.0001);
     }
     @Test
     public void test03UnPicoFinoDeMetalDeberiaInicializarConFuerza20(){

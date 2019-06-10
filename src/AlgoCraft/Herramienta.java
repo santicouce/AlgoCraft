@@ -3,12 +3,12 @@ package AlgoCraft;
 public abstract class Herramienta {
 
     protected Material material;
-    protected int durabilidad;
+    protected double durabilidad;
     protected int fuerza;
     protected Desgaste desgaste;
     protected Duracion duracion;
 
-    public int durabilidad() {
+    public double durabilidad() {
         return this.durabilidad;
     }
     public int fuerza(){

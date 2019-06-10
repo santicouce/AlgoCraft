@@ -2,17 +2,17 @@ package AlgoCraft;
 
 public class EstrategiaDeConstruccionMadera extends EstrategiaDeConstruccion {
     @Override
-    public int durabilidadDeConstruccion(Hacha unHacha) {
+    public double durabilidadDeConstruccion(Hacha unHacha) {
         return 100;
     }
 
     @Override
-    public int durabilidadDeConstruccion(Pico unPico) {
+    public double durabilidadDeConstruccion(Pico unPico) {
         return 100;
     }
 
     @Override
-    public int durabilidadDeConstruccion(PicoFino unPicoFino) {
+    public double durabilidadDeConstruccion(PicoFino unPicoFino) {
         return 0;
     }
 

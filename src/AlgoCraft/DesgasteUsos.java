@@ -2,7 +2,7 @@ package AlgoCraft;
 
 public class DesgasteUsos extends Desgaste {
     @Override
-    public int desgastarDada(int durabilidad, int fuerza) {
+    public double desgastarDada(double durabilidad, int fuerza) {
         return durabilidad;
     }
 }
