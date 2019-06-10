@@ -54,5 +54,24 @@ public class MapaTest {
         mapa.aniadirElementoEnPosicion(jugador,1,1);
         mapa.aniadirElementoEnPosicion(maderaProxy,1,1);
     }
-
+    @Test(expected = PosicionInvalidaError.class)
+    public void test09AlIntentarAniadirUnElementoEnUnaFilaMayorALaFilaMaximaDelMapaDeberiaLanzarseUnPosicionInvalidaError(){
+        MaderaProxy maderaProxy = new MaderaProxy();
+        mapa.aniadirElementoEnPosicion(maderaProxy,1,10);
+    }
+    @Test(expected = PosicionInvalidaError.class)
+    public void test10AlIntentarAniadirUnElementoEnUnaColumnaMayorALaColumnaMaximaDelMapaDeberiaLanzarseUnPosicionInvalidaError(){
+        MaderaProxy maderaProxy = new MaderaProxy();
+        mapa.aniadirElementoEnPosicion(maderaProxy,10,0);
+    }
+    @Test(expected = PosicionInvalidaError.class)
+    public void test11AlIntentarAniadirUnElementoEnUnaFilaMenorA0DeberiaLanzarseUnPosicionInvalidaError(){
+        Jugador jugador = new Jugador();
+        mapa.aniadirElementoEnPosicion(jugador,0,-1);
+    }
+    @Test(expected = PosicionInvalidaError.class)
+    public void test12AlIntentarAniadirUnElementoEnUnaColumnaMenorA0DeberiaLanzarseUnPosicionInvalidaError(){
+        Jugador jugador = new Jugador();
+        mapa.aniadirElementoEnPosicion(jugador,-1,0);
+    }
 }
