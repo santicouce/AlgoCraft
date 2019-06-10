@@ -1,4 +1,4 @@
 package AlgoCraft;
 
-public class MetalProxy {
+public class MetalProxy extends Material{
 }

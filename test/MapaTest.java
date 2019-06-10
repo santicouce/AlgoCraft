@@ -1,27 +1,23 @@
 import AlgoCraft.*;
+import org.junit.Assert;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class MapaTest {
 
     private Mapa mapa = new Mapa();
 
-/*    @Test
-    public void test02ElMapaTieneCasilleros(){
-        assertEquals(true, mapa.accederAPosicion(2,2).esUnCasillero());
-    }
-*/
     @Test
     public void test01UnCasilleroVacioDeUnMapaDeberiaPoderSerOcupadoPorMadera(){
         MaderaProxy maderaProxy = new MaderaProxy();
         mapa.aniadirElementoEnPosicion(maderaProxy, 1, 1);
     }
-  /*  @Test
+    @Test
     public void test02UnCasilleroVacioDeUnMapaDeberiaPdoerSerOcupadoPorMetal(){
         MetalProxy metalProxy = new MetalProxy();
         mapa.aniadirElementoEnPosicion(metalProxy,1,1);
-    }*/
+    }
     @Test
     public void test03UnCasilleroVacioDeUnMapaDeberiaPoderSerOcupadoPorPiedra(){
         PiedraProxy piedraProxy = new PiedraProxy();
@@ -31,5 +27,12 @@ public class MapaTest {
     public void test04UnCasilleroVacioDeUnMapaDeberiaPoderSerOcupadoPorDiamanteProxy(){
         DiamanteProxy diamanteProxy = new DiamanteProxy();
         mapa.aniadirElementoEnPosicion(diamanteProxy,1,1);
+    }
+    @Test(expected = CasilleroOcupadoError.class)
+    public void test05AlIntentarOcuparConUnMaterialUnCasilleroOcupadoPorOtroMaterialDeberiaLanzarseUnCasilleroOcupadoError(){
+        MaderaProxy maderaProxy = new MaderaProxy();
+        PiedraProxy piedraProxy = new PiedraProxy();
+        mapa.aniadirElementoEnPosicion(maderaProxy,1,1);
+        mapa.aniadirElementoEnPosicion(piedraProxy,1,1);
     }
 }

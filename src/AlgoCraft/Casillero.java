@@ -2,18 +2,16 @@ package AlgoCraft;
 
 public class Casillero {
 
-    private boolean estado;
-    private Object contenedor;
+    private EstadoCasillero estado;
+    private Material material;
 
-    public  Casillero(){ }
-
-    public boolean esUnCasillero() {
-        return true;
+    public Casillero(){
+        estado = new CasilleroLibre();
     }
-
-/*    public void setContenedor(Object objeto){
-
+    public void aniadirElemento(Material unMaterial){
+        estado.validarAgregacion();
+        material = unMaterial;
+        estado = new CasilleroOcupado();
     }
-*/
 }
  

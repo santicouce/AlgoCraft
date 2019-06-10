@@ -4,24 +4,23 @@ import AlgoCraft.Casillero;
 
 public class Mapa {
 
-    private Material tablero[][];
+    private Casillero tablero[][];
 
     public Mapa() {
-
         //Creo tablero de 10x10
-        this.tablero = new Material[10][10];
+        this.tablero = new Casillero[10][10];
+        this.inicializarTablero();
+    }
+    private void inicializarTablero(){
+        for(int i=0; i<10; i++){
+            for (int j=0; j<10; j++){
+                tablero[i][j]= new Casillero();
+            }
+        }
     }
 
-//    public Casillero accederAPosicion(int columna, int fila){
-  //      return this.tablero[columna][fila];
-        /*for (int i = 0; i < columna; i++) {
-            for (int j = 0; j < fila; j++) {
-                return this.tablero[i][j];
-            }
-        }*/
-//    }
     public void aniadirElementoEnPosicion(Material material, int columna, int fila){
-        tablero[columna][fila] = material;
+        tablero[columna][fila].aniadirElemento(material);
     }
 
 
