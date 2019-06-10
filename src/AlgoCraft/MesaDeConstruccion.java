@@ -21,7 +21,11 @@ public class MesaDeConstruccion {
         }
     }
 
-    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){}
+    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
+        validarPosicion(columna,fila);
+        Casillero casilleroEnCuestion = tablero[columna][fila];
+        casilleroEnCuestion.aniadirElemento(colocable);
+    }
 
     public void validarPosicion(int columna, int fila) {
         this.validarColumna(columna);
