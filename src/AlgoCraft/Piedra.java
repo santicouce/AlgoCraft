@@ -9,4 +9,8 @@ public class Piedra extends MaterialDeConstruccion{
     public EstrategiaDeConstruccion estrategiaDeConstruccion() {
         return (new EstrategiaDeConstruccionPiedra());
     }
+
+    public boolean esUnaPiedra() {
+        return true;
+    }
 }

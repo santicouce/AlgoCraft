@@ -1,21 +1,21 @@
 package AlgoCraft;
+// Futura clase madre de Mapa y tablero, ingloba los comportamientos de ambas
+public class Tablero {
 
-public class MesaDeConstruccion {
-
-
-    static final int CANTIDAD_DE_COLUMNAS = 10;
-    static final int CANTIDAD_DE_FILAS = 10;
+    private int CANTIDAD_DE_COLUMNAS;
+    private int CANTIDAD_DE_FILAS;
     private Casillero tablero[][];
 
-    public MesaDeConstruccion() {
-        //Creo tablero de 3x3
-        this.tablero = new Casillero[3][3];
+    public Tablero(int cantidadDeColumnas, int cantidadDeFilas) {
+        this.CANTIDAD_DE_COLUMNAS = cantidadDeColumnas;
+        this.CANTIDAD_DE_FILAS = cantidadDeFilas;
+        this.tablero = new Casillero[cantidadDeColumnas][cantidadDeFilas];
         this.inicializarTablero();
     }
 
     private void inicializarTablero() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < CANTIDAD_DE_COLUMNAS; i++) {
+            for (int j = 0; j < CANTIDAD_DE_FILAS; j++) {
                 tablero[i][j] = new Casillero();
             }
         }
