@@ -3,13 +3,13 @@ package AlgoCraft;
 public class MesaDeConstruccion {
 
 
-    static final int CANTIDAD_DE_COLUMNAS = 10;
-    static final int CANTIDAD_DE_FILAS = 10;
+    static final int CANTIDAD_DE_COLUMNAS = 3;
+    static final int CANTIDAD_DE_FILAS = 3;
     private Casillero tablero[][];
 
     public MesaDeConstruccion() {
         //Creo tablero de 3x3
-        this.tablero = new Casillero[3][3];
+        this.tablero = new Casillero[CANTIDAD_DE_COLUMNAS][CANTIDAD_DE_FILAS];
         this.inicializarTablero();
     }
 
