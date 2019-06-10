@@ -1,9 +1,7 @@
 import AlgoCraft.Casillero;
-import AlgoCraft.*;
+import AlgoCraft.CasilleroOcupadoError;
+import AlgoCraft.MaderaProxy;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class CasilleroTest {
     @Test (expected = CasilleroOcupadoError.class)
