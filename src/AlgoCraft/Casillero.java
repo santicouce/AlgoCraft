@@ -10,7 +10,7 @@ public class Casillero {
     }
     public void aniadirElemento(Colocable colocable){
         estado.validarAgregacion();
-        colocable = colocable;
+        this.colocable = colocable;
         estado = new CasilleroOcupado();
     }
 }
