@@ -10,4 +10,9 @@ public class Metal extends MaterialDeConstruccion{
     public EstrategiaDeConstruccion estrategiaDeConstruccion() {
         return (new EstrategiaDeConstruccionMetal());
     }
+
+    public boolean esUnMetal() {
+        return true;
+    }
+
 }

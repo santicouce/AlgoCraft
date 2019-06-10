@@ -9,4 +9,8 @@ public class Madera extends MaterialDeConstruccion{
     public EstrategiaDeConstruccion estrategiaDeConstruccion() {
         return (new EstrategiaDeConstruccionMadera());
     }
+
+    public boolean esUnaMadera() {
+        return true;
+    }
 }

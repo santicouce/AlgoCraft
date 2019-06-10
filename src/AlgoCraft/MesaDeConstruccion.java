@@ -1,6 +1,10 @@
 package AlgoCraft;
 
 public class MesaDeConstruccion {
+
+
+    static final int CANTIDAD_DE_COLUMNAS = 10;
+    static final int CANTIDAD_DE_FILAS = 10;
     private Casillero tablero[][];
 
     public MesaDeConstruccion() {
@@ -8,15 +12,32 @@ public class MesaDeConstruccion {
         this.tablero = new Casillero[3][3];
         this.inicializarTablero();
     }
-    private void inicializarTablero(){
-        for(int i=0; i<3; i++){
-            for (int j=0; j<3; j++){
-                tablero[i][j]= new Casillero();
+
+    private void inicializarTablero() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                tablero[i][j] = new Casillero();
             }
         }
     }
 
-    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
-        tablero[columna][fila].aniadirElemento(colocable);
+    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){}
+
+    public void validarPosicion(int columna, int fila) {
+        this.validarColumna(columna);
+        this.validarFila(fila);
+    }
+
+    private void validarColumna(int columna) {
+        if (columna < 0 || columna > (CANTIDAD_DE_COLUMNAS - 1)) {
+            throw new PosicionInvalidaError();
+        }
+    }
+
+    private void validarFila(int fila) {
+        if (fila < 0 || fila > (CANTIDAD_DE_COLUMNAS - 1)) {
+            throw new PosicionInvalidaError();
+        }
+
     }
 }
