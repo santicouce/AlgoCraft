@@ -19,10 +19,7 @@ public class Mapa {
         }
     }
 
-    public void aniadirElementoEnPosicion(Material material, int columna, int fila){
-        tablero[columna][fila].aniadirElemento(material);
+    public void aniadirElementoEnPosicion(Colocable colocable, int columna, int fila){
+        tablero[columna][fila].aniadirElemento(colocable);
     }
-
-
-
 }

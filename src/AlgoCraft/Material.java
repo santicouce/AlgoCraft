@@ -1,6 +1,6 @@
 package AlgoCraft;
 
-public abstract class Material {
+public abstract class Material implements Colocable{
 
     protected int durabilidad;
 

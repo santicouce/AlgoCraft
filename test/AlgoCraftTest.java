@@ -22,7 +22,6 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadHacha, hachaDeMadera.durabilidad());
         assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
-
     }
 
     @Test
@@ -32,7 +31,6 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadPico, picoDeMadera.durabilidad());
         assertEquals(fuerzaPico, picoDeMadera.fuerza());
-
     }
 
     @Test
@@ -42,7 +40,6 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadHacha, hachaDeMetal.durabilidad());
         assertEquals(fuerzaHacha, hachaDeMetal.fuerza());
-
     }
 
     @Test
@@ -52,7 +49,6 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadPico, picoDeMetal.durabilidad());
         assertEquals(fuerzaPico, picoDeMetal.fuerza());
-
     }
 
     @Test
@@ -62,8 +58,8 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadPico, picoFinoDeMetal.durabilidad());
         assertEquals(fuerzaPico, picoFinoDeMetal.fuerza());
-
     }
+
     @Test
     public void test06PicoFinoDePiedraConDurabilidadYFuerzaCorrespondiente() {
         int durabilidadPico = 1000;
@@ -71,7 +67,6 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadPico, picoFinoDePiedra.durabilidad());
         assertEquals(fuerzaPico, picoFinoDePiedra.fuerza());
-
     }
 
     @Test
@@ -82,7 +77,6 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadHacha-2, hachaDeMadera.durabilidad());
         assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
-
     }
     @Test
     public void test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene() {
@@ -94,7 +88,5 @@ public class AlgoCraftTest {
 
         assertEquals(durabilidadHacha-4, hachaDeMadera.durabilidad());
         assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
-
     }
-
 }

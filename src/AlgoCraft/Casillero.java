@@ -3,14 +3,14 @@ package AlgoCraft;
 public class Casillero {
 
     private EstadoCasillero estado;
-    private Material material;
+    private Colocable colocable;
 
     public Casillero(){
         estado = new CasilleroLibre();
     }
-    public void aniadirElemento(Material unMaterial){
+    public void aniadirElemento(Colocable colocable){
         estado.validarAgregacion();
-        material = unMaterial;
+        colocable = colocable;
         estado = new CasilleroOcupado();
     }
 }

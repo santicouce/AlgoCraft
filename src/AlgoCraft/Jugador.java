@@ -1,5 +1,5 @@
 package AlgoCraft;
-public class Jugador {
+public class Jugador implements Colocable{
     Inventario inventario = new Inventario();
     Mano mano = new Mano();
     public Jugador(){

@@ -35,4 +35,24 @@ public class MapaTest {
         mapa.aniadirElementoEnPosicion(maderaProxy,1,1);
         mapa.aniadirElementoEnPosicion(piedraProxy,1,1);
     }
+    @Test
+    public void test06UnCasilleroVacioDeUnMapaDeberiaPoderSerOcupadoPorUnJugador(){
+        Jugador jugador = new Jugador();
+        mapa.aniadirElementoEnPosicion(jugador,1,1);
+    }
+    @Test(expected = CasilleroOcupadoError.class)
+    public void test07AlIntentarOcuparConUnJugadorUnCasilleroOcupadoPorUnMaterialDeberiaLanzarseUnCasilleroOcupadoError(){
+        MaderaProxy maderaProxy = new MaderaProxy();
+        Jugador jugador = new Jugador();
+        mapa.aniadirElementoEnPosicion(maderaProxy,1,1);
+        mapa.aniadirElementoEnPosicion(jugador,1,1);
+    }
+    @Test(expected = CasilleroOcupadoError.class)
+    public void test08AlIntentarOcuparConUnMaterialUnCasilleroOcupadoPorUnJugadorDeberiaLanzarseUnCasilleroOcupadoError(){
+        MaderaProxy maderaProxy = new MaderaProxy();
+        Jugador jugador = new Jugador();
+        mapa.aniadirElementoEnPosicion(jugador,1,1);
+        mapa.aniadirElementoEnPosicion(maderaProxy,1,1);
+    }
+
 }
