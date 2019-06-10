@@ -5,7 +5,7 @@ public class Jugador implements Observable {
     UbicacionJugador ubicacion;
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
-        mano.aniadirHerramienta(hacha);
+        mano.equiparHerramienta(hacha);
     }
     public void golpear(Material unMaterial){
         mano.golpear(unMaterial);

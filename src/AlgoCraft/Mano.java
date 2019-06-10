@@ -1,15 +1,18 @@
 package AlgoCraft;
 
 public class Mano {
-    private Herramienta herramienta;
-    public void golpear(Material unMaterial){
-        unMaterial.serGolpeadaPor(herramienta);
+    private EstadoMano estadoMano;
+    public Mano(){
+        estadoMano = new ManoVacia();
     }
-    public void aniadirHerramienta(Herramienta unaHerramienta){
-        herramienta = unaHerramienta;
+    public void golpear(Material unMaterial){
+        estadoMano.golpear(unMaterial);
+    }
+    public void equiparHerramienta(Herramienta unaHerramienta){
+        estadoMano = new ManoLlena(unaHerramienta);
     }
     public void guardarHerramientaEn(Inventario unInventario){
-        unInventario.aniadirHerramienta(herramienta);
-        herramienta = null;
+        estadoMano.guardarHerramientaEn(unInventario);
+        estadoMano = new ManoVacia();
     }
 }
