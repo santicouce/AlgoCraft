@@ -22,4 +22,6 @@ public class Mapa {
     public void aniadirElementoEnPosicion(Colocable colocable, int columna, int fila){
         tablero[columna][fila].aniadirElemento(colocable);
     }
+
+    
 }

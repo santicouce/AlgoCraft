@@ -12,5 +12,4 @@ public class Jugador implements Colocable{
     public void desequiparHerramientaEnMano(){
         mano.guardarHerramientaEn(inventario);
     }
-
 }
