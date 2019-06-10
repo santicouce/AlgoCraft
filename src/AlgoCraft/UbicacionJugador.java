@@ -3,20 +3,20 @@ package AlgoCraft;
 public class UbicacionJugador {
     private int columna;
     private int fila;
-    Mapa mapa;
 
-    public UbicacionJugador(Mapa unMapa, int unaColumna, int unaFila){
-        this.mapa = unMapa;
+    public UbicacionJugador(int unaColumna, int unaFila){
         this.columna = unaColumna;
         this.fila = unaFila;
     }
 
-    public void moverALaIzquierda(Jugador unJugador){
-       try {
-           mapa.moverJugador(unJugador, columna - 1, fila);
-       }catch (CasilleroOcupadoError | PosicionInvalidaError erroresDeMovimiento){
-           throw new MovimientoInvalidoError();
-        }
-        columna = columna -1;
+    public void moverJugadorA(Jugador unJugador, Direccion unaDireccion){
+        unaDireccion.realizarMovimiento(unJugador, columna, fila);
+        unaDireccion.actualizarUbicacion(this);
     }
+    public void actualizarUbicacion(DireccionIzquierda direccionIzquierda){
+        columna -= 1;
+    }
+    public void actualizarUbicacion(DireccionDerecha direccionDerecha){ columna += 1;}
+    public void actualizarUbicacion(DireccionArriba direccionArriba) { fila -= 1; }
+    public void actualizarUbicacion(DireccionAbajo direccionAbajo) {fila += 1;}
 }

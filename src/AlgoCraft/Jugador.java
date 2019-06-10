@@ -1,5 +1,5 @@
 package AlgoCraft;
-public class Jugador implements Colocable{
+public class Jugador implements Observable {
     Inventario inventario = new Inventario();
     Mano mano = new Mano();
     UbicacionJugador ubicacion;
@@ -13,11 +13,12 @@ public class Jugador implements Colocable{
     public void desequiparHerramientaEnMano(){
         mano.guardarHerramientaEn(inventario);
     }
-    public void aniadirJugadorAlMapa(Mapa mapa, int columna, int fila){
-        ubicacion = new UbicacionJugador(mapa, columna, fila);
+    public void aniadirJugadorAlMapa(int columna, int fila){
+        ubicacion = new UbicacionJugador(columna, fila);
     }
-    public void moverALaIzquierda(){
-        ubicacion.moverALaIzquierda(this);
+    public void moverA(Direccion unaDireccion) {
+        try{
+            ubicacion.moverJugadorA(this, unaDireccion);
+        }catch (MovimientoInvalidoError e){}
     }
-
 }

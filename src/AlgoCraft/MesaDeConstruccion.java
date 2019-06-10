@@ -16,7 +16,7 @@ public class MesaDeConstruccion {
         }
     }
 
-    public void aniadirElementoEnPosicion(Colocable colocable, int columna, int fila){
+    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
         tablero[columna][fila].aniadirElemento(colocable);
     }
 }

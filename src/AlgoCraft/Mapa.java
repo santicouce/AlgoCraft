@@ -1,7 +1,5 @@
 package AlgoCraft;
 
-import AlgoCraft.Casillero;
-
 public class Mapa {
     static final int CANTIDAD_DE_COLUMNAS = 10;
     static final int CANTIDAD_DE_FILAS = 10;
@@ -20,13 +18,17 @@ public class Mapa {
         }
     }
 
-    public void aniadirElementoEnPosicion(Colocable colocable, int columna, int fila){
+    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
         validarPosicion(columna,fila);
         tablero[columna][fila].aniadirElemento(colocable);
     }
 
     public void moverJugador(Jugador unJugador, int columna, int fila){
         aniadirElementoEnPosicion(unJugador, columna, fila);
+    }
+    public void aniadirJugadorAlMapa(Jugador unJugador, int columna, int fila){
+        aniadirElementoEnPosicion(unJugador, columna, fila);
+        unJugador.aniadirJugadorAlMapa(columna, fila);
     }
 
     public void validarPosicion(int columna, int fila){
@@ -44,5 +46,9 @@ public class Mapa {
         if(fila < 0 || fila > (CANTIDAD_DE_COLUMNAS -1)){
             throw new PosicionInvalidaError();
         }
+    }
+
+    public void eliminarElementoEnPosicion(int columna, int fila) {
+        tablero[columna][fila].eliminarElemento();
     }
 }
