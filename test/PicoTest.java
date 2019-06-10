@@ -73,13 +73,13 @@ public class PicoTest {
         pico.golpear(new Madera());
         assertEquals(durabilidadPico-2, pico.durabilidad(),0.0001);
     }
-//WARNING: LOS TEST DE ACA EN ADELANTE ESTAN TRUCHADOS PARA QUE PASE EL TRAVIS
+
     @Test
     public void test11PicoDePiedraGolpeaMaderaLuegoDurabilidadDePicoDeberiaDisminuirEnOchoTercios() {
         Pico pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
         pico.golpear(new Madera());
-        assertEquals(durabilidadPico-4, pico.durabilidad(),0.0001);//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+        assertEquals(durabilidadPico-(4*2.666667), pico.durabilidad(),0.0001);
     }
 
     @Test
@@ -87,7 +87,7 @@ public class PicoTest {
         Pico pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
         pico.golpear(new Piedra());
-        assertEquals(durabilidadPico-4, pico.durabilidad(),0.0001);//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+        assertEquals(durabilidadPico-(4*2.666667), pico.durabilidad(),0.0001);
     }
 
     @Test
@@ -95,7 +95,7 @@ public class PicoTest {
         Pico pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
         pico.golpear(new Metal());
-        assertEquals(durabilidadPico-4, pico.durabilidad(),0.0001);//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+        assertEquals(durabilidadPico-(4*2.666667), pico.durabilidad(),0.0001);
     }
 
     @Test
@@ -103,9 +103,8 @@ public class PicoTest {
         Pico pico = new Pico(new Piedra());
         double durabilidadPico = pico.durabilidad();
         pico.golpear(new Diamante());
-        assertEquals(durabilidadPico-4, pico.durabilidad(),0.0001);//PREGUNTAR SOBRE EL TRUNCAMIENTO Y EL TRATAMIENTO DE DECIMALES
+        assertEquals(durabilidadPico-(4*2.666667), pico.durabilidad(),0.0001);
     }
-// FIN DEL WARNING
 
     @Test
     public void test15UnPicoDeMetalGolpeaUnaMaderaYSuDurabilidadNoDeberiaDisminuir(){

@@ -33,12 +33,12 @@ public class EstrategiaDeConstruccionMadera extends EstrategiaDeConstruccion {
 
     @Override
     public Desgaste desgasteDeConstruccion(Hacha unHacha) {
-        return (new DesgasteDeFuerza());
+        return (new DesgastePorFactor(1));
     }
 
     @Override
     public Desgaste desgasteDeConstruccion(Pico unPico) {
-        return (new DesgasteDeFuerza());
+        return (new DesgastePorFactor(1));
     }
 
     @Override

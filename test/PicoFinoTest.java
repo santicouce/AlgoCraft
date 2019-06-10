@@ -1,3 +1,4 @@
+import AlgoCraft.Diamante;
 import AlgoCraft.Metal;
 import AlgoCraft.PicoFino;
 import AlgoCraft.Piedra;
@@ -25,16 +26,26 @@ public class PicoFinoTest {
     public void test04UnPicoFinoDePiedraDeberiaInicializarConFuerza20(){
         assertEquals(20, picoFinoDePiedra.fuerza());
     }
+
     @Test
-    public void test05PicoFinoRespondeQueNoEsUnHacha(){
+    public void test05UnPicoFinoSeUsaContraDiamanteYSuDurabilidadDeberiaDisminuirEn2(){
+        double durabilidadInicialPicoFino = picoFinoDeMetal.durabilidad();
+        picoFinoDeMetal.golpear(new Diamante());
+        assertEquals(durabilidadInicialPicoFino-2, picoFinoDeMetal.durabilidad(), 0.00001);
+    }
+
+    @Test
+    public void test00PicoFinoRespondeQueNoEsUnHacha(){
+
         assertEquals(false, picoFinoDeMetal.esUnHacha());
     }
+
     @Test
-    public void test17PicoRespondeQueEsUnPico(){
+    public void test00PicoRespondeQueEsUnPico(){
         assertEquals(false, picoFinoDeMetal.esUnPico());
     }
     @Test
-    public void test18PicoRespondeQueNoEsUnPicoFino(){
+    public void test00PicoRespondeQueNoEsUnPicoFino(){
         assertEquals(true, picoFinoDeMetal.esUnPicoFino());
     }
 

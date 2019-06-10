@@ -33,7 +33,7 @@ public class EstrategiaDeConstruccionMetal extends EstrategiaDeConstruccion{
 
     @Override
     public Desgaste desgasteDeConstruccion(Hacha unHacha) {
-        return (new DesgasteMitadDeFuerza());
+        return (new DesgastePorFactor(0.5));
     }
 
     @Override
@@ -43,6 +43,6 @@ public class EstrategiaDeConstruccionMetal extends EstrategiaDeConstruccion{
 
     @Override
     public Desgaste desgasteDeConstruccion(PicoFino unPicoFino) {
-        return (new DesgasteMitadDeFuerza());
+        return (new DesgastePorFactor(0.1));
     }
 }

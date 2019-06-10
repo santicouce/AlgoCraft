@@ -13,7 +13,7 @@ public class PicoFino extends Herramienta{
     }
     @Override
     public void golpear(Material material) {
-
+        durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
     }
 
     @Override

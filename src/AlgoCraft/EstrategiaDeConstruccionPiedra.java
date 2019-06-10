@@ -33,16 +33,16 @@ public class EstrategiaDeConstruccionPiedra extends EstrategiaDeConstruccion{
 
     @Override
     public Desgaste desgasteDeConstruccion(Hacha unHacha) {
-        return (new DesgasteDeFuerza());
+        return (new DesgastePorFactor(1));
     }
 
     @Override
     public Desgaste desgasteDeConstruccion(Pico unPico) {
-        return (new DesgasteDeFuerza());
+        return (new DesgastePorFactor(2.666667));
     }
 
     @Override
     public Desgaste desgasteDeConstruccion(PicoFino unPicoFino) {
-        return (new DesgasteMitadDeFuerza());
+        return (new DesgastePorFactor(0.1));
     }
 }
