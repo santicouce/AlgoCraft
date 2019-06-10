@@ -3,12 +3,13 @@ package AlgoCraft;
 import AlgoCraft.Casillero;
 
 public class Mapa {
-
+    static final int CANTIDAD_DE_COLUMNAS = 10;
+    static final int CANTIDAD_DE_FILAS = 10;
     private Casillero tablero[][];
 
     public Mapa() {
         //Creo tablero de 10x10
-        this.tablero = new Casillero[10][10];
+        this.tablero = new Casillero[CANTIDAD_DE_COLUMNAS][CANTIDAD_DE_FILAS];
         this.inicializarTablero();
     }
     private void inicializarTablero(){
@@ -20,8 +21,24 @@ public class Mapa {
     }
 
     public void aniadirElementoEnPosicion(Colocable colocable, int columna, int fila){
+        validarPosicion(columna,fila);
         tablero[columna][fila].aniadirElemento(colocable);
     }
 
-    
+    public void validarPosicion(int columna, int fila){
+        this.validarColumna(columna);
+        this.validarFila(fila);
+    }
+
+    private void validarColumna(int columna){
+        if(columna < 0 || columna > (CANTIDAD_DE_COLUMNAS -1)){
+            throw new PosicionInvalidaError();
+        }
+    }
+
+    private void validarFila(int fila){
+        if(fila < 0 || fila > (CANTIDAD_DE_COLUMNAS -1)){
+            throw new PosicionInvalidaError();
+        }
+    }
 }
