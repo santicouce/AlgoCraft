@@ -25,6 +25,10 @@ public class Mapa {
         tablero[columna][fila].aniadirElemento(colocable);
     }
 
+    public void moverJugador(Jugador unJugador, int columna, int fila){
+        aniadirElementoEnPosicion(unJugador, columna, fila);
+    }
+
     public void validarPosicion(int columna, int fila){
         this.validarColumna(columna);
         this.validarFila(fila);
