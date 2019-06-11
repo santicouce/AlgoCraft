@@ -10,4 +10,9 @@ public class MaderaProxy extends Material{
     public void serGolpeadaPor(Herramienta unaHerramienta) {
         unaHerramienta.daniar(madera);
     }
+
+    @Override
+    public void daniar(PicoFino unPicoFino) {
+        //UNA MADERAPROXY NO PUEDA DANIAR UN PICO FINO
+    }
 }

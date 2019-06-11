@@ -31,4 +31,10 @@ public class PicoFinoTest {
         picoFinoDeMetal.golpear(new Diamante());
         assertEquals(durabilidadInicialPicoFino-2, picoFinoDeMetal.durabilidad(), 0.00001);
     }
+    @Test
+    public void test06UnPicoFinoSeUsaContraMaderaYSuDurabilidadNoDeberiaDisminuir(){
+        double durabilidadInicialPicoFino = picoFinoDeMetal.durabilidad();
+        picoFinoDeMetal.golpear(new Madera());
+        assertEquals(durabilidadInicialPicoFino, picoFinoDeMetal.durabilidad(), 0.00001);
+    }
 }

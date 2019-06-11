@@ -15,4 +15,8 @@ public class Piedra extends MaterialDeConstruccion{
         unmetal.serGolpeadaPor(unPico);
     }
 
+    @Override
+    public void daniar(PicoFino unPicoFino) {
+        //UNA PIEDRA NO PUEDE DANIAR UN PICO FINO
+    }
 }

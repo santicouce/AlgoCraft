@@ -13,7 +13,8 @@ public class PicoFino extends Herramienta{
     }
     @Override
     public void golpear(Material material) {
-        durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
+        material.daniar(this);
+
     }
 
     @Override
@@ -36,5 +37,7 @@ public class PicoFino extends Herramienta{
         //UN PICO FINO NO DANIA METAL
     }
 
-
+    public void desgastate(){
+        durabilidad = desgaste.desgastarDada(durabilidad, fuerza);
+    }
 }

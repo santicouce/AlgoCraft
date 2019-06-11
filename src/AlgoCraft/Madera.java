@@ -14,4 +14,9 @@ public class Madera extends MaterialDeConstruccion{
     public void daniar(Pico unPico, Metal unmetal) {
         //UN PICO DE MADERA NO PUEDE DANIAR METAL
     }
+
+    @Override
+    public void daniar(PicoFino unPicoFino) {
+        //UNA MADERA NO PUEDE DANIAR UN PICO FINO
+    }
 }

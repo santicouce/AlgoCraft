@@ -10,4 +10,9 @@ public class MetalProxy extends Material{
     public void serGolpeadaPor(Herramienta unaHerramienta) {
         unaHerramienta.daniar(metal);
     }
+
+    @Override
+    public void daniar(PicoFino unPicoFino) {
+        //UN METAL PROXY NO PUEDE NO PUEDE DESGASTAR UN PICO FINO
+    }
 }

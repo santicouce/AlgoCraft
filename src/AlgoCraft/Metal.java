@@ -15,4 +15,9 @@ public class Metal extends MaterialDeConstruccion{
     public void daniar(Pico unPico, Metal unmetal) {
         //UN PICO DE METAL NO PUEDE DANIAR UN PICO
     }
+
+    @Override
+    public void daniar(PicoFino unPicoFino) {
+        //UN METAL NO PUEDA DANIAR UN PICO FINO
+    }
 }

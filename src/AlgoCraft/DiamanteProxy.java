@@ -9,4 +9,9 @@ public class DiamanteProxy extends  Material{
     public void serGolpeadaPor(Herramienta unaHerramienta){
         unaHerramienta.daniar(diamante);
     }
+
+    @Override
+    public void daniar(PicoFino unPicoFino) {
+     //UN DIAMANTEPROXY NO PUEDE DANIAR UN PICO FINO
+    }
 }
