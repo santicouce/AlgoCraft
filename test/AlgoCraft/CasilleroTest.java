@@ -1,6 +1,5 @@
-import AlgoCraft.Casillero;
-import AlgoCraft.CasilleroOcupadoError;
-import AlgoCraft.MaderaProxy;
+package AlgoCraft;
+
 import org.junit.Test;
 
 public class CasilleroTest {

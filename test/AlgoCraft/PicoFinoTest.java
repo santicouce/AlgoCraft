@@ -1,7 +1,5 @@
-import AlgoCraft.Diamante;
-import AlgoCraft.Metal;
-import AlgoCraft.PicoFino;
-import AlgoCraft.Piedra;
+package AlgoCraft;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

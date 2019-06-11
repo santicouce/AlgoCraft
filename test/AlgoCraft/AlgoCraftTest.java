@@ -1,6 +1,6 @@
-import AlgoCraft.*;
-import org.junit.Test;
+package AlgoCraft;
 
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AlgoCraftTest {

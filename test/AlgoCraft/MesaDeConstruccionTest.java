@@ -1,7 +1,5 @@
-package PACKAGE_NAME;
+package AlgoCraft;
 
-import AlgoCraft.MesaDeConstruccion;
-import AlgoCraft.Piedra;
 import org.junit.Test;
 
 public class MesaDeConstruccionTest {

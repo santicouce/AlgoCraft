@@ -1,4 +1,5 @@
-import AlgoCraft.Metal;
+package AlgoCraft;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

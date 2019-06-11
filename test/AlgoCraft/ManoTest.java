@@ -1,4 +1,5 @@
-import AlgoCraft.Mano;
+package AlgoCraft;
+
 import org.junit.Test;
 
 public class ManoTest {
