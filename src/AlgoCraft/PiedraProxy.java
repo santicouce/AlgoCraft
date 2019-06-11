@@ -9,8 +9,6 @@ public class PiedraProxy extends Material {
     }
     @Override
     public void serGolpeadaPor(Herramienta unaHerramienta) {
-        if(unaHerramienta.esUnPico()){
-            piedra.serGolpeadaPor(unaHerramienta);
-        }
+        unaHerramienta.daniar(piedra);
     }
 }

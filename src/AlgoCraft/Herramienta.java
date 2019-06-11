@@ -18,7 +18,8 @@ public abstract class Herramienta {
     public void rompete(){durabilidad = 0;}
     public int reducir(int durabilidadDeObjetoGolpeado){ return (durabilidadDeObjetoGolpeado - fuerza);}
 
-    public abstract boolean esUnHacha();
-    public abstract boolean esUnPico();
-    public abstract boolean esUnPicoFino();
+    public abstract void daniar(Madera madera);
+    public abstract void daniar(Diamante diamante);
+    public abstract void daniar(Piedra piedra);
+    public abstract void daniar(Metal metal);
 }

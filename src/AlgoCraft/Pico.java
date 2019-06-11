@@ -17,17 +17,23 @@ public class Pico extends Herramienta {
     }
 
     @Override
-    public boolean esUnHacha() {
-        return false;
+    public void daniar(Madera madera) {
+        //UN PICO NO DANIA MADERA
     }
 
     @Override
-    public boolean esUnPico() {
-        return true;
+    public void daniar(Diamante diamante) {
+        //UN PICO NO DANIA DIAMANTE
     }
 
     @Override
-    public boolean esUnPicoFino() {
-        return false;
+    public void daniar(Piedra piedra) {
+        piedra.serGolpeadaPor(this);
     }
+
+    @Override
+    public void daniar(Metal metal) {
+
+    }
+
 }
