@@ -7,8 +7,6 @@ public class DiamanteProxy extends  Material{
         return diamante.durabilidad();
     }
     public void serGolpeadaPor(Herramienta unaHerramienta){
-        if(unaHerramienta.esUnPicoFino()){
-            diamante.serGolpeadaPor(unaHerramienta);
-        }
+        unaHerramienta.daniar(diamante);
     }
 }

@@ -1,21 +1,21 @@
 package AlgoCraft;
-// Futura clase madre de Mapa y tablero, ingloba los comportamientos de ambas
+// Futura clase madre de Mapa y MesaDeConstrucción, ingloba los comportamientos de ambas
 public class Tablero {
 
-    private int CANTIDAD_DE_COLUMNAS;
-    private int CANTIDAD_DE_FILAS;
+    private int cantidadDeColumnas;
+    private int cantidadDeFilas;
     private Casillero tablero[][];
 
     public Tablero(int cantidadDeColumnas, int cantidadDeFilas) {
-        this.CANTIDAD_DE_COLUMNAS = cantidadDeColumnas;
-        this.CANTIDAD_DE_FILAS = cantidadDeFilas;
+        this.cantidadDeColumnas = cantidadDeColumnas;
+        this.cantidadDeFilas = cantidadDeFilas;
         this.tablero = new Casillero[cantidadDeColumnas][cantidadDeFilas];
         this.inicializarTablero();
     }
 
     private void inicializarTablero() {
-        for (int i = 0; i < CANTIDAD_DE_COLUMNAS; i++) {
-            for (int j = 0; j < CANTIDAD_DE_FILAS; j++) {
+        for (int i = 0; i < cantidadDeColumnas; i++) {
+            for (int j = 0; j < cantidadDeFilas; j++) {
                 tablero[i][j] = new Casillero();
             }
         }
@@ -32,13 +32,13 @@ public class Tablero {
     }
 
     private void validarColumna(int columna) {
-        if (columna < 0 || columna > (CANTIDAD_DE_COLUMNAS - 1)) {
+        if (columna < 0 || columna > (cantidadDeColumnas - 1)) {
             throw new PosicionInvalidaError();
         }
     }
 
     private void validarFila(int fila) {
-        if (fila < 0 || fila > (CANTIDAD_DE_COLUMNAS - 1)) {
+        if (fila < 0 || fila > (cantidadDeColumnas - 1)) {
             throw new PosicionInvalidaError();
         }
 

@@ -33,20 +33,4 @@ public class PicoFinoTest {
         picoFinoDeMetal.golpear(new Diamante());
         assertEquals(durabilidadInicialPicoFino-2, picoFinoDeMetal.durabilidad(), 0.00001);
     }
-
-    @Test
-    public void test00PicoFinoRespondeQueNoEsUnHacha(){
-
-        assertEquals(false, picoFinoDeMetal.esUnHacha());
-    }
-
-    @Test
-    public void test00PicoRespondeQueEsUnPico(){
-        assertEquals(false, picoFinoDeMetal.esUnPico());
-    }
-    @Test
-    public void test00PicoRespondeQueNoEsUnPicoFino(){
-        assertEquals(true, picoFinoDeMetal.esUnPicoFino());
-    }
-
 }
