@@ -2,7 +2,7 @@ package AlgoCraft;
 
 public abstract class Herramienta {
 
-    protected Material material;
+    protected MaterialDeConstruccion material;
     protected double durabilidad;
     protected int fuerza;
     protected Desgaste desgaste;

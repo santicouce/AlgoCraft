@@ -2,15 +2,17 @@ import AlgoCraft.*;
 import org.junit.Test;
 
 
+import java.security.PublicKey;
+
 import static org.junit.Assert.assertEquals;
 
 public class PicoTest {
-
     @Test
     public void test01UnPicoDeMaderaDeberiaInicializarConDurabilidad100(){
         Pico picoDeMadera = new Pico(new Madera());
         assertEquals(100.00, picoDeMadera.durabilidad(),0.0001);
     }
+
     @Test
     public void test02UnPicoDeMaderaDeberiaInicializarConFuerza2(){
         Pico picoDeMadera = new Pico(new Madera());
@@ -111,6 +113,30 @@ public class PicoTest {
         Pico pico = new Pico(new Metal());
         double durabilidadInicial = pico.durabilidad();
         pico.golpear(new Madera());
+        assertEquals(durabilidadInicial, pico.durabilidad(),0.0001);
+    }
+
+    @Test
+    public void test16UnPicoDeMetalGolpeaUnaPiedraYSuDurabilidadNoDeberiaDisminuir(){
+        Pico pico = new Pico(new Metal());
+        double durabilidadInicial = pico.durabilidad();
+        pico.golpear(new Piedra());
+        assertEquals(durabilidadInicial, pico.durabilidad(),0.0001);
+    }
+
+    @Test
+    public void test17UnPicoDeMetalGolpeaUnMetalYSuDurabilidadNoDeberiaDisminuir(){
+        Pico pico = new Pico(new Metal());
+        double durabilidadInicial = pico.durabilidad();
+        pico.golpear(new Madera());
+        assertEquals(durabilidadInicial, pico.durabilidad(),0.0001);
+    }
+
+    @Test
+    public void test18UnPicoDeMetalGolpeaUnDiamanteYSuDurabilidadNoDeberiaDisminuir(){
+        Pico pico = new Pico(new Metal());
+        double durabilidadInicial = pico.durabilidad();
+        pico.golpear(new Diamante());
         assertEquals(durabilidadInicial, pico.durabilidad(),0.0001);
     }
 }

@@ -10,7 +10,9 @@ public class Piedra extends MaterialDeConstruccion{
         return (new EstrategiaDeConstruccionPiedra());
     }
 
-    public boolean esUnaPiedra() {
-        return true;
+    @Override
+    public void daniar(Pico unPico, Metal unmetal) {
+        unmetal.serGolpeadaPor(unPico);
     }
+
 }

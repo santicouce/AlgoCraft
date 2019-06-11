@@ -10,7 +10,8 @@ public class Madera extends MaterialDeConstruccion{
         return (new EstrategiaDeConstruccionMadera());
     }
 
-    public boolean esUnaMadera() {
-        return true;
+    @Override
+    public void daniar(Pico unPico, Metal unmetal) {
+        //UN PICO DE MADERA NO PUEDE DANIAR METAL
     }
 }

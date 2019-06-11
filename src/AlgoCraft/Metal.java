@@ -11,8 +11,8 @@ public class Metal extends MaterialDeConstruccion{
         return (new EstrategiaDeConstruccionMetal());
     }
 
-    public boolean esUnMetal() {
-        return true;
+    @Override
+    public void daniar(Pico unPico, Metal unmetal) {
+        //UN PICO DE METAL NO PUEDE DANIAR UN PICO
     }
-
 }

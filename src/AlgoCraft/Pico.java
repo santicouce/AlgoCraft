@@ -33,7 +33,7 @@ public class Pico extends Herramienta {
 
     @Override
     public void daniar(Metal metal) {
-
+        material.daniar(this, metal);
     }
 
 }

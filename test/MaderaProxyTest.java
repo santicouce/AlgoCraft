@@ -65,5 +65,4 @@ public class MaderaProxyTest {
         madera.serGolpeadaPor(picoFino);
         assertEquals(durabilidadInicialMadera,madera.durabilidad());
     }
-
 }

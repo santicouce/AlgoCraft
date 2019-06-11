@@ -31,6 +31,6 @@ public class Hacha extends Herramienta {
 
     @Override
     public void daniar(Metal metal) {
-
+        //UN HACHA DE METAL NO PUEDE DANIAR METAL
     }
 }
