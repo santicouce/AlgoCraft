@@ -15,17 +15,22 @@ public class Hacha extends Herramienta {
     }
 
     @Override
-    public boolean esUnHacha() {
-        return true;
+    public void daniar(Madera madera) {
+        madera.serGolpeadaPor(this);
     }
 
     @Override
-    public boolean esUnPico() {
-        return false;
+    public void daniar(Diamante diamante) {
+        //UN HACHA NO DANIA DIAMANTE
     }
 
     @Override
-    public boolean esUnPicoFino() {
-        return false;
+    public void daniar(Piedra piedra) {
+        //UN HACHA NO DANIA PIEDRA
+    }
+
+    @Override
+    public void daniar(Metal metal) {
+
     }
 }
