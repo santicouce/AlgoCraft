@@ -1,3 +1,5 @@
+package AlgoCraft;
+
 import AlgoCraft.Juego;
 import org.junit.Test;
 
