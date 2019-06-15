@@ -1,4 +1,4 @@
-package AlgoCraft;
+package Algocraft;
 
 public class Juego {
     private Mapa mapa = new Mapa();
