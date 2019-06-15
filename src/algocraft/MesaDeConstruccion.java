@@ -2,8 +2,8 @@ package algocraft;
 
 public class MesaDeConstruccion {
 
-    static final int CANTIDAD_DE_COLUMNAS = 3;
-    static final int CANTIDAD_DE_FILAS = 3;
+    private static final int CANTIDAD_DE_COLUMNAS = 3;
+    private static final int CANTIDAD_DE_FILAS = 3;
     private Casillero tablero[][];
 
     public MesaDeConstruccion() {

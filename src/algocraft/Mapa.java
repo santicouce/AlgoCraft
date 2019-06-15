@@ -1,8 +1,8 @@
 package algocraft;
 
 public class Mapa {
-    static final int CANTIDAD_DE_COLUMNAS = 10;
-    static final int CANTIDAD_DE_FILAS = 10;
+    private static final int CANTIDAD_DE_COLUMNAS = 10;
+    private static final int CANTIDAD_DE_FILAS = 10;
     private Casillero tablero[][];
 
     public Mapa() {
