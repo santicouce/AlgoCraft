@@ -20,10 +20,11 @@ public class Madera extends MaterialDeConstruccion{
     public void daniar(PicoFino unPicoFino) {
         //UNA MADERA NO PUEDE DANIAR UN PICO FINO
     }
+    @Override
     public void inicializar(FortalezaHerramienta fuerzaHerramienta){
         fuerzaHerramienta.inicializate(this);
     }
-
+    @Override
     public void inicializar(AguanteHerramienta durabilidadHerramienta){durabilidadHerramienta.inicializate(this);}
 
 }

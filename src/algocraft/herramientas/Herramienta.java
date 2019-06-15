@@ -18,6 +18,7 @@ public abstract class Herramienta {
     }
     public int reducir(int unaDurabilidad){return 0;}
     public void daniar(Material unMaterial){}
-    public void desgastate(){}
+    public void desgastate(){
+    }
     public void rompete(){}
 }

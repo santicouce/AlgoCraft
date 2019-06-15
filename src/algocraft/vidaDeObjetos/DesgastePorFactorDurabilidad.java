@@ -7,6 +7,6 @@ public class DesgastePorFactorDurabilidad extends Desgaste {
     }
     @Override
     public double desgastarDada(double durabilidad, int fuerza)  {
-        return (durabilidad *factor);
+        return (durabilidad - (durabilidad *factor));
     }
 }
