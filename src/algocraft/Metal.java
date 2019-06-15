@@ -4,6 +4,7 @@ public class Metal extends MaterialDeConstruccion{
     public Metal ()
     {
         this.durabilidad =50;
+        this.id ='2'
     }
 
     @Override

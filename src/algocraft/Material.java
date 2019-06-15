@@ -3,11 +3,12 @@ package algocraft;
 public abstract class Material implements Observable {
 
     protected int durabilidad;
+    protected char id;
 
     public int durabilidad(){
         return this.durabilidad;
     }
-
+    public char id(){ return this.id; }
     public void serGolpeadaPor(Herramienta unaHerramienta){
         durabilidad = unaHerramienta.reducir(durabilidad);
     }
