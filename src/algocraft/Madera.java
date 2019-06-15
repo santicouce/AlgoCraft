@@ -3,6 +3,7 @@ package algocraft;
 public class Madera extends MaterialDeConstruccion{
     public Madera (){
         this.durabilidad = 10;
+        this.id = '1';
     }
 
     @Override
