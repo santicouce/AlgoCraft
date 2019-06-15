@@ -1,5 +1,7 @@
 package algocraft;
 
+import algocraft.construccionDeHerramientas.MesaDeConstruccion;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
 
 public class MesaDeConstruccionTest {

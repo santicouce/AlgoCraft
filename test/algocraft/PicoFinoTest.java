@@ -1,5 +1,9 @@
 package algocraft;
 
+import algocraft.herramientas.PicoFino;
+import algocraft.materiales.Diamante;
+import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

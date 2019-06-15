@@ -1,5 +1,6 @@
 package algocraft;
 
+import algocraft.materiales.Diamante;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

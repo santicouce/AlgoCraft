@@ -1,4 +1,7 @@
 package algocraft;
+import algocraft.errores.CasilleroOcupadoError;
+import algocraft.mapaDeJuego.Casillero;
+import algocraft.materiales.MaderaProxy;
 import org.junit.Test;
 
 public class CasilleroTest {

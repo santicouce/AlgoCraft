@@ -1,5 +1,11 @@
 package algocraft;
 
+import algocraft.herramientas.Hacha;
+import algocraft.herramientas.Pico;
+import algocraft.jugador.Inventario;
+import algocraft.materiales.Diamante;
+import algocraft.materiales.Madera;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
 
 import static junit.framework.TestCase.fail;

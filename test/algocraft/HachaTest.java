@@ -1,5 +1,10 @@
 package algocraft;
 
+import algocraft.herramientas.Hacha;
+import algocraft.materiales.Diamante;
+import algocraft.materiales.Madera;
+import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

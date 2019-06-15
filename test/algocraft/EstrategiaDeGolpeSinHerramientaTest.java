@@ -1,5 +1,10 @@
 package algocraft;
 
+import algocraft.errores.GolpeInvalidoError;
+import algocraft.errores.ImposibleDesequiparNingunaHerramientaError;
+import algocraft.herramientas.Hacha;
+import algocraft.jugador.Jugador;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

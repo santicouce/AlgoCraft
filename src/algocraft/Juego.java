@@ -1,5 +1,12 @@
 package algocraft;
 
+import algocraft.jugador.Jugador;
+import algocraft.mapaDeJuego.Mapa;
+import algocraft.materiales.Diamante;
+import algocraft.materiales.Madera;
+import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
+
 public class Juego {
     private Mapa mapa = new Mapa();
     private Jugador jugador = new Jugador();

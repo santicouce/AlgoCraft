@@ -1,5 +1,12 @@
 package algocraft;
 
+import algocraft.jugador.Jugador;
+import algocraft.movimientoDelJugador.DireccionAbajo;
+import algocraft.movimientoDelJugador.DireccionArriba;
+import algocraft.movimientoDelJugador.DireccionDerecha;
+import algocraft.movimientoDelJugador.DireccionIzquierda;
+import algocraft.mapaDeJuego.Mapa;
+import algocraft.materiales.MaderaProxy;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
