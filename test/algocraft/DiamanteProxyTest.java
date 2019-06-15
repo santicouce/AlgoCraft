@@ -14,7 +14,7 @@ public class DiamanteProxyTest {
     }
     @Test
     public void test02UnDiamanteEsGolpeadoConUnPicoFinoYSuDurailidadDeberiaReducirseEn20(){
-        PicoFino picoFino = new PicoFino(new Piedra());
+        PicoFino picoFino = new PicoFino(new Piedra(), new Metal());
         int durabilidadInicialDiamante = diamante.durabilidad();
         diamante.serGolpeadaPor(picoFino);
         assertEquals(durabilidadInicialDiamante-20,diamante.durabilidad());

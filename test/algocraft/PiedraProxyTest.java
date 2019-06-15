@@ -62,7 +62,7 @@ public class PiedraProxyTest {
     @Test
     public void test08UnaPiedraEsGolpeadaPorUnPicoFinoYSuDurabildiadNoDeberiaDisminuir(){
         PiedraProxy piedra = new PiedraProxy();
-        PicoFino picoFino = new PicoFino(new Piedra());
+        PicoFino picoFino = new PicoFino(new Piedra(), new Metal());
         int durabilidadInicialPiedra = piedra.durabilidad();
         piedra.serGolpeadaPor(picoFino);
         assertEquals(durabilidadInicialPiedra, piedra.durabilidad());

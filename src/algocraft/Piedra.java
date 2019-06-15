@@ -6,11 +6,6 @@ public class Piedra extends MaterialDeConstruccion{
     }
 
     @Override
-    public EstrategiaDeConstruccion estrategiaDeConstruccion() {
-        return (new EstrategiaDeConstruccionPiedra());
-    }
-
-    @Override
     public void daniar(Pico unPico, Metal unmetal) {
         unmetal.serGolpeadaPor(unPico);
     }
@@ -19,4 +14,11 @@ public class Piedra extends MaterialDeConstruccion{
     public void daniar(PicoFino unPicoFino) {
         //UNA PIEDRA NO PUEDE DANIAR UN PICO FINO
     }
+
+    @Override
+    public void inicializar(FortalezaHerramienta fuerzaHerramienta){
+        fuerzaHerramienta.inicializate(this);
+    }
+    @Override
+    public void inicializar(AguanteHerramienta durabilidadHerramienta){durabilidadHerramienta. inicializate(this);}
 }

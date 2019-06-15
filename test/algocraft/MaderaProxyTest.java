@@ -61,7 +61,7 @@ public class MaderaProxyTest {
     }
     @Test
     public void test05MaderaEsGolpeadaConUnPicoFinoYSuDurabilidadNoDeberiaCambiar(){
-        PicoFino picoFino = new PicoFino(new Piedra());
+        PicoFino picoFino = new PicoFino(new Piedra(), new Metal());
         int durabilidadInicialMadera = madera.durabilidad();
         madera.serGolpeadaPor(picoFino);
         assertEquals(durabilidadInicialMadera,madera.durabilidad());

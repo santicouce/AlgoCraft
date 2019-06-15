@@ -7,11 +7,6 @@ public class Metal extends MaterialDeConstruccion{
     }
 
     @Override
-    public EstrategiaDeConstruccion estrategiaDeConstruccion() {
-        return (new EstrategiaDeConstruccionMetal());
-    }
-
-    @Override
     public void daniar(Pico unPico, Metal unmetal) {
         //UN PICO DE METAL NO PUEDE DANIAR UN PICO
     }
@@ -19,5 +14,14 @@ public class Metal extends MaterialDeConstruccion{
     @Override
     public void daniar(PicoFino unPicoFino) {
         //UN METAL NO PUEDA DANIAR UN PICO FINO
+    }
+
+    @Override
+    public void inicializar(FortalezaHerramienta fuerzaHerramienta){
+        fuerzaHerramienta.inicializate(this);
+    }
+    @Override
+    public void inicializar(AguanteHerramienta durabilidadHerramienta){
+        durabilidadHerramienta.inicializate(this);
     }
 }

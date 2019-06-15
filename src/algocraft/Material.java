@@ -12,4 +12,8 @@ public abstract class Material implements Observable {
         durabilidad = unaHerramienta.reducir(durabilidad);
     }
     public abstract void daniar(PicoFino unPicoFino);
+
+    public void daniadoCon(FortalezaHerramienta fuerzaHerramienta){
+        durabilidad = fuerzaHerramienta.daniar(durabilidad);
+    }
 }

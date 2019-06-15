@@ -1,8 +1,8 @@
 package algocraft;
 
-public class DesgastePorFactor extends Desgaste{
+public class DesgastePorFactorFuerza extends Desgaste{
     private  double factor;
-    public DesgastePorFactor(double unFactor){
+    public DesgastePorFactorFuerza(double unFactor){
         this.factor = unFactor;
     }
     @Override

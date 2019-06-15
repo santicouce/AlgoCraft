@@ -46,7 +46,7 @@ public class MetalProxyTest {
     }
     @Test
     public void test07UnMetalEsGolpeadoPorUnPicoFinoYSuDurabilidadNoDeberiaCambiar(){
-        PicoFino picoFino = new PicoFino(new Metal());
+        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
         metalProxy.serGolpeadaPor(picoFino);
         assertEquals(durabilidadInicialMetal, metalProxy.durabilidad(), 0.00001);
     }

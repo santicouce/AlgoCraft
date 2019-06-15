@@ -2,24 +2,18 @@ package algocraft;
 
 public abstract class Herramienta {
 
-    protected MaterialDeConstruccion material;
-    protected double durabilidad;
-    protected int fuerza;
-    protected Desgaste desgaste;
-    protected Duracion duracion;
+    protected FortalezaHerramienta fortaleza;
+    protected AguanteHerramienta aguante;
 
-    public double durabilidad() {
-        return this.durabilidad;
+    public double durabilidad(){
+        return aguante.durabilidad();
     }
-    public int fuerza(){
-        return this.fuerza;
+    public void golpear (Material unMaterial){
+        unMaterial.daniadoCon(fortaleza);
+        aguante.desgastate(fortaleza);
     }
-    public abstract void golpear(Material material);
-    public void rompete(){durabilidad = 0;}
-    public int reducir(int durabilidadDeObjetoGolpeado){ return (durabilidadDeObjetoGolpeado - fuerza);}
-
-    public abstract void daniar(Madera madera);
-    public abstract void daniar(Diamante diamante);
-    public abstract void daniar(Piedra piedra);
-    public abstract void daniar(Metal metal);
+    public int reducir(int unaDurabilidad){return 0;}
+    public void daniar(Material unMaterial){}
+    public void desgastate(){}
+    public void rompete(){}
 }
