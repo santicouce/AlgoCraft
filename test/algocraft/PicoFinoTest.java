@@ -1,7 +1,9 @@
 package algocraft;
 
+import algocraft.errores.ConstruccionInvalidaError;
 import algocraft.herramientas.PicoFino;
 import algocraft.materiales.Diamante;
+import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import org.junit.Test;

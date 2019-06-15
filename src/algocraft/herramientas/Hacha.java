@@ -1,7 +1,7 @@
 package algocraft.herramientas;
 
-import algocraft.vidaDeObjetos.AguanteHacha;
-import algocraft.vidaDeObjetos.FortalezaHacha;
+import algocraft.vidadeobjetos.AguanteHacha;
+import algocraft.vidadeobjetos.FortalezaHacha;
 import algocraft.materiales.MaterialDeConstruccion;
 
 public class Hacha extends Herramienta {

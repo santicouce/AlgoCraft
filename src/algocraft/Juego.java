@@ -1,7 +1,7 @@
 package algocraft;
 
 import algocraft.jugador.Jugador;
-import algocraft.mapaDeJuego.Mapa;
+import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;

@@ -1,10 +1,10 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
-import algocraft.movimientoDelJugador.UbicacionJugador;
-import algocraft.vidaDeObjetos.EstrategiaDeGolpe;
-import algocraft.vidaDeObjetos.EstrategiaDeGolpeConHerramienta;
-import algocraft.movimientoDelJugador.Direccion;
+import algocraft.movimientodeljugador.UbicacionJugador;
+import algocraft.vidadeobjetos.EstrategiaDeGolpe;
+import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
+import algocraft.movimientodeljugador.Direccion;
 import algocraft.errores.MovimientoInvalidoError;
 import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Herramienta;

@@ -3,7 +3,7 @@ package algocraft;
 import algocraft.errores.CasilleroOcupadoError;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Jugador;
-import algocraft.mapaDeJuego.Mapa;
+import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.DiamanteProxy;
 import algocraft.materiales.MaderaProxy;
 import algocraft.materiales.MetalProxy;

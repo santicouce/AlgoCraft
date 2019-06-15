@@ -1,7 +1,7 @@
 package algocraft.herramientas;
 
-import algocraft.vidaDeObjetos.AguanteHerramienta;
-import algocraft.vidaDeObjetos.FortalezaHerramienta;
+import algocraft.vidadeobjetos.AguanteHerramienta;
+import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.materiales.Material;
 
 public abstract class Herramienta {

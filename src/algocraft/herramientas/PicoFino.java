@@ -1,7 +1,7 @@
 package algocraft.herramientas;
 
-import algocraft.vidaDeObjetos.AguantePicoFino;
-import algocraft.vidaDeObjetos.FortalezaPicoFino;
+import algocraft.vidadeobjetos.AguantePicoFino;
+import algocraft.vidadeobjetos.FortalezaPicoFino;
 import algocraft.materiales.MaterialDeConstruccion;
 
 public class PicoFino extends Herramienta {

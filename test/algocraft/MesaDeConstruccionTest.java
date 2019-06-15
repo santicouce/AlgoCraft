@@ -1,6 +1,6 @@
 package algocraft;
 
-import algocraft.construccionDeHerramientas.MesaDeConstruccion;
+import algocraft.construcciondeherramientas.MesaDeConstruccion;
 import algocraft.materiales.Piedra;
 import org.junit.Test;
 

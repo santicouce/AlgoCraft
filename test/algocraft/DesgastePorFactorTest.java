@@ -1,6 +1,6 @@
 package algocraft;
 
-import algocraft.vidaDeObjetos.DesgastePorFactorFuerza;
+import algocraft.vidadeobjetos.DesgastePorFactorFuerza;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

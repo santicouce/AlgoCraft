@@ -1,6 +1,6 @@
 package algocraft.materiales;
 
-import algocraft.vidaDeObjetos.FortalezaHerramienta;
+import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
 import algocraft.herramientas.Herramienta;
 import algocraft.herramientas.PicoFino;
