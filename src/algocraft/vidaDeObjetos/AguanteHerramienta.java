@@ -5,8 +5,8 @@ import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 
 public abstract class AguanteHerramienta {
-    double durabilidad;
-    Desgaste desgaste;
+    private double durabilidad;
+    private Desgaste desgaste;
 
     public abstract void inicializate(Madera unaMadera);
     public abstract void inicializate(Piedra unaPiedra);
