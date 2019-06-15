@@ -8,13 +8,13 @@ public class JugadorTest {
     private Jugador jugador = new Jugador();
     Mapa mapa = new Mapa();
 
-    @Test
-    public void test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera(){
-        Madera madera = new Madera();
-        int durabilidadInicialMadera = madera.durabilidad();
-        jugador.golpear(madera);
-        assertEquals(durabilidadInicialMadera - 2, madera.durabilidad());
-    }
+    //@Test
+    //public void test01JugadorRecienCreadoCuentaSoloConUnHachaDeMadera(){
+      //  Madera madera = new Madera();
+       // int durabilidadInicialMadera = madera.durabilidad();
+        //jugador.golpear(madera);
+        //assertEquals(durabilidadInicialMadera - 2, madera.durabilidad());
+    //}
     @Test
     public void test02UnJugadorSeIntentaMoverALaIzquieraAUnCasilleroOcupadoPorUnMaterialYNoDeberiaCambiarSuPosicion(){
         mapa.aniadirElementoEnPosicion(new MaderaProxy(),0,0);
