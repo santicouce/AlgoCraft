@@ -5,7 +5,7 @@ import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 
 public abstract class FortalezaHerramienta {
-    private int fuerza;
+    protected int fuerza;
     public abstract void inicializate(Madera unaMadera);
     public abstract void inicializate(Piedra unaPiedra);
     public abstract void inicializate(Metal unMetal);
