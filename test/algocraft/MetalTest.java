@@ -4,11 +4,7 @@ import algocraft.herramientas.Pico;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import org.junit.Test;
-import org.junit.runner.notification.RunListener;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
-
 
 public class MetalTest {
     @Test
