@@ -42,11 +42,12 @@ public class EstrategiaDeGolpeConHerramientaTest {
             jugador.golpear(piedra);
             jugador.golpear(piedra);
         } catch (Exception GolpeInvalidoError){
-            fail("No se lanzo GolpeInvalidoError");
+            fail("Falla en test03 para equipar herramienta y golpear material");
         }
     }
     @Test
     public void test04EquipoyDesequipoUnaHerramientaLaEstrategiaDeGolpeDeberiaContinuarSiendoLaMisma() {
+        try {
         Jugador jugador = new Jugador();
         Hacha hacha = new Hacha(new Piedra());
         Piedra piedra = new Piedra();
@@ -56,6 +57,9 @@ public class EstrategiaDeGolpeConHerramientaTest {
         jugador.golpear(piedra);
         jugador.golpear(piedra);
         jugador.golpear(piedra);
+        } catch (Exception e){
+            fail("Fallo la estrategia de golpe");
+        }
     }
 
 }
