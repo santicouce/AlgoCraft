@@ -1,8 +1,8 @@
 package algocraft.herramientas;
 
+import algocraft.materiales.*;
 import algocraft.vidadeobjetos.AguantePicoFino;
 import algocraft.vidadeobjetos.FortalezaPicoFino;
-import algocraft.materiales.MaterialDeConstruccion;
 
 public class PicoFino extends Herramienta {
     public PicoFino(MaterialDeConstruccion unMaterialDeConstruccion, MaterialDeConstruccion otroMaterialdeConstruccion){
@@ -10,5 +10,10 @@ public class PicoFino extends Herramienta {
         aguante = new AguantePicoFino();
         unMaterialDeConstruccion.inicializar(fortaleza);
         otroMaterialdeConstruccion.inicializar(aguante);
+    }
+    @Override
+    public void golpear (Material unMaterial){
+        unMaterial.golpeadoCon(fortaleza);
+        unMaterial.impactadoCon(this);
     }
 }
