@@ -1,19 +1,24 @@
 package algocraft;
 
+import algocraft.herramientas.Hacha;
+import algocraft.herramientas.Pico;
+import algocraft.herramientas.PicoFino;
+import algocraft.materiales.Madera;
+import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AlgoCraftTest {
 
-    Madera madera = new Madera();
-    Hacha hachaDeMadera = new Hacha(madera);
-    Pico picoDeMadera = new Pico(madera);
-    Metal metal = new Metal();
-    Hacha hachaDeMetal = new Hacha(metal);
-    Pico picoDeMetal = new Pico(metal);
-    PicoFino picoFinoDeMetal = new PicoFino(metal);
-    Piedra piedra = new Piedra();
-    PicoFino picoFinoDePiedra = new PicoFino(piedra);
+    private Madera madera = new Madera();
+    private Hacha hachaDeMadera = new Hacha(madera);
+    private Pico picoDeMadera = new Pico(madera);
+    private Metal metal = new Metal();
+    private Hacha hachaDeMetal = new Hacha(metal);
+    private Pico picoDeMetal = new Pico(metal);
+    private Piedra piedra = new Piedra();
+    private PicoFino picoFino = new PicoFino(metal, piedra);
 
     @Test
     public void test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente() {
@@ -56,25 +61,15 @@ public class AlgoCraftTest {
         int durabilidadPico = 1000;
         int fuerzaPico = 20;
 
-        assertEquals(durabilidadPico, picoFinoDeMetal.durabilidad(),0.0001);
-        assertEquals(fuerzaPico, picoFinoDeMetal.fuerza());
+        assertEquals(durabilidadPico, picoFino.durabilidad(),0.0001);
+        assertEquals(fuerzaPico, picoFino.fuerza());
     }
 
     @Test
-    public void test06PicoFinoDePiedraConDurabilidadYFuerzaCorrespondiente() {
-        int durabilidadPico = 1000;
-        int fuerzaPico = 20;
-
-        assertEquals(durabilidadPico, picoFinoDePiedra.durabilidad(),0.0001);
-        assertEquals(fuerzaPico, picoFinoDePiedra.fuerza());
-    }
-
-    @Test
-    public void test07HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene() {
+    public void test06HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene() {
         int durabilidadHacha = 100;
         int fuerzaHacha = 2;
         hachaDeMadera.golpear(madera);
-
         assertEquals(durabilidadHacha-2, hachaDeMadera.durabilidad(),0.0001);
         assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
     }
