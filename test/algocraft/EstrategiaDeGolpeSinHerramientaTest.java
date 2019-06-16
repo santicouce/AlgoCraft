@@ -7,7 +7,7 @@ import algocraft.jugador.Jugador;
 import algocraft.materiales.Piedra;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.TestCase.fail;
 
 public class EstrategiaDeGolpeSinHerramientaTest {
 
@@ -22,22 +22,28 @@ public class EstrategiaDeGolpeSinHerramientaTest {
 
     @Test(expected = ImposibleDesequiparNingunaHerramientaError.class)
     public void test02DesequiparUnaHerramientaNoEsPosible() {
+
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.desequiparHerramienta();
+
     }
 
     @Test
     public void test03LuegoDeEquiparUnaHerramientaLaEstrategiaDeGolpeDeberiaCambiarAEstrategiaDeGolpeConHerramienta() {
-        Jugador jugador = new Jugador();
-        jugador.desequiparHerramienta();
+        try {
+            Jugador jugador = new Jugador();
+            jugador.desequiparHerramienta();
 
-        Hacha hacha = new Hacha(new Piedra());
-        Piedra piedra = new Piedra();
+            Hacha hacha = new Hacha(new Piedra());
+            Piedra piedra = new Piedra();
 
-        jugador.equiparHerramienta(hacha);
-        jugador.golpear(piedra);
-        jugador.golpear(piedra);
+            jugador.equiparHerramienta(hacha);
+            jugador.golpear(piedra);
+            jugador.golpear(piedra);
+        } catch (Exception e){
+            fail("Fallo la estrategia de golpe");
+        }
     }
 
 }

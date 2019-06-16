@@ -5,7 +5,6 @@ import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
 import algocraft.movimientodeljugador.Direccion;
-import algocraft.errores.MovimientoInvalidoError;
 import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Herramienta;
 import algocraft.materiales.Madera;
