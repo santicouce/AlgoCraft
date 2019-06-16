@@ -1,17 +1,27 @@
 package algocraft;
 
+import algocraft.herramientas.Pico;
 import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
 import org.junit.Test;
+import org.junit.runner.notification.RunListener;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 
 public class MetalTest {
-
-    Metal metal = new Metal();
-
     @Test
-    public void test01UnaMetalDeberiaInicializarConDurabilidad50(){
+    public void test01UnMetalDeberiaInicializarConDurabilidad50(){
+        Metal metal = new Metal();
         assertEquals(50,metal.durabilidad());
+    }
+    @Test
+    public void test02UnMetalEsGolpeadoPorUnPicoDePiedraYSuDurabilidadDeberiaReducirseEn5(){
+        Metal metal = new Metal();
+        int durabilidadInicialMetal = metal.durabilidad();
+        Pico picoDePiedra = new Pico(new Piedra());
+        picoDePiedra.golpear(metal);
+        assertEquals(durabilidadInicialMetal-5,metal.durabilidad());
     }
 }

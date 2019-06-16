@@ -14,12 +14,10 @@ public abstract class Material implements Observable {
         return this.durabilidad;
     }
     public char id(){ return this.id; }
-    public void serGolpeadaPor(Herramienta unaHerramienta){
-        durabilidad = unaHerramienta.reducir(durabilidad);
-    }
-    public abstract void daniar(PicoFino unPicoFino);
 
     public void daniadoCon(FortalezaHerramienta fuerzaHerramienta){
         durabilidad = fuerzaHerramienta.daniar(durabilidad);
     }
+    public abstract void golpeadoCon(FortalezaHerramienta fortalezaHerramienta);
+    public abstract void impactadoCon(PicoFino picoFino);
 }

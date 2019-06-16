@@ -16,10 +16,14 @@ public class Metal extends MaterialDeConstruccion{
     public void daniar(Pico unPico, Metal unmetal) {
         //UN PICO DE METAL NO PUEDE DANIAR UN PICO
     }
+    @Override
+    public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {
+        fortalezaHerramienta.golpear(this);
+    }
 
     @Override
-    public void daniar(PicoFino unPicoFino) {
-        //UN METAL NO PUEDA DANIAR UN PICO FINO
+    public void impactadoCon(PicoFino picoFino) {
+        //UN PICO FINO NO SE DESGASTA AL IMPAZTAR CON METAL
     }
 
     @Override

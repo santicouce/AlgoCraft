@@ -13,12 +13,17 @@ public class Piedra extends MaterialDeConstruccion{
 
     @Override
     public void daniar(Pico unPico, Metal unmetal) {
-        unmetal.serGolpeadaPor(unPico);
+
     }
 
     @Override
-    public void daniar(PicoFino unPicoFino) {
-        //UNA PIEDRA NO PUEDE DANIAR UN PICO FINO
+    public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {
+        fortalezaHerramienta.golpear(this);
+    }
+
+    @Override
+    public void impactadoCon(PicoFino picoFino) {
+        //UN PICO FINO NO SE DESGASTA AL IMPACTAR CON PIEDRA
     }
 
     @Override

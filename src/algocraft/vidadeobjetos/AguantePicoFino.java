@@ -1,6 +1,7 @@
 package algocraft.vidadeobjetos;
 
 import algocraft.errores.ConstruccionInvalidaError;
+import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;

@@ -17,9 +17,15 @@ public class Madera extends MaterialDeConstruccion{
     }
 
     @Override
-    public void daniar(PicoFino unPicoFino) {
-        //UNA MADERA NO PUEDE DANIAR UN PICO FINO
+    public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {
+        fortalezaHerramienta.golpear(this);
     }
+
+    @Override
+    public void impactadoCon(PicoFino picoFino) {
+        //UN PICO FINO NO SE DESGASTA AL IMPACTAR CON MADERA
+    }
+
     @Override
     public void inicializar(FortalezaHerramienta fuerzaHerramienta){
         fuerzaHerramienta.inicializate(this);

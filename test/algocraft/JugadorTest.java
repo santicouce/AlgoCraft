@@ -1,12 +1,9 @@
 package algocraft;
 
 import algocraft.jugador.Jugador;
-import algocraft.movimientodeljugador.DireccionAbajo;
-import algocraft.movimientodeljugador.DireccionArriba;
-import algocraft.movimientodeljugador.DireccionDerecha;
-import algocraft.movimientodeljugador.DireccionIzquierda;
+import algocraft.movimientodeljugador.*;
+import algocraft.materiales.Madera;
 import algocraft.mapadejuego.Mapa;
-import algocraft.materiales.MaderaProxy;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -24,7 +21,7 @@ public class JugadorTest {
     //}
     @Test
     public void test02UnJugadorSeIntentaMoverALaIzquieraAUnCasilleroOcupadoPorUnMaterialYNoDeberiaCambiarSuPosicion(){
-        mapa.aniadirElementoEnPosicion(new MaderaProxy(),0,0);
+        mapa.aniadirElementoEnPosicion(new Madera(),0,0);
         mapa.aniadirJugadorAlMapa(jugador,1,0);
         jugador.moverA(new DireccionIzquierda(mapa));
     }
@@ -42,7 +39,7 @@ public class JugadorTest {
     }
     @Test
     public void test05UnJugadorIntentaMoverseALaDerechaAUnCasilleroOcupadoPorUnMaterialYNoDeberiaCambiarSuPosicion(){
-        mapa.aniadirElementoEnPosicion(new MaderaProxy(),1,0);
+        mapa.aniadirElementoEnPosicion(new Madera(),1,0);
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionDerecha(mapa));
     }
@@ -58,7 +55,7 @@ public class JugadorTest {
     }
     @Test
     public void test08UnJugadorIntentaMoverseArribaAUnCasillerOcupadoYSuPosicionNoDeberiaCambiar(){
-        mapa.aniadirElementoEnPosicion(new MaderaProxy(),0 ,0);
+        mapa.aniadirElementoEnPosicion(new Madera(),0 ,0);
         mapa.aniadirJugadorAlMapa(jugador,0,1);
         jugador.moverA(new DireccionArriba(mapa));
     }
@@ -74,7 +71,7 @@ public class JugadorTest {
     }
     @Test
     public void test11UnJugadorIntentaMoverseAbajoAUnCasilleroOcupadoYSuPosicionNoDeberiaCambiar(){
-        mapa.aniadirElementoEnPosicion(new MaderaProxy(),0 ,1);
+        mapa.aniadirElementoEnPosicion(new Madera(),0 ,1);
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionAbajo(mapa));
     }
@@ -88,6 +85,4 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador, 0,0);
         jugador.moverA(new DireccionAbajo(mapa));
     }
-
-
 }
