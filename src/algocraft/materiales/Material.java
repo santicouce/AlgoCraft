@@ -2,7 +2,6 @@ package algocraft.materiales;
 
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
-import algocraft.herramientas.Herramienta;
 import algocraft.herramientas.PicoFino;
 
 public abstract class Material implements Observable {

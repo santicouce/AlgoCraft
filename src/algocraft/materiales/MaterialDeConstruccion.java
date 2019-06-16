@@ -2,7 +2,6 @@ package algocraft.materiales;
 
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
-import algocraft.herramientas.Pico;
 import algocraft.vidadeobjetos.FortalezaPico;
 
 public  abstract class MaterialDeConstruccion extends Material {
