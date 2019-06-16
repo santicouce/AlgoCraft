@@ -10,16 +10,19 @@ public class FortalezaHacha extends FortalezaHerramienta {
     @Override
     public void inicializate(Madera unaMadera){
         fuerza = 2;
+        material = unaMadera;
     }
 
     @Override
     public void inicializate(Piedra unaPiedra){
         fuerza = 5;
+        material = unaPiedra;
     }
 
     @Override
     public void inicializate(Metal unMetal){
         fuerza = 10;
+        material = unMetal;
     }
 
     @Override

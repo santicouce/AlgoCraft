@@ -4,6 +4,7 @@ import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.Pico;
 import algocraft.herramientas.PicoFino;
+import algocraft.vidadeobjetos.FortalezaPico;
 
 public class Metal extends MaterialDeConstruccion{
     public Metal ()
@@ -12,10 +13,6 @@ public class Metal extends MaterialDeConstruccion{
         this.id ='2';
     }
 
-    @Override
-    public void daniar(Pico unPico, Metal unmetal) {
-        //UN PICO DE METAL NO PUEDE DANIAR UN PICO
-    }
     @Override
     public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {
         fortalezaHerramienta.golpear(this);
@@ -33,5 +30,10 @@ public class Metal extends MaterialDeConstruccion{
     @Override
     public void inicializar(AguanteHerramienta durabilidadHerramienta){
         durabilidadHerramienta.inicializate(this);
+    }
+
+    @Override
+    public void daniarCon(Metal unMetal, FortalezaPico fortalezaPico) {
+        //UN PICO DE METAL NO PUEDE DANIAR METAL
     }
 }

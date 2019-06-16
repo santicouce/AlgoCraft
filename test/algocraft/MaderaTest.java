@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class MaderaTest {
 
-    Madera madera = new Madera();
+    private Madera madera = new Madera();
 
     @Test
     public void test01UnaMaderaDeberiaInicializarConDurabilidad10(){

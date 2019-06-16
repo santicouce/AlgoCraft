@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 public class DiamanteTest {
 
-    Diamante diamante = new Diamante();
+    private Diamante diamante = new Diamante();
 
     @Test
     public void test01UnDiamanteDeberiaInicializarConDurabilidad100(){

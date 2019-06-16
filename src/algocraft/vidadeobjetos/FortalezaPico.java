@@ -8,12 +8,15 @@ import algocraft.materiales.Piedra;
 public class FortalezaPico extends FortalezaHerramienta{
     public void inicializate(Madera unaMadera){
         fuerza = 2;
+        material = unaMadera;
     }
     public void inicializate(Piedra unaPiedra){
         fuerza = 4;
+        material = unaPiedra;
     }
-    public void inicializate(Metal unaMetal){
+    public void inicializate(Metal unMetal){
         fuerza = 12;
+        material = unMetal;
     }
 
     @Override
@@ -28,7 +31,7 @@ public class FortalezaPico extends FortalezaHerramienta{
 
     @Override
     public void golpear(Metal unMetal) {
-        //???????
+        material.daniarCon(unMetal, this);
     }
 
     @Override

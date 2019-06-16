@@ -4,16 +4,12 @@ import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.Pico;
 import algocraft.herramientas.PicoFino;
+import algocraft.vidadeobjetos.FortalezaPico;
 
 public class Madera extends MaterialDeConstruccion{
     public Madera (){
         this.durabilidad = 10;
         this.id ='1';
-    }
-
-    @Override
-    public void daniar(Pico unPico, Metal unmetal) {
-        //UN PICO DE MADERA NO PUEDE DANIAR METAL
     }
 
     @Override
@@ -33,4 +29,8 @@ public class Madera extends MaterialDeConstruccion{
     @Override
     public void inicializar(AguanteHerramienta durabilidadHerramienta){durabilidadHerramienta.inicializate(this);}
 
+    @Override
+    public void daniarCon(Metal unMetal, FortalezaPico fortalezaPico) {
+        //UN PICO DE MADERA NO PUEDE DANIAR METAL
+    }
 }
