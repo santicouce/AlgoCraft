@@ -12,6 +12,7 @@ public abstract class Herramienta {
     public double durabilidad(){
         return aguante.durabilidad();
     }
+    public int fuerza(){return fortaleza.fuerza();}
 
     public void golpear (Material unMaterial){
         unMaterial.golpeadoCon(fortaleza);
