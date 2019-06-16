@@ -51,6 +51,7 @@ public class EstrategiaDeGolpeConHerramientaTest {
         Piedra piedra = new Piedra();
         jugador.equiparHerramienta(hacha);
         jugador.desequiparHerramienta();
+        jugador.equiparHerramienta(hacha);
         jugador.golpear(piedra);
         jugador.golpear(piedra);
         jugador.golpear(piedra);
