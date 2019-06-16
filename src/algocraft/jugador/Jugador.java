@@ -39,9 +39,7 @@ public class Jugador implements Observable {
     }
 
     public void moverA(Direccion unaDireccion) {
-        try{
-            ubicacion.moverJugadorA(this, unaDireccion);
-        }catch (MovimientoInvalidoError e){}
+        ubicacion.moverJugadorA(this, unaDireccion);
     }
 
     public void equiparHerramienta(Herramienta unaHerramienta){

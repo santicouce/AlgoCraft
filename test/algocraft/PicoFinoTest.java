@@ -53,4 +53,21 @@ public class PicoFinoTest {
         picoFino.golpear(madera);
         assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
     }
+    @Test
+    public void test08UnPicoFinoGolpeaUnaPiedraYSuDurabilidadNoDeberiaReducirse(){
+        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
+        Piedra piedra = new Piedra();
+        double durabilidadInicialPicoFino = picoFino.durabilidad();
+        picoFino.golpear(piedra);
+        assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
+    }
+    @Test
+    public void test09UnPicoFinoGolpeaUnaMetalYSuDurabilidadNoDeberiaReducirse(){
+        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
+        Metal metal = new Metal();
+        double durabilidadInicialPicoFino = picoFino.durabilidad();
+        picoFino.golpear(metal);
+        assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
+    }
+
 }

@@ -2,7 +2,7 @@ package algocraft.herramientas;
 
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
-import algocraft.materiales.Material;
+import algocraft.materiales.*;
 
 public abstract class Herramienta {
 
@@ -12,13 +12,14 @@ public abstract class Herramienta {
     public double durabilidad(){
         return aguante.durabilidad();
     }
+    public int fuerza(){return fortaleza.fuerza();}
+
     public void golpear (Material unMaterial){
-        unMaterial.daniadoCon(fortaleza);
-        aguante.desgastate(fortaleza);
+        unMaterial.golpeadoCon(fortaleza);
+        this.desgastate();
     }
-    public int reducir(int unaDurabilidad){return 0;}
-    public void daniar(Material unMaterial){}
     public void desgastate(){
+        aguante.desgastate(fortaleza);
     }
     public void rompete(){}
 }

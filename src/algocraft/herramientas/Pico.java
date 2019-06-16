@@ -1,8 +1,8 @@
 package algocraft.herramientas;
 
+import algocraft.materiales.*;
 import algocraft.vidadeobjetos.AguantePico;
 import algocraft.vidadeobjetos.FortalezaPico;
-import algocraft.materiales.MaterialDeConstruccion;
 
 public class Pico extends Herramienta {
     public Pico(MaterialDeConstruccion unMaterialDeConstruccion) {
