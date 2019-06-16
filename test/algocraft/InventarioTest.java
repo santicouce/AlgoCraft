@@ -42,6 +42,7 @@ public class InventarioTest {
 
     @Test
     public void test03InventarioPermiteAniadirYEliminarHerramientas() {
+        
         try {
             Inventario inventario = new Inventario();
             inventario.aniadirHerramienta(new Hacha(new Piedra()));
