@@ -1,5 +1,6 @@
 package algocraft.materiales;
 
+import algocraft.construcciondeherramientas.IdMadera;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.PicoFino;
@@ -8,7 +9,7 @@ import algocraft.vidadeobjetos.FortalezaPico;
 public class Madera extends MaterialDeConstruccion{
     public Madera (){
         this.durabilidad = 10;
-        this.id ='1';
+        this.id = new IdMadera();
     }
 
     @Override

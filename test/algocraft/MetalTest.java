@@ -71,4 +71,9 @@ public class MetalTest {
         picoFino.golpear(metal);
         assertEquals(durabilidadInicialMetal,metal.durabilidad());
     }
+    @Test
+    public void test09UnMetalSeInicializaConNumeroDeId2(){
+        Metal metal = new Metal();
+        assertEquals(metal.id(), 2);
+    }
 }

@@ -1,5 +1,6 @@
 package algocraft.herramientas;
 
+import algocraft.construcciondeherramientas.Id;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.materiales.*;
@@ -8,6 +9,7 @@ public abstract class Herramienta {
 
     protected FortalezaHerramienta fortaleza;
     protected AguanteHerramienta aguante;
+    protected Id id;
 
     public double durabilidad(){
         return aguante.durabilidad();
@@ -22,4 +24,5 @@ public abstract class Herramienta {
         aguante.desgastate(fortaleza);
     }
     public void rompete(){}
+    public int Id(){ return this.id.getNumeroDeId();}
 }

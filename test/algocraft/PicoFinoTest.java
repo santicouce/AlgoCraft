@@ -69,5 +69,9 @@ public class PicoFinoTest {
         picoFino.golpear(metal);
         assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
     }
-
+    @Test
+    public void test18UnPicoFinoTieneId222310010(){
+        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
+        assertEquals(222310010, picoFino.Id());
+    }
 }

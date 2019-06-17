@@ -72,4 +72,9 @@ public class PiedraTest {
         picoFino.golpear(piedra);
         assertEquals(durabilidadInicialDePiedra, piedra.durabilidad());
     }
+    @Test
+    public void test09UnaPiedraSeInicializaConNumeroDeId3(){
+        Piedra piedra = new Piedra();
+        assertEquals(piedra.id(), 3);
+    }
 }

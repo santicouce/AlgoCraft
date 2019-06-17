@@ -158,4 +158,10 @@ public class HachaTest {
         hachaDeMetal.golpear(diamante);
         assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
     }
+    @Test
+    public void test18UnHachaDeMaderaTieneId110110010(){
+        Hacha hachaDeMadera = new Hacha(new Madera());
+        assertEquals(110110010, hachaDeMadera.Id());
+    }
+
 }

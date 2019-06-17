@@ -1,5 +1,6 @@
 package algocraft.materiales;
 
+import algocraft.construcciondeherramientas.Id;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
 import algocraft.herramientas.PicoFino;
@@ -7,12 +8,12 @@ import algocraft.herramientas.PicoFino;
 public abstract class Material implements Observable {
 
     protected int durabilidad;
-    protected char id;
+    public Id id; //agregué esto
 
     public int durabilidad(){
         return this.durabilidad;
     }
-    public char id(){ return this.id; }
+    public int id(){ return this.id.getNumeroDeId(); } //agregué esto
 
     public void daniadoCon(FortalezaHerramienta fuerzaHerramienta){
         durabilidad = fuerzaHerramienta.daniar(durabilidad);

@@ -1,5 +1,7 @@
 package algocraft.materiales;
 
+import algocraft.construcciondeherramientas.Id;
+import algocraft.construcciondeherramientas.IdPiedra;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.PicoFino;
@@ -8,7 +10,7 @@ import algocraft.vidadeobjetos.FortalezaPico;
 public class Piedra extends MaterialDeConstruccion{
     public Piedra (){
         this.durabilidad =30;
-        this.id ='3';
+        this.id = new IdPiedra();
     }
     @Override
     public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {

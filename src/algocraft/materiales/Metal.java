@@ -1,5 +1,7 @@
 package algocraft.materiales;
 
+import algocraft.construcciondeherramientas.Id;
+import algocraft.construcciondeherramientas.IdMetal;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.PicoFino;
@@ -9,7 +11,7 @@ public class Metal extends MaterialDeConstruccion{
     public Metal ()
     {
         this.durabilidad =50;
-        this.id ='2';
+        this.id = new IdMetal();
     }
 
     @Override
