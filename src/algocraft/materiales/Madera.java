@@ -20,7 +20,6 @@ public class Madera extends MaterialDeConstruccion{
     public void impactadoCon(PicoFino picoFino) {
         //UN PICO FINO NO SE DESGASTA AL IMPACTAR CON MADERA
     }
-
     @Override
     public void inicializar(FortalezaHerramienta fuerzaHerramienta){
         fuerzaHerramienta.inicializate(this);
