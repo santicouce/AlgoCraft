@@ -1,5 +1,4 @@
 package algocraft;
-//hola
 import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.ImposibleDesequiparNingunaHerramientaError;
 import algocraft.herramientas.Hacha;
