@@ -71,12 +71,7 @@ public class MaderaTest {
     }
     @Test
     public void test08UnaMaderaSeInicializaConNumeroDeId1(){
-        assertEquals(madera.id(), 1);
+        assertEquals(madera.getId(), "1");
     }
-    @Test
-    public void test01LosIdsDeDosMaterialesIgualesEsElMismo(){
-        Madera madera1 = new Madera();
-        Madera madera2 = new Madera();
-        assertEquals(madera1.id(),(madera2.id()));
-    }
+
 }

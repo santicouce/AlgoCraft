@@ -74,6 +74,6 @@ public class MetalTest {
     @Test
     public void test09UnMetalSeInicializaConNumeroDeId2(){
         Metal metal = new Metal();
-        assertEquals(metal.id(), 2);
+        assertEquals(metal.getId(), "3");
     }
 }

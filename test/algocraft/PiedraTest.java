@@ -75,6 +75,6 @@ public class PiedraTest {
     @Test
     public void test09UnaPiedraSeInicializaConNumeroDeId3(){
         Piedra piedra = new Piedra();
-        assertEquals(piedra.id(), 3);
+        assertEquals(piedra.getId(), "2");
     }
 }

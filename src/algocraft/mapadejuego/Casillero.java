@@ -20,6 +20,8 @@ public class Casillero {
         colocable = null;
         estado = new CasilleroLibre();
     }
-
+    public String getId(){
+        return colocable.getId();
+    }
 }
  

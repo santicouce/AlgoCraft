@@ -71,6 +71,6 @@ public class DiamanteTest {
     }
     @Test
     public void test07UnDiamanteSeInicializaConId4(){
-        assertEquals(4, diamante.id());
+        assertEquals("4", diamante.getId());
     }
 }
