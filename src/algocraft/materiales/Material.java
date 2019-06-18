@@ -4,7 +4,7 @@ import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
 import algocraft.herramientas.PicoFino;
 
-public abstract class Material implements Observable {
+public abstract class Material extends Observable {
 
     protected int durabilidad;
     protected char id;

@@ -10,6 +10,7 @@ public class Metal extends MaterialDeConstruccion{
     {
         this.durabilidad =50;
         this.id ='2';
+        this.nombre = "metal";
     }
 
     @Override

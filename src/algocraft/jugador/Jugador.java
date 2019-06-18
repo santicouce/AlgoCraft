@@ -10,7 +10,7 @@ import algocraft.herramientas.Herramienta;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
 
-public class Jugador implements Observable {
+public class Jugador extends Observable {
 
     private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
@@ -19,6 +19,7 @@ public class Jugador implements Observable {
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
+        nombre = "steve";
     }
 
     public void golpear(Material unMaterial){

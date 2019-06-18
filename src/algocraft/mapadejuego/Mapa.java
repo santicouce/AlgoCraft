@@ -55,4 +55,8 @@ public class Mapa {
     public void eliminarElementoEnPosicion(int columna, int fila) {
         tablero[columna][fila].eliminarElemento();
     }
+
+    public String darNombreDeElementoEn(int columna, int fila){
+        return (tablero[columna][fila].darNombre());
+    }
 }

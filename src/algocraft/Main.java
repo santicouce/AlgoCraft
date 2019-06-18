@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application{
 
+    Juego algoCraft = new Juego();
     public static void main(String[] args) {
         launch(args);
     }
@@ -18,7 +19,7 @@ public class Main extends Application{
 
         stage.setTitle("AlgoCraft");
 
-        ContenedorJuego contenedorJuego = new ContenedorJuego(stage);
+        ContenedorJuego contenedorJuego = new ContenedorJuego(stage, algoCraft);
         Scene escenaJuego = new Scene(contenedorJuego, 640, 480);
 
         ContenedorBienvenida contenedorBienvenidos = new ContenedorBienvenida(stage, escenaJuego);

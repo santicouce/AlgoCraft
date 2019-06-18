@@ -9,6 +9,7 @@ public class Piedra extends MaterialDeConstruccion{
     public Piedra (){
         this.durabilidad =30;
         this.id ='3';
+        this.nombre = "piedra";
     }
     @Override
     public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {

@@ -17,14 +17,18 @@ public class Juego {
         Metal metal = new Metal();
         Diamante diamante = new Diamante();
 
-        mapa.aniadirElementoEnPosicion(madera , 2,2);
+        mapa.aniadirElementoEnPosicion(madera , 0,0);
         mapa.aniadirElementoEnPosicion(madera , 2,3);
         mapa.aniadirElementoEnPosicion(diamante , 3,2);
         mapa.aniadirElementoEnPosicion(metal , 3,3);
         mapa.aniadirElementoEnPosicion(piedra , 5,2);
         mapa.aniadirElementoEnPosicion(madera , 7,3);
         mapa.aniadirElementoEnPosicion(metal , 4,1);
-
+        mapa.aniadirElementoEnPosicion(jugador,5,5);
         jugador.aniadirJugadorAlMapa(5,5);
+    }
+
+    public String darNombre(int columna, int fila){
+        return mapa.darNombreDeElementoEn(columna, fila);
     }
 }
