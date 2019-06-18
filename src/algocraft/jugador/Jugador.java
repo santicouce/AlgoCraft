@@ -4,6 +4,7 @@ import algocraft.Observable;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
 import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.herramientas.Pico;
+import algocraft.herramientas.PicoFino;
 import algocraft.materiales.*;
 import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
@@ -83,6 +84,15 @@ public class Jugador implements Observable {
             agregarHerramientaAlInventario(new Pico(unMaterial));
         }
     }
+
+    public void fabricarPicoFino() {
+        if (mesaDeConstruccion.crearUnPicoFino()==false){
+            throw new ImposibleCrearHerramientaError();
+        }else{
+            agregarHerramientaAlInventario(new PicoFino(new Metal(), new Piedra()));
+        }
+    }
+
 
     public void agregarMaderaAlInventario(Madera madera) {
         inventario.aniadirMadera(madera);

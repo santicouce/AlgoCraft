@@ -98,4 +98,15 @@ public class MesaDeConstruccion {
         return true;
     }
 
+    public boolean crearUnPicoFino() {
+        String identificadorDelTablero = new String();
+        identificadorDelTablero = identificadorDelTablero();
+        construirPicoFino(identificadorDelTablero);
+        return true;
+    }
+    private boolean construirPicoFino(String identificadorDelTablero){
+        FabricaDePicoFino fabricaDePicoFino = new FabricaDePicoFino();
+        fabricaDePicoFino.construir(identificadorDelTablero, inventarioDelJugador);
+        return true;
+    }
 }
