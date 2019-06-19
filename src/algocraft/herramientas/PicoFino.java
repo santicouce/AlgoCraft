@@ -10,10 +10,15 @@ public class PicoFino extends Herramienta {
         aguante = new AguantePicoFino();
         unMaterialDeConstruccion.inicializar(fortaleza);
         otroMaterialdeConstruccion.inicializar(aguante);
+        nombre = "picofino";
     }
     @Override
     public void golpear (Material unMaterial){
         unMaterial.golpeadoCon(fortaleza);
         unMaterial.impactadoCon(this);
+    }
+    @Override
+    public String getNombre(){
+        return (nombre);
     }
 }

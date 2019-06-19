@@ -1,6 +1,10 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
+import algocraft.herramientas.Pico;
+import algocraft.herramientas.PicoFino;
+import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
 import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
@@ -9,6 +13,7 @@ import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Herramienta;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
+import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 
 public class Jugador extends Observable {
 
@@ -48,5 +53,10 @@ public class Jugador extends Observable {
 
     public void agregarHerramientaAlInventario(Herramienta herramienta) {
         inventario.aniadirHerramienta(herramienta);
+    }
+
+    @Override
+    public String darNombre(){
+        return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
     }
 }

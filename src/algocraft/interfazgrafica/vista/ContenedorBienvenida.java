@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -25,23 +26,20 @@ public class ContenedorBienvenida extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPadding(new Insets(25));
-        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/prueba.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/fondo-web-12.jpg");
+
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
         Button botonEntrar = new Button();
-        botonEntrar.setText("Entrar");
+        botonEntrar.setGraphic(new ImageView(new Image("file:src/algocraft/interfazgrafica/vista/imagenes/n.png")));
 
-        Label etiqueta = new Label();
-        etiqueta.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
-
-        etiqueta.setText("Bienvenido A AlgoCraft. Haga click en entrar");
-        etiqueta.setTextFill(Color.web("#ffffff"));
-
+        Image logo = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/ALGOCRAFT.png");
+        ImageView vistaLogo = new ImageView(logo);
         BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
         botonEntrar.setOnAction(botonEntrarHandler);
 
-        this.getChildren().addAll(etiqueta, botonEntrar);
+        this.getChildren().addAll(vistaLogo, botonEntrar);
     }
 
 }

@@ -1,20 +1,21 @@
 package algocraft.interfazgrafica.vista;
 
 import algocraft.Juego;
+import algocraft.interfazgrafica.eventos.*;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class ContenedorJuego extends BorderPane{
 
     BarraDeMenu menuBar;
-    Canvas canvasCentral;
+    JugadorVista jugador;
     GridPane contenedorCentral;
     Juego algoCraft;
 
@@ -27,13 +28,27 @@ public class ContenedorJuego extends BorderPane{
 
     private void inicializarBotonera() {
 
-        Button botonMover = new Button();
-        botonMover.setText("Mover");
+        Button botonMoverAbajo = new Button();
+        botonMoverAbajo.setText("Mover Abajo");
+        BotonMoverAbajoEventHandler moverButtonHandler = new BotonMoverAbajoEventHandler(jugador, algoCraft);
+        botonMoverAbajo.setOnAction(moverButtonHandler);
 
-        Button botonDireccion = new Button();
-        botonDireccion.setText("Cambiar direccion");
+        Button botonMoverArriba = new Button();
+        botonMoverArriba.setText("Mover Arriba");
+        BotonMoverArribaEventHandler moverArribaEventHandler = new BotonMoverArribaEventHandler(jugador, algoCraft);
+        botonMoverArriba.setOnAction(moverArribaEventHandler);
 
-        VBox contenedorVertical = new VBox(botonMover, botonDireccion);
+        Button botonMoverIzquierda = new Button();
+        botonMoverIzquierda.setText("Mover Izquierda");
+        BotonMoverIzquierdaEventHandler moverIzquierdaEventHandler = new BotonMoverIzquierdaEventHandler(jugador, algoCraft);
+        botonMoverIzquierda.setOnAction(moverIzquierdaEventHandler);
+
+        Button botonMoverDerecha = new Button();
+        botonMoverDerecha.setText("Mover Derecha");
+        BotonMoverDerechaEventHandler moverDerechaEventHandler = new BotonMoverDerechaEventHandler(jugador, algoCraft);
+        botonMoverDerecha.setOnAction(moverDerechaEventHandler);
+
+        VBox contenedorVertical = new VBox(botonMoverAbajo, botonMoverArriba, botonMoverIzquierda, botonMoverDerecha);
         contenedorVertical.setSpacing(10);
         contenedorVertical.setPadding(new Insets(15));
 
@@ -46,31 +61,39 @@ public class ContenedorJuego extends BorderPane{
     }
 
     private void inicializarCentro() {
-
-        int length = 10;
-        int width = 10;
-
         contenedorCentral = new GridPane();
-
-        for(int x= 0; x < length; x++){
-            for(int y = 0; y < width; y++){
-                String nombreDeElemento = new String();
-                nombreDeElemento = algoCraft.darNombre(x,y);
-                if(!nombreDeElemento.isEmpty()){
-                    Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/" + nombreDeElemento + ".png");
-                    ImageView tf = new ImageView();
-                    tf.setFitWidth(50);
-                    tf.setFitHeight(50);
-                    tf.setImage(imagen);
-                    contenedorCentral.setRowIndex(tf,y);
-                    contenedorCentral.setColumnIndex(tf,x);
-                    contenedorCentral.getChildren().add(tf);
-                }
-            }
-        }
+        this.actualizarImgagen();
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pasto.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         this.setCenter(contenedorCentral);
+        this.setOnKeyPressed(new TeclaPulsadaEventHandler(algoCraft, jugador));
+
+    }
+    public void actualizarImgagen(){
+        int length = 10;
+        int width = 10;
+        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/stevefrente.png");
+        ImageView vistaImagen = new ImageView();
+        vistaImagen.setFitWidth(50);
+        vistaImagen.setFitHeight(50);
+        vistaImagen.setImage(imagen);
+        this.jugador = new JugadorVista(this, vistaImagen);
+        for(int x= 0; x < length; x++){
+            for(int y = 0; y < width; y++){
+                String nombreDeElemento = algoCraft.darNombre(x,y);
+                if(!nombreDeElemento.isEmpty()){
+                    imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/" + nombreDeElemento + ".png");
+                    vistaImagen = new ImageView();
+                    vistaImagen.setFitWidth(50);
+                    vistaImagen.setFitHeight(50);
+                    vistaImagen.setImage(imagen);
+                    contenedorCentral.add(vistaImagen, x, y);
+                }
+            }
+        }
+    }
+    public void eliminarImager(){
+        contenedorCentral.getChildren().clear();
     }
 }

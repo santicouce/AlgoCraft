@@ -25,4 +25,9 @@ public class EstrategiaDeGolpeConHerramienta extends EstrategiaDeGolpe {
         herramientaActual= unaHerramienta;
     }
 
+    @Override
+    public String herramienta() {
+        return herramientaActual.getNombre();
+    }
+
 }
