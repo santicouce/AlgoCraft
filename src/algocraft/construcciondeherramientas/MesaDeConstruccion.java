@@ -85,8 +85,8 @@ public class MesaDeConstruccion {
     }
     public boolean crearUnHacha(MaterialDeConstruccion unMaterial) {
 
-        String identificadorDelTablero = new String();
-        identificadorDelTablero = identificadorDelTablero();
+//        String identificadorDelTablero = new String();
+        String identificadorDelTablero = identificadorDelTablero();
         unMaterial.construirHacha(identificadorDelTablero,inventarioDelJugador);
         return true;
     }
