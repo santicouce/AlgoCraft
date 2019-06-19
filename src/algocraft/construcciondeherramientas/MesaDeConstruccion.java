@@ -1,9 +1,7 @@
 package algocraft.construcciondeherramientas;
 import algocraft.errores.PosicionInvalidaError;
-import algocraft.herramientas.Hacha;
 import algocraft.jugador.Inventario;
 import algocraft.mapadejuego.Casillero;
-import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
 import algocraft.materiales.MaterialDeConstruccion;
 
@@ -84,23 +82,18 @@ public class MesaDeConstruccion {
         return identificador;
     }
     public boolean crearUnHacha(MaterialDeConstruccion unMaterial) {
-
-//        String identificadorDelTablero = new String();
         String identificadorDelTablero = identificadorDelTablero();
         unMaterial.construirHacha(identificadorDelTablero,inventarioDelJugador);
         return true;
     }
     public boolean crearUnPico(MaterialDeConstruccion unMaterial) {
-
-        String identificadorDelTablero = new String();
-        identificadorDelTablero = identificadorDelTablero();
+        String identificadorDelTablero = identificadorDelTablero();
         unMaterial.construirPico(identificadorDelTablero,inventarioDelJugador);
         return true;
     }
 
     public boolean crearUnPicoFino() {
-        String identificadorDelTablero = new String();
-        identificadorDelTablero = identificadorDelTablero();
+        String identificadorDelTablero = identificadorDelTablero();
         construirPicoFino(identificadorDelTablero);
         return true;
     }
