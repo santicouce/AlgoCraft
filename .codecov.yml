@@ -1,3 +1,4 @@
 ignore:
   - "src/algocraft/interfazgrafica/*"
   - "src/main"
+  - "src/musica/*"
