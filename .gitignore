@@ -16,7 +16,7 @@ out/
 *.iml
 *.iws
 *.ipr
-
+module-info.java
 
 # OS
 Thumbs.db
