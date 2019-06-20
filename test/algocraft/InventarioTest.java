@@ -31,9 +31,9 @@ public class InventarioTest {
     public void test02InventarioPermiteAniadirMateriales() {
         try {
             Inventario inventario = new Inventario();
-            inventario.aniadirMaterial(new Piedra());
-            inventario.aniadirMaterial(new Madera());
-            inventario.aniadirMaterial(new Diamante());
+            inventario.aniadirPiedra(new Piedra());
+            inventario.aniadirMadera(new Madera());
+            inventario.aniadirDiamante(new Diamante());
         }catch (Exception e){
             fail("No funciono aniadir materiales al iventario");
         }
@@ -62,11 +62,11 @@ public class InventarioTest {
     public void test04InventarioPermiteAniadirYEliminarMateriales() {
         try {
             Inventario inventario = new Inventario();
-            inventario.aniadirMaterial(new Piedra());
-            inventario.extraerMaterial();
-            inventario.aniadirMaterial(new Madera());
-            inventario.aniadirMaterial(new Diamante());
-            inventario.extraerMaterial();
+            inventario.aniadirPiedra(new Piedra());
+            inventario.extraerPiedra();
+            inventario.aniadirMadera(new Madera());
+            inventario.aniadirDiamante(new Diamante());
+            inventario.extraerMadera();
         }catch (Exception e){
             fail("No funciono aniadir y eliminar materiales al iventario");
         }
@@ -75,9 +75,9 @@ public class InventarioTest {
     @Test(expected = IndexOutOfBoundsException.class)
     public void test05NoPiedoExtraerMasMaterialesDeLosQueTengo() {
         Inventario inventario = new Inventario();
-        inventario.aniadirMaterial(new Piedra());
-        inventario.extraerMaterial();
-        inventario.extraerMaterial();
+        inventario.aniadirPiedra(new Piedra());
+        inventario.extraerPiedra();
+        inventario.extraerPiedra();
     }
 
     }

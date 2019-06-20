@@ -69,4 +69,8 @@ public class DiamanteTest {
         picoDeMetal.golpear(diamante);
         assertEquals(durabilidadInicialDiamante, diamante.durabilidad());
     }
+    @Test
+    public void test07UnDiamanteSeInicializaConId4(){
+        assertEquals("4", diamante.getId());
+    }
 }

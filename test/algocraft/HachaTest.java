@@ -158,4 +158,6 @@ public class HachaTest {
         hachaDeMetal.golpear(diamante);
         assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
     }
+
+
 }
