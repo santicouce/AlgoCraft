@@ -10,11 +10,10 @@ import algocraft.vidadeobjetos.FortalezaPico;
 
 public class Piedra extends MaterialDeConstruccion{
 
-    public Piedra(){
-
-        durabilidad =30;
-        id = "2";
-    }
+    public Piedra (){
+        this.durabilidad =30;
+        this.id ="2";
+        this.nombre = "piedra";
 
     @Override
     public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {

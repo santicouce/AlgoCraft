@@ -9,11 +9,13 @@ import algocraft.herramientas.PicoFino;
 import algocraft.vidadeobjetos.FortalezaPico;
 
 public class Metal extends MaterialDeConstruccion{
-
-    public Metal(){
-        durabilidad =50;
-        id = "3";
+    public Metal ()
+    {
+        this.durabilidad =50;
+        this.id ="3";
+        this.nombre = "metal";
     }
+
     @Override
     public void golpeadoCon(FortalezaHerramienta fortalezaHerramienta) {
         fortalezaHerramienta.golpear(this);

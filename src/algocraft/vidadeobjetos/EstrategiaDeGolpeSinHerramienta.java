@@ -8,6 +8,10 @@ import algocraft.materiales.Material;
 
 public class EstrategiaDeGolpeSinHerramienta extends EstrategiaDeGolpe {
 
+    public EstrategiaDeGolpeSinHerramienta(){
+        herramienta = "desequipado";
+    }
+
     public void golpear(Material unMaterial){
         throw new GolpeInvalidoError();
     }
@@ -18,6 +22,11 @@ public class EstrategiaDeGolpeSinHerramienta extends EstrategiaDeGolpe {
 
     public void equiparHerramienta(Jugador jugador, Herramienta unaHerramienta){
         jugador.cambiarEstrategia(new EstrategiaDeGolpeConHerramienta(unaHerramienta));
+    }
+
+    @Override
+    public String herramienta() {
+        return herramienta;
     }
 
 }

@@ -1,6 +1,10 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
+import algocraft.herramientas.Pico;
+import algocraft.herramientas.PicoFino;
+import algocraft.materiales.Metal;
+import algocraft.materiales.Piedra;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
 import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.herramientas.Pico;
@@ -12,8 +16,11 @@ import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
 import algocraft.movimientodeljugador.Direccion;
 import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Herramienta;
+import algocraft.materiales.Madera;
+import algocraft.materiales.Material;
+import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 
-public class Jugador implements Observable {
+public class Jugador extends Observable {
 
     private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
@@ -23,6 +30,7 @@ public class Jugador implements Observable {
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
+        nombre = "steve";
         mesaDeConstruccion = new MesaDeConstruccion(inventario);
     }
 
@@ -54,7 +62,11 @@ public class Jugador implements Observable {
         inventario.aniadirHerramienta(herramienta);
     }
 
-
+    @Override
+    public String darNombre(){
+        return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
+    }
+    
     public String getId(){
         //esto tiene que desaparecer
         return "a";
@@ -103,5 +115,4 @@ public class Jugador implements Observable {
     public void agregarPiedraAlInventario(Piedra piedra) {
         inventario.aniadirPiedra(piedra);
     }
-
 }

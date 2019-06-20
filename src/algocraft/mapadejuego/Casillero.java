@@ -20,6 +20,10 @@ public class Casillero {
         colocable = null;
         estado = new CasilleroLibre();
     }
+    public String darNombre(){
+        return estado.darNombreDe(colocable);
+    }
+
     public String getId(){
         return colocable.getId();
     }

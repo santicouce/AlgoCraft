@@ -14,7 +14,9 @@ public class Madera extends MaterialDeConstruccion{
     public Madera(){
 
         this.durabilidad = 10;
-        id = "1";
+        this.id ="1";
+        this.nombre = "madera";
+
     }
 
     @Override

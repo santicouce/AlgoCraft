@@ -8,7 +8,8 @@ public abstract class Herramienta {
 
     protected FortalezaHerramienta fortaleza;
     protected AguanteHerramienta aguante;
-
+    protected String nombre;
+    protected Material material;
     public double durabilidad(){
         return aguante.durabilidad();
     }
@@ -22,4 +23,7 @@ public abstract class Herramienta {
         aguante.desgastate(fortaleza);
     }
     public void rompete(){}
+    public String getNombre(){
+        return (nombre + material.darNombre());
+    }
 }
