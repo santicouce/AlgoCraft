@@ -5,18 +5,17 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
 public class ContenedorBienvenida extends VBox {
 
     Stage stage;
+    MediaPlayer mediaPlayer;
 
     public ContenedorBienvenida(Stage stage, Scene proximaEscena) {
         super();
@@ -39,7 +38,12 @@ public class ContenedorBienvenida extends VBox {
         BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
         botonEntrar.setOnAction(botonEntrarHandler);
 
+        String s = "musica/DatGroove.mp3";
+        Media media = new Media(new File(s).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setVolume(0.2);
         this.getChildren().addAll(vistaLogo, botonEntrar);
+        mediaPlayer.setAutoPlay(true);
     }
 
 }
