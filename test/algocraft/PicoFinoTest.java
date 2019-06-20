@@ -69,5 +69,4 @@ public class PicoFinoTest {
         picoFino.golpear(metal);
         assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
     }
-
 }

@@ -24,5 +24,8 @@ public class Casillero {
         return estado.darNombreDe(colocable);
     }
 
+    public String getId(){
+        return colocable.getId();
+    }
 }
  

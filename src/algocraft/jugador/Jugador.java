@@ -5,6 +5,11 @@ import algocraft.herramientas.Pico;
 import algocraft.herramientas.PicoFino;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
+import algocraft.construcciondeherramientas.MesaDeConstruccion;
+import algocraft.errores.ImposibleCrearHerramientaError;
+import algocraft.herramientas.Pico;
+import algocraft.herramientas.PicoFino;
+import algocraft.materiales.*;
 import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
@@ -20,11 +25,13 @@ public class Jugador extends Observable {
     private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
+    private MesaDeConstruccion mesaDeConstruccion;
 
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
+        mesaDeConstruccion = new MesaDeConstruccion(inventario);
     }
 
     public void golpear(Material unMaterial){
@@ -58,5 +65,54 @@ public class Jugador extends Observable {
     @Override
     public String darNombre(){
         return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
+    }
+    
+    public String getId(){
+        //esto tiene que desaparecer
+        return "a";
+    }
+
+    public void aniadirMaderaEnPosicion(int columna, int fila){
+        mesaDeConstruccion.aniadirMaderaEnPosicion(columna,fila);
+    }
+
+    public void aniadirMetalEnPosicion(int columna, int fila) {
+        mesaDeConstruccion.aniadirMetalEnPosicion(columna,fila);
+    }
+    public void aniadirPiedraEnPosicion(int columna, int fila) {
+        mesaDeConstruccion.aniadirPiedraEnPosicion(columna,fila);
+    }
+    public void fabricarHacha(MaterialDeConstruccion unMaterial){
+        if (mesaDeConstruccion.crearUnHacha(unMaterial)==false){
+            throw new ImposibleCrearHerramientaError();
+        }else{
+            agregarHerramientaAlInventario(new Hacha(unMaterial));
+        }
+    }
+    public void fabricarPico(MaterialDeConstruccion unMaterial){
+        if (mesaDeConstruccion.crearUnPico(unMaterial)==false){
+            throw new ImposibleCrearHerramientaError();
+        }else{
+            agregarHerramientaAlInventario(new Pico(unMaterial));
+        }
+    }
+
+    public void fabricarPicoFino() {
+        if (mesaDeConstruccion.crearUnPicoFino()==false){
+            throw new ImposibleCrearHerramientaError();
+        }else{
+            agregarHerramientaAlInventario(new PicoFino(new Metal(), new Piedra()));
+        }
+    }
+
+
+    public void agregarMaderaAlInventario(Madera madera) {
+        inventario.aniadirMadera(madera);
+    }
+    public void agregarMetalAlInventario(Metal metal) {
+        inventario.aniadirMetal(metal);
+    }
+    public void agregarPiedraAlInventario(Piedra piedra) {
+        inventario.aniadirPiedra(piedra);
     }
 }

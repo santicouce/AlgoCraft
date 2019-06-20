@@ -69,4 +69,9 @@ public class MaderaTest {
         picoFino.golpear(madera);
         assertEquals(durabilidadInicialMadera,madera.durabilidad());
     }
+    @Test
+    public void test08UnaMaderaSeInicializaConNumeroDeId1(){
+        assertEquals(madera.getId(), "1");
+    }
+
 }
