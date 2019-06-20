@@ -2,6 +2,7 @@ package algocraft.interfazgrafica.vista;
 
 import algocraft.Juego;
 import algocraft.interfazgrafica.eventos.*;
+import algocraft.jugador.Inventario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -63,6 +64,8 @@ public class ContenedorJuego extends BorderPane{
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/azul.png");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
+        Inventario inventario = algoCraft.inventarioJugador();
+
         listView.setPrefHeight(397);
         listView.setCellFactory(param -> new ListCell<String>() {
             private ImageView imageView = new ImageView();
@@ -76,12 +79,17 @@ public class ContenedorJuego extends BorderPane{
                 } else {
                     if(name.equals("Madera")){
                         imageView.setImage(listOfImages[0]);
+                        setText(name +": " + inventario.cantidadDeMadera());
+                        inventario.cantidadDeMadera();
                     } else if(name.equals("Piedra")){
                         imageView.setImage(listOfImages[1]);
+                        setText(name +": " + inventario.cantidadDePiedra());
                     } else if(name.equals("Metal")){
                         imageView.setImage(listOfImages[2]);
+                        setText(name +": " + inventario.cantidadDeMetal());
                     } else if(name.equals("Diamante")){
                         imageView.setImage(listOfImages[3]);
+                        setText(name +": " + inventario.cantidadDeDiamante());
                     }else if(name.equals("Hacha De Madera")){
                         imageView.setImage(listOfImages[4]);
                     }else if(name.equals("Hacha De Piedra")){
@@ -100,7 +108,7 @@ public class ContenedorJuego extends BorderPane{
 
                     imageView.setFitHeight(30);
                     imageView.setFitWidth(30);
-                    setText(name + ":  0");
+                //    setText(name + ":  0");
                     setGraphic(imageView);
                     setBackground(new Background(imagenDeFondo));
                 }

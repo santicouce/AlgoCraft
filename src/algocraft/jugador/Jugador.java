@@ -66,7 +66,7 @@ public class Jugador extends Observable {
     public String darNombre(){
         return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
     }
-    
+
     public String getId(){
         //esto tiene que desaparecer
         return "a";
@@ -115,4 +115,6 @@ public class Jugador extends Observable {
     public void agregarPiedraAlInventario(Piedra piedra) {
         inventario.aniadirPiedra(piedra);
     }
+
+    public Inventario darInventario(){return this.inventario;}
 }

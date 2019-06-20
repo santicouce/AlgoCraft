@@ -1,6 +1,5 @@
 package algocraft.jugador;
 
-import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Herramienta;
 import algocraft.materiales.*;
 
@@ -14,7 +13,6 @@ public class Inventario {
     private List<Piedra> piedras;
     private List<Metal> metales;
     private List<Diamante> diamantes;
-
     public Inventario(){
         maderas = new ArrayList<>();
         piedras = new ArrayList<>();
@@ -33,9 +31,6 @@ public class Inventario {
     public Metal extraerMetal(){
         return metales.remove(0);
     }
-    public Diamante extraerDiamante(){
-        return diamantes.remove(0);
-    }
 
     public void extraerHerramienta() { herramientas.remove(0); }
 
@@ -49,10 +44,6 @@ public class Inventario {
     }
     public boolean validarStockDeMadera() {
         if (piedras.isEmpty()) { return false; };
-        return true;
-    }
-    public boolean validarStockDeDiamante() {
-        if (diamantes.isEmpty()) { return false; };
         return true;
     }
 
@@ -70,4 +61,9 @@ public class Inventario {
     public void aniadirPiedra(Piedra piedra){
         piedras.add(piedra);
     }
+
+    public int cantidadDeMadera(){return maderas.size();}
+    public int cantidadDePiedra(){return piedras.size();}
+    public int cantidadDeMetal(){return metales.size();}
+    public int cantidadDeDiamante(){return diamantes.size();}
 }
