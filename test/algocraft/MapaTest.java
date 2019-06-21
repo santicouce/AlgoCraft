@@ -67,4 +67,12 @@ public class MapaTest {
     public void test12AlIntentarAniadirUnElementoEnUnaColumnaMenorA0DeberiaLanzarseUnPosicionInvalidaError(){
         mapa.aniadirElementoEnPosicion(jugador,-1,0);
     }
+
+
+    /*
+    @Test
+    public void test13CreoBienUnMApa(){
+        Mapa unMapa = new Mapa(5,5);
+    }
+     */
 }

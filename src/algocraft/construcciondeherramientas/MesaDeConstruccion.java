@@ -2,8 +2,12 @@ package algocraft.construcciondeherramientas;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Inventario;
 import algocraft.mapadejuego.Casillero;
+import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Material;
 import algocraft.materiales.MaterialDeConstruccion;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class MesaDeConstruccion {
 

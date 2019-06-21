@@ -13,7 +13,7 @@ import algocraft.movimientodeljugador.DireccionDerecha;
 import algocraft.movimientodeljugador.DireccionIzquierda;
 
 public class Juego {
-    private Mapa mapa = new Mapa();
+    private Mapa mapa = new Mapa(20,20);
     private Jugador jugador = new Jugador();
 
     public Juego(){

@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class JugadorTest {
 
     private Jugador jugador = new Jugador();
-    Mapa mapa = new Mapa();
+    Mapa mapa = new Mapa(20,20);
 
     @Test
     public void test01JugadorRecienCreadoDeberiaCuentaSoloConUnHachaDeMadera(){
