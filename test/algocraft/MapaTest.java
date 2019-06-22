@@ -7,6 +7,8 @@ import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.*;
 import org.junit.Test;
 
+import static junit.framework.TestCase.fail;
+
 public class MapaTest {
 
     private Mapa mapa = new Mapa(10,10);
@@ -51,9 +53,13 @@ public class MapaTest {
         mapa.aniadirElementoEnPosicion(jugador,1,1);
         mapa.aniadirElementoEnPosicion(madera,1,1);
     }
-    @Test(expected = PosicionInvalidaError.class)
-    public void test09AlIntentarAniadirUnElementoEnUnaFilaMayorALaFilaMaximaDelMapaDeberiaLanzarseUnPosicionInvalidaError(){
-        mapa.aniadirElementoEnPosicion(madera,1,10);
+    @Test
+    public void test09AlIntentarAniadirUnElementoEnUnaFilaMayorALaFilaMaximaDelMapaDeberiaAgrandarseElMapaYAniadirse(){
+     //   try {
+            mapa.aniadirElementoEnPosicion(madera, 1, 10);
+       // }catch (Exception e){
+       //     fail("no se agrando el mapa");
+        //}
     }
 
     @Test(expected = PosicionInvalidaError.class)
