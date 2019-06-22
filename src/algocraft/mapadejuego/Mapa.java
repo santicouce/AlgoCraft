@@ -14,7 +14,7 @@ public class Mapa extends Tablero {
     public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
             try {
                 tablero.get(fila).get(columna).aniadirElemento(colocable);
-            }catch (Exception IndexOutOfBoundsException){
+            }catch (IndexOutOfBoundsException indexoutofboundsexception){
                 throw new PosicionInvalidaError();
             }
     }
