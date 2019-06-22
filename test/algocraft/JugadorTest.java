@@ -7,6 +7,8 @@ import algocraft.movimientodeljugador.*;
 import algocraft.materiales.Madera;
 import algocraft.mapadejuego.Mapa;
 import org.junit.Test;
+
+import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 
 public class JugadorTest {
@@ -45,10 +47,14 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionDerecha(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
-    public void test06UnJugadorIntentaMoverseALaDerechaEstandoEnElBordeDerechoDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
-        mapa.aniadirJugadorAlMapa(jugador,9,0);
-        jugador.moverA(new DireccionDerecha(mapa));
+    @Test
+    public void test06UnJugadorIntentaMoverseALaDerechaEstandoEnElBordeDerechoDelMapaYSeDeberiaAgrandarElMapa(){
+        try {
+            mapa.aniadirJugadorAlMapa(jugador, 9, 0);
+            jugador.moverA(new DireccionDerecha(mapa));
+        } catch (Exception e){
+            fail ("No pudo moverse el jugador.");
+        }
     }
     @Test
     public void test07UnJugadoIntentaMoverseALaDerechaHaciaUnCasilleroVacioYSuPosicionDeberiaCambiar(){
@@ -78,7 +84,7 @@ public class JugadorTest {
         jugador.moverA(new DireccionAbajo(mapa));
     }
     @Test(expected = MovimientoInvalidoError.class)
-    public void test12UnJugadorIntentaMoverseAbajoEnElBordeInferiorDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
+    public void test12UnJugadorIntentaMoverseAbajoEnElBordeInferiorDelMapaYDeberiaPoderse(){
         mapa.aniadirJugadorAlMapa(jugador, 0,9);
         jugador.moverA(new DireccionAbajo(mapa));
     }

@@ -16,13 +16,21 @@ public class Mapa extends Tablero {
 
     public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila) {
         try {
-
-            tablero.get(fila).get(columna).aniadirElemento(colocable);
+            tablero.get(columna).get(fila).aniadirElemento(colocable);
         } catch (IndexOutOfBoundsException indexoutofboundsexception) {
-            if (columna > tablero.size() - 1) {
+            if (columna > tablero.size()-1) {
                 agrandarseADerecha();
             } else {
+                if (columna < 0) {
+                    throw new PosicionInvalidaError();
+                }
+            }
+            if (fila>tablero.get(0).size()-1){
                 agrandarseParaAbajo();
+            }else{
+                if (fila < 0) {
+                    throw new PosicionInvalidaError();
+                }
             }
         }
     }
@@ -58,7 +66,7 @@ public class Mapa extends Tablero {
         int CANTIDAD_FILAS_NUEVAS = 2;
         int CANTIDAD_DE_COLUMNAS = tablero.size();
 
-        for (int i = 1; i <= CANTIDAD_DE_COLUMNAS; i++) {
+        for (int i = 0; i < CANTIDAD_DE_COLUMNAS; i++) {
             for (int j = 0; j < CANTIDAD_FILAS_NUEVAS; j++) {
                 tablero.get(i).add(new Casillero());
             }

@@ -55,16 +55,20 @@ public class MapaTest {
     }
     @Test
     public void test09AlIntentarAniadirUnElementoEnUnaFilaMayorALaFilaMaximaDelMapaDeberiaAgrandarseElMapaYAniadirse(){
-     //   try {
+        try {
             mapa.aniadirElementoEnPosicion(madera, 1, 10);
-       // }catch (Exception e){
-       //     fail("no se agrando el mapa");
-        //}
+        }catch (Exception e){
+            fail("Algo salio mal al querer agrandar el mapa");
+        }
     }
 
-    @Test(expected = PosicionInvalidaError.class)
-    public void test10AlIntentarAniadirUnElementoEnUnaColumnaMayorALaColumnaMaximaDelMapaDeberiaLanzarseUnPosicionInvalidaError(){
-        mapa.aniadirElementoEnPosicion(madera,10,0);
+    @Test
+    public void test10AlIntentarAniadirUnElementoEnUnaColumnaMayorALaColumnaMaximaDelMapaDeberiaAgrandarseElMapaYAniadirse(){
+        try {
+            mapa.aniadirElementoEnPosicion(madera, 10, 0);
+        } catch (Exception e){
+            fail("Algo salio mal al querer agrandar el mapa");
+        }
     }
     @Test(expected = PosicionInvalidaError.class)
     public void test11AlIntentarAniadirUnElementoEnUnaFilaMenorA0DeberiaLanzarseUnPosicionInvalidaError(){
