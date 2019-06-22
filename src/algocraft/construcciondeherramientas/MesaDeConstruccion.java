@@ -8,65 +8,29 @@ import algocraft.materiales.MaterialDeConstruccion;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MesaDeConstruccion {
 
     private static final int CANTIDAD_DE_COLUMNAS = 3;
     private static final int CANTIDAD_DE_FILAS = 3;
-    private Casillero tablero[][];
+    private  Tablero tablero;
     private Inventario inventarioDelJugador;
 
     public MesaDeConstruccion(Inventario inventario) {
         this.inventarioDelJugador = inventario;
-        this.tablero = new Casillero[CANTIDAD_DE_COLUMNAS][CANTIDAD_DE_FILAS];
-        this.inicializarTablero();
+        tablero= new Tablero();
+        tablero.inicializarTablero(CANTIDAD_DE_FILAS,CANTIDAD_DE_COLUMNAS);
     }
 
-    private void inicializarTablero() {
-        for (int i = 0; i < CANTIDAD_DE_FILAS; i++) {
-            for (int j = 0; j < CANTIDAD_DE_COLUMNAS; j++) {
-                tablero[i][j] = new Casillero();
-            }
-        }
-    }
-    public void aniadirPiedraEnPosicion(int columna, int fila){
-        validarPosicion(columna,fila);
-        inventarioDelJugador.validarStockDePiedra();
+    public void aniadirMaterialEnPosicion(int columna, int fila, String madera){
+        tablero.validarPosicion(columna,fila);
+        inventarioDelJugador.validarStockDe();
         Casillero casilleroEnCuestion = tablero[columna][fila];
         Material material = inventarioDelJugador.extraerPiedra();
         casilleroEnCuestion.aniadirElemento(material);
     }
-    public void aniadirMaderaEnPosicion(int columna, int fila){
-        validarPosicion(columna,fila);
-        inventarioDelJugador.validarStockDeMadera();
-        Casillero casilleroEnCuestion = tablero[columna][fila];
-        Material material = inventarioDelJugador.extraerMadera();
-        casilleroEnCuestion.aniadirElemento(material);
-    }
-    public void aniadirMetalEnPosicion(int columna, int fila){
-        validarPosicion(columna,fila);
-        inventarioDelJugador.validarStockDeMetal();
-        Casillero casilleroEnCuestion = tablero[columna][fila];
-        Material material = inventarioDelJugador.extraerMetal();
-        casilleroEnCuestion.aniadirElemento(material);
-    }
-    public void validarPosicion(int columna, int fila) {
-        this.validarColumna(columna);
-        this.validarFila(fila);
-    }
 
-    private void validarColumna(int columna) {
-        if (columna < 0 || columna > (CANTIDAD_DE_COLUMNAS - 1)) {
-            throw new PosicionInvalidaError();
-        }
-    }
-
-    private void validarFila(int fila) {
-        if (fila < 0 || fila > (CANTIDAD_DE_COLUMNAS - 1)) {
-            throw new PosicionInvalidaError();
-        }
-
-    }
 
     public String identificadorDelTablero() {
         String identificador = new String();

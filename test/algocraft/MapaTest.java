@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class MapaTest {
 
-    private Mapa mapa = new Mapa();
+    private Mapa mapa = new Mapa(10,10);
     private Jugador jugador = new Jugador();
     private Madera madera = new Madera();
     private Metal metal = new Metal();

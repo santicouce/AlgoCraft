@@ -12,7 +12,7 @@ import javafx.util.Duration;
 import java.io.File;
 
 
-public class Main extends Application{
+public class  Main extends Application{
 
     private Juego algoCraft = new Juego();
     private MediaPlayer mediaPlayer;

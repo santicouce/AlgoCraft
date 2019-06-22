@@ -12,7 +12,11 @@ public class Mapa extends Tablero {
     }
 
     public void aniadirElementoEnPosicion(Observable colocable, int fila, int columna){
-        tablero.get(fila).get(columna).aniadirElemento(colocable);
+        try {
+            tablero.get(fila).get(columna).aniadirElemento(colocable);
+        }catch(Exception ArrayIndexOutOfBoundsException){
+            throw new PosicionInvalidaError();
+        }
     }
 
     public void moverJugador(Jugador unJugador, int columna, int fila){
@@ -22,6 +26,7 @@ public class Mapa extends Tablero {
     public void aniadirJugadorAlMapa(Jugador unJugador, int columna, int fila){
         aniadirElementoEnPosicion(unJugador, columna, fila);
         unJugador.aniadirJugadorAlMapa(columna, fila);
+
     }
 
     public String darNombreDeElementoEn(int columna, int fila){

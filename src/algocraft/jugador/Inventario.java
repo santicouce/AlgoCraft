@@ -70,4 +70,8 @@ public class Inventario {
     public void aniadirPiedra(Piedra piedra){
         piedras.add(piedra);
     }
+
+    public void validarStockDe(String material) {
+        //el codigo de esto estaria en la rama de hugo, cuando hagamos merge esto vuela, pero lo hago para que me de ok el build.
+    }
 }
