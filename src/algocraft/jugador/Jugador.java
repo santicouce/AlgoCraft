@@ -83,7 +83,11 @@ public class Jugador extends Observable {
 
     @Override
     public String darNombre(){
-        return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
+        return (nombre + ubicacion.frente() + nombreDeHerramientaEquipada());
+    }
+
+    public String nombreDeHerramientaEquipada(){
+        return estrategiaDeGolpe.herramienta();
     }
 
     public String getId(){
