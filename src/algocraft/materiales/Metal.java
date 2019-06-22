@@ -3,7 +3,6 @@ package algocraft.materiales;
 import algocraft.construcciondeherramientas.FabricaDeHacha;
 import algocraft.construcciondeherramientas.FabricaDePico;
 import algocraft.herramientas.Herramienta;
-import algocraft.jugador.Inventario;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.PicoFino;
