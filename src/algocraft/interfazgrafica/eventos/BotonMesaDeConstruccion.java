@@ -20,11 +20,11 @@ public class BotonMesaDeConstruccion extends MenuButton {
         cofre.setFitHeight(30);
         cofre.setFitWidth(30);
         MenuItem menuMadera = new MenuItem("Madera");
-        menuMadera.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, madera));
+        menuMadera.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuMadera, madera));
         MenuItem menuPiedra = new MenuItem("Piedra");
-        menuPiedra.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, piedra));
+        menuPiedra.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuPiedra, piedra));
         MenuItem menuMetal = new MenuItem("Metal");
-        menuMetal.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, metal));
+        menuMetal.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuMetal, metal));
         this.getItems().addAll(menuMadera, menuPiedra, menuMetal);
         this.setGraphic(cofre);
     }

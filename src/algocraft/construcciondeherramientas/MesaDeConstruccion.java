@@ -12,62 +12,45 @@ import java.util.List;
 
 public class MesaDeConstruccion {
 
-    private static final int CANTIDAD_DE_COLUMNAS = 3;
-    private static final int CANTIDAD_DE_FILAS = 3;
-    private  Tablero tablero;
-    private Inventario inventarioDelJugador;
+    private int cantidadDeColumnas=3;
+    private int cantidadDeFilas=3;
+    private Casillero tablero[][];
 
-    public MesaDeConstruccion(Inventario inventario) {
-        this.inventarioDelJugador = inventario;
-        tablero= new Tablero();
-        tablero.inicializarTablero(CANTIDAD_DE_FILAS,CANTIDAD_DE_COLUMNAS);
+    public MesaDeConstruccion() {
+        this.cantidadDeColumnas = cantidadDeColumnas;
+        this.cantidadDeFilas = cantidadDeFilas;
+        this.tablero = new Casillero[cantidadDeColumnas][cantidadDeFilas];
+        this.inicializarTablero();
     }
 
-    public void aniadirMaterialEnPosicion(int columna, int fila, String madera){
-        tablero.validarPosicion(columna,fila);
-        inventarioDelJugador.validarStockDe();
-        Casillero casilleroEnCuestion = tablero[columna][fila];
-        Material material = inventarioDelJugador.extraerPiedra();
-        casilleroEnCuestion.aniadirElemento(material);
-    }
-
-
-    public String identificadorDelTablero() {
-        String identificador = new String();
-        String identificadorCasilleroActual = new String();
-
-        for (int i = 0; i < CANTIDAD_DE_FILAS; i++) {
-            for (int j = 0; j < CANTIDAD_DE_COLUMNAS; j++) {
-                Casillero casillero = tablero[j][i];
-                try{
-                    identificadorCasilleroActual = casillero.getId();
-                }catch(Exception NullPointerException){
-                    identificadorCasilleroActual = "0";
-                }
-                identificador = identificador.concat(identificadorCasilleroActual);
+    private void inicializarTablero() {
+        for (int i = 0; i < cantidadDeColumnas; i++) {
+            for (int j = 0; j < cantidadDeFilas; j++) {
+                tablero[i][j] = new Casillero();
             }
         }
-        return identificador;
-    }
-    public boolean crearUnHacha(MaterialDeConstruccion unMaterial) {
-        String identificadorDelTablero = identificadorDelTablero();
-        unMaterial.construirHacha(identificadorDelTablero,inventarioDelJugador);
-        return true;
-    }
-    public boolean crearUnPico(MaterialDeConstruccion unMaterial) {
-        String identificadorDelTablero = identificadorDelTablero();
-        unMaterial.construirPico(identificadorDelTablero,inventarioDelJugador);
-        return true;
     }
 
-    public boolean crearUnPicoFino() {
-        String identificadorDelTablero = identificadorDelTablero();
-        construirPicoFino(identificadorDelTablero);
-        return true;
+    public void aniadirElementoEnPosicion(int columna, int fila, Material material) {
+        validarPosicion(columna, fila);
+        tablero[columna][fila].aniadirElemento(material);
     }
-    private boolean construirPicoFino(String identificadorDelTablero){
-        FabricaDePicoFino fabricaDePicoFino = new FabricaDePicoFino();
-        fabricaDePicoFino.construir(identificadorDelTablero, inventarioDelJugador);
-        return true;
+
+    public void validarPosicion(int columna, int fila) {
+        this.validarColumna(columna);
+        this.validarFila(fila);
+    }
+
+    private void validarColumna(int columna) {
+        if (columna < 0 || columna > (cantidadDeColumnas - 1)) {
+            throw new PosicionInvalidaError();
+        }
+    }
+
+    private void validarFila(int fila) {
+        if (fila < 0 || fila > (cantidadDeColumnas - 1)) {
+            throw new PosicionInvalidaError();
+        }
+
     }
 }

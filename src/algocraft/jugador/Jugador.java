@@ -20,18 +20,28 @@ import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
+
 public class Jugador extends Observable {
 
     private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
     private MesaDeConstruccion mesaDeConstruccion;
+    private HashMap<String, List<Material>> Inventario = new HashMap<String, List<Material>>();
 
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
         mesaDeConstruccion = new MesaDeConstruccion(inventario);
+        Inventario.put("madera", new ArrayList<Material>());
+        Inventario.put("piedra", new ArrayList<Material>());
+        Inventario.put("metal", new ArrayList<Material>());
+        Inventario.put("diamante", new ArrayList<Material>());
     }
 
     public void golpear(Material unMaterial){
@@ -66,22 +76,17 @@ public class Jugador extends Observable {
     public String darNombre(){
         return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
     }
-    
+
     public String getId(){
         //esto tiene que desaparecer
         return "a";
     }
 
-    public void aniadirMaderaEnPosicion(int columna, int fila){
-        mesaDeConstruccion.aniadirMaderaEnPosicion(columna,fila);
+    public void aniadirMaterialEnPosicion(int columna, int fila, String material){
+        Material materialPorAgregar = extraerMaterialDelInventario(material);
+        mesaDeConstruccion.aniadirMaterialEnPosicion(columna, fila, materialPorAgregar);
     }
 
-    public void aniadirMetalEnPosicion(int columna, int fila) {
-        mesaDeConstruccion.aniadirMetalEnPosicion(columna,fila);
-    }
-    public void aniadirPiedraEnPosicion(int columna, int fila) {
-        mesaDeConstruccion.aniadirPiedraEnPosicion(columna,fila);
-    }
     public void fabricarHacha(MaterialDeConstruccion unMaterial){
         if (mesaDeConstruccion.crearUnHacha(unMaterial)==false){
             throw new ImposibleCrearHerramientaError();
@@ -105,14 +110,19 @@ public class Jugador extends Observable {
         }
     }
 
+    public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){
+        Inventario.get(nombreDelMaterial).add(materialASerAgregado);
+    }
 
-    public void agregarMaderaAlInventario(Madera madera) {
-        inventario.aniadirMadera(madera);
+    public Material extraerMaterialDelInventario(String nombreDelMaterial){
+        return Inventario.get(nombreDelMaterial).get(0);
     }
-    public void agregarMetalAlInventario(Metal metal) {
-        inventario.aniadirMetal(metal);
+    public boolean validarStockDe(String nombreDelMaterial){
+        if (Inventario.get(nombreDelMaterial).isEmpty()) { return false; }
+        return true;
     }
-    public void agregarPiedraAlInventario(Piedra piedra) {
-        inventario.aniadirPiedra(piedra);
+
+    public int cantidadDe(String nombreDelMaterial){
+        return Inventario.get(nombreDelMaterial).size();
     }
 }
