@@ -84,7 +84,7 @@ public class Jugador extends Observable {
 
     public void aniadirMaterialEnPosicion(int columna, int fila, String material){
         Material materialPorAgregar = extraerMaterialDelInventario(material);
-        mesaDeConstruccion.aniadirMaterialEnPosicion(columna, fila, materialPorAgregar);
+        mesaDeConstruccion.aniadirElementoEnPosicion(columna, fila, materialPorAgregar);
     }
 
     public void fabricarHacha(MaterialDeConstruccion unMaterial){

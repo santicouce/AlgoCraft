@@ -16,18 +16,17 @@ public class MesaDeConstruccionTest {
         try {
 
             Jugador jugador = new Jugador();
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-
-            jugador.aniadirMaderaEnPosicion(0,0);
-            jugador.aniadirMaderaEnPosicion(0,1);
-            jugador.aniadirMaderaEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "madera");
+            jugador.aniadirMaterialEnPosicion(0,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,0, "madera");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarHacha(new Madera());
 
@@ -42,17 +41,17 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
 
-            jugador.aniadirPiedraEnPosicion(0,0);
-            jugador.aniadirPiedraEnPosicion(0,1);
-            jugador.aniadirPiedraEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(0,1,"piedra");
+            jugador.aniadirMaterialEnPosicion(1,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,2, "piedra");
 
             jugador.fabricarHacha(new Piedra());
 
@@ -69,17 +68,17 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMetalEnPosicion(0,0);
-            jugador.aniadirMetalEnPosicion(0,1);
-            jugador.aniadirMetalEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "metal");
+            jugador.aniadirMaterialEnPosicion(0,1, "metal");
+            jugador.aniadirMaterialEnPosicion(1,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarHacha(new Metal());
 
@@ -94,17 +93,17 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMaderaEnPosicion(0,0);
-            jugador.aniadirMaderaEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(2,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "madera");
+            jugador.aniadirMaterialEnPosicion(1,0, "madera");
+            jugador.aniadirMaterialEnPosicion(2,0, "madera");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarPico(new Madera());
 
@@ -119,17 +118,18 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirPiedraEnPosicion(0,0);
-            jugador.aniadirPiedraEnPosicion(1,0);
-            jugador.aniadirPiedraEnPosicion(2,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+
+            jugador.aniadirMaterialEnPosicion(0,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(2,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarPico(new Piedra());
 
@@ -144,17 +144,17 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMetalEnPosicion(0,0);
-            jugador.aniadirMetalEnPosicion(1,0);
-            jugador.aniadirMetalEnPosicion(2,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,0, "metal");
+            jugador.aniadirMaterialEnPosicion(2,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarPico(new Metal());
 
@@ -169,19 +169,19 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMetalEnPosicion(0,0);
-            jugador.aniadirMetalEnPosicion(1,0);
-            jugador.aniadirMetalEnPosicion(2,0);
-            jugador.aniadirPiedraEnPosicion(0,1);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,0, "metal");
+            jugador.aniadirMaterialEnPosicion(2,0, "metal");
+            jugador.aniadirMaterialEnPosicion(0,1, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarPicoFino();
 
@@ -194,17 +194,18 @@ public class MesaDeConstruccionTest {
     public void test08NoPuedoConstruirUnHachaDeMaderaSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMaderaAlInventario(new Madera());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMetalEnPosicion(1,0);
-        jugador.aniadirMetalEnPosicion(2,0);
-        jugador.aniadirMaderaEnPosicion(1,1);
-        jugador.aniadirMaderaEnPosicion(1,2);
+
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,0, "metal");
+        jugador.aniadirMaterialEnPosicion(2,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
         jugador.fabricarHacha(new Madera());
 
@@ -215,12 +216,12 @@ public class MesaDeConstruccionTest {
     public void test09NoPuedoConstruirUnHachaDePiedraSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
 
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMetalEnPosicion(1,0);
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,0, "metal");
 
         jugador.fabricarHacha(new Piedra());
     }
@@ -236,11 +237,11 @@ public class MesaDeConstruccionTest {
     public void test11NoPuedoConstruirUnPicoDeMaderaSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMaderaAlInventario(new Madera());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMaderaEnPosicion(1,1);
-        jugador.aniadirMaderaEnPosicion(1,2);
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
         jugador.fabricarPico(new Madera());
     }
@@ -249,17 +250,18 @@ public class MesaDeConstruccionTest {
     public void test12NoPuedoConstruirUnPicoDePiedraSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMaderaAlInventario(new Madera());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMetalEnPosicion(1,0);
-        jugador.aniadirMetalEnPosicion(2,0);
-        jugador.aniadirMaderaEnPosicion(1,1);
-        jugador.aniadirMaderaEnPosicion(1,2);
+
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,0, "metal");
+        jugador.aniadirMaterialEnPosicion(2,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
         jugador.fabricarPico(new Piedra());
     }
@@ -268,11 +270,11 @@ public class MesaDeConstruccionTest {
     public void test13NoPuedoConstruirUnPicoDeMetalSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMaderaEnPosicion(1,2);
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
         jugador.fabricarPico(new Metal());
     }
