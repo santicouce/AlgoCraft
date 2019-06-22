@@ -83,10 +83,14 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionAbajo(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
+    @Test
     public void test12UnJugadorIntentaMoverseAbajoEnElBordeInferiorDelMapaYDeberiaPoderse(){
-        mapa.aniadirJugadorAlMapa(jugador, 0,9);
-        jugador.moverA(new DireccionAbajo(mapa));
+        try {
+            mapa.aniadirJugadorAlMapa(jugador, 0, 9);
+            jugador.moverA(new DireccionAbajo(mapa));
+        }catch (Exception e){
+            fail ("No pude moverse satisfactoriamente.");
+        }
     }
     @Test
     public void test13UnJugadorIntentaMoverseAbajoAUnCasilleroVacioYSuPosicionDeberiaCambiar(){
