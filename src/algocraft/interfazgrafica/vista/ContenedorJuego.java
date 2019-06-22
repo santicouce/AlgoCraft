@@ -29,6 +29,8 @@ public class ContenedorJuego extends BorderPane{
     private GridPane contenedorCentral;
     private Juego algoCraft;
     private MediaPlayer mediaPlayer;
+    Button botonDesequipar;
+
     public ContenedorJuego(Stage stage, Juego juego) {
         this.algoCraft = juego;
         this.inicializarMenu(stage);
@@ -41,6 +43,57 @@ public class ContenedorJuego extends BorderPane{
     }
 
     private void inicializarBotonera() {
+        Jugador jugador = algoCraft.darJugador();
+        botonDesequipar = new Button("Desequipar");
+        botonDesequipar.setOnAction(new BotonDesequiparEventHandler(jugador, this, botonDesequipar));
+        actualizarBotonera();
+    }
+
+    private void inicializarMenu(Stage stage) {
+        this.menuBar = new BarraDeMenu(stage);
+        this.setTop(menuBar);
+    }
+
+    private void inicializarCentro() {
+        contenedorCentral = new GridPane();
+        this.actualizarImgagen();
+        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pasto.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        contenedorCentral.setBackground(new Background(imagenDeFondo));
+        this.setCenter(contenedorCentral);
+        this.setOnKeyPressed(new TeclaPulsadaEventHandler(algoCraft, jugador));
+
+    }
+    public void actualizarImgagen(){
+        int length = 20;
+        int width = 20;
+        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/stevefrente.png");
+        ImageView vistaImagen = new ImageView();
+        vistaImagen.setFitWidth(50);
+        vistaImagen.setFitHeight(50);
+        vistaImagen.setImage(imagen);
+        this.jugador = new JugadorVista(this, vistaImagen);
+        for(int x= 0; x < length; x++){
+            for(int y = 0; y < width; y++){
+                String nombreDeElemento = algoCraft.darNombre(x,y);
+                if(!nombreDeElemento.isEmpty()){
+                    imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/" + nombreDeElemento + ".png");
+                    vistaImagen = new ImageView();
+                    vistaImagen.setFitWidth(50);
+                    vistaImagen.setFitHeight(50);
+                    vistaImagen.setImage(imagen);
+                    contenedorCentral.add(vistaImagen, x, y);
+                }
+            }
+        }
+    }
+    public void eliminarImager(){
+        contenedorCentral.getChildren().clear();
+        mediaPlayer.setAutoPlay(true);
+    }
+
+    public void actualizarBotonera(){
+        VBox botonera = new VBox();
         ListView<String> listView = new ListView<String>();
         ObservableList<String> items = FXCollections.observableArrayList (
                 "Madera", "Piedra", "Metal", "Diamante", "Hacha De Madera", "Hacha De Piedra", "Hacha De Metal",
@@ -50,15 +103,15 @@ public class ContenedorJuego extends BorderPane{
         Image piedra  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/piedramenu.png");
         Image metal  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/metalmenu.png");
         Image diamante = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/diamantemenu.png");
-        Image hachamadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hachamaderamenu.png");
-        Image hachapiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hachapiedra.png");
-        Image hachametal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hachametal.png");
-        Image picomadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picomadera.png");
-        Image picopiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picopiedra.png");
-        Image picometal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picometal.png");
-        Image picofino = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picofino.jpg");
+        Image hachamadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hacha de madera.png");
+        Image hachapiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hacha de piedra.png");
+        Image hachametal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hacha de metal.png");
+        Image picomadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico de madera.png");
+        Image picopiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico de piedra.png");
+        Image picometal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico de metal.png");
+        Image picofino = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico fino.png");
         Image[] listOfImages = {madera, piedra, metal, diamante, hachamadera, hachapiedra, hachametal, picomadera, picopiedra,
-        picometal, picofino};
+                picometal, picofino};
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/azul.png");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
@@ -116,11 +169,10 @@ public class ContenedorJuego extends BorderPane{
                 }
             }
         });
-        ImageView imageView = new ImageView(hachamadera);
+        ImageView imageView = new ImageView(new Image("file:src/algocraft/interfazgrafica/vista/imagenes/" + jugador.nombreDeHerramientaEquipada() +".png"));
         imageView.setFitWidth(30);
         imageView.setFitHeight(30);
-        Button button = new Button("Desequipar");
-        HBox hBox = new HBox(new Label("Hacha De Madera"), imageView, button);
+        HBox hBox = new HBox(imageView, botonDesequipar);
         hBox.setAlignment(Pos.CENTER);
 
         SeparadorMenu separadorInventario = new SeparadorMenu("   Inventario");
@@ -133,53 +185,10 @@ public class ContenedorJuego extends BorderPane{
         Button botonConstruirHerramienta = new Button("Construir");
         HBox botonesControlMesaDeConstruccion = new HBox(botonConstruirHerramienta, botonBorranMesaDeConstruccion);
         botonesControlMesaDeConstruccion.setAlignment(Pos.CENTER);
-        VBox botonera = new VBox(separadorInventario, listView, separadorHerramientaEquipada, hBox, separadorMesaDeConstruccion,
+        botonera.getChildren().addAll(separadorInventario, listView, separadorHerramientaEquipada, hBox, separadorMesaDeConstruccion,
                 mesaDeConstruccion, botonesControlMesaDeConstruccion);
         botonera.setBackground(new Background(imagenDeFondo));
         botonera.setAlignment(Pos.TOP_CENTER);
         this.setLeft(botonera);
-    }
-
-    private void inicializarMenu(Stage stage) {
-        this.menuBar = new BarraDeMenu(stage);
-        this.setTop(menuBar);
-    }
-
-    private void inicializarCentro() {
-        contenedorCentral = new GridPane();
-        this.actualizarImgagen();
-        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pasto.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        contenedorCentral.setBackground(new Background(imagenDeFondo));
-        this.setCenter(contenedorCentral);
-        this.setOnKeyPressed(new TeclaPulsadaEventHandler(algoCraft, jugador));
-
-    }
-    public void actualizarImgagen(){
-        int length = 10;
-        int width = 10;
-        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/stevefrente.png");
-        ImageView vistaImagen = new ImageView();
-        vistaImagen.setFitWidth(50);
-        vistaImagen.setFitHeight(50);
-        vistaImagen.setImage(imagen);
-        this.jugador = new JugadorVista(this, vistaImagen);
-        for(int x= 0; x < length; x++){
-            for(int y = 0; y < width; y++){
-                String nombreDeElemento = algoCraft.darNombre(x,y);
-                if(!nombreDeElemento.isEmpty()){
-                    imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/" + nombreDeElemento + ".png");
-                    vistaImagen = new ImageView();
-                    vistaImagen.setFitWidth(50);
-                    vistaImagen.setFitHeight(50);
-                    vistaImagen.setImage(imagen);
-                    contenedorCentral.add(vistaImagen, x, y);
-                }
-            }
-        }
-    }
-    public void eliminarImager(){
-        contenedorCentral.getChildren().clear();
-        mediaPlayer.setAutoPlay(true);
     }
 }
