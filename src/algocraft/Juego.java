@@ -84,8 +84,7 @@ public class Juego {
         }
     }
 
-    public Inventario inventarioJugador(){
-        return jugador.darInventario();
+    public Jugador darJugador(){
+        return jugador;
     }
-
 }

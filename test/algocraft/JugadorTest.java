@@ -2,6 +2,7 @@ package algocraft;
 
 import algocraft.errores.MovimientoInvalidoError;
 import algocraft.jugador.Jugador;
+import algocraft.materiales.Material;
 import algocraft.movimientodeljugador.*;
 import algocraft.materiales.Madera;
 import algocraft.mapadejuego.Mapa;
@@ -85,5 +86,10 @@ public class JugadorTest {
     public void test13UnJugadorIntentaMoverseAbajoAUnCasilleroVacioYSuPosicionDeberiaCambiar(){
         mapa.aniadirJugadorAlMapa(jugador, 0,0);
         jugador.moverA(new DireccionAbajo(mapa));
+    }
+    @Test
+    public void test14UnJugadorIntentaGuardarseUnaMaderaYLaCantidadDeMaderasEnSuInventarioDeberiaSerUno(){
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        assertEquals(1, jugador.cantidadDe("madera"));
     }
 }

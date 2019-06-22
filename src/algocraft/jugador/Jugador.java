@@ -20,18 +20,28 @@ import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
+
 public class Jugador extends Observable {
 
     private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
     private MesaDeConstruccion mesaDeConstruccion;
+    private HashMap<String, List<Material>> Inventario = new HashMap<String, List<Material>>();
 
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
         mesaDeConstruccion = new MesaDeConstruccion(inventario);
+        Inventario.put("madera", new ArrayList<Material>());
+        Inventario.put("piedra", new ArrayList<Material>());
+        Inventario.put("metal", new ArrayList<Material>());
+        Inventario.put("diamante", new ArrayList<Material>());
     }
 
     public void golpear(Material unMaterial){
@@ -105,16 +115,19 @@ public class Jugador extends Observable {
         }
     }
 
-
-    public void agregarMaderaAlInventario(Madera madera) {
-        inventario.aniadirMadera(madera);
-    }
-    public void agregarMetalAlInventario(Metal metal) {
-        inventario.aniadirMetal(metal);
-    }
-    public void agregarPiedraAlInventario(Piedra piedra) {
-        inventario.aniadirPiedra(piedra);
+    public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){
+        Inventario.get(nombreDelMaterial).add(materialASerAgregado);
     }
 
-    public Inventario darInventario(){return this.inventario;}
+    public Material extraerMaterialDelInventario(String nombreDelMaterial){
+        return Inventario.get(nombreDelMaterial).get(0);
+    }
+    public boolean validarStockDe(String nombreDelMaterial){
+        if (Inventario.get(nombreDelMaterial).isEmpty()) { return false; }
+        return true;
+    }
+
+    public int cantidadDe(String nombreDelMaterial){
+        return Inventario.get(nombreDelMaterial).size();
+    }
 }
