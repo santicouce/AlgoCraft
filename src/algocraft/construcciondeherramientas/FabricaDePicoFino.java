@@ -3,7 +3,6 @@ package algocraft.construcciondeherramientas;
 import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.herramientas.Herramienta;
 import algocraft.herramientas.PicoFino;
-import algocraft.jugador.Inventario;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 

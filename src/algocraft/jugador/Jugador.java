@@ -27,7 +27,6 @@ import java.util.Objects;
 
 public class Jugador extends Observable {
 
-    private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
     private MesaDeConstruccion mesaDeConstruccion;
@@ -38,7 +37,7 @@ public class Jugador extends Observable {
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
-        mesaDeConstruccion = new MesaDeConstruccion(inventario);
+        mesaDeConstruccion = new MesaDeConstruccion();
         InventarioMateriales.put("madera", new ArrayList<>());
         InventarioMateriales.put("piedra", new ArrayList<>());
         InventarioMateriales.put("metal", new ArrayList<>());
@@ -77,7 +76,6 @@ public class Jugador extends Observable {
     }
 
     public void agregarHerramientaAlInventario(String nombreDeLaHerramienta, Herramienta herramienta) {
-        inventario.aniadirHerramienta(herramienta);
         InventarioHerramientas.get(nombreDeLaHerramienta).add(herramienta);
     }
 

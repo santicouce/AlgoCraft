@@ -1,14 +1,10 @@
 package algocraft.construcciondeherramientas;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.herramientas.Herramienta;
-import algocraft.jugador.Inventario;
 import algocraft.mapadejuego.Casillero;
-import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Material;
 import algocraft.materiales.MaterialDeConstruccion;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,12 +13,10 @@ public class MesaDeConstruccion {
     private int CANTIDAD_DE_COLUMNAS=3;
     private int CANTIDAD_DE_FILAS = 3;
     private Casillero tablero[][];
-    private Inventario inventarioDelJugador;
 
-    public MesaDeConstruccion(Inventario inventario) {
+    public MesaDeConstruccion() {
         this.tablero = new Casillero[CANTIDAD_DE_COLUMNAS][CANTIDAD_DE_FILAS];
         this.inicializarTablero();
-        this.inventarioDelJugador = inventario;
     }
 
     private void inicializarTablero() {

@@ -1,9 +1,7 @@
 package algocraft.construcciondeherramientas;
 
 import algocraft.herramientas.Herramienta;
-import algocraft.jugador.Inventario;
 import algocraft.materiales.Madera;
-import algocraft.materiales.Material;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 

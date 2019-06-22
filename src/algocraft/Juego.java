@@ -1,7 +1,6 @@
 package algocraft;
 
 import algocraft.errores.MovimientoInvalidoError;
-import algocraft.jugador.Inventario;
 import algocraft.jugador.Jugador;
 import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Diamante;
