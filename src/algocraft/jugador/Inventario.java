@@ -13,8 +13,6 @@ public class Inventario {
         herramientas = new ArrayList<>();
     }
 
-    public void extraerHerramienta() { herramientas.remove(0); }
-
     public void aniadirHerramienta(Herramienta herramienta) {
         herramientas.add(herramienta);
     }

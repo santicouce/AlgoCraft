@@ -92,4 +92,3 @@ public class MesaDeConstruccion {
         return true;
     }
 }
-

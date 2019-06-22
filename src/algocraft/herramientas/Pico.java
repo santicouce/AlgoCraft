@@ -10,7 +10,7 @@ public class Pico extends Herramienta {
         aguante = new AguantePico();
         unMaterialDeConstruccion.inicializar(fortaleza);
         unMaterialDeConstruccion.inicializar(aguante);
-        nombre = "pico";
+        nombre = "pico de ";
         material = unMaterialDeConstruccion;
     }
 }

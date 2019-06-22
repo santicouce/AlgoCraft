@@ -90,6 +90,6 @@ public class JugadorTest {
     @Test
     public void test14UnJugadorIntentaGuardarseUnaMaderaYLaCantidadDeMaderasEnSuInventarioDeberiaSerUno(){
         jugador.agregarMaterialAlInventario("madera", new Madera());
-        assertEquals(1, jugador.cantidadDe("madera"));
+        assertEquals(1, jugador.cantidadDeMaterial("madera"));
     }
 }

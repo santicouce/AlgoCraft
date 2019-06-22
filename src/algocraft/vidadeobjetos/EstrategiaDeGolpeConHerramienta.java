@@ -16,7 +16,7 @@ public class EstrategiaDeGolpeConHerramienta extends EstrategiaDeGolpe {
     }
 
     public void desequiparHerramienta(Jugador jugador){
-        jugador.agregarHerramientaAlInventario(herramientaActual);
+        jugador.agregarHerramientaAlInventario(herramientaActual.getNombre(), herramientaActual);
         herramientaActual = null;
         jugador.cambiarEstrategia(new EstrategiaDeGolpeSinHerramienta());
     }

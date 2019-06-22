@@ -44,14 +44,14 @@ public class MesaDeConstruccionTest {
             jugador.agregarMaterialAlInventario("piedra", new Piedra());
             jugador.agregarMaterialAlInventario("piedra", new Piedra());
             jugador.agregarMaterialAlInventario("piedra", new Piedra());
-            jugador.agregarMaterialAlInventario("piedra", new Piedra());
-            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
             jugador.aniadirMaterialEnPosicion(0,0, "piedra");
             jugador.aniadirMaterialEnPosicion(0,1,"piedra");
             jugador.aniadirMaterialEnPosicion(1,0, "piedra");
-            jugador.aniadirMaterialEnPosicion(1,1, "piedra");
-            jugador.aniadirMaterialEnPosicion(1,2, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
             jugador.fabricarHacha(new Piedra());
 

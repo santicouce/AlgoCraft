@@ -2,7 +2,6 @@ package algocraft.interfazgrafica.vista;
 
 import algocraft.Juego;
 import algocraft.interfazgrafica.eventos.*;
-import algocraft.jugador.Inventario;
 import algocraft.jugador.Jugador;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,11 +28,9 @@ public class ContenedorJuego extends BorderPane{
     private JugadorVista jugador;
     private GridPane contenedorCentral;
     private Juego algoCraft;
-    private Stage stage;
     private MediaPlayer mediaPlayer;
     public ContenedorJuego(Stage stage, Juego juego) {
         this.algoCraft = juego;
-        this.stage = stage;
         this.inicializarMenu(stage);
         this.inicializarCentro();
         this.inicializarBotonera();
@@ -80,35 +77,40 @@ public class ContenedorJuego extends BorderPane{
                 } else {
                     if(name.equals("Madera")){
                         imageView.setImage(listOfImages[0]);
-                        setText(name +": " + jugador.cantidadDe("madera"));
+                        setText(name +": " + jugador.cantidadDeMaterial("madera"));
                     } else if(name.equals("Piedra")){
                         imageView.setImage(listOfImages[1]);
-                        setText(name +": " + jugador.cantidadDe("piedra"));
+                        setText(name +": " + jugador.cantidadDeMaterial("piedra"));
                     } else if(name.equals("Metal")){
                         imageView.setImage(listOfImages[2]);
-                        setText(name +": " + jugador.cantidadDe("metal"));
+                        setText(name +": " + jugador.cantidadDeMaterial("metal"));
                     } else if(name.equals("Diamante")){
                         imageView.setImage(listOfImages[3]);
-                        setText(name +": " + jugador.cantidadDe("diamante"));
+                        setText(name +": " + jugador.cantidadDeMaterial("diamante"));
                     }else if(name.equals("Hacha De Madera")){
                         imageView.setImage(listOfImages[4]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("hacha de madera"));
                     }else if(name.equals("Hacha De Piedra")){
                         imageView.setImage(listOfImages[5]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("hacha de piedra"));
                     }else if(name.equals("Hacha De Metal")){
                         imageView.setImage(listOfImages[6]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("hacha de metal"));
                     } else if(name.equals("Pico De Madera")){
                         imageView.setImage(listOfImages[7]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico de madera"));
                     }else if(name.equals("Pico De Piedra")){
                         imageView.setImage(listOfImages[8]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico de piedra"));
                     }else if(name.equals("Pico De Metal")){
                         imageView.setImage(listOfImages[9]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico de metal"));
                     }else if(name.equals("Pico Fino")){
                         imageView.setImage(listOfImages[10]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico fino"));
                     }
-
                     imageView.setFitHeight(30);
                     imageView.setFitWidth(30);
-                //    setText(name + ":  0");
                     setGraphic(imageView);
                     setBackground(new Background(imagenDeFondo));
                 }

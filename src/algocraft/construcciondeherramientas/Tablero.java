@@ -42,6 +42,6 @@ public class Tablero {
 
     }
     public void eliminarElementoEnPosicion(int columna, int fila) {
-        tablero.get(fila).get(columna).eliminarElemento();
+        tablero.get(columna).get(fila).eliminarElemento();
     }
 }

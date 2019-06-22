@@ -31,17 +31,25 @@ public class Jugador extends Observable {
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
     private MesaDeConstruccion mesaDeConstruccion;
-    private HashMap<String, List<Material>> Inventario = new HashMap<String, List<Material>>();
+    private HashMap<String, List<Material>> InventarioMateriales = new HashMap<String, List<Material>>();
+    private HashMap<String, List<Herramienta>> InventarioHerramientas = new HashMap<String, List<Herramienta>>();
 
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
         mesaDeConstruccion = new MesaDeConstruccion(inventario);
-        Inventario.put("madera", new ArrayList<Material>());
-        Inventario.put("piedra", new ArrayList<Material>());
-        Inventario.put("metal", new ArrayList<Material>());
-        Inventario.put("diamante", new ArrayList<Material>());
+        InventarioMateriales.put("madera", new ArrayList<>());
+        InventarioMateriales.put("piedra", new ArrayList<>());
+        InventarioMateriales.put("metal", new ArrayList<>());
+        InventarioMateriales.put("diamante", new ArrayList<>());
+        InventarioHerramientas.put("hacha de madera", new ArrayList<>());
+        InventarioHerramientas.put("hacha de piedra", new ArrayList<>());
+        InventarioHerramientas.put("hacha de metal", new ArrayList<>());
+        InventarioHerramientas.put("pico de madera", new ArrayList<>());
+        InventarioHerramientas.put("pico de piedra", new ArrayList<>());
+        InventarioHerramientas.put("pico de metal", new ArrayList<>());
+        InventarioHerramientas.put("pico fino", new ArrayList<>());
     }
 
     public void golpear(Material unMaterial){
@@ -68,8 +76,9 @@ public class Jugador extends Observable {
            estrategiaDeGolpe.equiparHerramienta(this,unaHerramienta);
     }
 
-    public void agregarHerramientaAlInventario(Herramienta herramienta) {
+    public void agregarHerramientaAlInventario(String nombreDeLaHerramienta, Herramienta herramienta) {
         inventario.aniadirHerramienta(herramienta);
+        InventarioHerramientas.get(nombreDeLaHerramienta).add(herramienta);
     }
 
     @Override
@@ -91,14 +100,16 @@ public class Jugador extends Observable {
         if (mesaDeConstruccion.crearUnHacha(unMaterial)==false){
             throw new ImposibleCrearHerramientaError();
         }else{
-            agregarHerramientaAlInventario(new Hacha(unMaterial));
+            Hacha hacha = new Hacha(unMaterial);
+            agregarHerramientaAlInventario("hacha de " + unMaterial.darNombre(), hacha);
         }
     }
     public void fabricarPico(MaterialDeConstruccion unMaterial){
         if (mesaDeConstruccion.crearUnPico(unMaterial)==false){
             throw new ImposibleCrearHerramientaError();
         }else{
-            agregarHerramientaAlInventario(new Pico(unMaterial));
+            Pico pico = new Pico(unMaterial);
+            agregarHerramientaAlInventario("pico de " + unMaterial.darNombre(), pico);
         }
     }
 
@@ -106,23 +117,28 @@ public class Jugador extends Observable {
         if (mesaDeConstruccion.crearUnPicoFino()==false){
             throw new ImposibleCrearHerramientaError();
         }else{
-            agregarHerramientaAlInventario(new PicoFino(new Metal(), new Piedra()));
+            agregarHerramientaAlInventario("pico fino", new PicoFino(new Metal(), new Piedra()));
         }
     }
 
     public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){
-        Inventario.get(nombreDelMaterial).add(materialASerAgregado);
+        InventarioMateriales.get(nombreDelMaterial).add(materialASerAgregado);
     }
 
     public Material extraerMaterialDelInventario(String nombreDelMaterial){
-        return Inventario.get(nombreDelMaterial).get(0);
+        return InventarioMateriales.get(nombreDelMaterial).get(0);
     }
     public boolean validarStockDe(String nombreDelMaterial){
-        if (Inventario.get(nombreDelMaterial).isEmpty()) { return false; }
+        if (InventarioMateriales.get(nombreDelMaterial).isEmpty()) { return false; }
         return true;
     }
 
-    public int cantidadDe(String nombreDelMaterial){
-        return Inventario.get(nombreDelMaterial).size();
+    public int cantidadDeMaterial(String nombreDelMaterial){
+        return InventarioMateriales.get(nombreDelMaterial).size();
     }
+
+    public int cantidadDeHerramienta(String nombreDeHerramienta){
+        return InventarioHerramientas.get(nombreDeHerramienta).size();
+    }
+
 }
