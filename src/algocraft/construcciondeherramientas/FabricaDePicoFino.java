@@ -1,10 +1,14 @@
 package algocraft.construcciondeherramientas;
 
 import algocraft.errores.ImposibleCrearHerramientaError;
+import algocraft.herramientas.Herramienta;
 import algocraft.herramientas.PicoFino;
 import algocraft.jugador.Inventario;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class FabricaDePicoFino {
 
@@ -14,10 +18,10 @@ public class FabricaDePicoFino {
         identificador = "333210010";
     }
 
-    public void construir(String identificadorDelTablero, Inventario inventario){
+    public void construir(String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas){
 
         if (identificadorDelTablero.equals(identificador)){
-            inventario.aniadirHerramienta(new PicoFino(new Piedra(),new Metal()));
+            InventarioHerramientas.get("pico fino").add(new PicoFino(new Piedra(),new Metal()));
         }else {
             throw new ImposibleCrearHerramientaError();
         }

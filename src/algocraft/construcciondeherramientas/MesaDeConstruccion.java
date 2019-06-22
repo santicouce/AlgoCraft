@@ -1,5 +1,6 @@
 package algocraft.construcciondeherramientas;
 import algocraft.errores.PosicionInvalidaError;
+import algocraft.herramientas.Herramienta;
 import algocraft.jugador.Inventario;
 import algocraft.mapadejuego.Casillero;
 import algocraft.mapadejuego.Mapa;
@@ -8,6 +9,7 @@ import algocraft.materiales.MaterialDeConstruccion;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MesaDeConstruccion {
@@ -70,25 +72,21 @@ public class MesaDeConstruccion {
         }
 
     }
-    public boolean crearUnHacha(MaterialDeConstruccion unMaterial) {
+    public void crearUnHacha(MaterialDeConstruccion unMaterial, HashMap<String, List<Herramienta>> InventarioHerramientas) {
         String identificadorDelTablero =  identificadorDelTablero();
-        unMaterial.construirHacha(identificadorDelTablero,inventarioDelJugador);
-        return true;
+        unMaterial.construirHacha(identificadorDelTablero,InventarioHerramientas);
     }
-    public boolean crearUnPico(MaterialDeConstruccion unMaterial) {
+    public void crearUnPico(MaterialDeConstruccion unMaterial, HashMap<String, List<Herramienta>> InventarioHerramientas) {
         String identificadorDelTablero = identificadorDelTablero();
-        unMaterial.construirPico(identificadorDelTablero,inventarioDelJugador);
-        return true;
+        unMaterial.construirPico(identificadorDelTablero,InventarioHerramientas);
     }
 
-    public boolean crearUnPicoFino() {
+    public void crearUnPicoFino(HashMap<String, List<Herramienta>> InventarioHerramientas) {
         String identificadorDelTablero = identificadorDelTablero();
-        construirPicoFino(identificadorDelTablero);
-        return true;
+        construirPicoFino(identificadorDelTablero, InventarioHerramientas);
     }
-    private boolean construirPicoFino(String identificadorDelTablero){
+    private void construirPicoFino(String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas){
         FabricaDePicoFino fabricaDePicoFino = new FabricaDePicoFino();
-        fabricaDePicoFino.construir(identificadorDelTablero, inventarioDelJugador);
-        return true;
+        fabricaDePicoFino.construir(identificadorDelTablero, InventarioHerramientas);
     }
 }

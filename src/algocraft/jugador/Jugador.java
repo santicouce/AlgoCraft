@@ -97,28 +97,14 @@ public class Jugador extends Observable {
     }
 
     public void fabricarHacha(MaterialDeConstruccion unMaterial){
-        if (mesaDeConstruccion.crearUnHacha(unMaterial)==false){
-            throw new ImposibleCrearHerramientaError();
-        }else{
-            Hacha hacha = new Hacha(unMaterial);
-            agregarHerramientaAlInventario("hacha de " + unMaterial.darNombre(), hacha);
-        }
+        mesaDeConstruccion.crearUnHacha(unMaterial,InventarioHerramientas);
     }
     public void fabricarPico(MaterialDeConstruccion unMaterial){
-        if (mesaDeConstruccion.crearUnPico(unMaterial)==false){
-            throw new ImposibleCrearHerramientaError();
-        }else{
-            Pico pico = new Pico(unMaterial);
-            agregarHerramientaAlInventario("pico de " + unMaterial.darNombre(), pico);
-        }
+        mesaDeConstruccion.crearUnPico(unMaterial,InventarioHerramientas);
     }
 
     public void fabricarPicoFino() {
-        if (mesaDeConstruccion.crearUnPicoFino()==false){
-            throw new ImposibleCrearHerramientaError();
-        }else{
-            agregarHerramientaAlInventario("pico fino", new PicoFino(new Metal(), new Piedra()));
-        }
+        mesaDeConstruccion.crearUnPicoFino(InventarioHerramientas);
     }
 
     public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){

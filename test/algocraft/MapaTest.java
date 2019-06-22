@@ -55,6 +55,7 @@ public class MapaTest {
     public void test09AlIntentarAniadirUnElementoEnUnaFilaMayorALaFilaMaximaDelMapaDeberiaLanzarseUnPosicionInvalidaError(){
         mapa.aniadirElementoEnPosicion(madera,1,10);
     }
+
     @Test(expected = PosicionInvalidaError.class)
     public void test10AlIntentarAniadirUnElementoEnUnaColumnaMayorALaColumnaMaximaDelMapaDeberiaLanzarseUnPosicionInvalidaError(){
         mapa.aniadirElementoEnPosicion(madera,10,0);
