@@ -13,7 +13,7 @@ public class Tablero {
         tablero = new ArrayList<>();
     }
 
-    public void inicializarTablero(int cantidadInicialDeFilas,int cantidadInicialDeColumnas) {
+    public void inicializarTablero(int cantidadInicialDeColumnas,int cantidadInicialDeFilas) {
 
         for (int i = 0; i < cantidadInicialDeColumnas; i++) {
             tablero.add(new ArrayList<Casillero>());

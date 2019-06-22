@@ -116,10 +116,6 @@ public class Jugador extends Observable {
     public Material extraerMaterialDelInventario(String nombreDelMaterial){
         return InventarioMateriales.get(nombreDelMaterial).get(0);
     }
-    public boolean validarStockDe(String nombreDelMaterial){
-        if (InventarioMateriales.get(nombreDelMaterial).isEmpty()) { return false; }
-        return true;
-    }
 
     public int cantidadDeMaterial(String nombreDelMaterial){
         return InventarioMateriales.get(nombreDelMaterial).size();

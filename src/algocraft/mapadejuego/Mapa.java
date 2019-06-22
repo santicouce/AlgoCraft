@@ -10,18 +10,21 @@ import java.util.List;
 
 public class Mapa extends Tablero {
 
-    public Mapa(int fila, int columna) {
+    public Mapa(int columna, int fila) {
         inicializarTablero(columna,fila);
     }
 
-    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
-            try {
-                tablero.get(fila).get(columna).aniadirElemento(colocable);
-            }catch (IndexOutOfBoundsException indexoutofboundsexception){
-                if (columna>tablero.size()-1) {
-                    agrandarseADerecha();
-                }else {agrandarseParaAbajo();}
+    public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila) {
+        try {
+
+            tablero.get(fila).get(columna).aniadirElemento(colocable);
+        } catch (IndexOutOfBoundsException indexoutofboundsexception) {
+            if (columna > tablero.size() - 1) {
+                agrandarseADerecha();
+            } else {
+                agrandarseParaAbajo();
             }
+        }
     }
     public void moverJugador(Jugador unJugador, int columna, int fila){
         aniadirElementoEnPosicion(unJugador, columna, fila);
