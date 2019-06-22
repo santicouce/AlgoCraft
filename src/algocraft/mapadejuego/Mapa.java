@@ -7,13 +7,13 @@ import algocraft.errores.PosicionInvalidaError;
 
 public class Mapa extends Tablero {
 
-    public Mapa(int fila, int columna) {
+    public Mapa(int columna, int fila) {
         inicializarTablero(columna,fila);
     }
 
     public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila){
             try {
-                tablero.get(fila).get(columna).aniadirElemento(colocable);
+                tablero.get(columna).get(fila).aniadirElemento(colocable);
             }catch (Exception IndexOutOfBoundsException){
                 throw new PosicionInvalidaError();
             }
