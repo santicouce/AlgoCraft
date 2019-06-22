@@ -20,6 +20,7 @@ public class BotonDesequiparEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         jugador.desequiparHerramienta();
+        botonera.actualizarImgagen();
         botonera.actualizarBotonera();
         boton.setDisable(true);
     }
