@@ -83,4 +83,8 @@ public class MesaDeConstruccion {
         FabricaDePicoFino fabricaDePicoFino = new FabricaDePicoFino();
         fabricaDePicoFino.construir(identificadorDelTablero, InventarioHerramientas);
     }
+    private void construir(){
+        String identificadorDelTablero = identificadorDelTablero();
+        
+    }
 }
