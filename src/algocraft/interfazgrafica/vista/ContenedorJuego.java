@@ -145,25 +145,31 @@ public class ContenedorJuego extends BorderPane{
                     }else if(name.equals("Hacha De Madera")){
                         imageView.setImage(listOfImages[4]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de madera"));
-
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de madera", jugador));
                     }else if(name.equals("Hacha De Piedra")){
                         imageView.setImage(listOfImages[5]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de piedra"));
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de piedra", jugador));
                     }else if(name.equals("Hacha De Metal")){
                         imageView.setImage(listOfImages[6]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de metal"));
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de metal", jugador));
                     } else if(name.equals("Pico De Madera")){
                         imageView.setImage(listOfImages[7]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico de madera"));
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de madera", jugador));
                     }else if(name.equals("Pico De Piedra")){
                         imageView.setImage(listOfImages[8]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico de piedra"));
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de piedra", jugador));
                     }else if(name.equals("Pico De Metal")){
                         imageView.setImage(listOfImages[9]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico de metal"));
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de metal", jugador));
                     }else if(name.equals("Pico Fino")){
                         imageView.setImage(listOfImages[10]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico fino"));
+                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico fino", jugador));
                     }
                     imageView.setFitHeight(30);
                     imageView.setFitWidth(30);

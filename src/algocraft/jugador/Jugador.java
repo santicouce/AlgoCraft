@@ -56,7 +56,14 @@ public class Jugador extends Observable {
         agregarMaterialAlInventario("madera", new Madera());
         agregarMaterialAlInventario("madera", new Madera());
         agregarMaterialAlInventario("madera", new Madera());
-
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("metal", new Metal());
+        agregarMaterialAlInventario("metal", new Metal());
+        agregarMaterialAlInventario("metal", new Metal());
+        agregarMaterialAlInventario("metal", new Metal());
     }
 
     public void golpear(Material unMaterial){
@@ -140,4 +147,7 @@ public class Jugador extends Observable {
         mesaDeConstruccion.limpiarMesa();
     }
 
+    public void equiparHerramienta(String nombreDeHerramienta){
+        estrategiaDeGolpe.equiparHerramienta(this, InventarioHerramientas.get(nombreDeHerramienta).get(0));
+    }
 }
