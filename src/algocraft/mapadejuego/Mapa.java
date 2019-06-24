@@ -1,6 +1,5 @@
 package algocraft.mapadejuego;
 
-import algocraft.construcciondeherramientas.Tablero;
 import algocraft.jugador.Jugador;
 import algocraft.Observable;
 import algocraft.errores.PosicionInvalidaError;
@@ -8,10 +7,23 @@ import algocraft.errores.PosicionInvalidaError;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mapa extends Tablero {
+public class Mapa{
+    protected List<List<Casillero>> tablero;
 
     public Mapa(int columna, int fila) {
+        tablero = new ArrayList<>();
         inicializarTablero(columna,fila);
+    }
+
+    public void inicializarTablero(int cantidadInicialDeColumnas,int cantidadInicialDeFilas) {
+
+
+        for (int i = 0; i < cantidadInicialDeColumnas; i++) {
+            tablero.add(new ArrayList<Casillero>());
+            for (int j = 0; j < cantidadInicialDeFilas; j++) {
+                tablero.get(i).add(new Casillero());
+            }
+        }
     }
 
     public void aniadirElementoEnPosicion(Observable colocable, int columna, int fila) {
@@ -71,5 +83,25 @@ public class Mapa extends Tablero {
                 tablero.get(i).add(new Casillero());
             }
         }
+    }
+    public void validarPosicion(int columna, int fila) {
+        this.validarColumna(columna);
+        this.validarFila(fila);
+    }
+
+    private void validarColumna(int columna) {
+        if (columna < 0 || columna > (tablero.get(0).size() - 1)) {
+            throw new PosicionInvalidaError();
+        }
+    }
+
+    private void validarFila(int fila) {
+        if (fila < 0 || fila > (tablero.size() - 1)) {
+            throw new PosicionInvalidaError();
+        }
+
+    }
+    public void eliminarElementoEnPosicion(int columna, int fila) {
+        tablero.get(columna).get(fila).eliminarElemento();
     }
 }
