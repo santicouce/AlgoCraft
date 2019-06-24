@@ -1,6 +1,7 @@
 package algocraft.interfazgrafica.vista;
 
 import algocraft.interfazgrafica.eventos.BotonMesaDeConstruccion;
+import algocraft.jugador.Jugador;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 
@@ -14,16 +15,20 @@ public class VistaMesaDeConstruccion extends GridPane {
     private BotonMesaDeConstruccion button7;
     private BotonMesaDeConstruccion button8;
     private BotonMesaDeConstruccion button9;
-    public VistaMesaDeConstruccion(){
-        button1 = new BotonMesaDeConstruccion();
-        button2 = new BotonMesaDeConstruccion();
-        button3 = new BotonMesaDeConstruccion();
-        button4 = new BotonMesaDeConstruccion();
-        button5 = new BotonMesaDeConstruccion();
-        button6 = new BotonMesaDeConstruccion();
-        button7 = new BotonMesaDeConstruccion();
-        button8 = new BotonMesaDeConstruccion();
-        button9 = new BotonMesaDeConstruccion();
+    private Jugador jugador;
+    private ContenedorJuego contenedorJuego;
+    public VistaMesaDeConstruccion(Jugador unJugador, ContenedorJuego contenedorJuego){
+        button1 = new BotonMesaDeConstruccion(0,0, this);
+        button2 = new BotonMesaDeConstruccion(0,1, this);
+        button3 = new BotonMesaDeConstruccion(0,2, this);
+        button4 = new BotonMesaDeConstruccion(1,0, this);
+        button5 = new BotonMesaDeConstruccion(1,1, this);
+        button6 = new BotonMesaDeConstruccion(1,2, this);
+        button7 = new BotonMesaDeConstruccion(2,0, this);
+        button8 = new BotonMesaDeConstruccion(2,1, this);
+        button9 = new BotonMesaDeConstruccion(2,2, this);
+        jugador = unJugador;
+        this.contenedorJuego = contenedorJuego;
         this.add(button1, 0, 0, 1, 1);
         this.add(button2, 1, 0, 1, 1);
         this.add(button3, 2, 0, 1, 1);
@@ -45,5 +50,14 @@ public class VistaMesaDeConstruccion extends GridPane {
         button7.borrar();
         button8.borrar();
         button9.borrar();
+        jugador.limpiarMesaDeConstruccion();
+    }
+    public void aniadirMaterialEnPosicion(int columna, int fila, String unMaterial){
+        jugador.aniadirMaterialEnPosicion(columna, fila, unMaterial);
+    }
+    public void construir(){
+        jugador.fabricarUnaHerramienta();
+        borrar();
+        contenedorJuego.actualizarBotonera();
     }
 }

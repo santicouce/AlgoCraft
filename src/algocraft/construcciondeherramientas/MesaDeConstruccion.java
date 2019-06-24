@@ -40,7 +40,7 @@ public class MesaDeConstruccion {
 
         for (int i = 0; i < CANTIDAD_DE_FILAS; i++) {
             for (int j = 0; j < CANTIDAD_DE_COLUMNAS; j++) {
-                Casillero casillero = tablero[j][i];
+                Casillero casillero = tablero[i][j];
                 try{
                     identificadorCasilleroActual = casillero.getId();
                 }catch(Exception NullPointerException){

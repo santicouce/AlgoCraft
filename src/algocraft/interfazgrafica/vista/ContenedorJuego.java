@@ -21,6 +21,8 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ContenedorJuego extends BorderPane{
@@ -118,7 +120,7 @@ public class ContenedorJuego extends BorderPane{
         Jugador jugador = algoCraft.darJugador();
 
         listView.setPrefHeight(397);
-        listView.setCellFactory(param -> new ListCell<String>() {
+        listView.setCellFactory(param -> new ListCell<>() {
             private ImageView imageView = new ImageView();
             @Override
 
@@ -143,6 +145,7 @@ public class ContenedorJuego extends BorderPane{
                     }else if(name.equals("Hacha De Madera")){
                         imageView.setImage(listOfImages[4]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de madera"));
+
                     }else if(name.equals("Hacha De Piedra")){
                         imageView.setImage(listOfImages[5]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de piedra"));
@@ -179,14 +182,15 @@ public class ContenedorJuego extends BorderPane{
         SeparadorMenu separadorHerramientaEquipada = new SeparadorMenu("   Herramienta Equipada");
         SeparadorMenu separadorMesaDeConstruccion = new SeparadorMenu("   Mesa De Construccion");
 
-        VistaMesaDeConstruccion mesaDeConstruccion = new VistaMesaDeConstruccion();
+        VistaMesaDeConstruccion mesaDeConstruccion = new VistaMesaDeConstruccion(jugador, this);
         Button botonBorranMesaDeConstruccion = new Button("Borrar Todo");
         botonBorranMesaDeConstruccion.setOnAction(new BotonBorrarEventHandler(mesaDeConstruccion));
         Button botonConstruirHerramienta = new Button("Construir");
+        botonConstruirHerramienta.setOnAction(new BotonConstruirEventHandler( mesaDeConstruccion));
         HBox botonesControlMesaDeConstruccion = new HBox(botonConstruirHerramienta, botonBorranMesaDeConstruccion);
         botonesControlMesaDeConstruccion.setAlignment(Pos.CENTER);
         botonera.getChildren().addAll(separadorInventario, listView, separadorHerramientaEquipada, hBox, separadorMesaDeConstruccion,
-                mesaDeConstruccion, botonesControlMesaDeConstruccion);
+                mesaDeConstruccion, botonesControlMesaDeConstruccion );
         botonera.setBackground(new Background(imagenDeFondo));
         botonera.setAlignment(Pos.TOP_CENTER);
         this.setLeft(botonera);

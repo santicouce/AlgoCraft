@@ -9,13 +9,17 @@ public class BotonMenuMesaDeConstruccionEventHandler implements EventHandler<Act
     private BotonMesaDeConstruccion vistaMesaDeConstruccion;
     private ImageView imagen;
     private MenuItem boton;
-    public BotonMenuMesaDeConstruccionEventHandler(BotonMesaDeConstruccion botonMesaDeConstruccion, MenuItem unBoton, ImageView imagen){
+    private String material;
+    public BotonMenuMesaDeConstruccionEventHandler(BotonMesaDeConstruccion botonMesaDeConstruccion, MenuItem unBoton, ImageView imagen,
+                                                   String unMaterial){
         vistaMesaDeConstruccion = botonMesaDeConstruccion;
         this.imagen = imagen;
-        unBoton.setDisable(true);
+        //unBoton.setDisable(true);
+        material = unMaterial;
     }
     @Override
     public void handle(ActionEvent actionEvent) {
         vistaMesaDeConstruccion.setGraphic(imagen);
+        vistaMesaDeConstruccion.aniadirMaterial(material);
     }
 }

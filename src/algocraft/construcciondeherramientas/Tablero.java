@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tablero {
-
     protected List<List<Casillero>> tablero;
 
     public Tablero(){
@@ -14,6 +13,7 @@ public class Tablero {
     }
 
     public void inicializarTablero(int cantidadInicialDeColumnas,int cantidadInicialDeFilas) {
+
 
         for (int i = 0; i < cantidadInicialDeColumnas; i++) {
             tablero.add(new ArrayList<Casillero>());

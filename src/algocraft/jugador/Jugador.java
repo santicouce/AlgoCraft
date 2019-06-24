@@ -49,6 +49,14 @@ public class Jugador extends Observable {
         InventarioHerramientas.put("pico de piedra", new ArrayList<>());
         InventarioHerramientas.put("pico de metal", new ArrayList<>());
         InventarioHerramientas.put("pico fino", new ArrayList<>());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+
     }
 
     public void golpear(Material unMaterial){
