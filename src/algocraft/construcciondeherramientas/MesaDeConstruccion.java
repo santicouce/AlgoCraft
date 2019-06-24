@@ -123,7 +123,15 @@ public class MesaDeConstruccion {
                 for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
                 for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
                 InventarioMateriales.get("pidra").remove(0);
+            }
         }
 
+    public void limpiarMesa(){
+        for (int i=0;i<3;i++){
+            for (int j=0;j<3;j++){
+                Casillero casillero=tablero[i][j];
+                casillero.eliminarElemento();
+            }
+        }
     }
 }

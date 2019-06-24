@@ -128,5 +128,8 @@ public class Jugador extends Observable {
     public int cantidadDeHerramienta(String nombreDeHerramienta){
         return InventarioHerramientas.get(nombreDeHerramienta).size();
     }
+    public void limpiarMesaDeConstruccion(){
+        mesaDeConstruccion.limpiarMesa();
+    }
 
 }
