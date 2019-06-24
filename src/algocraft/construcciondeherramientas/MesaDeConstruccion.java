@@ -1,4 +1,5 @@
 package algocraft.construcciondeherramientas;
+import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.herramientas.Herramienta;
 import algocraft.mapadejuego.Casillero;
@@ -93,37 +94,48 @@ public class MesaDeConstruccion {
     }
     public void construir(HashMap<String, List<Herramienta>> InventarioHerramientas,HashMap<String, List<Material>> InventarioMateriales){
         String identificadorDelTablero = identificadorDelTablero();
-        int itemAConstruir = contruccionesSegunIdentificador.get(identificadorDelTablero) ;
+        int itemAConstruir=0;
+        try {
+            itemAConstruir = contruccionesSegunIdentificador.get(identificadorDelTablero);
+        }catch(Exception e){
+            throw new ImposibleCrearHerramientaError();
+        }
         switch(itemAConstruir){
             case 1:
                 crearUnHacha(new Madera(),InventarioHerramientas);
                 for (int i=1; i==5;i++){ InventarioMateriales.get("madera").remove(0); }
-
+                break;
             case 2:
                 crearUnHacha(new Piedra(),InventarioHerramientas);
                 for (int i=1; i==3;i++){ InventarioMateriales.get("piedra").remove(0); }
                 for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+                break;
             case 3:
                 crearUnHacha(new Metal(),InventarioHerramientas);
                 for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
                 for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+                break;
             case 4:
                 crearUnPico(new Madera(),InventarioHerramientas);
                 for (int i=1; i==5;i++){ InventarioMateriales.get("madera").remove(0); }
+                break;
             case 5:
                 crearUnPico(new Piedra(),InventarioHerramientas);
                 for (int i=1; i==3;i++){ InventarioMateriales.get("piedra").remove(0); }
                 for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+                break;
             case 6:
                 crearUnPico(new Metal(),InventarioHerramientas);
                 for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
                 for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+                break;
             case 7:
                 crearUnPicoFino(InventarioHerramientas);
                 for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
                 for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
-                InventarioMateriales.get("pidra").remove(0);
-            }
+                InventarioMateriales.get("piedra").remove(0);
+                break;
+        }
         }
 
     public void limpiarMesa(){
