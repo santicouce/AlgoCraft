@@ -159,5 +159,13 @@ public class HachaTest {
         assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
     }
 
+    @Test
+    public void test18UnHachaSeRompeAlUsarla50Veces(){
+        Hacha hachaDeMadera = new Hacha(new Madera());
+        for (int i=0; i<50; i++){
+            hachaDeMadera.golpear(new Madera());
+        }
+        assertEquals(true,hachaDeMadera.seRompio());
+    }
 
 }

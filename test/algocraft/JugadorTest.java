@@ -97,9 +97,18 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador, 0,0);
         jugador.moverA(new DireccionAbajo(mapa));
     }
-    //@Test
-    //public void test14UnJugadorIntentaGuardarseUnaMaderaYLaCantidadDeMaderasEnSuInventarioDeberiaSerUno(){
-      //  jugador.agregarMaterialAlInventario("madera", new Madera());
-        //assertEquals(1, jugador.cantidadDeMaterial("madera"));
-    //}
+
+    @Test
+    public void test14UnJugadorIntentaGuardarseUnaMaderaYLaCantidadDeMaderasEnSuInventarioDeberiaSerOcho(){
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        assertEquals(8, jugador.cantidadDeMaterial("madera"));
+    }
+
+    @Test
+    public void test15UnJugadorGolpeaUnaMaderaYAlRomperseLaAgregaAlInventario(){
+        Madera unaMadera = new Madera();
+        for (int i=0; i<7; i++){ jugador.extraerMaterialDelInventario("madera");}
+        for (int i=0; i<5; i++){ jugador.golpear(unaMadera);}
+        assertEquals(unaMadera,jugador.extraerMaterialDelInventario(unaMadera.darNombre()));
+    }
 }

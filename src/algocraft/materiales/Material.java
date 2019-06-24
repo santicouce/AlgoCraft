@@ -1,6 +1,7 @@
 package algocraft.materiales;
 
-import algocraft.construcciondeherramientas.FabricaDeHacha;
+import algocraft.jugador.Jugador;
+import algocraft.mapadejuego.Mapa;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
 import algocraft.herramientas.PicoFino;
@@ -22,4 +23,13 @@ public abstract class Material extends Observable {
     }
     public abstract void golpeadoCon(FortalezaHerramienta fortalezaHerramienta);
     public abstract void impactadoCon(PicoFino picoFino);
+    public boolean seRompio(){
+        if (this.durabilidad <= 0){ return true;}
+        return false;
+    }
+/*    public void eliminarse(Mapa mapa, Jugador jugador){
+        mapa.eliminarElementoDelMapa(this.ubicacion);
+    }
+
+ */
 }

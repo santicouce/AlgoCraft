@@ -26,4 +26,9 @@ public abstract class Herramienta {
     public String getNombre(){
         return (nombre + material.darNombre());
     }
+
+    public boolean seRompio(){
+        if (this.durabilidad() <= 0){ return true;}
+        return false;
+    }
 }

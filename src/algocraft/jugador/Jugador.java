@@ -68,6 +68,9 @@ public class Jugador extends Observable {
 
     public void golpear(Material unMaterial){
         estrategiaDeGolpe.golpear(unMaterial);
+        if (unMaterial.seRompio()){
+            this.agregarMaterialAlInventario(unMaterial.darNombre(),unMaterial);
+        }
     }
 
     public void cambiarEstrategia(EstrategiaDeGolpe nuevaEstrategia){

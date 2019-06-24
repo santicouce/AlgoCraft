@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Mapa{
     protected List<List<Casillero>> tablero;
+    private Jugador jugador;
 
     public Mapa(int columna, int fila) {
         tablero = new ArrayList<>();
@@ -51,9 +52,9 @@ public class Mapa{
 
     }
     public void aniadirJugadorAlMapa(Jugador unJugador, int columna, int fila){
+        this.jugador = unJugador;
         aniadirElementoEnPosicion(unJugador, columna, fila);
         unJugador.aniadirJugadorAlMapa(columna, fila);
-
     }
 
     public String darNombreDeElementoEn(int columna, int fila){

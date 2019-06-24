@@ -3,9 +3,13 @@ package algocraft;
 import algocraft.errores.CasilleroOcupadoError;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Jugador;
+import algocraft.mapadejuego.Casillero;
+import algocraft.mapadejuego.CasilleroLibre;
 import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.*;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 import static junit.framework.TestCase.fail;
 
@@ -79,6 +83,12 @@ public class MapaTest {
         mapa.aniadirElementoEnPosicion(jugador,-1,0);
     }
 
+    @Test
+    public void test13MapaBorraElementoDeLaUicacionColumnaFila(){
+        mapa.aniadirElementoEnPosicion(new Madera(),2, 2);
+        mapa.eliminarElementoEnPosicion(2,2);
+        assertEquals(new Casillero().darNombre(),mapa.darNombreDeElementoEn(2,2));
+    }
 
     /*
     @Test
