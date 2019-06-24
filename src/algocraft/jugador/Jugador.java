@@ -133,7 +133,7 @@ public class Jugador extends Observable {
     }
 
     public Material extraerMaterialDelInventario(String nombreDelMaterial){
-        return InventarioMateriales.get(nombreDelMaterial).get(0);
+        return InventarioMateriales.get(nombreDelMaterial).remove(0);
     }
 
     public int cantidadDeMaterial(String nombreDelMaterial){
@@ -148,6 +148,6 @@ public class Jugador extends Observable {
     }
 
     public void equiparHerramienta(String nombreDeHerramienta){
-        estrategiaDeGolpe.equiparHerramienta(this, InventarioHerramientas.get(nombreDeHerramienta).get(0));
+        estrategiaDeGolpe.equiparHerramienta(this, InventarioHerramientas.get(nombreDeHerramienta).remove(0));
     }
 }

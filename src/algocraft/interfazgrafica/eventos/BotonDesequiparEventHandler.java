@@ -8,20 +8,20 @@ import javafx.scene.control.Button;
 
 public class BotonDesequiparEventHandler implements EventHandler<ActionEvent> {
     private Jugador jugador;
-    private ContenedorJuego botonera;
+    private ContenedorJuego contenedorJuego;
     private Button boton;
 
-    public BotonDesequiparEventHandler (Jugador unJugador, ContenedorJuego unaBotonera, Button unBoton){
+    public BotonDesequiparEventHandler (Jugador unJugador, ContenedorJuego unContenedorDeJuego, Button unBoton){
         jugador = unJugador;
-        botonera = unaBotonera;
+        this.contenedorJuego = unContenedorDeJuego;
         boton = unBoton;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         jugador.desequiparHerramienta();
-        botonera.actualizarImgagen();
-        botonera.actualizarBotonera();
+        contenedorJuego.actualizarImgagen();
+        contenedorJuego.actualizarBotonera();
         boton.setDisable(true);
     }
 }

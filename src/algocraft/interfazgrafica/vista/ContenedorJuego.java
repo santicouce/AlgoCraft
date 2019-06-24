@@ -19,10 +19,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
-
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class ContenedorJuego extends BorderPane{
@@ -120,7 +117,7 @@ public class ContenedorJuego extends BorderPane{
         Jugador jugador = algoCraft.darJugador();
 
         listView.setPrefHeight(397);
-        listView.setCellFactory(param -> new ListCell<>() {
+        listView.setCellFactory(param -> new ListCell<String>() {
             private ImageView imageView = new ImageView();
             @Override
 

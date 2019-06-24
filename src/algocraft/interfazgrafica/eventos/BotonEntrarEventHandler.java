@@ -4,7 +4,6 @@ import algocraft.interfazgrafica.vista.ContenedorBienvenida;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class BotonEntrarEventHandler implements EventHandler<ActionEvent> {

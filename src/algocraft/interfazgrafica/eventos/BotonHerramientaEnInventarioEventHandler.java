@@ -5,8 +5,8 @@ import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 public class BotonHerramientaEnInventarioEventHandler implements EventHandler<MouseEvent> {
-    String nombreDeHerramienta;
-    Jugador jugador;
+    private String nombreDeHerramienta;
+    private Jugador jugador;
     public BotonHerramientaEnInventarioEventHandler(String nombreDeHerramienta, Jugador jugador){
         this.nombreDeHerramienta = nombreDeHerramienta;
         this.jugador = jugador;
