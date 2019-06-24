@@ -14,7 +14,7 @@ public class FabricaDePicoFino {
     String identificador = new String();
 
     public FabricaDePicoFino(){
-        identificador = "333210010";
+        identificador = "320311300";
     }
 
     public void construir(String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas){

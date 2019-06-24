@@ -18,13 +18,13 @@ public class MesaDeConstruccion {
     public MesaDeConstruccion() {
         this.tablero = new Casillero[CANTIDAD_DE_COLUMNAS][CANTIDAD_DE_FILAS];
         this.inicializarTablero();
-        contruccionesSegunIdentificador.put("110110010",1);
-        contruccionesSegunIdentificador.put("220210010",2);
-        contruccionesSegunIdentificador.put("330310010",3);
-        contruccionesSegunIdentificador.put("111010010",4);
-        contruccionesSegunIdentificador.put("222010010",5);
-        contruccionesSegunIdentificador.put("333010010",6);
-        contruccionesSegunIdentificador.put("333210010",7);
+        contruccionesSegunIdentificador.put("110111000",1);
+        contruccionesSegunIdentificador.put("220211000",2);
+        contruccionesSegunIdentificador.put("330311000",3);
+        contruccionesSegunIdentificador.put("100111100",4);
+        contruccionesSegunIdentificador.put("200211200",5);
+        contruccionesSegunIdentificador.put("300311300",6);
+        contruccionesSegunIdentificador.put("320311300",7);
     }
 
     private void inicializarTablero() {
@@ -34,12 +34,13 @@ public class MesaDeConstruccion {
             }
         }
     }
+
     public String identificadorDelTablero() {
         String identificador = new String();
         String identificadorCasilleroActual = new String();
 
-        for (int i = 0; i < CANTIDAD_DE_FILAS; i++) {
-            for (int j = 0; j < CANTIDAD_DE_COLUMNAS; j++) {
+        for (int i = 0; i < CANTIDAD_DE_COLUMNAS; i++) {
+            for (int j = 0; j < CANTIDAD_DE_FILAS; j++) {
                 Casillero casillero = tablero[i][j];
                 try{
                     identificadorCasilleroActual = casillero.getId();

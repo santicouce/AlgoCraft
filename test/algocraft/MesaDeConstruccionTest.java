@@ -13,8 +13,8 @@ public class MesaDeConstruccionTest {
 
     @Test
     public void test01ConstruyoUnHachaDeMaderaSafiscatoriamente(){
-        try {
 
+        try{
             Jugador jugador = new Jugador();
             jugador.agregarMaterialAlInventario("madera", new Madera());
             jugador.agregarMaterialAlInventario("madera", new Madera());
