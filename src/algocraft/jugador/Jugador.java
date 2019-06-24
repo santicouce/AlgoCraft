@@ -98,6 +98,10 @@ public class Jugador extends Observable {
         mesaDeConstruccion.aniadirElementoEnPosicion(columna, fila, materialPorAgregar);
     }
 
+    public void fabricarUnaHerramienta(){
+        mesaDeConstruccion.construir(InventarioHerramientas,InventarioMateriales);
+    }
+
     public void fabricarHacha(MaterialDeConstruccion unMaterial){
         mesaDeConstruccion.crearUnHacha(unMaterial,InventarioHerramientas);
     }

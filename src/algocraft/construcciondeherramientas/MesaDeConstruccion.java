@@ -2,8 +2,7 @@ package algocraft.construcciondeherramientas;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.herramientas.Herramienta;
 import algocraft.mapadejuego.Casillero;
-import algocraft.materiales.Material;
-import algocraft.materiales.MaterialDeConstruccion;
+import algocraft.materiales.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,10 +12,18 @@ public class MesaDeConstruccion {
     private int CANTIDAD_DE_COLUMNAS=3;
     private int CANTIDAD_DE_FILAS = 3;
     private Casillero tablero[][];
+    HashMap<String, Integer> contruccionesSegunIdentificador = new HashMap<String, Integer>();
 
     public MesaDeConstruccion() {
         this.tablero = new Casillero[CANTIDAD_DE_COLUMNAS][CANTIDAD_DE_FILAS];
         this.inicializarTablero();
+        contruccionesSegunIdentificador.put("110110010",1);
+        contruccionesSegunIdentificador.put("220210010",2);
+        contruccionesSegunIdentificador.put("330310010",3);
+        contruccionesSegunIdentificador.put("111010010",4);
+        contruccionesSegunIdentificador.put("222010010",5);
+        contruccionesSegunIdentificador.put("333010010",6);
+        contruccionesSegunIdentificador.put("333210010",7);
     }
 
     private void inicializarTablero() {
@@ -70,6 +77,7 @@ public class MesaDeConstruccion {
         String identificadorDelTablero =  identificadorDelTablero();
         unMaterial.construirHacha(identificadorDelTablero,InventarioHerramientas);
     }
+
     public void crearUnPico(MaterialDeConstruccion unMaterial, HashMap<String, List<Herramienta>> InventarioHerramientas) {
         String identificadorDelTablero = identificadorDelTablero();
         unMaterial.construirPico(identificadorDelTablero,InventarioHerramientas);
@@ -79,12 +87,43 @@ public class MesaDeConstruccion {
         String identificadorDelTablero = identificadorDelTablero();
         construirPicoFino(identificadorDelTablero, InventarioHerramientas);
     }
-    private void construirPicoFino(String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas){
+    private void construirPicoFino(String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas) {
         FabricaDePicoFino fabricaDePicoFino = new FabricaDePicoFino();
         fabricaDePicoFino.construir(identificadorDelTablero, InventarioHerramientas);
     }
-    private void construir(){
+    public void construir(HashMap<String, List<Herramienta>> InventarioHerramientas,HashMap<String, List<Material>> InventarioMateriales){
         String identificadorDelTablero = identificadorDelTablero();
-        
+        int itemAConstruir = contruccionesSegunIdentificador.get(identificadorDelTablero) ;
+        switch(itemAConstruir){
+            case 1:
+                crearUnHacha(new Madera(),InventarioHerramientas);
+                for (int i=1; i==5;i++){ InventarioMateriales.get("madera").remove(0); }
+
+            case 2:
+                crearUnHacha(new Piedra(),InventarioHerramientas);
+                for (int i=1; i==3;i++){ InventarioMateriales.get("piedra").remove(0); }
+                for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+            case 3:
+                crearUnHacha(new Metal(),InventarioHerramientas);
+                for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
+                for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+            case 4:
+                crearUnPico(new Madera(),InventarioHerramientas);
+                for (int i=1; i==5;i++){ InventarioMateriales.get("madera").remove(0); }
+            case 5:
+                crearUnPico(new Piedra(),InventarioHerramientas);
+                for (int i=1; i==3;i++){ InventarioMateriales.get("piedra").remove(0); }
+                for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+            case 6:
+                crearUnPico(new Metal(),InventarioHerramientas);
+                for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
+                for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+            case 7:
+                crearUnPicoFino(InventarioHerramientas);
+                for (int i=1; i==3;i++){ InventarioMateriales.get("metal").remove(0); }
+                for (int i=1; i==2;i++){ InventarioMateriales.get("madera").remove(0); }
+                InventarioMateriales.get("pidra").remove(0);
+        }
+
     }
 }
