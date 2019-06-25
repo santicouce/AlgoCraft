@@ -1,6 +1,7 @@
 package algocraft;
 
 import algocraft.herramientas.Hacha;
+import algocraft.jugador.Jugador;
 import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
