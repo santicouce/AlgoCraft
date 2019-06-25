@@ -107,8 +107,7 @@ public class Jugador extends Observable {
     }
 
     public String getId(){
-        //esto tiene que desaparecer
-        return "a";
+        return nombre;
     }
 
     public void aniadirMaterialEnPosicion(int columna, int fila, String material){
@@ -120,16 +119,6 @@ public class Jugador extends Observable {
         mesaDeConstruccion.construir(InventarioHerramientas,InventarioMateriales);
     }
 
-    public void fabricarHacha(MaterialDeConstruccion unMaterial){
-        mesaDeConstruccion.crearUnHacha(unMaterial,InventarioHerramientas);
-    }
-    public void fabricarPico(MaterialDeConstruccion unMaterial){
-        mesaDeConstruccion.crearUnPico(unMaterial,InventarioHerramientas);
-    }
-
-    public void fabricarPicoFino() {
-        mesaDeConstruccion.crearUnPicoFino(InventarioHerramientas);
-    }
 
     public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){
         InventarioMateriales.get(nombreDelMaterial).add(materialASerAgregado);
