@@ -1,8 +1,10 @@
 package algocraft;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.MovimientoInvalidoError;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Material;
+import algocraft.materiales.Piedra;
 import algocraft.movimientodeljugador.*;
 import algocraft.materiales.Madera;
 import algocraft.mapadejuego.Mapa;
@@ -110,5 +112,28 @@ public class JugadorTest {
         for (int i=0; i<7; i++){ jugador.extraerMaterialDelInventario("madera");}
         for (int i=0; i<5; i++){ jugador.golpear(unaMadera);}
         assertEquals(unaMadera,jugador.extraerMaterialDelInventario(unaMadera.darNombre()));
+    }
+
+    @Test
+    public void test16UnJugadorUsaUnHacha50VecesSeRompeYDesaparece(){
+        Jugador jugador = new Jugador();
+        Madera unaMadera = new Madera();
+
+        for (int i=0; i<50; i++){
+            jugador.golpear(unaMadera);
+        }
+
+        assertEquals(0, jugador.cantidadDeHerramienta("hacha de madera"));
+    }
+
+    @Test(expected = GolpeInvalidoError.class)
+    public void test17UnJugadorUsaUnHacha50VecesSeRompeYLaEstrategiaActualDeberiaCambiarAEstrategiaSinHerramienta() {
+        Jugador jugador = new Jugador();
+        Madera unaMadera = new Madera();
+
+        for (int i=0; i<50; i++){
+            jugador.golpear(unaMadera);
+        }
+        jugador.golpear(new Piedra());
     }
 }

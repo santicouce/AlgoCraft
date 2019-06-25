@@ -71,6 +71,9 @@ public class Jugador extends Observable {
         if (unMaterial.seRompio()){
             this.agregarMaterialAlInventario(unMaterial.darNombre(),unMaterial);
         }
+        if (estrategiaDeGolpe.herramienta().equals("herramienta rota")){
+            this.cambiarEstrategia(new EstrategiaDeGolpeSinHerramienta());
+        }
     }
 
     public void cambiarEstrategia(EstrategiaDeGolpe nuevaEstrategia){
