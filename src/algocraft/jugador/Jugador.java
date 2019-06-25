@@ -136,7 +136,7 @@ public class Jugador extends Observable {
         return InventarioHerramientas.get(nombreDeHerramienta).size();
     }
     public void limpiarMesaDeConstruccion(){
-        mesaDeConstruccion.limpiarMesa();
+        mesaDeConstruccion.limpiarMesa(InventarioMateriales);
     }
 
     public void equiparHerramienta(String nombreDeHerramienta){

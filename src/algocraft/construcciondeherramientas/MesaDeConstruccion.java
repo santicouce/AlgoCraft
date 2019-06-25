@@ -95,10 +95,11 @@ public class MesaDeConstruccion {
     }
     public void construir(HashMap<String, List<Herramienta>> InventarioHerramientas,HashMap<String, List<Material>> InventarioMateriales){
         String identificadorDelTablero = identificadorDelTablero();
-        int itemAConstruir=0;
+        int itemAConstruir;
         try {
             itemAConstruir = contruccionesSegunIdentificador.get(identificadorDelTablero);
         }catch(Exception e){
+            devolverMaterialesAlInventario(identificadorDelTablero,InventarioMateriales);
             throw new ImposibleCrearHerramientaError();
         }
         switch(itemAConstruir){
@@ -139,10 +140,29 @@ public class MesaDeConstruccion {
         }
         }
 
-    public void limpiarMesa(){
+    private void devolverMaterialesAlInventario(String identificadorDelTablero, HashMap<String, List<Material>> inventarioMateriales) {
+        for (int i=0;i<identificadorDelTablero.length();i++){
+            String identificador = String.valueOf(identificadorDelTablero.charAt(i));
+            devolverAlInventario(identificador,inventarioMateriales);
+        }
+    }
+
+    private void devolverAlInventario(String identificador, HashMap<String, List<Material>> inventarioMateriales) {
+        switch (identificador){
+            case "1":
+                inventarioMateriales.get("madera").add(new Madera());
+            case "2":
+                inventarioMateriales.get("piedra").add(new Piedra());
+            case "3":
+                inventarioMateriales.get("metal").add(new Metal());
+        }
+    }
+
+    public void limpiarMesa(HashMap<String, List<Material>> inventarioMateriales){
         for (int i=0;i<3;i++){
             for (int j=0;j<3;j++){
                 Casillero casillero=tablero[i][j];
+                devolverAlInventario(casillero.getId(),inventarioMateriales);
                 casillero.eliminarElemento();
             }
         }
