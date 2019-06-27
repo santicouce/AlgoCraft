@@ -9,7 +9,6 @@ import java.util.List;
 
 public class Mapa{
     protected List<List<Casillero>> tablero;
-    private Jugador jugador;
 
     public Mapa(int columna, int fila) {
         tablero = new ArrayList<>();
@@ -22,7 +21,7 @@ public class Mapa{
         for (int i = 0; i < cantidadInicialDeColumnas; i++) {
             tablero.add(new ArrayList<Casillero>());
             for (int j = 0; j < cantidadInicialDeFilas; j++) {
-                tablero.get(i).add(new Casillero());
+                tablero.get(i).add(j,new Casillero());
             }
         }
     }
@@ -52,7 +51,6 @@ public class Mapa{
 
     }
     public void aniadirJugadorAlMapa(Jugador unJugador, int columna, int fila){
-        this.jugador = unJugador;
         aniadirElementoEnPosicion(unJugador, columna, fila);
         unJugador.aniadirJugadorAlMapa(columna, fila);
     }
@@ -104,5 +102,9 @@ public class Mapa{
     }
     public void eliminarElementoEnPosicion(int columna, int fila) {
         tablero.get(columna).get(fila).eliminarElemento();
+    }
+
+    public List<List<Casillero>> getTablero() {
+        return tablero;
     }
 }

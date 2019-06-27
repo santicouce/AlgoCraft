@@ -64,8 +64,8 @@ public class ContenedorJuego extends BorderPane{
 
     }
     public void actualizarImgagen(){
-        int length = 20;
-        int width = 20;
+        int length = 10;
+        int width = 10;
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/stevefrente.png");
         ImageView vistaImagen = new ImageView();
         vistaImagen.setFitWidth(50);

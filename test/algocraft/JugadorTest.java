@@ -2,6 +2,7 @@ package algocraft;
 
 import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.MovimientoInvalidoError;
+import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Material;
 import algocraft.materiales.Piedra;
@@ -37,7 +38,7 @@ public class JugadorTest {
         jugador.aniadirJugadorAlMapa(1,0);
         jugador.moverA(new DireccionIzquierda(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
+    @Test(expected = PosicionInvalidaError.class)
     public void test04UnJugadorIntentaMoverseALaIzquierdaEstandoEnElBordeIzquierdoDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
         mapa.aniadirElementoEnPosicion(jugador,0,0);
         jugador.aniadirJugadorAlMapa(0,0);
@@ -69,7 +70,7 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador,0,1);
         jugador.moverA(new DireccionArriba(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
+    @Test(expected = PosicionInvalidaError.class)
     public void test09UnJugadorIntentaMoverseArribaEstandoEnElBordeSuperiorDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionArriba(mapa));

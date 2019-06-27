@@ -1,6 +1,7 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
+import algocraft.errores.NoHayStockDelMaterial;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
@@ -120,7 +121,11 @@ public class Jugador extends Observable {
     }
 
     public Material extraerMaterialDelInventario(String nombreDelMaterial){
-        return inventarioMateriales.get(nombreDelMaterial).remove(0);
+        try {
+            return inventarioMateriales.get(nombreDelMaterial).remove(0);
+        }catch (IndexOutOfBoundsException outofbounds){
+            throw new NoHayStockDelMaterial();
+        }
     }
 
     public int cantidadDeMaterial(String nombreDelMaterial){
@@ -131,7 +136,7 @@ public class Jugador extends Observable {
         return inventarioHerramientas.get(nombreDeHerramienta).size();
     }
     public void limpiarMesaDeConstruccion(){
-        mesaDeConstruccion.limpiarMesa(inventarioMateriales);
+        mesaDeConstruccion.limpiarMesa();
     }
 
     public void equiparHerramienta(String nombreDeHerramienta){
