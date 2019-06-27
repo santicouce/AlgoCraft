@@ -3,12 +3,15 @@ package algocraft.mapadejuego;
 import algocraft.jugador.Jugador;
 import algocraft.Observable;
 import algocraft.errores.PosicionInvalidaError;
+import algocraft.materiales.Material;
+import algocraft.movimientodeljugador.Direccion;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Mapa{
     protected List<List<Casillero>> tablero;
+    private Jugador jugador;
 
     public Mapa(int columna, int fila) {
         tablero = new ArrayList<>();
@@ -53,6 +56,7 @@ public class Mapa{
     public void aniadirJugadorAlMapa(Jugador unJugador, int columna, int fila){
         aniadirElementoEnPosicion(unJugador, columna, fila);
         unJugador.aniadirJugadorAlMapa(columna, fila);
+        jugador = unJugador;
     }
 
     public String darNombreDeElementoEn(int columna, int fila){
@@ -106,5 +110,32 @@ public class Mapa{
 
     public List<List<Casillero>> getTablero() {
         return tablero;
+    }
+
+    public void golpear(){
+        String direccionDelJugador = jugador.getUbicacion().frente();
+        int ubicacionDelJugadorColumna = jugador.getUbicacion().getColumna();
+        int ubicacionDelJugadorFila = jugador.getUbicacion().getFila();
+        Observable observableAledanio;
+
+        switch (direccionDelJugador){
+
+            case "frente":
+                observableAledanio = tablero.get(ubicacionDelJugadorColumna).get(ubicacionDelJugadorFila+1).getObservable();
+
+            case "espalda":
+                observableAledanio = tablero.get(ubicacionDelJugadorColumna).get(ubicacionDelJugadorFila-1).getObservable();
+
+            case "derecha":
+                observableAledanio = tablero.get(ubicacionDelJugadorColumna+1).get(ubicacionDelJugadorFila).getObservable();
+
+            case "izquierda":
+                observableAledanio = tablero.get(ubicacionDelJugadorColumna-1).get(ubicacionDelJugadorFila).getObservable();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + direccionDelJugador);
+        }
+
+        jugador.golpear((Material)observableAledanio);
     }
 }

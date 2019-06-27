@@ -7,6 +7,7 @@ import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import org.junit.Test;
 import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertEquals;
 
 public class MesaDeConstruccionTest {
 
@@ -283,5 +284,26 @@ public class MesaDeConstruccionTest {
     public void test14NoPuedoConstruirUnPicoFinoSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
         jugador.fabricarUnaHerramienta();
+    }
+
+    @Test
+    public void test15PuedoConstruirUnPicoDeMaderaConLosMaterialesNecesarios(){
+        Jugador jugador = new Jugador();
+
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("piedra", new Piedra());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+
+
+        jugador.aniadirMaterialEnPosicion(0,0, "madera");
+        jugador.aniadirMaterialEnPosicion(1,0, "madera");
+        jugador.aniadirMaterialEnPosicion(2,0, "madera");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
+
+        jugador.fabricarUnaHerramienta();
+        assertEquals(1,jugador.cantidadDeHerramienta("pico de madera"));
     }
 }

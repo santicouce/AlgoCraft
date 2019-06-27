@@ -34,4 +34,12 @@ public class UbicacionJugador {
     public String frente() {
         return mirando;
     }
+
+    public int getColumna(){
+        return columna;
+    }
+
+    public int getFila(){
+        return fila;
+    }
 }

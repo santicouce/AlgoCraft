@@ -90,10 +90,27 @@ public class MapaTest {
         assertEquals(new Casillero().darNombre(),mapa.darNombreDeElementoEn(2,2));
     }
 
-    /*
     @Test
-    public void test13CreoBienUnMApa(){
-        Mapa unMapa = new Mapa(5,5);
+    public void test14UnJugadorPuedeGolpearMaterialAledanio(){
+        mapa.aniadirJugadorAlMapa(jugador,5,5);
+        mapa.aniadirElementoEnPosicion(madera,5,6);
+        mapa.aniadirElementoEnPosicion(madera,5,4);
+        mapa.aniadirElementoEnPosicion(madera,4,5);
+        mapa.aniadirElementoEnPosicion(madera,6,5);
+        mapa.golpear();
     }
-     */
+/*
+    @Test
+    public void test15DurabilidadDeMaterialAledanioSeReduceAlGolpearlo(){
+        mapa.aniadirJugadorAlMapa(jugador,5,5);
+        mapa.aniadirElementoEnPosicion(madera,5,6);
+        mapa.aniadirElementoEnPosicion(piedra,5,4);
+        mapa.aniadirElementoEnPosicion(diamante,4,5);
+        mapa.aniadirElementoEnPosicion(metal,6,5);
+        mapa.golpear();
+        Material materialGolpeado = (Material)mapa.getTablero().get(5).get(6).getObservable();
+        assertEquals(8,materialGolpeado.durabilidad());
+    }
+
+ */
 }

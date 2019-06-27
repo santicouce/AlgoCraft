@@ -85,6 +85,10 @@ public class Jugador extends Observable {
         ubicacion.moverJugadorA(this, unaDireccion);
     }
 
+    public UbicacionJugador getUbicacion(){
+        return ubicacion;
+    }
+
     public void equiparHerramienta(Herramienta unaHerramienta){
            estrategiaDeGolpe.equiparHerramienta(this,unaHerramienta);
     }
