@@ -17,4 +17,9 @@ public class DireccionIzquierda extends Direccion{
     public void actualizarUbicacion(UbicacionJugador ubicacionJugador) {
         ubicacionJugador.actualizarUbicacion(this);
     }
+
+    @Override
+    public String vista(String mirando) {
+        return "izquierda";
+    }
 }

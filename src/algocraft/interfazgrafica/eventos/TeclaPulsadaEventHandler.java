@@ -1,15 +1,15 @@
 package algocraft.interfazgrafica.eventos;
 
 import algocraft.Juego;
-import algocraft.interfazgrafica.vista.JugadorVista;
+import algocraft.interfazgrafica.vista.VistaJugador;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class TeclaPulsadaEventHandler implements EventHandler <KeyEvent>{
     private Juego algocraft;
-    private JugadorVista jugador;
-    public TeclaPulsadaEventHandler(Juego juego, JugadorVista jugadorVista){
+    private VistaJugador jugador;
+    public TeclaPulsadaEventHandler(Juego juego, VistaJugador jugadorVista){
         algocraft = juego;
         jugador = jugadorVista;
     }

@@ -1,15 +1,9 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
-import algocraft.herramientas.Pico;
-import algocraft.herramientas.PicoFino;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
-import algocraft.errores.ImposibleCrearHerramientaError;
-import algocraft.herramientas.Pico;
-import algocraft.herramientas.PicoFino;
-import algocraft.materiales.*;
 import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
@@ -19,36 +13,34 @@ import algocraft.herramientas.Herramienta;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 public class Jugador extends Observable {
 
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
     private MesaDeConstruccion mesaDeConstruccion;
-    private HashMap<String, List<Material>> InventarioMateriales = new HashMap<String, List<Material>>();
-    private HashMap<String, List<Herramienta>> InventarioHerramientas = new HashMap<String, List<Herramienta>>();
+    private HashMap<String, List<Material>> inventarioMateriales = new HashMap<String, List<Material>>();
+    private HashMap<String, List<Herramienta>> inventarioHerramientas = new HashMap<String, List<Herramienta>>();
 
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
         mesaDeConstruccion = new MesaDeConstruccion();
-        InventarioMateriales.put("madera", new ArrayList<>());
-        InventarioMateriales.put("piedra", new ArrayList<>());
-        InventarioMateriales.put("metal", new ArrayList<>());
-        InventarioMateriales.put("diamante", new ArrayList<>());
-        InventarioHerramientas.put("hacha de madera", new ArrayList<>());
-        InventarioHerramientas.put("hacha de piedra", new ArrayList<>());
-        InventarioHerramientas.put("hacha de metal", new ArrayList<>());
-        InventarioHerramientas.put("pico de madera", new ArrayList<>());
-        InventarioHerramientas.put("pico de piedra", new ArrayList<>());
-        InventarioHerramientas.put("pico de metal", new ArrayList<>());
-        InventarioHerramientas.put("pico fino", new ArrayList<>());
+        inventarioMateriales.put("madera", new ArrayList<>());
+        inventarioMateriales.put("piedra", new ArrayList<>());
+        inventarioMateriales.put("metal", new ArrayList<>());
+        inventarioMateriales.put("diamante", new ArrayList<>());
+        inventarioHerramientas.put("hacha de madera", new ArrayList<>());
+        inventarioHerramientas.put("hacha de piedra", new ArrayList<>());
+        inventarioHerramientas.put("hacha de metal", new ArrayList<>());
+        inventarioHerramientas.put("pico de madera", new ArrayList<>());
+        inventarioHerramientas.put("pico de piedra", new ArrayList<>());
+        inventarioHerramientas.put("pico de metal", new ArrayList<>());
+        inventarioHerramientas.put("pico fino", new ArrayList<>());
         agregarMaterialAlInventario("madera", new Madera());
         agregarMaterialAlInventario("madera", new Madera());
         agregarMaterialAlInventario("madera", new Madera());
@@ -97,7 +89,7 @@ public class Jugador extends Observable {
     }
 
     public void agregarHerramientaAlInventario(String nombreDeLaHerramienta, Herramienta herramienta) {
-        InventarioHerramientas.get(nombreDeLaHerramienta).add(herramienta);
+        inventarioHerramientas.get(nombreDeLaHerramienta).add(herramienta);
     }
 
     @Override
@@ -119,30 +111,30 @@ public class Jugador extends Observable {
     }
 
     public void fabricarUnaHerramienta(){
-        mesaDeConstruccion.construir(InventarioHerramientas,InventarioMateriales);
+        mesaDeConstruccion.construir(inventarioHerramientas,inventarioMateriales);
     }
 
 
     public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){
-        InventarioMateriales.get(nombreDelMaterial).add(materialASerAgregado);
+        inventarioMateriales.get(nombreDelMaterial).add(materialASerAgregado);
     }
 
     public Material extraerMaterialDelInventario(String nombreDelMaterial){
-        return InventarioMateriales.get(nombreDelMaterial).remove(0);
+        return inventarioMateriales.get(nombreDelMaterial).remove(0);
     }
 
     public int cantidadDeMaterial(String nombreDelMaterial){
-        return InventarioMateriales.get(nombreDelMaterial).size();
+        return inventarioMateriales.get(nombreDelMaterial).size();
     }
 
     public int cantidadDeHerramienta(String nombreDeHerramienta){
-        return InventarioHerramientas.get(nombreDeHerramienta).size();
+        return inventarioHerramientas.get(nombreDeHerramienta).size();
     }
     public void limpiarMesaDeConstruccion(){
-        mesaDeConstruccion.limpiarMesa(InventarioMateriales);
+        mesaDeConstruccion.limpiarMesa(inventarioMateriales);
     }
 
     public void equiparHerramienta(String nombreDeHerramienta){
-        estrategiaDeGolpe.equiparHerramienta(this, InventarioHerramientas.get(nombreDeHerramienta).remove(0));
+        estrategiaDeGolpe.equiparHerramienta(this, inventarioHerramientas.get(nombreDeHerramienta).remove(0));
     }
 }

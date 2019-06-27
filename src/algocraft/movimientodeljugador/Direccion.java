@@ -21,4 +21,5 @@ public abstract class Direccion {
         }
     }
     public abstract void actualizarUbicacion(UbicacionJugador ubicacionJugador);
+    public abstract String vista(String mirando);
 }

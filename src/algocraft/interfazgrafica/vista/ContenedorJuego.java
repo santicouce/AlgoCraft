@@ -21,13 +21,13 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import java.io.File;
 
-
 public class ContenedorJuego extends BorderPane{
     private BarraDeMenu menuBar;
-    private JugadorVista jugador;
+    private VistaJugador jugador;
     private GridPane contenedorCentral;
     private Juego algoCraft;
     private MediaPlayer mediaPlayer;
+    private VistaJuego vistaJuego = new VistaJuego(this);
     Button botonDesequipar;
 
     public ContenedorJuego(Stage stage, Juego juego) {
@@ -41,7 +41,7 @@ public class ContenedorJuego extends BorderPane{
         mediaPlayer.setVolume(0.2);
     }
 
-    private void inicializarBotonera() {
+    public void inicializarBotonera() {
         Jugador jugador = algoCraft.darJugador();
         botonDesequipar = new Button("Desequipar");
         botonDesequipar.setOnAction(new BotonDesequiparEventHandler(jugador, this, botonDesequipar));
@@ -53,7 +53,7 @@ public class ContenedorJuego extends BorderPane{
         this.setTop(menuBar);
     }
 
-    private void inicializarCentro() {
+    public void inicializarCentro() {
         contenedorCentral = new GridPane();
         this.actualizarImgagen();
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pasto.jpg");
@@ -71,7 +71,7 @@ public class ContenedorJuego extends BorderPane{
         vistaImagen.setFitWidth(50);
         vistaImagen.setFitHeight(50);
         vistaImagen.setImage(imagen);
-        this.jugador = new JugadorVista(this, vistaImagen);
+        this.jugador = new VistaJugador(this, vistaImagen);
         for(int x= 0; x < length; x++){
             for(int y = 0; y < width; y++){
                 String nombreDeElemento = algoCraft.darNombre(x,y);
@@ -142,31 +142,45 @@ public class ContenedorJuego extends BorderPane{
                     }else if(name.equals("Hacha De Madera")){
                         imageView.setImage(listOfImages[4]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de madera"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de madera", jugador));
+                        if(jugador.cantidadDeHerramienta("hacha de madera") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de madera", jugador, vistaJuego));
+                        }
                     }else if(name.equals("Hacha De Piedra")){
                         imageView.setImage(listOfImages[5]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de piedra"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de piedra", jugador));
+                        if(jugador.cantidadDeHerramienta("hacha de piedra") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de piedra", jugador, vistaJuego));
+                        }
                     }else if(name.equals("Hacha De Metal")){
                         imageView.setImage(listOfImages[6]);
                         setText(name +": " + jugador.cantidadDeHerramienta("hacha de metal"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de metal", jugador));
+                        if(jugador.cantidadDeHerramienta("hacha de metal") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de metal", jugador, vistaJuego));
+                        }
                     } else if(name.equals("Pico De Madera")){
                         imageView.setImage(listOfImages[7]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico de madera"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de madera", jugador));
+                        if(jugador.cantidadDeHerramienta("pico de madera") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de madera", jugador, vistaJuego));
+                        }
                     }else if(name.equals("Pico De Piedra")){
                         imageView.setImage(listOfImages[8]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico de piedra"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de piedra", jugador));
+                        if(jugador.cantidadDeHerramienta("pico de piedra") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de piedra", jugador, vistaJuego));
+                        }
                     }else if(name.equals("Pico De Metal")){
                         imageView.setImage(listOfImages[9]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico de metal"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de metal", jugador));
+                        if(jugador.cantidadDeHerramienta("pico de metal") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de metal", jugador, vistaJuego));
+                        }
                     }else if(name.equals("Pico Fino")){
                         imageView.setImage(listOfImages[10]);
                         setText(name +": " + jugador.cantidadDeHerramienta("pico fino"));
-                        setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico fino", jugador));
+                        if(jugador.cantidadDeHerramienta("pico fino") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico fino", jugador, vistaJuego));
+                        }
                     }
                     imageView.setFitHeight(30);
                     imageView.setFitWidth(30);
