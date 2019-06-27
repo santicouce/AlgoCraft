@@ -1,6 +1,7 @@
 package algocraft.interfazgrafica.eventos;
 
 import algocraft.interfazgrafica.vista.VistaMesaDeConstruccion;
+import algocraft.jugador.Jugador;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
@@ -11,7 +12,7 @@ public class BotonMesaDeConstruccion extends MenuButton {
     private int columna;
     private int fila;
     private VistaMesaDeConstruccion mesaDeConstruccion;
-    public BotonMesaDeConstruccion(int columna, int fila, VistaMesaDeConstruccion mesaDeConstruccion){
+    public BotonMesaDeConstruccion(int columna, int fila, VistaMesaDeConstruccion mesaDeConstruccion, Jugador jugador){
         ImageView madera = new ImageView(new Image("file:src/algocraft/interfazgrafica/vista/imagenes/maderamenu.png"));
         ImageView metal = new ImageView(new Image("file:src/algocraft/interfazgrafica/vista/imagenes/metalmenu.png"));
         ImageView piedra = new ImageView(new Image("file:src/algocraft/interfazgrafica/vista/imagenes/piedramenu.png"));
@@ -27,11 +28,11 @@ public class BotonMesaDeConstruccion extends MenuButton {
         this.fila = fila;
         this.mesaDeConstruccion = mesaDeConstruccion;
         MenuItem menuMadera = new MenuItem("Madera");
-        menuMadera.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuMadera, madera, "madera"));
+        menuMadera.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuMadera, madera, "madera", jugador));
         MenuItem menuPiedra = new MenuItem("Piedra");
-        menuPiedra.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuPiedra, piedra, "piedra"));
+        menuPiedra.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuPiedra, piedra, "piedra", jugador));
         MenuItem menuMetal = new MenuItem("Metal");
-        menuMetal.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuMetal, metal, "metal"));
+        menuMetal.setOnAction(new BotonMenuMesaDeConstruccionEventHandler(this, menuMetal, metal, "metal", jugador));
         this.getItems().addAll(menuMadera, menuPiedra, menuMetal);
         this.setGraphic(cofre);
     }

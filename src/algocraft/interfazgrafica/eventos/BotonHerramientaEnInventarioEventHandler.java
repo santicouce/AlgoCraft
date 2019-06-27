@@ -11,14 +11,10 @@ public class BotonHerramientaEnInventarioEventHandler implements EventHandler<Mo
     private String nombreDeHerramienta;
     private Jugador jugador;
     private VistaJuego juego;
-    private Button boton;
     public BotonHerramientaEnInventarioEventHandler(String nombreDeHerramienta, Jugador jugador, VistaJuego juego){
         this.nombreDeHerramienta = nombreDeHerramienta;
         this.jugador = jugador;
         this.juego = juego;
-        if(jugador.cantidadDeHerramienta(nombreDeHerramienta) == 0){
-
-        }
     }
     @Override
     public void handle(MouseEvent mouseEvent) {
