@@ -18,16 +18,16 @@ public class VistaMesaDeConstruccion extends GridPane {
     private Jugador jugador;
     private ContenedorJuego contenedorJuego;
     public VistaMesaDeConstruccion(Jugador unJugador, ContenedorJuego contenedorJuego){
-        button1 = new BotonMesaDeConstruccion(0,0, this);
-        button2 = new BotonMesaDeConstruccion(1,0, this);
-        button3 = new BotonMesaDeConstruccion(2,0, this);
-        button4 = new BotonMesaDeConstruccion(0,1, this);
-        button5 = new BotonMesaDeConstruccion(1,1, this);
-        button6 = new BotonMesaDeConstruccion(2,1, this);
-        button7 = new BotonMesaDeConstruccion(0,2, this);
-        button8 = new BotonMesaDeConstruccion(1,2, this);
-        button9 = new BotonMesaDeConstruccion(2,2, this);
         jugador = unJugador;
+        button1 = new BotonMesaDeConstruccion(0,0, this, jugador);
+        button2 = new BotonMesaDeConstruccion(1,0, this, jugador);
+        button3 = new BotonMesaDeConstruccion(2,0, this, jugador);
+        button4 = new BotonMesaDeConstruccion(0,1, this, jugador);
+        button5 = new BotonMesaDeConstruccion(1,1, this, jugador);
+        button6 = new BotonMesaDeConstruccion(2,1, this, jugador);
+        button7 = new BotonMesaDeConstruccion(0,2, this, jugador);
+        button8 = new BotonMesaDeConstruccion(1,2, this, jugador);
+        button9 = new BotonMesaDeConstruccion(2,2, this, jugador);
         this.contenedorJuego = contenedorJuego;
         this.add(button1, 0, 0, 1, 1);
         this.add(button2, 1, 0, 1, 1);
