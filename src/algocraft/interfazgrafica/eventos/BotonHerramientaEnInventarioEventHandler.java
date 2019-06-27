@@ -1,5 +1,6 @@
 package algocraft.interfazgrafica.eventos;
 
+import algocraft.errores.ImposibleDesequiparNingunaHerramientaError;
 import algocraft.interfazgrafica.vista.VistaJuego;
 import algocraft.jugador.Jugador;
 import javafx.event.EventHandler;
@@ -21,6 +22,11 @@ public class BotonHerramientaEnInventarioEventHandler implements EventHandler<Mo
     }
     @Override
     public void handle(MouseEvent mouseEvent) {
+        try{
+            jugador.desequiparHerramienta();
+        }catch (ImposibleDesequiparNingunaHerramientaError imposibleDesequiparNingunaHerramientaError){
+
+        }
         jugador.equiparHerramienta(nombreDeHerramienta);
         juego.actualizar();
     }
