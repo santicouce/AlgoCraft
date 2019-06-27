@@ -14,7 +14,7 @@ public class FabricaDeHacha extends Fabrica{
 
     public void construir(Madera unaMadera, String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas){
 
-        identificador = "110111000" ;
+        identificador = "110110010" ;
         if (identificadorDelTablero.equals(identificador)){
             InventarioHerramientas.get("hacha de madera").add(new Hacha(new Madera()));
         }else {
@@ -23,7 +23,7 @@ public class FabricaDeHacha extends Fabrica{
     }
 
     public void construir(Piedra unaPiedra,String identificadorDelTablero, HashMap<String, List<Herramienta>>  InventarioHerramientas){
-        identificador = "220211000" ;
+        identificador = "220210010" ;
         if (identificadorDelTablero.equals(identificador)){
             InventarioHerramientas.get("hacha de piedra").add(new Hacha(new Piedra()));
         }else {
@@ -32,7 +32,7 @@ public class FabricaDeHacha extends Fabrica{
     }
 
     public void construir(Metal unMetal,String identificadorDelTablero, HashMap<String, List<Herramienta>> InventarioHerramientas){
-        identificador = "330311000" ;
+        identificador = "330310010" ;
         if (identificadorDelTablero.equals(identificador)){
             InventarioHerramientas.get("hacha de metal").add(new Hacha(new Metal()));
         }else {

@@ -1,15 +1,10 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
-import algocraft.herramientas.Pico;
-import algocraft.herramientas.PicoFino;
+import algocraft.errores.NoHayStockDelMaterial;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
-import algocraft.errores.ImposibleCrearHerramientaError;
-import algocraft.herramientas.Pico;
-import algocraft.herramientas.PicoFino;
-import algocraft.materiales.*;
 import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
@@ -23,7 +18,6 @@ import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 public class Jugador extends Observable {
 
@@ -128,7 +122,11 @@ public class Jugador extends Observable {
     }
 
     public Material extraerMaterialDelInventario(String nombreDelMaterial){
-        return InventarioMateriales.get(nombreDelMaterial).remove(0);
+        try {
+            return InventarioMateriales.get(nombreDelMaterial).remove(0);
+        }catch (IndexOutOfBoundsException outofbounds){
+            throw new NoHayStockDelMaterial();
+        }
     }
 
     public int cantidadDeMaterial(String nombreDelMaterial){
@@ -139,7 +137,7 @@ public class Jugador extends Observable {
         return InventarioHerramientas.get(nombreDeHerramienta).size();
     }
     public void limpiarMesaDeConstruccion(){
-        mesaDeConstruccion.limpiarMesa(InventarioMateriales);
+        mesaDeConstruccion.limpiarMesa();
     }
 
     public void equiparHerramienta(String nombreDeHerramienta){

@@ -13,7 +13,7 @@ import algocraft.movimientodeljugador.DireccionDerecha;
 import algocraft.movimientodeljugador.DireccionIzquierda;
 
 public class Juego {
-    private Mapa mapa = new Mapa(20,20);
+    private Mapa mapa = new Mapa(10,10);
     private Jugador jugador = new Jugador();
 
     public Juego(){
@@ -32,6 +32,8 @@ public class Juego {
         mapa.aniadirElementoEnPosicion(madera , 0,7);
         mapa.aniadirElementoEnPosicion(madera , 0,8);
         mapa.aniadirElementoEnPosicion(madera , 0,9);
+
+
         mapa.aniadirElementoEnPosicion(madera , 2,3);
         mapa.aniadirElementoEnPosicion(madera , 1,0);
         mapa.aniadirElementoEnPosicion(madera , 2,0);
@@ -52,7 +54,6 @@ public class Juego {
         mapa.aniadirElementoEnPosicion(madera , 7,3);
         mapa.aniadirElementoEnPosicion(metal , 4,1);
         mapa.aniadirJugadorAlMapa(jugador,5,5);
-        jugador.aniadirJugadorAlMapa(5,5);
     }
 
     public String darNombre(int columna, int fila){
