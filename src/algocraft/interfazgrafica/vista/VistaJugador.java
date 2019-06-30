@@ -16,4 +16,10 @@ public class VistaJugador {
         contenedor.eliminarImager();
         contenedor.actualizarImgagen();
     }
+
+    public void actualizateDespuesDeGolpear() {
+        contenedor.eliminarImager();
+        contenedor.actualizarImgagen();
+        contenedor.actualizarBotonera();
+    }
 }

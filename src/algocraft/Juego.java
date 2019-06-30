@@ -17,42 +17,43 @@ public class Juego {
     private Jugador jugador = new Jugador();
 
     public Juego(){
-        Madera madera = new Madera();
-        Piedra piedra = new Piedra();
-        Metal metal = new Metal();
-        Diamante diamante = new Diamante();
 
-        mapa.aniadirElementoEnPosicion(madera , 0,0);
-        mapa.aniadirElementoEnPosicion(madera , 0,1);
-        mapa.aniadirElementoEnPosicion(madera , 0,2);
-        mapa.aniadirElementoEnPosicion(madera , 0,3);
-        mapa.aniadirElementoEnPosicion(madera , 0,4);
-        mapa.aniadirElementoEnPosicion(madera , 0,5);
-        mapa.aniadirElementoEnPosicion(madera , 0,6);
-        mapa.aniadirElementoEnPosicion(madera , 0,7);
-        mapa.aniadirElementoEnPosicion(madera , 0,8);
-        mapa.aniadirElementoEnPosicion(madera , 0,9);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,1);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,2);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,3);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,4);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,5);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,6);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,7);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,8);
+        mapa.aniadirElementoEnPosicion(new Madera() , 0,9);
 
 
-        mapa.aniadirElementoEnPosicion(madera , 2,3);
-        mapa.aniadirElementoEnPosicion(madera , 1,0);
-        mapa.aniadirElementoEnPosicion(madera , 2,0);
-        mapa.aniadirElementoEnPosicion(madera , 3,0);
-        mapa.aniadirElementoEnPosicion(madera , 4,0);
-        mapa.aniadirElementoEnPosicion(madera , 5,0);
-        mapa.aniadirElementoEnPosicion(madera , 6,0);
-        mapa.aniadirElementoEnPosicion(madera , 7,0);
-        mapa.aniadirElementoEnPosicion(madera , 8,0);
-        mapa.aniadirElementoEnPosicion(madera , 9,0);
-        mapa.aniadirElementoEnPosicion(madera , 5,3);
+        mapa.aniadirElementoEnPosicion(new Madera() , 2,3);
+        mapa.aniadirElementoEnPosicion(new Madera() , 1,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 2,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 3,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 4,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 5,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 6,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 7,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 8,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 9,0);
+        mapa.aniadirElementoEnPosicion(new Madera() , 5,3);
+        mapa.aniadirElementoEnPosicion(new Madera() , 9,8);
+        mapa.aniadirElementoEnPosicion(new Madera() , 6,7);
 
-        mapa.aniadirElementoEnPosicion(diamante , 3,2);
+        mapa.aniadirElementoEnPosicion(new Diamante() , 3,2);
 
-        mapa.aniadirElementoEnPosicion(metal , 3,3);
+        mapa.aniadirElementoEnPosicion(new Metal() , 3,3);
+        mapa.aniadirElementoEnPosicion(new Metal() , 8,6);
+        mapa.aniadirElementoEnPosicion(new Metal() , 3,8);
 
-        mapa.aniadirElementoEnPosicion(piedra , 5,2);
-        mapa.aniadirElementoEnPosicion(madera , 7,3);
-        mapa.aniadirElementoEnPosicion(metal , 4,1);
+        mapa.aniadirElementoEnPosicion(new Piedra() , 5,9);
+        mapa.aniadirElementoEnPosicion(new Piedra() , 5,2);
+        mapa.aniadirElementoEnPosicion(new Madera() , 7,3);
+        mapa.aniadirElementoEnPosicion(new Metal() , 4,1);
         mapa.aniadirJugadorAlMapa(jugador,5,5);
     }
 
@@ -86,5 +87,20 @@ public class Juego {
 
     public Jugador darJugador(){
         return jugador;
+    }
+
+    public void golpear(){
+        try {
+            jugador.golpear(mapa);
+        }catch (NullPointerException nullpointer){
+            //No hay objeto a golpear.
+        }
+    }
+
+    public int cantidadFilasDelTablero() {
+        return mapa.getTablero().get(0).size();
+    }
+    public int cantidadColumnasDelTablero() {
+        return mapa.getTablero().size();
     }
 }

@@ -1,5 +1,6 @@
 package algocraft.materiales;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.jugador.Jugador;
 import algocraft.mapadejuego.Mapa;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
@@ -18,8 +19,12 @@ public abstract class Material extends Observable {
         return id;
     }
 
-    public void daniadoCon(FortalezaHerramienta fuerzaHerramienta){
-        durabilidad = fuerzaHerramienta.daniar(durabilidad);
+    public void daniadoCon(FortalezaHerramienta fuerzaHerramienta) {
+        if (seRompio()) {
+            throw new GolpeInvalidoError();
+        } else {
+            durabilidad = fuerzaHerramienta.daniar(durabilidad);
+        }
     }
     public abstract void golpeadoCon(FortalezaHerramienta fortalezaHerramienta);
     public abstract void impactadoCon(PicoFino picoFino);
@@ -27,9 +32,5 @@ public abstract class Material extends Observable {
         if (this.durabilidad <= 0){ return true;}
         return false;
     }
-/*    public void eliminarse(Mapa mapa, Jugador jugador){
-        mapa.eliminarElementoDelMapa(this.ubicacion);
-    }
 
- */
 }

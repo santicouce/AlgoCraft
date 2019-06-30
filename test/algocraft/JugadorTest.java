@@ -118,10 +118,9 @@ public class JugadorTest {
     @Test
     public void test16UnJugadorUsaUnHacha50VecesSeRompeYDesaparece(){
         Jugador jugador = new Jugador();
-        Madera unaMadera = new Madera();
 
         for (int i=0; i<50; i++){
-            jugador.golpear(unaMadera);
+            jugador.golpear(new Madera());
         }
 
         assertEquals(0, jugador.cantidadDeHerramienta("hacha de madera"));

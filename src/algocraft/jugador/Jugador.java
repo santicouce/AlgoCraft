@@ -1,7 +1,9 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.NoHayStockDelMaterial;
+import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
@@ -17,6 +19,8 @@ import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static junit.framework.TestCase.fail;
 
 public class Jugador extends Observable {
 
@@ -59,8 +63,70 @@ public class Jugador extends Observable {
         agregarMaterialAlInventario("metal", new Metal());
     }
 
+    public void golpear(Mapa mapa){
+        String direccionDelJugador = ubicacion.frente();
+        int ubicacionDelJugadorColumna = ubicacion.getColumna();
+        int ubicacionDelJugadorFila = ubicacion.getFila();
+        Observable observableAledanio;
+
+
+        switch (direccionDelJugador){
+
+            case "frente":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna, ubicacionDelJugadorFila + 1);
+                    Material material = (Material)observableAledanio;
+                    golpear(material);
+                    if (material.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna, ubicacionDelJugadorFila+1);
+                    }
+                }catch(IndexOutOfBoundsException indexoutofbounds){
+                }
+                break;
+
+            case "espalda":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna, ubicacionDelJugadorFila - 1);
+                    Material materialEspalda = (Material)observableAledanio;
+                    golpear(materialEspalda);
+                    if (materialEspalda.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna, ubicacionDelJugadorFila-1);
+                    }
+                }catch(IndexOutOfBoundsException indexoutofboundds){
+                }
+                break;
+            case "derecha":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna + 1, ubicacionDelJugadorFila);
+                    Material materialDerecha = (Material)observableAledanio;
+                    golpear(materialDerecha);
+                    if (materialDerecha.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna + 1, ubicacionDelJugadorFila);
+                    }
+
+                }catch (IndexOutOfBoundsException indexoutofbounds){
+                }
+                break;
+            case "izquierda":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna - 1, ubicacionDelJugadorFila);
+                    Material materialIzquierda = (Material)observableAledanio;
+                    golpear(materialIzquierda);
+                    if (materialIzquierda.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna - 1, ubicacionDelJugadorFila);
+                    }
+
+                }catch(IndexOutOfBoundsException indexoutofbounds){
+                }
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + direccionDelJugador);
+        }
+
+    }
+
     public void golpear(Material unMaterial){
-        estrategiaDeGolpe.golpear(unMaterial);
+            estrategiaDeGolpe.golpear(unMaterial);
         if (unMaterial.seRompio()){
             this.agregarMaterialAlInventario(unMaterial.darNombre(),unMaterial);
         }

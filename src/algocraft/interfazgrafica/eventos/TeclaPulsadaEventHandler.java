@@ -31,6 +31,10 @@ public class TeclaPulsadaEventHandler implements EventHandler <KeyEvent>{
             algocraft.moverJugadorDerecha();
             jugador.actualizate();
         }
+        if(keyEvent.getCode()== KeyCode.G){
+            algocraft.golpear();
+            jugador.actualizateDespuesDeGolpear();
+        }
         keyEvent.consume();
     }
 }

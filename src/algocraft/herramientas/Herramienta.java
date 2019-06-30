@@ -16,7 +16,11 @@ public abstract class Herramienta {
     public int fuerza(){return fortaleza.fuerza();}
 
     public void golpear (Material unMaterial){
-        unMaterial.golpeadoCon(fortaleza);
+        try {
+            unMaterial.golpeadoCon(fortaleza);
+        }catch (NullPointerException nullpointer){
+            //No hay objeto a golpear en esa posicion.
+        }
         this.desgastate();
     }
     public void desgastate(){
