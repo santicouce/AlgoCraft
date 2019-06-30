@@ -2,10 +2,10 @@ package algocraft.interfazgrafica.vista;
 
 import javafx.scene.image.ImageView;
 
-public class JugadorVista {
+public class VistaJugador {
     ContenedorJuego contenedor;
     ImageView imagenJugador;
-    public JugadorVista(ContenedorJuego contenedor, ImageView imagen){
+    public VistaJugador(ContenedorJuego contenedor, ImageView imagen){
         this.contenedor = contenedor;
         imagenJugador = imagen;
     }
@@ -15,5 +15,11 @@ public class JugadorVista {
     private void dibujar(){
         contenedor.eliminarImager();
         contenedor.actualizarImgagen();
+    }
+
+    public void actualizateDespuesDeGolpear() {
+        contenedor.eliminarImager();
+        contenedor.actualizarImgagen();
+        contenedor.actualizarBotonera();
     }
 }

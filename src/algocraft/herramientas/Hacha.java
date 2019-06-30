@@ -11,7 +11,7 @@ public class Hacha extends Herramienta {
         aguante = new AguanteHacha();
         unMaterial.inicializar(fortaleza);
         unMaterial.inicializar(aguante);
-        nombre = "hacha";
+        nombre = "hacha de ";
         material = unMaterial;
     }
 }

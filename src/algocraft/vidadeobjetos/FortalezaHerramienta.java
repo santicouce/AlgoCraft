@@ -10,6 +10,7 @@ public abstract class FortalezaHerramienta {
     public abstract void inicializate(Metal unMetal);
 
     public int daniar(int durabilidad){
+
         return (durabilidad - fuerza);
     }
     public int fuerza(){return fuerza;}

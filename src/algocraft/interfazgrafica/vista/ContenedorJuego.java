@@ -2,6 +2,7 @@ package algocraft.interfazgrafica.vista;
 
 import algocraft.Juego;
 import algocraft.interfazgrafica.eventos.*;
+import algocraft.jugador.Jugador;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -18,20 +19,19 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
-
 import java.io.File;
-
 
 public class ContenedorJuego extends BorderPane{
     private BarraDeMenu menuBar;
-    private JugadorVista jugador;
+    private VistaJugador jugador;
     private GridPane contenedorCentral;
     private Juego algoCraft;
-    private Stage stage;
     private MediaPlayer mediaPlayer;
+    private VistaJuego vistaJuego = new VistaJuego(this);
+    Button botonDesequipar;
+
     public ContenedorJuego(Stage stage, Juego juego) {
         this.algoCraft = juego;
-        this.stage = stage;
         this.inicializarMenu(stage);
         this.inicializarCentro();
         this.inicializarBotonera();
@@ -41,93 +41,11 @@ public class ContenedorJuego extends BorderPane{
         mediaPlayer.setVolume(0.2);
     }
 
-    private void inicializarBotonera() {
-        ListView<String> listView = new ListView<String>();
-        ObservableList<String> items = FXCollections.observableArrayList (
-                "Madera", "Piedra", "Metal", "Diamante", "Hacha De Madera", "Hacha De Piedra", "Hacha De Metal",
-                "Pico De Madera", "Pico De Piedra", "Pico De Metal", "Pico Fino");
-        listView.setItems(items);
-        Image madera  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/maderaMenu.png");
-        Image piedra  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/piedramenu.png");
-        Image metal  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/metalmenu.png");
-        Image diamante = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/diamantemenu.png");
-        Image hachamadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hachamaderamenu.png");
-        Image hachapiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hachapiedra.png");
-        Image hachametal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hachametal.png");
-        Image picomadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picomadera.png");
-        Image picopiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picopiedra.png");
-        Image picometal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picometal.png");
-        Image picofino = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/picofino.jpg");
-        Image[] listOfImages = {madera, piedra, metal, diamante, hachamadera, hachapiedra, hachametal, picomadera, picopiedra,
-        picometal, picofino};
-        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/azul.png");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-
-        listView.setPrefHeight(397);
-        listView.setCellFactory(param -> new ListCell<String>() {
-            private ImageView imageView = new ImageView();
-            @Override
-
-            public void updateItem(String name, boolean empty) {
-                super.updateItem(name, empty);
-                if (empty) {
-                    setText(null);
-                    setGraphic(null);
-                } else {
-                    if(name.equals("Madera")){
-                        imageView.setImage(listOfImages[0]);
-                    } else if(name.equals("Piedra")){
-                        imageView.setImage(listOfImages[1]);
-                    } else if(name.equals("Metal")){
-                        imageView.setImage(listOfImages[2]);
-                    } else if(name.equals("Diamante")){
-                        imageView.setImage(listOfImages[3]);
-                    }else if(name.equals("Hacha De Madera")){
-                        imageView.setImage(listOfImages[4]);
-                    }else if(name.equals("Hacha De Piedra")){
-                        imageView.setImage(listOfImages[5]);
-                    }else if(name.equals("Hacha De Metal")){
-                        imageView.setImage(listOfImages[6]);
-                    } else if(name.equals("Pico De Madera")){
-                        imageView.setImage(listOfImages[7]);
-                    }else if(name.equals("Pico De Piedra")){
-                        imageView.setImage(listOfImages[8]);
-                    }else if(name.equals("Pico De Metal")){
-                        imageView.setImage(listOfImages[9]);
-                    }else if(name.equals("Pico Fino")){
-                        imageView.setImage(listOfImages[10]);
-                    }
-
-                    imageView.setFitHeight(30);
-                    imageView.setFitWidth(30);
-                    setText(name + ":  0");
-                    setGraphic(imageView);
-                    setBackground(new Background(imagenDeFondo));
-                }
-            }
-        });
-        ImageView imageView = new ImageView(hachamadera);
-        imageView.setFitWidth(30);
-        imageView.setFitHeight(30);
-        Button button = new Button("Desequipar");
-        HBox hBox = new HBox(new Label("Hacha De Madera"), imageView, button);
-        hBox.setAlignment(Pos.CENTER);
-
-        SeparadorMenu separadorInventario = new SeparadorMenu("   Inventario");
-        SeparadorMenu separadorHerramientaEquipada = new SeparadorMenu("   Herramienta Equipada");
-        SeparadorMenu separadorMesaDeConstruccion = new SeparadorMenu("   Mesa De Construccion");
-
-        VistaMesaDeConstruccion mesaDeConstruccion = new VistaMesaDeConstruccion();
-        Button botonBorranMesaDeConstruccion = new Button("Borrar Todo");
-        botonBorranMesaDeConstruccion.setOnAction(new BotonBorrarEventHandler(mesaDeConstruccion));
-        Button botonConstruirHerramienta = new Button("Construir");
-        HBox botonesControlMesaDeConstruccion = new HBox(botonConstruirHerramienta, botonBorranMesaDeConstruccion);
-        botonesControlMesaDeConstruccion.setAlignment(Pos.CENTER);
-        VBox botonera = new VBox(separadorInventario, listView, separadorHerramientaEquipada, hBox, separadorMesaDeConstruccion,
-                mesaDeConstruccion, botonesControlMesaDeConstruccion);
-        botonera.setBackground(new Background(imagenDeFondo));
-        botonera.setAlignment(Pos.TOP_CENTER);
-        this.setLeft(botonera);
+    public void inicializarBotonera() {
+        Jugador jugador = algoCraft.darJugador();
+        botonDesequipar = new Button("Desequipar");
+        botonDesequipar.setOnAction(new BotonDesequiparEventHandler(jugador, this, botonDesequipar));
+        actualizarBotonera();
     }
 
     private void inicializarMenu(Stage stage) {
@@ -135,7 +53,7 @@ public class ContenedorJuego extends BorderPane{
         this.setTop(menuBar);
     }
 
-    private void inicializarCentro() {
+    public void inicializarCentro() {
         contenedorCentral = new GridPane();
         this.actualizarImgagen();
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pasto.jpg");
@@ -146,14 +64,14 @@ public class ContenedorJuego extends BorderPane{
 
     }
     public void actualizarImgagen(){
-        int length = 10;
-        int width = 10;
+        int length = algoCraft.cantidadColumnasDelTablero();
+        int width = algoCraft.cantidadFilasDelTablero();
         Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/stevefrente.png");
         ImageView vistaImagen = new ImageView();
         vistaImagen.setFitWidth(50);
         vistaImagen.setFitHeight(50);
         vistaImagen.setImage(imagen);
-        this.jugador = new JugadorVista(this, vistaImagen);
+        this.jugador = new VistaJugador(this, vistaImagen);
         for(int x= 0; x < length; x++){
             for(int y = 0; y < width; y++){
                 String nombreDeElemento = algoCraft.darNombre(x,y);
@@ -171,5 +89,127 @@ public class ContenedorJuego extends BorderPane{
     public void eliminarImager(){
         contenedorCentral.getChildren().clear();
         mediaPlayer.setAutoPlay(true);
+    }
+
+    public void actualizarBotonera(){
+        VBox botonera = new VBox();
+        ListView<String> listView = new ListView<String>();
+        ObservableList<String> items = FXCollections.observableArrayList (
+                "Madera", "Piedra", "Metal", "Diamante", "Hacha De Madera", "Hacha De Piedra", "Hacha De Metal",
+                "Pico De Madera", "Pico De Piedra", "Pico De Metal", "Pico Fino");
+        listView.setItems(items);
+        Image madera  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/maderaMenu.png");
+        Image piedra  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/piedramenu.png");
+        Image metal  = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/metalmenu.png");
+        Image diamante = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/diamantemenu.png");
+        Image hachamadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hacha de madera.png");
+        Image hachapiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hacha de piedra.png");
+        Image hachametal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/hacha de metal.png");
+        Image picomadera = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico de madera.png");
+        Image picopiedra = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico de piedra.png");
+        Image picometal = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico de metal.png");
+        Image picofino = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/pico fino.png");
+        Image[] listOfImages = {madera, piedra, metal, diamante, hachamadera, hachapiedra, hachametal, picomadera, picopiedra,
+                picometal, picofino};
+        Image imagen = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/azul.png");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+
+        Jugador jugador = algoCraft.darJugador();
+
+        listView.setPrefHeight(397);
+        listView.setCellFactory(param -> new ListCell<String>() {
+            private ImageView imageView = new ImageView();
+            @Override
+
+            public void updateItem(String name, boolean empty) {
+                super.updateItem(name, empty);
+                if (empty) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    if(name.equals("Madera")){
+                        imageView.setImage(listOfImages[0]);
+                        setText(name +": " + jugador.cantidadDeMaterial("madera"));
+                    } else if(name.equals("Piedra")){
+                        imageView.setImage(listOfImages[1]);
+                        setText(name +": " + jugador.cantidadDeMaterial("piedra"));
+                    } else if(name.equals("Metal")){
+                        imageView.setImage(listOfImages[2]);
+                        setText(name +": " + jugador.cantidadDeMaterial("metal"));
+                    } else if(name.equals("Diamante")){
+                        imageView.setImage(listOfImages[3]);
+                        setText(name +": " + jugador.cantidadDeMaterial("diamante"));
+                    }else if(name.equals("Hacha De Madera")){
+                        imageView.setImage(listOfImages[4]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("hacha de madera"));
+                        if(jugador.cantidadDeHerramienta("hacha de madera") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de madera", jugador, vistaJuego));
+                        }
+                    }else if(name.equals("Hacha De Piedra")){
+                        imageView.setImage(listOfImages[5]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("hacha de piedra"));
+                        if(jugador.cantidadDeHerramienta("hacha de piedra") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de piedra", jugador, vistaJuego));
+                        }
+                    }else if(name.equals("Hacha De Metal")){
+                        imageView.setImage(listOfImages[6]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("hacha de metal"));
+                        if(jugador.cantidadDeHerramienta("hacha de metal") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("hacha de metal", jugador, vistaJuego));
+                        }
+                    } else if(name.equals("Pico De Madera")){
+                        imageView.setImage(listOfImages[7]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico de madera"));
+                        if(jugador.cantidadDeHerramienta("pico de madera") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de madera", jugador, vistaJuego));
+                        }
+                    }else if(name.equals("Pico De Piedra")){
+                        imageView.setImage(listOfImages[8]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico de piedra"));
+                        if(jugador.cantidadDeHerramienta("pico de piedra") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de piedra", jugador, vistaJuego));
+                        }
+                    }else if(name.equals("Pico De Metal")){
+                        imageView.setImage(listOfImages[9]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico de metal"));
+                        if(jugador.cantidadDeHerramienta("pico de metal") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico de metal", jugador, vistaJuego));
+                        }
+                    }else if(name.equals("Pico Fino")){
+                        imageView.setImage(listOfImages[10]);
+                        setText(name +": " + jugador.cantidadDeHerramienta("pico fino"));
+                        if(jugador.cantidadDeHerramienta("pico fino") > 0){
+                            setOnMouseClicked(new BotonHerramientaEnInventarioEventHandler("pico fino", jugador, vistaJuego));
+                        }
+                    }
+                    imageView.setFitHeight(30);
+                    imageView.setFitWidth(30);
+                    setGraphic(imageView);
+                    setBackground(new Background(imagenDeFondo));
+                }
+            }
+        });
+        ImageView imageView = new ImageView(new Image("file:src/algocraft/interfazgrafica/vista/imagenes/" + jugador.nombreDeHerramientaEquipada() +".png"));
+        imageView.setFitWidth(30);
+        imageView.setFitHeight(30);
+        HBox hBox = new HBox(imageView, botonDesequipar);
+        hBox.setAlignment(Pos.CENTER);
+
+        SeparadorMenu separadorInventario = new SeparadorMenu("   Inventario");
+        SeparadorMenu separadorHerramientaEquipada = new SeparadorMenu("   Herramienta Equipada");
+        SeparadorMenu separadorMesaDeConstruccion = new SeparadorMenu("   Mesa De Construccion");
+
+        VistaMesaDeConstruccion mesaDeConstruccion = new VistaMesaDeConstruccion(jugador, this);
+        Button botonBorranMesaDeConstruccion = new Button("Borrar Todo");
+        botonBorranMesaDeConstruccion.setOnAction(new BotonBorrarEventHandler(mesaDeConstruccion));
+        Button botonConstruirHerramienta = new Button("Construir");
+        botonConstruirHerramienta.setOnAction(new BotonConstruirEventHandler( mesaDeConstruccion));
+        HBox botonesControlMesaDeConstruccion = new HBox(botonConstruirHerramienta, botonBorranMesaDeConstruccion);
+        botonesControlMesaDeConstruccion.setAlignment(Pos.CENTER);
+        botonera.getChildren().addAll(separadorInventario, listView, separadorHerramientaEquipada, hBox, separadorMesaDeConstruccion,
+                mesaDeConstruccion, botonesControlMesaDeConstruccion );
+        botonera.setBackground(new Background(imagenDeFondo));
+        botonera.setAlignment(Pos.TOP_CENTER);
+        this.setLeft(botonera);
     }
 }

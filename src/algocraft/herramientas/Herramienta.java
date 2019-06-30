@@ -16,7 +16,11 @@ public abstract class Herramienta {
     public int fuerza(){return fortaleza.fuerza();}
 
     public void golpear (Material unMaterial){
-        unMaterial.golpeadoCon(fortaleza);
+        try {
+            unMaterial.golpeadoCon(fortaleza);
+        }catch (NullPointerException nullpointer){
+            //No hay objeto a golpear en esa posicion.
+        }
         this.desgastate();
     }
     public void desgastate(){
@@ -25,5 +29,10 @@ public abstract class Herramienta {
     public void rompete(){}
     public String getNombre(){
         return (nombre + material.darNombre());
+    }
+
+    public boolean seRompio(){
+        if (this.durabilidad() <= 0){ return true;}
+        return false;
     }
 }

@@ -1,17 +1,23 @@
 package algocraft;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.MovimientoInvalidoError;
+import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Jugador;
+import algocraft.materiales.Material;
+import algocraft.materiales.Piedra;
 import algocraft.movimientodeljugador.*;
 import algocraft.materiales.Madera;
 import algocraft.mapadejuego.Mapa;
 import org.junit.Test;
+
+import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 
 public class JugadorTest {
 
     private Jugador jugador = new Jugador();
-    Mapa mapa = new Mapa();
+    Mapa mapa = new Mapa(20,20);
 
     @Test
     public void test01JugadorRecienCreadoDeberiaCuentaSoloConUnHachaDeMadera(){
@@ -32,7 +38,7 @@ public class JugadorTest {
         jugador.aniadirJugadorAlMapa(1,0);
         jugador.moverA(new DireccionIzquierda(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
+    @Test(expected = PosicionInvalidaError.class)
     public void test04UnJugadorIntentaMoverseALaIzquierdaEstandoEnElBordeIzquierdoDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
         mapa.aniadirElementoEnPosicion(jugador,0,0);
         jugador.aniadirJugadorAlMapa(0,0);
@@ -44,10 +50,14 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionDerecha(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
-    public void test06UnJugadorIntentaMoverseALaDerechaEstandoEnElBordeDerechoDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
-        mapa.aniadirJugadorAlMapa(jugador,9,0);
-        jugador.moverA(new DireccionDerecha(mapa));
+    @Test
+    public void test06UnJugadorIntentaMoverseALaDerechaEstandoEnElBordeDerechoDelMapaYSeDeberiaAgrandarElMapa(){
+        try {
+            mapa.aniadirJugadorAlMapa(jugador, 9, 0);
+            jugador.moverA(new DireccionDerecha(mapa));
+        } catch (Exception e){
+            fail ("No pudo moverse el jugador.");
+        }
     }
     @Test
     public void test07UnJugadoIntentaMoverseALaDerechaHaciaUnCasilleroVacioYSuPosicionDeberiaCambiar(){
@@ -60,7 +70,7 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador,0,1);
         jugador.moverA(new DireccionArriba(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
+    @Test(expected = PosicionInvalidaError.class)
     public void test09UnJugadorIntentaMoverseArribaEstandoEnElBordeSuperiorDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionArriba(mapa));
@@ -76,14 +86,54 @@ public class JugadorTest {
         mapa.aniadirJugadorAlMapa(jugador,0,0);
         jugador.moverA(new DireccionAbajo(mapa));
     }
-    @Test(expected = MovimientoInvalidoError.class)
-    public void test12UnJugadorIntentaMoverseAbajoEnElBordeInferiorDelMapaYSeDeberiaLanzarMovimientoInvalidoError(){
-        mapa.aniadirJugadorAlMapa(jugador, 0,9);
-        jugador.moverA(new DireccionAbajo(mapa));
+    @Test
+    public void test12UnJugadorIntentaMoverseAbajoEnElBordeInferiorDelMapaYDeberiaPoderse(){
+        try {
+            mapa.aniadirJugadorAlMapa(jugador, 0, 9);
+            jugador.moverA(new DireccionAbajo(mapa));
+        }catch (Exception e){
+            fail ("No pude moverse satisfactoriamente.");
+        }
     }
     @Test
     public void test13UnJugadorIntentaMoverseAbajoAUnCasilleroVacioYSuPosicionDeberiaCambiar(){
         mapa.aniadirJugadorAlMapa(jugador, 0,0);
         jugador.moverA(new DireccionAbajo(mapa));
+    }
+
+    @Test
+    public void test14UnJugadorIntentaGuardarseUnaMaderaYLaCantidadDeMaderasEnSuInventarioDeberiaSerOcho(){
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        assertEquals(8, jugador.cantidadDeMaterial("madera"));
+    }
+
+    @Test
+    public void test15UnJugadorGolpeaUnaMaderaYAlRomperseLaAgregaAlInventario(){
+        Madera unaMadera = new Madera();
+        for (int i=0; i<7; i++){ jugador.extraerMaterialDelInventario("madera");}
+        for (int i=0; i<5; i++){ jugador.golpear(unaMadera);}
+        assertEquals(unaMadera,jugador.extraerMaterialDelInventario(unaMadera.darNombre()));
+    }
+
+    @Test
+    public void test16UnJugadorUsaUnHacha50VecesSeRompeYDesaparece(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0; i<50; i++){
+            jugador.golpear(new Madera());
+        }
+
+        assertEquals(0, jugador.cantidadDeHerramienta("hacha de madera"));
+    }
+
+    @Test(expected = GolpeInvalidoError.class)
+    public void test17UnJugadorUsaUnHacha50VecesSeRompeYLaEstrategiaActualDeberiaCambiarAEstrategiaSinHerramienta() {
+        Jugador jugador = new Jugador();
+        Madera unaMadera = new Madera();
+
+        for (int i=0; i<50; i++){
+            jugador.golpear(unaMadera);
+        }
+        jugador.golpear(new Piedra());
     }
 }

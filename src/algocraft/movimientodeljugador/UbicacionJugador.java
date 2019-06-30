@@ -14,27 +14,32 @@ public class UbicacionJugador {
     }
 
     public void moverJugadorA(Jugador unJugador, Direccion unaDireccion){
+        mirando = unaDireccion.vista(mirando);
         unaDireccion.realizarMovimiento(unJugador, columna, fila);
         unaDireccion.actualizarUbicacion(this);
     }
     public void actualizarUbicacion(DireccionIzquierda direccionIzquierda){
         columna -= 1;
-        this.mirando = "izquierda";
     }
     public void actualizarUbicacion(DireccionDerecha direccionDerecha){
         columna += 1;
-        this.mirando = "derecha";
     }
     public void actualizarUbicacion(DireccionArriba direccionArriba) {
         fila -= 1;
-        this.mirando = "espalda";
     }
     public void actualizarUbicacion(DireccionAbajo direccionAbajo) {
         fila += 1;
-        this.mirando = "frente";
     }
 
     public String frente() {
         return mirando;
+    }
+
+    public int getColumna(){
+        return columna;
+    }
+
+    public int getFila(){
+        return fila;
     }
 }

@@ -2,11 +2,14 @@ package algocraft.materiales;
 
 import algocraft.construcciondeherramientas.FabricaDeHacha;
 import algocraft.construcciondeherramientas.FabricaDePico;
-import algocraft.jugador.Inventario;
+import algocraft.herramientas.Herramienta;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.herramientas.PicoFino;
 import algocraft.vidadeobjetos.FortalezaPico;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class Piedra extends MaterialDeConstruccion{
 
@@ -37,12 +40,12 @@ public class Piedra extends MaterialDeConstruccion{
         unMetal.daniadoCon(fortalezaPico);
     }
     @Override
-    public void construirHacha(String identificadorDelTablero, Inventario inventarioDelJugador) {
+    public void construirHacha(String identificadorDelTablero, HashMap<String, List<Herramienta>> inventarioDelJugador) {
         FabricaDeHacha fabricaDeHacha = new FabricaDeHacha();
         fabricaDeHacha.construir(this, identificadorDelTablero, inventarioDelJugador);
     }
     @Override
-    public void construirPico(String identificadorDelTablero, Inventario inventarioDelJugador) {
+    public void construirPico(String identificadorDelTablero, HashMap<String, List<Herramienta>> inventarioDelJugador) {
         FabricaDePico fabricaDePico = new FabricaDePico();
         fabricaDePico.construir(this, identificadorDelTablero, inventarioDelJugador);
     }

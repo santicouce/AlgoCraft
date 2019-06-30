@@ -27,5 +27,9 @@ public class Casillero {
     public String getId(){
         return colocable.getId();
     }
+
+    public Observable getObservable(){
+        return colocable;
+    }
 }
  

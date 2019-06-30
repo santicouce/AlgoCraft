@@ -35,7 +35,7 @@ public class ContenedorBienvenida extends VBox {
 
         Image logo = new Image("file:src/algocraft/interfazgrafica/vista/imagenes/ALGOCRAFT.png");
         ImageView vistaLogo = new ImageView(logo);
-        BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
+        BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena, this);
         botonEntrar.setOnAction(botonEntrarHandler);
 
         String s = "musica/DatGroove.mp3";
@@ -44,6 +44,9 @@ public class ContenedorBienvenida extends VBox {
         mediaPlayer.setVolume(0.2);
         this.getChildren().addAll(vistaLogo, botonEntrar);
         mediaPlayer.setAutoPlay(true);
+    }
+    public void pararMusica(){
+        mediaPlayer.pause();
     }
 
 }

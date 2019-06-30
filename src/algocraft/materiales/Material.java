@@ -1,6 +1,8 @@
 package algocraft.materiales;
 
-import algocraft.construcciondeherramientas.FabricaDeHacha;
+import algocraft.errores.GolpeInvalidoError;
+import algocraft.jugador.Jugador;
+import algocraft.mapadejuego.Mapa;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
 import algocraft.herramientas.PicoFino;
@@ -17,9 +19,18 @@ public abstract class Material extends Observable {
         return id;
     }
 
-    public void daniadoCon(FortalezaHerramienta fuerzaHerramienta){
-        durabilidad = fuerzaHerramienta.daniar(durabilidad);
+    public void daniadoCon(FortalezaHerramienta fuerzaHerramienta) {
+        if (seRompio()) {
+            throw new GolpeInvalidoError();
+        } else {
+            durabilidad = fuerzaHerramienta.daniar(durabilidad);
+        }
     }
     public abstract void golpeadoCon(FortalezaHerramienta fortalezaHerramienta);
     public abstract void impactadoCon(PicoFino picoFino);
+    public boolean seRompio(){
+        if (this.durabilidad <= 0){ return true;}
+        return false;
+    }
+
 }

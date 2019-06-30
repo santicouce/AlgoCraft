@@ -74,4 +74,16 @@ public class MaderaTest {
         assertEquals(madera.getId(), "1");
     }
 
+    @Test
+    public void test09UnaMaderaSeRompeALa5taVezDeGolpearlaConUnHachaDeMadera(){
+        Madera madera = new Madera();
+        Hacha hachaDeMadera = new Hacha(madera);
+        hachaDeMadera.golpear(madera);
+        hachaDeMadera.golpear(madera);
+        hachaDeMadera.golpear(madera);
+        hachaDeMadera.golpear(madera);
+        hachaDeMadera.golpear(madera);
+        assertEquals(true,madera.seRompio());
+    }
+
 }

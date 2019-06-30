@@ -14,11 +14,20 @@ public abstract class Direccion {
     }
     public abstract void realizarMovimiento(Jugador unJugador, int columna, int fila);
     protected void moverJugadorA(Jugador unJugador, int columna, int fila){
+
         try {
             mapa.moverJugador(unJugador, columna, fila);
-        }catch (CasilleroOcupadoError | PosicionInvalidaError erroresDeMovimiento){
+
+        }catch (PosicionInvalidaError erroresDeMovimiento){
+
+            mapa.agrandarse(unJugador,columna,fila);
+        }
+        catch (CasilleroOcupadoError casilleroocupado){
+
             throw new MovimientoInvalidoError();
         }
+
     }
     public abstract void actualizarUbicacion(UbicacionJugador ubicacionJugador);
+    public abstract String vista(String mirando);
 }

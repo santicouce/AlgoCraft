@@ -1,15 +1,12 @@
 package algocraft.jugador;
 
 import algocraft.Observable;
-import algocraft.herramientas.Pico;
-import algocraft.herramientas.PicoFino;
+import algocraft.errores.GolpeInvalidoError;
+import algocraft.errores.NoHayStockDelMaterial;
+import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import algocraft.construcciondeherramientas.MesaDeConstruccion;
-import algocraft.errores.ImposibleCrearHerramientaError;
-import algocraft.herramientas.Pico;
-import algocraft.herramientas.PicoFino;
-import algocraft.materiales.*;
 import algocraft.movimientodeljugador.UbicacionJugador;
 import algocraft.vidadeobjetos.EstrategiaDeGolpe;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
@@ -19,23 +16,123 @@ import algocraft.herramientas.Herramienta;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Material;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import static junit.framework.TestCase.fail;
 
 public class Jugador extends Observable {
 
-    private Inventario inventario = new Inventario();
     private UbicacionJugador ubicacion;
     private EstrategiaDeGolpe estrategiaDeGolpe;
     private MesaDeConstruccion mesaDeConstruccion;
+    private HashMap<String, List<Material>> inventarioMateriales = new HashMap<String, List<Material>>();
+    private HashMap<String, List<Herramienta>> inventarioHerramientas = new HashMap<String, List<Herramienta>>();
 
     public Jugador(){
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
-        mesaDeConstruccion = new MesaDeConstruccion(inventario);
+        mesaDeConstruccion = new MesaDeConstruccion();
+        inventarioMateriales.put("madera", new ArrayList<>());
+        inventarioMateriales.put("piedra", new ArrayList<>());
+        inventarioMateriales.put("metal", new ArrayList<>());
+        inventarioMateriales.put("diamante", new ArrayList<>());
+        inventarioHerramientas.put("hacha de madera", new ArrayList<>());
+        inventarioHerramientas.put("hacha de piedra", new ArrayList<>());
+        inventarioHerramientas.put("hacha de metal", new ArrayList<>());
+        inventarioHerramientas.put("pico de madera", new ArrayList<>());
+        inventarioHerramientas.put("pico de piedra", new ArrayList<>());
+        inventarioHerramientas.put("pico de metal", new ArrayList<>());
+        inventarioHerramientas.put("pico fino", new ArrayList<>());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("madera", new Madera());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("piedra", new Piedra());
+        agregarMaterialAlInventario("metal", new Metal());
+        agregarMaterialAlInventario("metal", new Metal());
+        agregarMaterialAlInventario("metal", new Metal());
+        agregarMaterialAlInventario("metal", new Metal());
+    }
+
+    public void golpear(Mapa mapa){
+        String direccionDelJugador = ubicacion.frente();
+        int ubicacionDelJugadorColumna = ubicacion.getColumna();
+        int ubicacionDelJugadorFila = ubicacion.getFila();
+        Observable observableAledanio;
+
+
+        switch (direccionDelJugador){
+
+            case "frente":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna, ubicacionDelJugadorFila + 1);
+                    Material material = (Material)observableAledanio;
+                    golpear(material);
+                    if (material.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna, ubicacionDelJugadorFila+1);
+                    }
+                }catch(IndexOutOfBoundsException indexoutofbounds){
+                }
+                break;
+
+            case "espalda":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna, ubicacionDelJugadorFila - 1);
+                    Material materialEspalda = (Material)observableAledanio;
+                    golpear(materialEspalda);
+                    if (materialEspalda.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna, ubicacionDelJugadorFila-1);
+                    }
+                }catch(IndexOutOfBoundsException indexoutofboundds){
+                }
+                break;
+            case "derecha":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna + 1, ubicacionDelJugadorFila);
+                    Material materialDerecha = (Material)observableAledanio;
+                    golpear(materialDerecha);
+                    if (materialDerecha.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna + 1, ubicacionDelJugadorFila);
+                    }
+
+                }catch (IndexOutOfBoundsException indexoutofbounds){
+                }
+                break;
+            case "izquierda":
+                try {
+                    observableAledanio = mapa.obtenerObservable(ubicacionDelJugadorColumna - 1, ubicacionDelJugadorFila);
+                    Material materialIzquierda = (Material)observableAledanio;
+                    golpear(materialIzquierda);
+                    if (materialIzquierda.seRompio()) {
+                        mapa.eliminarElementoEnPosicion(ubicacionDelJugadorColumna - 1, ubicacionDelJugadorFila);
+                    }
+
+                }catch(IndexOutOfBoundsException indexoutofbounds){
+                }
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + direccionDelJugador);
+        }
+
     }
 
     public void golpear(Material unMaterial){
-        estrategiaDeGolpe.golpear(unMaterial);
+            estrategiaDeGolpe.golpear(unMaterial);
+        if (unMaterial.seRompio()){
+            this.agregarMaterialAlInventario(unMaterial.darNombre(),unMaterial);
+        }
+        if (estrategiaDeGolpe.herramienta().equals("herramienta rota")){
+            this.cambiarEstrategia(new EstrategiaDeGolpeSinHerramienta());
+        }
     }
 
     public void cambiarEstrategia(EstrategiaDeGolpe nuevaEstrategia){
@@ -54,65 +151,65 @@ public class Jugador extends Observable {
         ubicacion.moverJugadorA(this, unaDireccion);
     }
 
+    public UbicacionJugador getUbicacion(){
+        return ubicacion;
+    }
+
     public void equiparHerramienta(Herramienta unaHerramienta){
            estrategiaDeGolpe.equiparHerramienta(this,unaHerramienta);
     }
 
-    public void agregarHerramientaAlInventario(Herramienta herramienta) {
-        inventario.aniadirHerramienta(herramienta);
+    public void agregarHerramientaAlInventario(String nombreDeLaHerramienta, Herramienta herramienta) {
+        inventarioHerramientas.get(nombreDeLaHerramienta).add(herramienta);
     }
 
     @Override
     public String darNombre(){
-        return (nombre + ubicacion.frente() + estrategiaDeGolpe.herramienta());
+        return (nombre + ubicacion.frente() + nombreDeHerramientaEquipada());
     }
-    
+
+    public String nombreDeHerramientaEquipada(){
+        return estrategiaDeGolpe.herramienta();
+    }
+
     public String getId(){
-        //esto tiene que desaparecer
-        return "a";
+        return nombre;
     }
 
-    public void aniadirMaderaEnPosicion(int columna, int fila){
-        mesaDeConstruccion.aniadirMaderaEnPosicion(columna,fila);
+    public void aniadirMaterialEnPosicion(int columna, int fila, String material){
+        Material materialPorAgregar = extraerMaterialDelInventario(material);
+        mesaDeConstruccion.aniadirElementoEnPosicion(columna, fila, materialPorAgregar);
     }
 
-    public void aniadirMetalEnPosicion(int columna, int fila) {
-        mesaDeConstruccion.aniadirMetalEnPosicion(columna,fila);
+    public void fabricarUnaHerramienta(){
+        mesaDeConstruccion.construir(inventarioHerramientas,inventarioMateriales);
     }
-    public void aniadirPiedraEnPosicion(int columna, int fila) {
-        mesaDeConstruccion.aniadirPiedraEnPosicion(columna,fila);
+
+
+    public void agregarMaterialAlInventario(String nombreDelMaterial, Material materialASerAgregado){
+        inventarioMateriales.get(nombreDelMaterial).add(materialASerAgregado);
     }
-    public void fabricarHacha(MaterialDeConstruccion unMaterial){
-        if (mesaDeConstruccion.crearUnHacha(unMaterial)==false){
-            throw new ImposibleCrearHerramientaError();
-        }else{
-            agregarHerramientaAlInventario(new Hacha(unMaterial));
-        }
-    }
-    public void fabricarPico(MaterialDeConstruccion unMaterial){
-        if (mesaDeConstruccion.crearUnPico(unMaterial)==false){
-            throw new ImposibleCrearHerramientaError();
-        }else{
-            agregarHerramientaAlInventario(new Pico(unMaterial));
+
+    public Material extraerMaterialDelInventario(String nombreDelMaterial){
+        try {
+            return inventarioMateriales.get(nombreDelMaterial).remove(0);
+        }catch (IndexOutOfBoundsException outofbounds){
+            throw new NoHayStockDelMaterial();
         }
     }
 
-    public void fabricarPicoFino() {
-        if (mesaDeConstruccion.crearUnPicoFino()==false){
-            throw new ImposibleCrearHerramientaError();
-        }else{
-            agregarHerramientaAlInventario(new PicoFino(new Metal(), new Piedra()));
-        }
+    public int cantidadDeMaterial(String nombreDelMaterial){
+        return inventarioMateriales.get(nombreDelMaterial).size();
     }
 
+    public int cantidadDeHerramienta(String nombreDeHerramienta){
+        return inventarioHerramientas.get(nombreDeHerramienta).size();
+    }
+    public void limpiarMesaDeConstruccion(){
+        mesaDeConstruccion.limpiarMesa();
+    }
 
-    public void agregarMaderaAlInventario(Madera madera) {
-        inventario.aniadirMadera(madera);
-    }
-    public void agregarMetalAlInventario(Metal metal) {
-        inventario.aniadirMetal(metal);
-    }
-    public void agregarPiedraAlInventario(Piedra piedra) {
-        inventario.aniadirPiedra(piedra);
+    public void equiparHerramienta(String nombreDeHerramienta){
+        estrategiaDeGolpe.equiparHerramienta(this, inventarioHerramientas.get(nombreDeHerramienta).remove(0));
     }
 }

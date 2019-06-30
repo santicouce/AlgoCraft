@@ -7,29 +7,29 @@ import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import org.junit.Test;
 import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertEquals;
 
 public class MesaDeConstruccionTest {
 
 
     @Test
     public void test01ConstruyoUnHachaDeMaderaSafiscatoriamente(){
-        try {
 
+        try{
             Jugador jugador = new Jugador();
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.aniadirMaterialEnPosicion(0,0, "madera");
+            jugador.aniadirMaterialEnPosicion(0,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,0, "madera");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-            jugador.aniadirMaderaEnPosicion(0,0);
-            jugador.aniadirMaderaEnPosicion(0,1);
-            jugador.aniadirMaderaEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
-
-            jugador.fabricarHacha(new Madera());
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
             fail("No pudo construirse la herramienta solicitada.");
@@ -42,19 +42,19 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirPiedraEnPosicion(0,0);
-            jugador.aniadirPiedraEnPosicion(0,1);
-            jugador.aniadirPiedraEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(0,1,"piedra");
+            jugador.aniadirMaterialEnPosicion(1,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-            jugador.fabricarHacha(new Piedra());
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
             fail("No pudo construirse la herramienta solicitada.");
@@ -69,19 +69,19 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMetalEnPosicion(0,0);
-            jugador.aniadirMetalEnPosicion(0,1);
-            jugador.aniadirMetalEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "metal");
+            jugador.aniadirMaterialEnPosicion(0,1, "metal");
+            jugador.aniadirMaterialEnPosicion(1,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-            jugador.fabricarHacha(new Metal());
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
             fail("No pudo construirse la herramienta solicitada.");
@@ -94,19 +94,19 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMaderaEnPosicion(0,0);
-            jugador.aniadirMaderaEnPosicion(1,0);
-            jugador.aniadirMaderaEnPosicion(2,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "madera");
+            jugador.aniadirMaterialEnPosicion(1,0, "madera");
+            jugador.aniadirMaterialEnPosicion(2,0, "madera");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-            jugador.fabricarPico(new Madera());
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
             fail("No pudo construirse la herramienta solicitada.");
@@ -119,19 +119,20 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirPiedraEnPosicion(0,0);
-            jugador.aniadirPiedraEnPosicion(1,0);
-            jugador.aniadirPiedraEnPosicion(2,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
 
-            jugador.fabricarPico(new Piedra());
+            jugador.aniadirMaterialEnPosicion(0,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(2,0, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
+
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
             fail("No pudo construirse la herramienta solicitada.");
@@ -144,19 +145,19 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMetalEnPosicion(0,0);
-            jugador.aniadirMetalEnPosicion(1,0);
-            jugador.aniadirMetalEnPosicion(2,0);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,0, "metal");
+            jugador.aniadirMaterialEnPosicion(2,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-            jugador.fabricarPico(new Metal());
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
             fail("No pudo construirse la herramienta solicitada.");
@@ -169,24 +170,24 @@ public class MesaDeConstruccionTest {
 
             Jugador jugador = new Jugador();
 
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarMetalAlInventario(new Metal());
-            jugador.agregarPiedraAlInventario(new Piedra());
-            jugador.agregarMaderaAlInventario(new Madera());
-            jugador.agregarMaderaAlInventario(new Madera());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("metal", new Metal());
+            jugador.agregarMaterialAlInventario("piedra", new Piedra());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
+            jugador.agregarMaterialAlInventario("madera", new Madera());
 
-            jugador.aniadirMetalEnPosicion(0,0);
-            jugador.aniadirMetalEnPosicion(1,0);
-            jugador.aniadirMetalEnPosicion(2,0);
-            jugador.aniadirPiedraEnPosicion(0,1);
-            jugador.aniadirMaderaEnPosicion(1,1);
-            jugador.aniadirMaderaEnPosicion(1,2);
+            jugador.aniadirMaterialEnPosicion(0,0, "metal");
+            jugador.aniadirMaterialEnPosicion(1,0, "metal");
+            jugador.aniadirMaterialEnPosicion(2,0, "metal");
+            jugador.aniadirMaterialEnPosicion(0,1, "piedra");
+            jugador.aniadirMaterialEnPosicion(1,1, "madera");
+            jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-            jugador.fabricarPicoFino();
+            jugador.fabricarUnaHerramienta();
 
         }catch(Exception e){
-            fail("No pudo construirse la herramienta solicitada.");
+           fail("No pudo construirse la herramienta solicitada.");
         }
     }
 
@@ -194,19 +195,20 @@ public class MesaDeConstruccionTest {
     public void test08NoPuedoConstruirUnHachaDeMaderaSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMaderaAlInventario(new Madera());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("piedra", new Piedra());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMetalEnPosicion(1,0);
-        jugador.aniadirMetalEnPosicion(2,0);
-        jugador.aniadirMaderaEnPosicion(1,1);
-        jugador.aniadirMaderaEnPosicion(1,2);
 
-        jugador.fabricarHacha(new Madera());
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,0, "piedra");
+        jugador.aniadirMaterialEnPosicion(2,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
+
+        jugador.fabricarUnaHerramienta();
 
 
     }
@@ -215,71 +217,93 @@ public class MesaDeConstruccionTest {
     public void test09NoPuedoConstruirUnHachaDePiedraSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
 
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMetalEnPosicion(1,0);
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,0, "metal");
 
-        jugador.fabricarHacha(new Piedra());
+        jugador.fabricarUnaHerramienta();
     }
 
     @Test(expected = ImposibleCrearHerramientaError.class)
     public void test10NoPuedoConstruirUnHachaDeMetalSinLosMaterialesNecesarios(){
 
         Jugador jugador = new Jugador();
-        jugador.fabricarHacha(new Metal());
+        jugador.fabricarUnaHerramienta();
     }
 
     @Test(expected = ImposibleCrearHerramientaError.class)
     public void test11NoPuedoConstruirUnPicoDeMaderaSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMaderaAlInventario(new Madera());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMaderaEnPosicion(1,1);
-        jugador.aniadirMaderaEnPosicion(1,2);
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-        jugador.fabricarPico(new Madera());
+        jugador.fabricarUnaHerramienta();
     }
 
     @Test(expected = ImposibleCrearHerramientaError.class)
     public void test12NoPuedoConstruirUnPicoDePiedraSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMaderaAlInventario(new Madera());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("piedra", new Piedra());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("piedra", new Piedra());
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMetalEnPosicion(1,0);
-        jugador.aniadirMetalEnPosicion(2,0);
-        jugador.aniadirMaderaEnPosicion(1,1);
-        jugador.aniadirMaderaEnPosicion(1,2);
 
-        jugador.fabricarPico(new Piedra());
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,0, "piedra");
+        jugador.aniadirMaterialEnPosicion(2,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "piedra");
+
+        jugador.fabricarUnaHerramienta();
     }
 
     @Test(expected = ImposibleCrearHerramientaError.class)
     public void test13NoPuedoConstruirUnPicoDeMetalSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarMetalAlInventario(new Metal());
-        jugador.agregarMaderaAlInventario(new Madera());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
 
-        jugador.aniadirMetalEnPosicion(0,0);
-        jugador.aniadirMaderaEnPosicion(1,2);
+        jugador.aniadirMaterialEnPosicion(0,0, "metal");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
-        jugador.fabricarPico(new Metal());
+        jugador.fabricarUnaHerramienta();
     }
 
     @Test(expected = ImposibleCrearHerramientaError.class)
     public void test14NoPuedoConstruirUnPicoFinoSinLosMaterialesNecesarios(){
         Jugador jugador = new Jugador();
-        jugador.fabricarPicoFino();
+        jugador.fabricarUnaHerramienta();
+    }
+
+    @Test
+    public void test15PuedoConstruirUnPicoDeMaderaConLosMaterialesNecesarios(){
+        Jugador jugador = new Jugador();
+
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("piedra", new Piedra());
+        jugador.agregarMaterialAlInventario("metal", new Metal());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+        jugador.agregarMaterialAlInventario("madera", new Madera());
+
+
+        jugador.aniadirMaterialEnPosicion(0,0, "madera");
+        jugador.aniadirMaterialEnPosicion(1,0, "madera");
+        jugador.aniadirMaterialEnPosicion(2,0, "madera");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
+
+        jugador.fabricarUnaHerramienta();
+        assertEquals(1,jugador.cantidadDeHerramienta("pico de madera"));
     }
 }
