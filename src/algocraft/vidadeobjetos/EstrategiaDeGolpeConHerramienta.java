@@ -1,5 +1,6 @@
 package algocraft.vidadeobjetos;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.herramientas.HerramientaRota;
 import algocraft.jugador.Jugador;
 import algocraft.herramientas.Herramienta;
@@ -13,8 +14,12 @@ public class EstrategiaDeGolpeConHerramienta extends EstrategiaDeGolpe {
 
 
     public void golpear(Material unMaterial){
-        herramientaActual.golpear(unMaterial);
-        if (herramientaActual.seRompio()){this.desequiparHerramientaRota();}
+        try {
+            herramientaActual.golpear(unMaterial);
+        }
+        catch (GolpeInvalidoError RuntimeException){
+            throw new GolpeInvalidoError();
+        }
     }
 
     public void desequiparHerramienta(Jugador jugador){

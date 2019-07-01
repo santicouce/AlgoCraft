@@ -1,5 +1,6 @@
 package algocraft.herramientas;
 
+import algocraft.errores.HerramientaRotaError;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.materiales.*;
@@ -21,18 +22,17 @@ public abstract class Herramienta {
         }catch (NullPointerException nullpointer){
             //No hay objeto a golpear en esa posicion.
         }
+        if (this.durabilidad() <= 0){
+            throw new HerramientaRotaError();
+        }
         this.desgastate();
     }
     public void desgastate(){
         aguante.desgastate(fortaleza);
     }
-    public void rompete(){}
+//    public abstract Herramienta rompete();
     public String getNombre(){
         return (nombre + material.darNombre());
     }
 
-    public boolean seRompio(){
-        if (this.durabilidad() <= 0){ return true;}
-        return false;
-    }
 }

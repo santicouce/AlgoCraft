@@ -13,4 +13,5 @@ public class Pico extends Herramienta {
         nombre = "pico de ";
         material = unMaterialDeConstruccion;
     }
+
 }

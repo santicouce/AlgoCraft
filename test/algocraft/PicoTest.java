@@ -1,5 +1,6 @@
 package algocraft;
 
+import algocraft.errores.HerramientaRotaError;
 import algocraft.herramientas.Pico;
 import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
@@ -157,4 +158,11 @@ public class PicoTest {
         assertEquals(durabilidadInicialPicoDeMetal, picoDeMetal.durabilidad(), 0.0001);
     }
 
+    @Test (expected = HerramientaRotaError.class)
+    public void test18UnPicoDeMaderaNoSePuedeUsar51Veces(){
+        Pico picoDeMadera = new Pico(new Madera());
+        for (int i=0; i<51; i++){
+            picoDeMadera.golpear(new Madera());
+        }
+    }
 }

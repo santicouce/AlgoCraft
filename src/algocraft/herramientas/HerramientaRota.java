@@ -1,12 +1,17 @@
 package algocraft.herramientas;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.materiales.Material;
-import algocraft.vidadeobjetos.AguanteHerramienta;
-import algocraft.vidadeobjetos.FortalezaHerramienta;
+import javafx.beans.binding.ObjectExpression;
 
 public class HerramientaRota extends Herramienta{
-    public HerramientaRota(){
-        nombre = "herramienta rota";
+
+    @Override
+    public void golpear(Material unMaterial){
+        throw new GolpeInvalidoError();
     }
-    public String getNombre(){return nombre;}
+
+    public Herramienta rompete(){
+        return this;
+    }
 }

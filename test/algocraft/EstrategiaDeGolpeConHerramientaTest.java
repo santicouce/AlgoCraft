@@ -1,6 +1,7 @@
 package algocraft;
 
 import algocraft.errores.GolpeInvalidoError;
+import algocraft.errores.HerramientaRotaError;
 import algocraft.herramientas.Hacha;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Madera;

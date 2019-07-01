@@ -14,4 +14,5 @@ public class Hacha extends Herramienta {
         nombre = "hacha de ";
         material = unMaterial;
     }
+
 }

@@ -1,7 +1,7 @@
 package algocraft;
 
+import algocraft.errores.HerramientaRotaError;
 import algocraft.herramientas.Hacha;
-import algocraft.jugador.Jugador;
 import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
@@ -160,13 +160,12 @@ public class HachaTest {
         assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
     }
 
-    @Test
+    @Test (expected = HerramientaRotaError.class)
     public void test18UnHachaSeRompeAlUsarla50Veces(){
         Hacha hachaDeMadera = new Hacha(new Madera());
-        for (int i=0; i<50; i++){
+        for (int i=0; i<51; i++){
             hachaDeMadera.golpear(new Madera());
         }
-        assertEquals(true,hachaDeMadera.seRompio());
     }
 
 }

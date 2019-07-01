@@ -1,6 +1,7 @@
 package algocraft;
 
 import algocraft.errores.ConstruccionInvalidaError;
+import algocraft.errores.HerramientaRotaError;
 import algocraft.herramientas.PicoFino;
 import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
@@ -69,4 +70,20 @@ public class PicoFinoTest {
         picoFino.golpear(metal);
         assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
     }
+/*    @Test
+    public void test10UnPicoFinoNoSePuedeUsar101Veces(){
+        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
+        int x = 0;
+        while (picoFino.durabilidad()>=0){
+            picoFino.golpear(new Diamante());
+            x++;
+        }
+        System.out.println(x);
+    }
+    @Test
+    public void test11ParaSaberCuandoSeHace0(){
+
+    }
+
+ */
 }
