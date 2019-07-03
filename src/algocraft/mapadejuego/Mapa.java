@@ -96,23 +96,6 @@ public class Mapa{
         aniadirElementoEnPosicion(new Madera(),0,CANTIDAD_FILAS_ACTUALES+1);
 
     }
-    public void validarPosicion(int columna, int fila) {
-        this.validarColumna(columna);
-        this.validarFila(fila);
-    }
-
-    private void validarColumna(int columna) {
-        if (columna < 0 || columna > (tablero.get(0).size() - 1)) {
-            throw new PosicionInvalidaError();
-        }
-    }
-
-    private void validarFila(int fila) {
-        if (fila < 0 || fila > (tablero.size() - 1)) {
-            throw new PosicionInvalidaError();
-        }
-
-    }
     public void eliminarElementoEnPosicion(int columna, int fila) {
         tablero.get(columna).get(fila).eliminarElemento();
     }

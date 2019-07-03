@@ -1,12 +1,11 @@
 package algocraft.herramientas;
 
-import algocraft.errores.HerramientaRotaError;
 import algocraft.vidadeobjetos.AguanteHerramienta;
 import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.materiales.*;
 
-public abstract class Herramienta {
+public  class Herramienta {
 
     protected FortalezaHerramienta fortaleza;
     protected AguanteHerramienta aguante;

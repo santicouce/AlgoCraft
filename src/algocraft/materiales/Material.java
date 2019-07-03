@@ -1,8 +1,6 @@
 package algocraft.materiales;
 
 import algocraft.errores.GolpeInvalidoError;
-import algocraft.jugador.Jugador;
-import algocraft.mapadejuego.Mapa;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.Observable;
 import algocraft.herramientas.PicoFino;
