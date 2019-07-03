@@ -40,7 +40,6 @@ public class Mapa{
     }
     public void aniadirJugadorAlMapa(Jugador unJugador, int columna, int fila){
         aniadirElementoEnPosicion(unJugador, columna, fila);
-        unJugador.aniadirJugadorAlMapa(columna, fila);
     }
 
     public String darNombreDeElementoEn(int columna, int fila){

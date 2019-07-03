@@ -1,8 +1,12 @@
 package algocraft;
 
+import algocraft.errores.GolpeInvalidoError;
+import algocraft.errores.HerramientaRotaError;
 import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Pico;
 import algocraft.herramientas.PicoFino;
+import algocraft.jugador.Jugador;
+import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
@@ -20,50 +24,64 @@ public class AlgoCraftTest {
     private Piedra piedra = new Piedra();
     private PicoFino picoFino = new PicoFino(metal, piedra);
 
-    @Test
+    @Test(expected = GolpeInvalidoError.class)
     public void test01SeCreaHachaDeMaderaConDurabilidadYFuerzaCorrespondiente() {
-        int durabilidadHacha = 100;
-        int fuerzaHacha = 2;
 
-        assertEquals(durabilidadHacha, hachaDeMadera.durabilidad(), 0.0001);
-        assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
+    Juego juego = new Juego();
+    Jugador jugador = juego.darJugador();
+    jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Piedra());
+        }
     }
 
-    @Test
+    @Test(expected = GolpeInvalidoError.class)
     public void test02PicoDeMaderaConDurabilidadYFuerzaCorrespondiente() {
-        int durabilidadPico = 100;
-        int fuerzaPico = 2;
 
-        assertEquals(durabilidadPico, picoDeMadera.durabilidad(), 0.0001);
-        assertEquals(fuerzaPico, picoDeMadera.fuerza());
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Pico(new Madera()));
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Piedra());
+        }
     }
 
-    @Test
+    @Test(expected = GolpeInvalidoError.class)
     public void test03SeCreaHachaDeMetalConDurabilidadYFuerzaCorrespondiente() {
-        int durabilidadHacha = 400;
-        int fuerzaHacha = 10;
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
 
-        assertEquals(durabilidadHacha, hachaDeMetal.durabilidad(), 0.0001);
-        assertEquals(fuerzaHacha, hachaDeMetal.fuerza());
+        for (int i=0;i<81;i++){
+            jugador.golpear(new Piedra());
+        }
     }
 
-    @Test
+/*    @Test
     public void test04PicoDeMetalConDurabilidadYFuerzaCorrespondiente() {
-        int durabilidadPico = 400;
-        int fuerzaPico = 12;
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Pico(new Metal()));
 
-        assertEquals(durabilidadPico, picoDeMetal.durabilidad(), 0.0001);
-        assertEquals(fuerzaPico, picoDeMetal.fuerza());
+        for (int i=0;i<8000;i++){
+            jugador.golpear(new Madera());
+        }
     }
+
 
     @Test
     public void test05PicoFinoDeMetalConDurabilidadYFuerzaCorrespondiente() {
-        int durabilidadPico = 1000;
-        int fuerzaPico = 20;
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new PicoFino(new Metal(),new Piedra()));
 
-        assertEquals(durabilidadPico, picoFino.durabilidad(),0.0001);
-        assertEquals(fuerzaPico, picoFino.fuerza());
+        for (int i=0;i<8001;i++){
+            jugador.golpear(new Piedra());
+        }
     }
+
 
     @Test
     public void test06HachaDeMaderaGolpeaMaderaLuegoDurabilidadDeHachaDisminuyeEn2YSuFuerzaSeMantiene() {
@@ -73,6 +91,7 @@ public class AlgoCraftTest {
         assertEquals(durabilidadHacha-2, hachaDeMadera.durabilidad(),0.0001);
         assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
     }
+
     @Test
     public void test08HachaDeMaderaGolpeaMadera2VecesLuegoDurabilidadDeHachaDisminuyeEn4YSuFuerzaSeMantiene() {
         int durabilidadHacha = 100;
@@ -84,4 +103,5 @@ public class AlgoCraftTest {
         assertEquals(durabilidadHacha-4, hachaDeMadera.durabilidad(),0.0001);
         assertEquals(fuerzaHacha, hachaDeMadera.fuerza());
     }
+    */
 }

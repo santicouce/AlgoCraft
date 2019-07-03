@@ -52,6 +52,19 @@ public class VistaMesaDeConstruccion extends GridPane {
         button9.borrar();
         jugador.limpiarMesaDeConstruccion();
     }
+
+    public void borrarSinConstruir(){
+        button1.borrar();
+        button2.borrar();
+        button3.borrar();
+        button4.borrar();
+        button5.borrar();
+        button6.borrar();
+        button7.borrar();
+        button8.borrar();
+        button9.borrar();
+        jugador.limpiarMesaDeConstruccionSinConstruccion();
+    }
     public void aniadirMaterialEnPosicion(int columna, int fila, String unMaterial){
         jugador.aniadirMaterialEnPosicion(columna, fila, unMaterial);
     }

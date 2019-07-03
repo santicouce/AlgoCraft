@@ -11,6 +11,6 @@ public class BotonBorrarEventHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent actionEvent) {
-        mesaDeConstruccion.borrar();
+        mesaDeConstruccion.borrarSinConstruir();
     }
 }

@@ -14,7 +14,7 @@ public class EstrategiaDeGolpeConHerramienta extends EstrategiaDeGolpe {
 
     public void golpear(Material unMaterial){
         herramientaActual.golpear(unMaterial);
-        if (herramientaActual.seRompio()){this.desequiparHerramientaRota();}
+        herramientaActual.desequiparseAlRomperse(this);
     }
 
     public void desequiparHerramienta(Jugador jugador){

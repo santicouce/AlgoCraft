@@ -2,6 +2,7 @@ package algocraft.jugador;
 
 import algocraft.Observable;
 import algocraft.errores.GolpeInvalidoError;
+import algocraft.errores.HerramientaRotaError;
 import algocraft.errores.NoHayStockDelMaterial;
 import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Metal;
@@ -31,6 +32,7 @@ public class Jugador extends Observable {
     private HashMap<String, List<Herramienta>> inventarioHerramientas = new HashMap<String, List<Herramienta>>();
 
     public Jugador(){
+        ubicacion = new UbicacionJugador(5, 5);
         Hacha hacha = new Hacha(new Madera());
         estrategiaDeGolpe = new EstrategiaDeGolpeConHerramienta(hacha);
         nombre = "steve";
@@ -46,18 +48,15 @@ public class Jugador extends Observable {
         inventarioHerramientas.put("pico de piedra", new ArrayList<>());
         inventarioHerramientas.put("pico de metal", new ArrayList<>());
         inventarioHerramientas.put("pico fino", new ArrayList<>());
+
         agregarMaterialAlInventario("madera", new Madera());
         agregarMaterialAlInventario("madera", new Madera());
         agregarMaterialAlInventario("madera", new Madera());
-        agregarMaterialAlInventario("madera", new Madera());
-        agregarMaterialAlInventario("madera", new Madera());
-        agregarMaterialAlInventario("madera", new Madera());
-        agregarMaterialAlInventario("madera", new Madera());
+
         agregarMaterialAlInventario("piedra", new Piedra());
         agregarMaterialAlInventario("piedra", new Piedra());
         agregarMaterialAlInventario("piedra", new Piedra());
-        agregarMaterialAlInventario("piedra", new Piedra());
-        agregarMaterialAlInventario("metal", new Metal());
+
         agregarMaterialAlInventario("metal", new Metal());
         agregarMaterialAlInventario("metal", new Metal());
         agregarMaterialAlInventario("metal", new Metal());
@@ -126,12 +125,14 @@ public class Jugador extends Observable {
     }
 
     public void golpear(Material unMaterial){
-            estrategiaDeGolpe.golpear(unMaterial);
+
+        estrategiaDeGolpe.golpear(unMaterial);
+
         if (unMaterial.seRompio()){
             this.agregarMaterialAlInventario(unMaterial.darNombre(),unMaterial);
         }
-        if (estrategiaDeGolpe.herramienta().equals("herramienta rota")){
-            this.cambiarEstrategia(new EstrategiaDeGolpeSinHerramienta());
+        if (estrategiaDeGolpe.herramienta().equals("herramienta rota")) {
+            estrategiaDeGolpe = new EstrategiaDeGolpeSinHerramienta();
         }
     }
 
@@ -143,16 +144,8 @@ public class Jugador extends Observable {
         estrategiaDeGolpe.desequiparHerramienta(this);
     }
 
-    public void aniadirJugadorAlMapa(int columna, int fila){
-        ubicacion = new UbicacionJugador(columna, fila);
-    }
-
     public void moverA(Direccion unaDireccion) {
         ubicacion.moverJugadorA(this, unaDireccion);
-    }
-
-    public UbicacionJugador getUbicacion(){
-        return ubicacion;
     }
 
     public void equiparHerramienta(Herramienta unaHerramienta){
@@ -207,6 +200,9 @@ public class Jugador extends Observable {
     }
     public void limpiarMesaDeConstruccion(){
         mesaDeConstruccion.limpiarMesa();
+    }
+    public void limpiarMesaDeConstruccionSinConstruccion(){
+        mesaDeConstruccion.limpiarMesaSinConstruccion(inventarioMateriales);
     }
 
     public void equiparHerramienta(String nombreDeHerramienta){
