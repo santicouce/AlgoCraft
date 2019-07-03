@@ -69,7 +69,7 @@ public class HachaTest {
         hachaDePiedra.golpear(madera);
         assertEquals(durabilidadInicialMadera -10, madera.durabilidad());
     }
-/*
+
     @Test
     public void test06UnHachaDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirEnDos(){
         Madera madera = new Madera();
@@ -78,7 +78,7 @@ public class HachaTest {
         hachaDeMadera.golpear(madera);
         assertEquals(durabilidadInicialHachaDeMadera -2, hachaDeMadera.durabilidad(), 0.0001);
     }
-
+/*
     @Test
     public void test07UnHachaDeMaderaGolpeaUnaPiedraYSuDurabilidadDeberiaReducirseEnDos(){
         Piedra piedra = new Piedra();
