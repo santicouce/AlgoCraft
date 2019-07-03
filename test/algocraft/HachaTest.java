@@ -3,7 +3,6 @@ package algocraft;
 import algocraft.errores.GolpeInvalidoError;
 import algocraft.herramientas.Hacha;
 import algocraft.jugador.Jugador;
-import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
@@ -72,11 +71,13 @@ public class HachaTest {
 
     @Test
     public void test06UnHachaDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirEnDos(){
-        Madera madera = new Madera();
-        Hacha hachaDeMadera = new Hacha(madera);
-        double durabilidadInicialHachaDeMadera = hachaDeMadera.durabilidad();
-        hachaDeMadera.golpear(madera);
-        assertEquals(durabilidadInicialHachaDeMadera -2, hachaDeMadera.durabilidad(), 0.0001);
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<40;i++){
+            jugador.golpear(new Madera());
+        }
     }
 /*
     @Test
