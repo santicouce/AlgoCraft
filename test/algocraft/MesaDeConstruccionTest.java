@@ -1,6 +1,7 @@
 package algocraft;
 
 import algocraft.errores.ImposibleCrearHerramientaError;
+import algocraft.errores.NoHayStockDelMaterial;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
@@ -305,5 +306,21 @@ public class MesaDeConstruccionTest {
 
         jugador.fabricarUnaHerramienta();
         assertEquals(1,jugador.cantidadDeHerramienta("pico de madera"));
+    }
+
+    @Test(expected = NoHayStockDelMaterial.class)
+    public void test16NoPuedoConstruirUnHachaDeMaderaYaQueNoTengoMateriales(){
+
+        Jugador jugador = new Jugador();
+
+
+        jugador.aniadirMaterialEnPosicion(0,0, "madera");
+        jugador.aniadirMaterialEnPosicion(0,1,"madera");
+        jugador.aniadirMaterialEnPosicion(1,0, "madera");
+        jugador.aniadirMaterialEnPosicion(1,1, "madera");
+        jugador.aniadirMaterialEnPosicion(1,2, "madera");
+
+        jugador.fabricarUnaHerramienta();
+
     }
 }

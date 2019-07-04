@@ -6,6 +6,8 @@ import algocraft.jugador.Jugador;
 import algocraft.mapadejuego.Casillero;
 import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.*;
+import algocraft.movimientodeljugador.DireccionAbajo;
+import algocraft.movimientodeljugador.DireccionDerecha;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -100,5 +102,29 @@ public class MapaTest {
         assertEquals(8,materialGolpeado.durabilidad());
     }
 
+    @Test
+    public void test14JugadorSeMueveALaDerechaVariasVecesYElMapaSeAgranda(){
+
+        try {
+            mapa.aniadirJugadorAlMapa(jugador, 5, 5);
+            for (int i=0; i<10;i++) {
+                jugador.moverA(new DireccionDerecha(mapa));
+            }
+        }catch (Exception e){
+            fail ("No pude moverse satisfactoriamente.");
+        }
+    }
+    @Test
+    public void test15JugadorSeMueveHaciaAbajoVariasVecesYElMapaSeAgranda(){
+
+        try {
+            mapa.aniadirJugadorAlMapa(jugador, 5, 5);
+            for (int i=0; i<10;i++) {
+                jugador.moverA(new DireccionAbajo(mapa));
+            }
+        }catch (Exception e){
+            fail ("No pude moverse satisfactoriamente.");
+        }
+    }
 
 }
