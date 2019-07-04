@@ -1,6 +1,5 @@
 package algocraft.vidadeobjetos;
 
-import algocraft.errores.HerramientaRotaError;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
