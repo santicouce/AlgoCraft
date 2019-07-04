@@ -16,7 +16,6 @@ public abstract class AguanteHerramienta {
     public void desgastate(FortalezaHerramienta fortalezaHerramienta){
         durabilidad = desgaste.desgastarDada(durabilidad, fortalezaHerramienta.fuerza());
 
-
     }
     public double durabilidad(){return durabilidad;}
 }

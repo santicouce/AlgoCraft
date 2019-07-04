@@ -3,16 +3,20 @@ import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.ImposibleDesequiparNingunaHerramientaError;
 import algocraft.herramientas.Hacha;
 import algocraft.jugador.Jugador;
+import algocraft.materiales.Madera;
 import algocraft.materiales.Piedra;
+import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
 public class EstrategiaDeGolpeSinHerramientaTest {
 
+    private Jugador jugador = new Jugador();
+
     @Test(expected = GolpeInvalidoError.class)
     public void test01LaEstrategiaNoDeberiaGolpearUnaPiedraConHachaDePiedra() {
-        Jugador jugador = new Jugador();
         Piedra piedra = new Piedra();
 
         jugador.desequiparHerramienta();
@@ -21,17 +25,13 @@ public class EstrategiaDeGolpeSinHerramientaTest {
 
     @Test(expected = ImposibleDesequiparNingunaHerramientaError.class)
     public void test02DesequiparUnaHerramientaNoEsPosible() {
-
-        Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.desequiparHerramienta();
-
     }
 
     @Test
     public void test03LuegoDeEquiparUnaHerramientaLaEstrategiaDeGolpeDeberiaCambiarAEstrategiaDeGolpeConHerramienta() {
         try {
-            Jugador jugador = new Jugador();
             jugador.desequiparHerramienta();
 
             Hacha hacha = new Hacha(new Piedra());
