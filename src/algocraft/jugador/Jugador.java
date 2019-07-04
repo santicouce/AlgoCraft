@@ -3,6 +3,7 @@ package algocraft.jugador;
 import algocraft.Observable;
 import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.HerramientaRotaError;
+import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.errores.NoHayStockDelMaterial;
 import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.Metal;
@@ -175,7 +176,12 @@ public class Jugador extends Observable {
     }
 
     public void fabricarUnaHerramienta(){
-        mesaDeConstruccion.construir(inventarioHerramientas,inventarioMateriales);
+        try {
+            mesaDeConstruccion.construir(inventarioHerramientas, inventarioMateriales);
+        }catch(ImposibleCrearHerramientaError error){
+
+        }
+
     }
 
 
