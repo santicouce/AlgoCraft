@@ -1,5 +1,4 @@
 package algocraft;
-
 import algocraft.errores.GolpeInvalidoError;
 import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Pico;
@@ -58,16 +57,5 @@ public class AlgoCraftTest {
         }
     }
 
-/*
-    @Test
-    public void test05PicoFinoDeMetalConDurabilidadYFuerzaCorrespondiente() {
-        Juego juego = new Juego();
-        Jugador jugador = juego.darJugador();
-        jugador.equiparHerramienta(new PicoFino(new Metal(),new Piedra()));
 
-        for (int i=0;i<8001;i++){
-            jugador.golpear(new Piedra());
-        }
-    }
-*/
 }

@@ -53,15 +53,18 @@ public class PicoFinoTest {
             jugador.golpear(new Diamante());
         }
     }
-    /*
+
     @Test
     public void test07UnPicoFinoGolpeaUnaMaderaYSuDurabilidadNoDeberiaReducirse(){
-        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
-        Madera madera = new Madera();
-        double durabilidadInicialPicoFino = picoFino.durabilidad();
-        picoFino.golpear(madera);
-        assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
+
+        Jugador jugador = new Jugador();
+        jugador.desequiparHerramienta();
+        jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
+        for (int i = 0; i < 7; i++) {
+            jugador.golpear(new Madera());
+        }
     }
+    /*
     @Test
     public void test08UnPicoFinoGolpeaUnaPiedraYSuDurabilidadNoDeberiaReducirse(){
         PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
