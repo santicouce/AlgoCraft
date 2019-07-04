@@ -2,6 +2,7 @@ package algocraft;
 
 import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.errores.NoHayStockDelMaterial;
+import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
@@ -321,6 +322,20 @@ public class MesaDeConstruccionTest {
         jugador.aniadirMaterialEnPosicion(1,2, "madera");
 
         jugador.fabricarUnaHerramienta();
+
+    }
+    @Test(expected = PosicionInvalidaError.class)
+    public void test17NoPuedoAniadirUnMaterialEnUnaPosicionNoValidaEnLaMesaDeConstruccion(){
+
+        Jugador jugador = new Jugador();
+        jugador.aniadirMaterialEnPosicion(8,0, "madera");
+
+    }
+    @Test(expected = PosicionInvalidaError.class)
+    public void test18NoPuedoAniadirUnMaterialEnUnaPosicionNoValidaEnLaMesaDeConstruccion(){
+
+        Jugador jugador = new Jugador();
+        jugador.aniadirMaterialEnPosicion(0,9, "madera");
 
     }
 }

@@ -61,4 +61,15 @@ public class JuegoTest {
             fail("No pudo realizarse el golpe.");
         }
     }
+    @Test
+    public void test06JuegoMueveUnJugadorHaciaAbajo(){
+        try {
+            Juego juego = new Juego();
+
+            juego.moverJugadorAbajo();
+
+        }catch(Exception e){
+            fail("No pudo realizarse el golpe.");
+        }
+    }
 }
