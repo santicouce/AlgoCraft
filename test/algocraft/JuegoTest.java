@@ -18,12 +18,7 @@ public class JuegoTest {
     }
 
     @Test
-    public void test03JuegoAtrapaExcepcion(){
-        juego.golpear();
-    }
-
-    @Test
-    public void test04AccedeCorrectamenteAElementoATablero(){
+    public void test03AccedeCorrectamenteAElementoATablero(){
         assertEquals("metal",juego.darNombre(4,1));
     }
 

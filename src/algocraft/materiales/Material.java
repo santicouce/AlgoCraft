@@ -8,7 +8,7 @@ import algocraft.herramientas.PicoFino;
 public abstract class Material extends Observable {
 
     protected int durabilidad;
-    String id = new String();
+    String id;
 
     public int durabilidad(){
         return this.durabilidad;
