@@ -1,6 +1,8 @@
 package algocraft;
 
+import algocraft.herramientas.Hacha;
 import algocraft.herramientas.Pico;
+import algocraft.jugador.Jugador;
 import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
@@ -19,13 +21,19 @@ public class PicoTest {
         picoDeMadera.golpear(piedra);
         assertEquals(durabilidadInicialPiedra -2, piedra.durabilidad());
     }
-/*
+
     @Test
-    public void test02UnPicoDeMaderaDeberiaComenzarConDurabilidad100(){
-        Pico picoDeMadera = new Pico(new Madera());
-        assertEquals(100, picoDeMadera.durabilidad(),0.0001);
+    public void test02UnPicoDeMetalSeRompeAlDecimoUSo(){
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Pico(new Metal()));
+
+        for (int i=0;i<11;i++){
+            jugador.golpear(new Metal());
+        }
     }
 
+/*
     @Test
     public void test03UnPicoDePiedraDeberiaComenzarConFuerza4(){
         Piedra piedra = new Piedra();

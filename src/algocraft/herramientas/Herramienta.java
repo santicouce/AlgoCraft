@@ -29,7 +29,7 @@ public  class Herramienta {
     }
 
     public  void desequiparseAlRomperse(EstrategiaDeGolpeConHerramienta estrategiaDeGolpeConHerramienta){
-        if (aguante.durabilidad() <= 0) {
+        if (aguante.durabilidad() <= 1) {
             estrategiaDeGolpeConHerramienta.desequiparHerramientaRota();
         }
     }
