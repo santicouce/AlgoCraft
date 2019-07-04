@@ -6,7 +6,7 @@ import algocraft.materiales.Piedra;
 
 public class AguanteHacha extends AguanteHerramienta {
     public void inicializate(Madera unaMadera){
-        durabilidad = 10;
+        durabilidad = 100;
         desgaste = new DesgastePorFactorFuerza(1);
     }
     public void inicializate(Piedra unaPiedra){
