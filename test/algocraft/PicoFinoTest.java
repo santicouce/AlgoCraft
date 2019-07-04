@@ -10,6 +10,7 @@ import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class PicoFinoTest {
     @Test
@@ -56,30 +57,43 @@ public class PicoFinoTest {
 
     @Test
     public void test07UnPicoFinoGolpeaUnaMaderaYSuDurabilidadNoDeberiaReducirse(){
-
-        Jugador jugador = new Jugador();
-        jugador.desequiparHerramienta();
-        jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
-        for (int i = 0; i < 7; i++) {
-            jugador.golpear(new Madera());
+        try {
+            Jugador jugador = new Jugador();
+            jugador.desequiparHerramienta();
+            jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
+            for (int i = 0; i < 100; i++) {
+                jugador.golpear(new Madera());
+            }
+        }catch(Error e){
+            fail("Algo salio mal.");
         }
     }
-    /*
+
     @Test
     public void test08UnPicoFinoGolpeaUnaPiedraYSuDurabilidadNoDeberiaReducirse(){
-        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
-        Piedra piedra = new Piedra();
-        double durabilidadInicialPicoFino = picoFino.durabilidad();
-        picoFino.golpear(piedra);
-        assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
+        try {
+            Jugador jugador = new Jugador();
+            jugador.desequiparHerramienta();
+            jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
+            for (int i = 0; i < 100; i++) {
+                jugador.golpear(new Piedra());
+            }
+        }catch(Error e){
+            fail("Algo salio mal.");
+        }
     }
     @Test
     public void test09UnPicoFinoGolpeaUnaMetalYSuDurabilidadNoDeberiaReducirse(){
-        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
-        Metal metal = new Metal();
-        double durabilidadInicialPicoFino = picoFino.durabilidad();
-        picoFino.golpear(metal);
-        assertEquals(durabilidadInicialPicoFino,picoFino.durabilidad(),0.00001);
+        try {
+            Jugador jugador = new Jugador();
+            jugador.desequiparHerramienta();
+            jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
+            for (int i = 0; i < 100; i++) {
+                jugador.golpear(new Metal());
+            }
+        }catch(Error e){
+            fail("Algo salio mal.");
+        }
     }
-    */
+
 }
