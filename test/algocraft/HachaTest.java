@@ -1,5 +1,6 @@
 package algocraft;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.herramientas.Hacha;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Diamante;
@@ -9,42 +10,70 @@ import algocraft.materiales.Piedra;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class HachaTest {
     @Test
-    public void test01UnHachaDeMaderaDeberiaComenzarConFuerza2(){
-        Madera madera = new Madera();
-        Hacha hachaDeMadera = new Hacha(madera);
-        int durabilidadInicialMadera = madera.durabilidad();
-        hachaDeMadera.golpear(madera);
-        assertEquals(durabilidadInicialMadera -2, madera.durabilidad());
+    public void test01UnHachaDeMaderaDeberiaComenzarConDurabilidad100(){
+        try {
+            Juego juego = new Juego();
+            Jugador jugador = juego.darJugador();
+            jugador.equiparHerramienta(new Hacha(new Madera()));
+
+            for (int i = 0; i < 50; i++) {
+                jugador.golpear(new Piedra());
+            }
+        }catch(Exception e){
+            fail("Fallo la prueba.");
+        }
     }
 
     @Test
-    public void test02UnHachaDeMaderaDeberiaComenzarConDurabilidad100(){
-        Madera madera = new Madera();
-        Hacha hachaDeMadera = new Hacha(madera);
-        assertEquals(100, hachaDeMadera.durabilidad(), 0.0001);
+    public void test02UnHachaDeMaderaDeberiaComenzarConDurabilidad100HastaElUso50Funciona(){
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test03UnHachaDeMaderaDeberiaComenzarConDurabilidad100EnElUso51SeRompe(){
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test(expected = GolpeInvalidoError.class)
+    public void test04UnHachaDePiedraDeberiaComenzarDurabilidad200HastaElUso50Funciona(){
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Hacha(new Piedra()));
+
+        for (int i=0;i<41;i++){
+            jugador.golpear(new Madera());
+        }
     }
 
     @Test
-    public void test03UnHachaDePiedraDeberiaComenzarConFuerza5(){
-        Madera madera = new Madera();
-        Hacha hachaDePiedra = new Hacha(new Piedra());
-        int durabilidadInicialMadera = madera.durabilidad();
-        hachaDePiedra.golpear(madera);
-        assertEquals(durabilidadInicialMadera -5, madera.durabilidad());
+    public void test05UnHachaDePiedraDeberiaComenzarConDurabilidad200EnElUso51SeRompe(){
+        Juego juego = new Juego();
+        Jugador jugador = juego.darJugador();
+        jugador.equiparHerramienta(new Hacha(new Piedra()));
+
+        for (int i=0;i<40;i++){
+            jugador.golpear(new Madera());
+        }
     }
 
     @Test
-    public void test04UnHachaDePiedraDeberiaComenzarConDurabilidad200(){
-        Piedra piedra = new Piedra();
-        Hacha hachaDePiedra = new Hacha(piedra);
-        assertEquals(200, hachaDePiedra.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test05UnHachaDeMetalDeberiaComenzarConFuerza10(){
+    public void test06UnHachaDeMetalDeberiaComenzarConFuerza10(){
         Madera madera = new Madera();
         Hacha hachaDePiedra = new Hacha(new Metal());
         int durabilidadInicialMadera = madera.durabilidad();
@@ -53,120 +82,193 @@ public class HachaTest {
     }
 
     @Test
-    public void test06UnHachaDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirEnDos(){
-        Madera madera = new Madera();
-        Hacha hachaDeMadera = new Hacha(madera);
-        double durabilidadInicialHachaDeMadera = hachaDeMadera.durabilidad();
-        hachaDeMadera.golpear(madera);
-        assertEquals(durabilidadInicialHachaDeMadera -2, hachaDeMadera.durabilidad(), 0.0001);
-    }
+    public void test07UnHachaDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
 
-    @Test
-    public void test07UnHachaDeMaderaGolpeaUnaPiedraYSuDurabilidadDeberiaReducirseEnDos(){
-        Piedra piedra = new Piedra();
-        Hacha hachaDeMadera = new Hacha(new Madera());
-        double durabilidadInicialHachaDeMadera = hachaDeMadera.durabilidad();
-        hachaDeMadera.golpear(piedra);
-        assertEquals(durabilidadInicialHachaDeMadera -2, hachaDeMadera.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test08UnHachaDeMaderaGolpeaUnMetalYSuDurabilidadDeberiaReducirseEnDos(){
-        Metal metal = new Metal();
-        Hacha hachaDeMadera = new Hacha(new Madera());
-        double durabilidadInicialHachaDeMadera = hachaDeMadera.durabilidad();
-        hachaDeMadera.golpear(metal);
-        assertEquals(durabilidadInicialHachaDeMadera -2, hachaDeMadera.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test09UnHachaDeMaderaGolpeaUnDiamanteYSuDurabilidadDeberiaReducirseEnDos(){
-        Diamante diamante = new Diamante();
-        Hacha hachaDeMadera = new Hacha(new Madera());
-        double durabilidadInicialHachaDeMadera = hachaDeMadera.durabilidad();
-        hachaDeMadera.golpear(diamante);
-        assertEquals(durabilidadInicialHachaDeMadera -2, hachaDeMadera.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test10UnHachaDePiedraGolpeaUnaMaderaYSuDurabilidadDeberiaReducirseEn5(){
-        Madera madera = new Madera();
-        Hacha hachaDePiedra = new Hacha(new Piedra());
-        double durabilidadInicialHachaDePiedra = hachaDePiedra.durabilidad();
-        hachaDePiedra.golpear(madera);
-        assertEquals(durabilidadInicialHachaDePiedra -5, hachaDePiedra.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test11UnHachaDePiedraGolpeaUnaPiedraYSuDurabilidadDeberiaReducirseEn5(){
-        Piedra piedra = new Piedra();
-        Hacha hachaDePiedra = new Hacha(new Piedra());
-        double durabilidadInicialHachaDePiedra = hachaDePiedra.durabilidad();
-        hachaDePiedra.golpear(piedra);
-        assertEquals(durabilidadInicialHachaDePiedra -5, hachaDePiedra.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test12UnHachaDePiedraGolpeaUnMetalYSuDurabilidadDeberiaReducirseEn5(){
-        Metal metal = new Metal();
-        Hacha hachaDePiedra = new Hacha(new Piedra());
-        double durabilidadInicialHachaDePiedra = hachaDePiedra.durabilidad();
-        hachaDePiedra.golpear(metal);
-        assertEquals(durabilidadInicialHachaDePiedra -5, hachaDePiedra.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test13UnHachaDePiedraGolpeaUnDiamanteYSuDurabilidadDeberiaReducirseEn5(){
-        Diamante diamante = new Diamante();
-        Hacha hachaDePiedra = new Hacha(new Piedra());
-        double durabilidadInicialHachaDePiedra = hachaDePiedra.durabilidad();
-        hachaDePiedra.golpear(diamante);
-        assertEquals(durabilidadInicialHachaDePiedra -5, hachaDePiedra.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test14UnHachaDeMetalGolpeaUnaMaderaYSuDurabilidadDeberiaReducirseEn5(){
-        Madera madera = new Madera();
-        Hacha hachaDeMetal = new Hacha(new Metal());
-        double durabilidadInicialHachaDeMetal = hachaDeMetal.durabilidad();
-        hachaDeMetal.golpear(madera);
-        assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test15UnHachaDeMetalGolpeaUnaPiedraYSuDurabilidadDeberiaReducirseEn5(){
-        Piedra piedra = new Piedra();
-        Hacha hachaDeMetal = new Hacha(new Metal());
-        double durabilidadInicialHachaDeMetal = hachaDeMetal.durabilidad();
-        hachaDeMetal.golpear(piedra);
-        assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test16UnHachaDeMetalGolpeaUnMetalYSuDurabilidadDeberiaReducirseEn5(){
-        Metal metal = new Metal();
-        Hacha hachaDeMetal = new Hacha(new Metal());
-        double durabilidadInicialHachaDeMetal = hachaDeMetal.durabilidad();
-        hachaDeMetal.golpear(metal);
-        assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test17UnHachaDeMetalGolpeaUnDiamanteYSuDurabilidaDeberiaReducirseEn5(){
-        Diamante diamante = new Diamante();
-        Hacha hachaDeMetal = new Hacha(new Metal());
-        double durabilidadInicialHachaDeMetal = hachaDeMetal.durabilidad();
-        hachaDeMetal.golpear(diamante);
-        assertEquals(durabilidadInicialHachaDeMetal -5, hachaDeMetal.durabilidad(), 0.0001);
-    }
-
-    @Test
-    public void test18UnHachaSeRompeAlUsarla50Veces(){
-        Hacha hachaDeMadera = new Hacha(new Madera());
-        for (int i=0; i<50; i++){
-            hachaDeMadera.golpear(new Madera());
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Madera());
         }
-        assertEquals(true,hachaDeMadera.seRompio());
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test08UnHachaDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Madera());
+        }
+    }
+
+    @Test
+    public void test09UnHachaDeMaderaGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Metal());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test10UnHachaDeMaderaGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Metal());
+        }
+    }
+
+    @Test
+    public void test11UnHachaDeMaderaGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Diamante());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test12UnHachaDeMaderaGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Diamante());
+        }
+    }
+
+    @Test
+    public void test13UnHachaDePiedraGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Madera()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test14UnHachaDePiedraGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test
+    public void test15UnHachaDeMetalGolpeaUnMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Madera());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test16UnHachaDeMetalGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Madera());
+        }
+    }
+
+    @Test
+    public void test17UnHachaDeMetalGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Metal());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test18UnHachaDeMetalGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Metal());
+        }
+    }
+
+    @Test
+    public void test19UnHachaDeMetalGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test20UnHachaDeMetalGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test
+    public void test21UnHachaDePiedraGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test22UnHachaDePiedraGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Piedra());
+        }
+    }
+
+    @Test
+    public void test23UnHachaDePiedraGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Metal());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test24UnHachaDePiedraGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Metal());
+        }
+    }
+
+    @Test
+    public void test25UnHachaDePiedraGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        Jugador jugador = new Jugador();
+        jugador.equiparHerramienta(new Hacha(new Metal()));
+
+        for (int i=0;i<50;i++){
+            jugador.golpear(new Diamante());
+        }
+    }
+
+    @Test (expected = GolpeInvalidoError.class)
+    public void test26UnHachaDePiedraGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+        Jugador jugador = new Jugador();
+
+        for (int i=0;i<51;i++){
+            jugador.golpear(new Diamante());
+        }
     }
 
 }

@@ -4,7 +4,6 @@ import algocraft.errores.CasilleroOcupadoError;
 import algocraft.errores.PosicionInvalidaError;
 import algocraft.jugador.Jugador;
 import algocraft.mapadejuego.Casillero;
-import algocraft.mapadejuego.CasilleroLibre;
 import algocraft.mapadejuego.Mapa;
 import algocraft.materiales.*;
 import org.junit.Test;

@@ -1,19 +1,16 @@
 package algocraft.herramientas;
 
 import algocraft.vidadeobjetos.AguanteHerramienta;
+import algocraft.vidadeobjetos.EstrategiaDeGolpeConHerramienta;
 import algocraft.vidadeobjetos.FortalezaHerramienta;
 import algocraft.materiales.*;
 
-public abstract class Herramienta {
+public  class Herramienta {
 
     protected FortalezaHerramienta fortaleza;
     protected AguanteHerramienta aguante;
     protected String nombre;
     protected Material material;
-    public double durabilidad(){
-        return aguante.durabilidad();
-    }
-    public int fuerza(){return fortaleza.fuerza();}
 
     public void golpear (Material unMaterial){
         try {
@@ -26,13 +23,17 @@ public abstract class Herramienta {
     public void desgastate(){
         aguante.desgastate(fortaleza);
     }
-    public void rompete(){}
+
     public String getNombre(){
         return (nombre + material.darNombre());
     }
 
-    public boolean seRompio(){
-        if (this.durabilidad() <= 0){ return true;}
-        return false;
+    public  void desequiparseAlRomperse(EstrategiaDeGolpeConHerramienta estrategiaDeGolpeConHerramienta){
+        if (aguante.durabilidad() <= 1) {
+            estrategiaDeGolpeConHerramienta.desequiparHerramientaRota();
+        }
+    }
+    public void rompete(){
+        nombre="herramienta rota";
     }
 }

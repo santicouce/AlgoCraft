@@ -170,4 +170,18 @@ public class MesaDeConstruccion {
             }
         }
     }
+    public void limpiarMesaSinConstruccion(HashMap<String, List<Material>> inventarioMateriales){
+        for (int i=0;i<3;i++){
+            for (int j=0;j<3;j++){
+                Casillero casillero=tablero[i][j];
+                try {
+                    devolverAlInventario(casillero.getId(), inventarioMateriales);
+                }catch(Exception e){
+
+                }
+                casillero.eliminarElemento();
+
+            }
+        }
+    }
 }

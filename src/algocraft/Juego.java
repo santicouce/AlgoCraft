@@ -1,5 +1,6 @@
 package algocraft;
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.MovimientoInvalidoError;
 import algocraft.jugador.Jugador;
 import algocraft.mapadejuego.Mapa;
@@ -30,7 +31,7 @@ public class Juego {
         mapa.aniadirElementoEnPosicion(new Madera() , 0,9);
 
 
-        mapa.aniadirElementoEnPosicion(new Madera() , 2,3);
+        mapa.aniadirElementoEnPosicion(new Madera() , 5,6);
         mapa.aniadirElementoEnPosicion(new Madera() , 1,0);
         mapa.aniadirElementoEnPosicion(new Madera() , 2,0);
         mapa.aniadirElementoEnPosicion(new Madera() , 3,0);
@@ -94,6 +95,8 @@ public class Juego {
             jugador.golpear(mapa);
         }catch (NullPointerException nullpointer){
             //No hay objeto a golpear.
+        }catch(GolpeInvalidoError golpeinvalido){
+            //No tengo herramienta equipada
         }
     }
 
