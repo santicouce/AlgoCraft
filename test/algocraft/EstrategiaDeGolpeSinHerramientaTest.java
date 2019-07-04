@@ -3,12 +3,9 @@ import algocraft.errores.GolpeInvalidoError;
 import algocraft.errores.ImposibleDesequiparNingunaHerramientaError;
 import algocraft.herramientas.Hacha;
 import algocraft.jugador.Jugador;
-import algocraft.materiales.Madera;
 import algocraft.materiales.Piedra;
-import algocraft.vidadeobjetos.EstrategiaDeGolpeSinHerramienta;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
 public class EstrategiaDeGolpeSinHerramientaTest {

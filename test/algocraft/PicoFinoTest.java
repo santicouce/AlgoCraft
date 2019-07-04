@@ -1,6 +1,7 @@
 package algocraft;
 
 import algocraft.errores.ConstruccionInvalidaError;
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.herramientas.PicoFino;
 import algocraft.jugador.Jugador;
 import algocraft.materiales.Diamante;
@@ -41,20 +42,17 @@ public class PicoFinoTest {
         PicoFino picoFino = new PicoFino(new Madera(), new Madera());
     }
 
-    @Test
-    public void test06UnPicoFinoGolpeaUnDiamanteYSuDurabilidadDeberiaReducirseEn100(){
-  /*
-        Diamante diamante = new Diamante();
-        double durabilidadInicialPicoFino = picoFino.durabilidad();
-        picoFino.golpear(diamante);
-        assertEquals(durabilidadInicialPicoFino-100,picoFino.durabilidad(),0.00001);
-   */
- /*       PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
+    @Test(expected = GolpeInvalidoError.class)
+    public void test06UnPicoFinoGolpeaUnDiamanteYSuDurabilidadDeberiaReducirseEn100() {
+
+
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
-        jugador.equiparHerramienta(picoFino);
-        jugador.golpear();
-*/    }
+        jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
+        for (int i = 0; i < 67; i++) {
+            jugador.golpear(new Diamante());
+        }
+    }
     /*
     @Test
     public void test07UnPicoFinoGolpeaUnaMaderaYSuDurabilidadNoDeberiaReducirse(){

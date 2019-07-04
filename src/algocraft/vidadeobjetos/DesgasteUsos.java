@@ -1,7 +1,5 @@
 package algocraft.vidadeobjetos;
 
-import algocraft.errores.HerramientaRotaError;
-
 public class DesgasteUsos extends Desgaste {
     private int cantidadUsos=0;
     @Override
