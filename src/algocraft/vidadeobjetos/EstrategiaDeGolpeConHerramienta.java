@@ -1,6 +1,5 @@
 package algocraft.vidadeobjetos;
 
-import algocraft.herramientas.HerramientaRota;
 import algocraft.jugador.Jugador;
 import algocraft.herramientas.Herramienta;
 import algocraft.materiales.Material;
@@ -23,16 +22,20 @@ public class EstrategiaDeGolpeConHerramienta extends EstrategiaDeGolpe {
         jugador.cambiarEstrategia(new EstrategiaDeGolpeSinHerramienta());
     }
 
-    public void desequiparHerramientaRota(){
-        herramientaActual = new HerramientaRota();
+    public void desequiparHerramientaRota() {
+        herramientaActual = null;
     }
-
     public void equiparHerramienta(Jugador jugador, Herramienta unaHerramienta){
         herramientaActual= unaHerramienta;
     }
 
     @Override
     public String herramienta() {
+        try{
+            herramientaActual.getNombre();
+        }catch (NullPointerException e){
+            return "herramienta rota";
+        }
         return herramientaActual.getNombre();
     }
 

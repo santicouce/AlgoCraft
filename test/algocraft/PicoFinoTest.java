@@ -21,13 +21,17 @@ public class PicoFinoTest {
         picoFino.golpear(diamante);
         assertEquals(durabilidadInicialDiamante - 20, diamante.durabilidad());
     }
-/*
-    @Test
+
+    @Test(expected = GolpeInvalidoError.class)
     public void test02UnPicoFinoDeberiaComenzarConDurabilidad1000(){
-        PicoFino picoFino = new PicoFino(new Metal(), new Piedra());
-        assertEquals(1000, picoFino.durabilidad(), 0.00001);
+        Jugador jugador = new Jugador();
+        jugador.desequiparHerramienta();
+        jugador.equiparHerramienta(new PicoFino(new Metal(), new Piedra()));
+        for (int i = 0; i < 67; i++) {
+            jugador.golpear(new Diamante());
+        }
     }
-*/
+
     @Test(expected = ConstruccionInvalidaError.class)
     public void test03UnPicoFinoNoDeberiaPoderConstruirseConUnaMadera(){
         PicoFino picoFino = new PicoFino(new Madera(), new Metal());

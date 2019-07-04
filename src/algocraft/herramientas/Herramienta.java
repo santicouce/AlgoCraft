@@ -33,4 +33,7 @@ public  class Herramienta {
             estrategiaDeGolpeConHerramienta.desequiparHerramientaRota();
         }
     }
+    public void rompete(){
+        nombre="herramienta rota";
+    }
 }
