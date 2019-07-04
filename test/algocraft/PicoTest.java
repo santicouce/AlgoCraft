@@ -1,8 +1,10 @@
 package algocraft;
 
 
+import algocraft.errores.GolpeInvalidoError;
 import algocraft.herramientas.Pico;
 import algocraft.jugador.Jugador;
+import algocraft.materiales.Diamante;
 import algocraft.materiales.Madera;
 import algocraft.materiales.Metal;
 import algocraft.materiales.Piedra;
@@ -21,7 +23,7 @@ public class PicoTest {
         assertEquals(durabilidadInicialPiedra -2, piedra.durabilidad());
     }
 
-    @Test
+    @Test(expected = GolpeInvalidoError.class)
     public void test02UnPicoDeMetalSeRompeAlDecimoUSo(){
         Juego juego = new Juego();
         Jugador jugador = juego.darJugador();
@@ -32,15 +34,18 @@ public class PicoTest {
         }
     }
 
-/*
+
     @Test
-    public void test03UnPicoDePiedraDeberiaComenzarConFuerza4(){
+    public void test03UnPicoDePiedraDeberiaComenzarConFuerza4() {
         Piedra piedra = new Piedra();
         Pico picoDePiedra = new Pico(new Piedra());
         int durabilidadInicialPiedra = piedra.durabilidad();
         picoDePiedra.golpear(piedra);
-        assertEquals(durabilidadInicialPiedra -4, piedra.durabilidad());
-    public void test02UnPicoDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+        assertEquals(durabilidadInicialPiedra - 4, piedra.durabilidad());
+    }
+
+    @Test
+    public void test04UnPicoDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -51,7 +56,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test03UnPicoDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+    public void test05UnPicoDeMaderaGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -62,7 +67,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test04UnPicoDePiedraComienzaConDurabilidad200YDesgastaConFuerza4Dividido1Coma5HastaLaVez75EsUsable(){
+    public void test06UnPicoDePiedraComienzaConDurabilidad200YDesgastaConFuerza4Dividido1Coma5HastaLaVez75EsUsable(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -73,7 +78,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test05UnPicoDePiedraComienzaConDurabilidad200YDesgastaConFuerza4Dividido1Coma5ALaVez76SeRompe(){
+    public void test07UnPicoDePiedraComienzaConDurabilidad200YDesgastaConFuerza4Dividido1Coma5ALaVez76SeRompe(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -84,7 +89,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test06UnPicoDeMaderaGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+    public void test08UnPicoDeMaderaGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -95,7 +100,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test07UnPicoDeMaderaGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+    public void test09UnPicoDeMaderaGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -106,7 +111,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test08UnPicoDeMaderaGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+    public void test10UnPicoDeMaderaGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -117,7 +122,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test09UnPicoDeMaderaGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+    public void test11UnPicoDeMaderaGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -128,7 +133,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test10UnPicoDeMaderaGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
+    public void test12UnPicoDeMaderaGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez50SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -139,7 +144,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test11UnPicoDeMaderaGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
+    public void test13UnPicoDeMaderaGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYALaVez51LanzaExcepcion(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Madera()));
@@ -150,7 +155,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test12UnPicoDePiedraGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
+    public void test14UnPicoDePiedraGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
         Jugador jugador = new Jugador();
         Diamante diamante = new Diamante();
         jugador.desequiparHerramienta();
@@ -162,7 +167,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test13UnPicoDePiedraGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
+    public void test15UnPicoDePiedraGolpeaUnDiamanteYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
         Jugador jugador = new Jugador();
         Diamante diamante = new Diamante();
         jugador.desequiparHerramienta();
@@ -174,7 +179,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test14UnPicoDePiedraGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
+    public void test16UnPicoDePiedraGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -185,7 +190,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test15UnPicoDePiedraGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
+    public void test17UnPicoDePiedraGolpeaUnaPiedraYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -196,7 +201,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test16UnPicoDePiedraGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
+    public void test18UnPicoDePiedraGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -207,7 +212,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test17UnPicoDePiedraGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
+    public void test19UnPicoDePiedraGolpeaUnaMaderaYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -218,7 +223,7 @@ public class PicoTest {
     }
 
     @Test
-    public void test18UnPicoDePiedraGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
+    public void test20UnPicoDePiedraGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYHastaLaVez75SePuedeUsar(){
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -229,7 +234,7 @@ public class PicoTest {
     }
 
     @Test (expected = GolpeInvalidoError.class)
-    public void test19UnPicoDePiedraGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
+    public void test21UnPicoDePiedraGolpeaUnMetalYSuDurabilidadSeDeberiaReducirDeADosYALaVez76SeRompe() {
         Jugador jugador = new Jugador();
         jugador.desequiparHerramienta();
         jugador.equiparHerramienta(new Pico(new Piedra()));
@@ -238,5 +243,5 @@ public class PicoTest {
             jugador.golpear(new Metal());
         }
     }
-*/
+
 }
