@@ -70,7 +70,7 @@ public class VistaMesaDeConstruccion extends GridPane {
         try {
             jugador.fabricarUnaHerramienta();
         }catch (ImposibleCrearHerramientaError error){
-            
+
         }
         borrar();
         contenedorJuego.actualizarBotonera();
