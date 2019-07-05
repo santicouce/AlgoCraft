@@ -1,5 +1,6 @@
 package algocraft.interfazgrafica.vista;
 
+import algocraft.errores.ImposibleCrearHerramientaError;
 import algocraft.interfazgrafica.eventos.BotonMesaDeConstruccion;
 import algocraft.jugador.Jugador;
 import javafx.geometry.Pos;
@@ -66,7 +67,11 @@ public class VistaMesaDeConstruccion extends GridPane {
         jugador.aniadirMaterialEnPosicion(columna, fila, unMaterial);
     }
     public void construir(){
-        jugador.fabricarUnaHerramienta();
+        try {
+            jugador.fabricarUnaHerramienta();
+        }catch (ImposibleCrearHerramientaError error){
+            
+        }
         borrar();
         contenedorJuego.actualizarBotonera();
     }

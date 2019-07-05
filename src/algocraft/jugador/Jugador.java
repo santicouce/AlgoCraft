@@ -176,12 +176,7 @@ public class Jugador extends Observable {
     }
 
     public void fabricarUnaHerramienta(){
-        try {
             mesaDeConstruccion.construir(inventarioHerramientas, inventarioMateriales);
-        }catch(ImposibleCrearHerramientaError error){
-
-        }
-
     }
 
 
